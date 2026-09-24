@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors (Dark) -->
+    <color name="gold">#D4AF37</color>
+    <color name="deep_green">#0F2922</color>
+    <color name="deep_navy">#1A365D</color>
+
+    <!-- Material 3 Dark Palette (Updated: Green removed, Gold used for Secondary) -->
+    <color name="md_theme_dark_primary">#F2CA50</color>
+    <color name="md_theme_dark_onPrimary">#3C2F00</color>
+    <color name="md_theme_dark_primaryContainer">#D4AF37</color>
+    <color name="md_theme_dark_onPrimaryContainer">#554300</color>
+    <color name="md_theme_dark_secondary">#D4AF37</color>
+    <color name="md_theme_dark_onSecondary">#111415</color>
+    <color name="md_theme_dark_secondaryContainer">#554300</color>
+    <color name="md_theme_dark_onSecondaryContainer">#FFE088</color>
+    <color name="md_theme_dark_tertiary">#B5CFFF</color>
+    <color name="md_theme_dark_onTertiary">#133057</color>
+    <color name="md_theme_dark_tertiaryContainer">#9AB4E2</color>
+    <color name="md_theme_dark_onTertiaryContainer">#2B466D</color>
+    <color name="md_theme_dark_error">#FFB4AB</color>
+    <color name="md_theme_dark_onError">#690005</color>
+    <color name="md_theme_dark_errorContainer">#93000A</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+    <color name="md_theme_dark_outline">#99907C</color>
+    <color name="md_theme_dark_background">#111415</color>
+    <color name="md_theme_dark_onBackground">#E1E3E4</color>
+    <color name="md_theme_dark_surface">#111415</color>
+    <color name="md_theme_dark_onSurface">#E1E3E4</color>
+    <color name="md_theme_dark_surfaceVariant">#323536</color>
+    <color name="md_theme_dark_onSurfaceVariant">#D0C5AF</color>
+    <color name="md_theme_dark_inverseOnSurface">#2E3132</color>
+    <color name="md_theme_dark_inverseSurface">#E1E3E4</color>
+    <color name="md_theme_dark_inversePrimary">#735C00</color>
+    <color name="md_theme_dark_surfaceTint">#E9C349</color>
+    <color name="md_theme_dark_outlineVariant">#4D4635</color>
+    <color name="md_theme_dark_scrim">#000000</color>
+
+    <!-- Legacy / Compatibility Mappings (Dark Override) -->
+    <color name="primary">@color/md_theme_dark_primary</color>
+    <color name="secondary">@color/gold</color>
+    <color name="tertiary">@color/md_theme_dark_tertiary</color>
+    <color name="neutral_bg">@color/md_theme_dark_background</color>
+    <color name="card_bg">@color/md_theme_dark_surfaceVariant</color>
+    <color name="search_bar_bg">#1A1C1E</color>
+    <color name="text_primary">@color/md_theme_dark_onSurface</color>
+    <color name="text_secondary">@color/gold</color>
+    <color name="text_muted">#80E1E3E4</color>
+    <color name="card_stroke">#33D4AF37</color>
+    <color name="selected_lang_bg">#25D4AF37</color>
+</resources>

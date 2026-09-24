@@ -1,0 +1,138 @@
+<resources>
+    <string name="app_name">Hilalim Ezan Vakti</string>
+    <string name="app_name_part1">Hilalim</string>
+    <string name="app_name_part2"> Dini</string>
+    <string name="slogan">İSLAMİ YOLDAŞINIZ</string>
+    <string name="search_hint">Arama yapın&#8230;</string>
+    <string name="sure_ara">Sure Ara&#8230;</string>
+    <string name="placeholder_aa">Aa</string>
+    <string name="splash_title">HİLALİM EZAN VAKTİ</string>
+    <string name="copyright_text">© 2026 Korkut Yazılım A.Ş. , Demiral Medya</string>
+    <string name="logo_desc">Hilalim Logo</string>
+
+    <!-- Dashboard Strings -->
+    <string name="nav_home">Anasayfa</string>
+    <string name="nav_quran">Kur\'an</string>
+    <string name="nav_qibla">Kıble</string>
+    <string name="nav_tools">Araçlar</string>
+    <string name="drawer_open">Menüyü Aç</string>
+    <string name="drawer_close">Menüyü Kapat</string>
+
+    <!-- Home Fragment Strings -->
+    <string name="hijri_date_mock">15 Şaban 1445</string>
+    <string name="location_mock">İstanbul, TR</string>
+    <string name="next_prayer_label">SIRADAKİ VAKİT</string>
+    <string name="next_prayer_name_mock">Akşam</string>
+    <string name="next_prayer_time_mock">-01:24:15</string>
+    <string name="vakitler_title">Vakitler</string>
+    <string name="imsak">İmsak</string>
+    <string name="gunes">Güneş</string>
+    <string name="ogle">Öğle</string>
+    <string name="ikindi">İkindi</string>
+    <string name="aksam">Akşam</string>
+    <string name="yatsi">Yatsı</string>
+    <string name="imsak_time_mock">05:43</string>
+    <string name="gunes_time_mock">07:08</string>
+    <string name="ogle_time_mock">13:21</string>
+    <string name="ikindi_time_mock">16:34</string>
+    <string name="aksam_time_mock">19:24</string>
+    <string name="yatsi_time_mock">20:43</string>
+    <string name="gunun_ayeti_title">GÜNÜN AYETİ</string>
+    <string name="gunun_ayeti_content_mock">Şüphesiz Allah, adaleti, iyilik yapmayı, yakınlara yardım etmeyi emreder; hayasızlığı, fenalık ve azgınlığı da yasaklar.</string>
+    <string name="gunun_ayeti_ref_mock">(Nahl Suresi, 90. Ayet)</string>
+
+    <!-- Qibla Fragment Strings -->
+    <string name="qibla_title">Kıble Yönü</string>
+    <string name="qibla_location_mock">Mekke, Suudi Arabistan (135° G-D)</string>
+    <string name="qibla_degree_mock">135°</string>
+    <string name="calibration_title">Pusula Kalibrasyonu</string>
+    <string name="calibration_desc">Doğru sonuç için telefonunuzu sekiz (8) çizecek şekilde hareket ettirerek kalibre ediniz. Manyetik alanlardan uzak durun.</string>
+
+    <!-- Tools Fragment Strings -->
+    <string name="tools_main_title">İslami Araçlar</string>
+    <string name="tools_subtitle">Günlük ibadetlerinizi ve manevi gelişiminizi destekleyecek faydalı araçlar.</string>
+    <string name="tool_esma">Esma-ül\nHüsna</string>
+    <string name="tool_namaz_rehberi">Namaz\nRehberi</string>
+    <string name="tool_zikirmatik">Zikirmatik</string>
+    <string name="tool_dini_gunler">Dini Günler</string>
+    <string name="tool_aylik_vakitler">Aylık Namaz\nVakitleri</string>
+    <string name="tool_aylik_vakitler_desc">Tüm ayın detaylı namaz saatleri ve imsakiye.</string>
+    <string name="tool_zekat">Zekat\nHesapla</string>
+    <string name="gunun_duasi_title">Günün Duası</string>
+    <string name="gunun_duasi_arabic">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</string>
+    <string name="gunun_duasi_turkish">\"Rabbimiz! Bize dünyada da iyilik ver, ahirette de iyilik ver ve bizi ateş azabından koru.\"</string>
+    <string name="btn_save">Kaydet</string>
+
+    <!-- Welcome Activity Strings -->
+    <string name="welcome_greeting">Selamun\nAleyküm</string>
+    <string name="welcome_subtitle">Huzura açılan kapınız</string>
+    <string name="btn_start">Başla</string>
+    <string name="welcome_title">Hilalim\'e Hoş Geldiniz</string>
+    <string name="welcome_desc">Ezan vakitlerini hesaplamak için konumunuza ihtiyacımız var.</string>
+    <string name="location_info">Konum izni vermek, vakitlerin en doğru şekilde hesaplanmasını sağlar.</string>
+    <string name="search_city">Şehir Ara...</string>
+    <string name="btn_complete">Tamamla</string>
+    <string name="btn_get_location">Konumumu Ayarla</string>
+    <string name="btn_skip">Daha sonra ayarla</string>
+    <string name="select_language">Dil Seçimi</string>
+    <string name="select_language_en">Language Selection</string>
+    <string name="select_language_desc">Lütfen kullanmak istediğiniz dili seçiniz.</string>
+    <string name="select_location">Konum Ayarla</string>
+    <string name="manual_location">Manuel Ekle</string>
+    <string name="auto_location">Konumu Bul</string>
+    <string name="select_city">İl Seçin</string>
+    <string name="select_district">İlçe Seçin</string>
+    <string name="btn_continue">Devam Et</string>
+    <string name="lang_tr">🇹🇷 Türkçe</string>
+    <string name="lang_en">🇺🇸 English</string>
+    <string name="lang_ar">🇸🇦 العربية</string>
+    <string name="lang_de">🇩🇪 Deutsch</string>
+    <string name="or">veya</string>
+    <string name="toast_location_permission_denied">Konum izni verilmedi. Manuel seçim yapabilirsiniz.</string>
+    <string name="toast_select_city_district">Lütfen il ve ilçe seçin</string>
+    <string name="home_pro_title">HilalimDini</string>
+    <string name="fab_nearest_mosque">En Yakın Cami</string>
+    <string name="location_saved">Konum başarıyla kaydedildi.</string>
+    <string name="exact_alarm_permission_required">Namaz vakitlerinde tam zamanında bildirim alabilmek için \'Tam alarm\' izni gereklidir.</string>
+    <string name="allow">İzin Ver</string>
+
+    <!-- Notification Strings -->
+    <string name="notification_channel_name">Ezan Vakitleri</string>
+    <string name="notification_channel_desc">Namaz vakti ve öncesi hatırlatıcı bildirimler</string>
+    <string name="notification_exact_title">Ezan Vakti</string>
+    <string name="notification_exact_content">%s vakti geldi.</string>
+    <string name="notification_pre_45_title">Ezan Vaktine 45 Dk Kaldı</string>
+    <string name="notification_pre_45_content">%s vaktine 45 dakika kaldı.</string>
+    <string name="notification_pre_15_title">Ezan Vaktine 15 Dk Kaldı</string>
+    <string name="notification_pre_15_content">%s vaktine 15 dakika kaldı.</string>
+
+    <!-- Location Helper Strings -->
+    <string name="location_fetching">Konumunuz alınıyor, lütfen bekleyin&#8230;</string>
+    <string name="location_disabled">Konum servisleri kapalı. Lütfen GPS\'i açın.</string>
+    <string name="location_not_found">Konumunuz tespit edilemedi. Lütfen manuel il/ilçe seçimi yapın.</string>
+
+    <!-- Qibla Extra Strings -->
+    <string name="qibla_location_required">Kıble yönünün hesaplanabilmesi için konumunuzu ayarlayın.</string>
+    <string name="qibla_no_sensor">Cihazınızda pusula (manyetometre) sensörü bulunamadı.</string>
+    <string name="btn_set_location">Konum Ayarla</string>
+
+    <!-- Zekat and Zikirmatik Strings -->
+    <string name="gold_price_per_gram">Gram Altın Fiyatı (TL)</string>
+    <string name="zekat_result_amount">Zekat Miktarı: %.2f TL</string>
+    <string name="zekat_result_below_nisap">Zekat Miktarı: 0 TL (Varlığınız Nisap miktarının [%.2f TL] altındadır)</string>
+    <string name="reset_confirm_title">Zikri Sıfırla</string>
+    <string name="reset_confirm_msg">Zikir sayacını sıfırlamak istediğinize emin misiniz?</string>
+    <string name="target_reached_msg">Tebrikler! Hedeflediğiniz zikir sayısına ulaştınız.</string>
+    <string name="target_label">Hedef: %d</string>
+    <string name="target_free">Serbest</string>
+    <string name="cancel">İptal</string>
+    <string name="yes">Evet</string>
+
+    <!-- Drawer Strings -->
+    <string name="nav_change_location">Konum Değiştir</string>
+    <string name="nav_change_language">Dil Seçimi</string>
+
+    <!-- Nearest Mosque -->
+    <string name="tool_nearest_mosque">En Yakın Cami</string>
+    <string name="tool_nearest_mosque_desc">Yakınınızdaki camileri Google Haritalar\'da görün.</string>
+</resources>

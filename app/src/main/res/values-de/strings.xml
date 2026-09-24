@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">Hilalim</string>
+    <string name="app_name_part1">Hilalim</string>
+    <string name="app_name_part2"> Religiös</string>
+    <string name="slogan">IHR ISLAMISCHER BEGLEITER</string>
+    <string name="splash_title">HILALIM GEBETSZEIT</string>
+
+    <!-- Dashboard -->
+    <string name="nav_home">Startseite</string>
+    <string name="nav_quran">Koran</string>
+    <string name="nav_qibla">Qibla</string>
+    <string name="nav_tools">Werkzeuge</string>
+    <string name="sure_ara">Sure suchen&#8230;</string>
+
+    <!-- Home -->
+    <string name="next_prayer_label">NÄCHSTES GEBET</string>
+    <string name="vakitler_title">Gebetszeiten</string>
+    <string name="imsak">Fajr</string>
+    <string name="gunes">Sonnenaufgang</string>
+    <string name="ogle">Dhuhr</string>
+    <string name="ikindi">Asr</string>
+    <string name="aksam">Maghrib</string>
+    <string name="yatsi">Isha</string>
+    <string name="gunun_ayeti_title">VERS DES TAGES</string>
+
+    <!-- Qibla -->
+    <string name="qibla_title">Qibla-Richtung</string>
+    <string name="calibration_title">Kompass-Kalibrierung</string>
+    <string name="calibration_desc">Für genaue Ergebnisse kalibrieren Sie Ihr Telefon, indem Sie es in einer Achterbewegung (8) bewegen. Halten Sie sich von Magnetfeldern fern.</string>
+
+    <!-- Tools -->
+    <string name="tools_main_title">Islamische Werkzeuge</string>
+    <string name="tools_subtitle">Nützliche Werkzeuge zur Unterstützung Ihres täglichen Gottesdienstes und Ihres spirituellen Wachstums.</string>
+    <string name="tool_esma">Asma-ul\nHusna</string>
+    <string name="tool_namaz_rehberi">Gebets\nführer</string>
+    <string name="tool_zikirmatik">Tasbih</string>
+    <string name="tool_dini_gunler">Religiöse Tage</string>
+    <string name="tool_zekat">Zakat\nRechner</string>
+    <string name="gunun_duasi_title">Dua des Tages</string>
+
+    <!-- Welcome -->
+    <string name="welcome_greeting">Salam Alaykum</string>
+    <string name="welcome_subtitle">Ihr Tor zur Gelassenheit</string>
+    <string name="btn_start">Starten</string>
+    <string name="welcome_title">Willkommen bei Hilalim</string>
+    <string name="welcome_desc">Wir benötigen Ihren Standort, um die Gebetszeiten zu berechnen.</string>
+    <string name="location_info">Die Erteilung der Standorterlaubnis gewährleistet eine möglichst genaue Berechnung der Zeiten.</string>
+    <string name="search_city">Stadt suchen...</string>
+    <string name="btn_complete">Abschließen</string>
+    <string name="btn_get_location">Meinen Standort festlegen</string>
+    <string name="btn_skip">Später festlegen</string>
+    <string name="select_language">Sprachauswahl</string>
+    <string name="select_language_en">Language Selection</string>
+    <string name="select_language_desc">Bitte wählen Sie die Sprache aus, die Sie verwenden möchten.</string>
+    <string name="select_location">Standort festlegen</string>
+    <string name="manual_location">Manuell hinzufügen</string>
+    <string name="auto_location">Standort finden</string>
+    <string name="select_city">Stadt auswählen</string>
+    <string name="select_district">Bezirk auswählen</string>
+    <string name="btn_continue">Weiter</string>
+    <string name="lang_tr">Türkisch</string>
+    <string name="lang_en">Englisch</string>
+    <string name="lang_ar">Arabisch</string>
+    <string name="lang_de">Deutsch</string>
+    <string name="or">oder</string>
+    <string name="toast_location_permission_denied">Standortberechtigung verweigert. Sie können manuell auswählen.</string>
+    <string name="toast_select_city_district">Bitte wählen Sie Stadt und Bezirk aus.</string>
+    <string name="home_pro_title">HilalimDini</string>
+    <string name="fab_nearest_mosque">Nächste Moschee</string>
+    <string name="location_saved">Standort erfolgreich gespeichert.</string>
+    <string name="exact_alarm_permission_required">Die Berechtigung für den exakten Alarm ist erforderlich, um Benachrichtigungen pünktlich zu den Gebetszeiten zu erhalten.</string>
+    <string name="allow">Zulassen</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Gebetszeiten</string>
+    <string name="notification_channel_desc">Gebetszeit- und Erinnerungsbenachrichtigungen</string>
+    <string name="notification_exact_title">Gebetszeit</string>
+    <string name="notification_exact_content">Zeit für das %s-Gebet.</string>
+    <string name="notification_pre_45_title">Noch 45 Minuten</string>
+    <string name="notification_pre_45_content">Noch 45 Minuten bis zum %s-Gebet.</string>
+    <string name="notification_pre_15_title">Noch 15 Minuten</string>
+    <string name="notification_pre_15_content">Noch 15 Minuten bis zum %s-Gebet.</string>
+
+    <!-- Location Helper Strings -->
+    <string name="location_fetching">Standort wird ermittelt, bitte warten&#8230;</string>
+    <string name="location_disabled">Standortdienste deaktiviert. Bitte aktivieren Sie GPS.</string>
+    <string name="location_not_found">Standort konnte nicht ermittelt werden. Bitte wählen Sie Stadt/Bezirk manuell aus.</string>
+
+    <!-- Qibla Extra Strings -->
+    <string name="qibla_location_required">Bitte stellen Sie Ihren Standort ein, um die Qibla-Richtung zu berechnen.</string>
+    <string name="qibla_no_sensor">Kompass-Sensor (Magnetometer) auf Ihrem Gerät nicht gefunden.</string>
+    <string name="btn_set_location">Standort festlegen</string>
+
+    <!-- Zekat and Zikirmatik Strings -->
+    <string name="gold_price_per_gram">Goldpreis pro Grams (TL)</string>
+    <string name="zekat_result_amount">Zakat-Betrag: %.2f TL</string>
+    <string name="zekat_result_below_nisap">Zakat-Betrag: 0 TL (Ihr Vermögen liegt unter der Nisab-Schwelle [%.2f TL])</string>
+    <string name="reset_confirm_title">Tasbih zurücksetzen</string>
+    <string name="reset_confirm_msg">Möchten Sie den Zähler wirklich zurücksetzen?</string>
+    <string name="target_reached_msg">Herzlichen Glückwunsch! Sie haben Ihr Zieldatum erreicht.</string>
+    <string name="target_label">Ziel: %d</string>
+    <string name="target_free">Frei</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="yes">Ja</string>
+
+    <!-- Drawer Strings -->
+    <string name="nav_change_location">Standort ändern</string>
+    <string name="nav_change_language">Sprache ändern</string>
+
+    <!-- Nearest Mosque -->
+    <string name="tool_nearest_mosque">Nächste Moschee</string>
+    <string name="tool_nearest_mosque_desc">Finden Sie nahegelegene Moscheen auf Google Maps.</string>
+</resources>

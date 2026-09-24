@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">هلالي</string>
+    <string name="app_name_part1">هلالي</string>
+    <string name="app_name_part2"> ديني</string>
+    <string name="slogan">رفيقك الإسلامي</string>
+    <string name="splash_title">هلالي وقت الأذان</string>
+
+    <!-- Dashboard -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_quran">القرآن</string>
+    <string name="nav_qibla">القبلة</string>
+    <string name="nav_tools">الأدوات</string>
+    <string name="sure_ara">ابحث عن السورة&#8230;</string>
+
+    <!-- Home -->
+    <string name="next_prayer_label">الوقت القادم</string>
+    <string name="vakitler_title">أوقات الصلاة</string>
+    <string name="imsak">إمساك</string>
+    <string name="gunes">شروق</string>
+    <string name="ogle">ظهر</string>
+    <string name="ikindi">عصر</string>
+    <string name="aksam">مغرب</string>
+    <string name="yatsi">عشاء</string>
+    <string name="gunun_ayeti_title">آية اليوم</string>
+
+    <!-- Qibla -->
+    <string name="qibla_title">اتجاه القبلة</string>
+    <string name="calibration_title">معايرة البوصلة</string>
+    <string name="calibration_desc">للحصول على نتائج دقيقة، قم بمعايرة هاتفك عن طريق تحريكه بحركة الرقم ثمانية (8). ابق بعيداً عن المجالات المغناطيسية.</string>
+
+    <!-- Tools -->
+    <string name="tools_main_title">الأدوات الإسلامية</string>
+    <string name="tools_subtitle">أدوات مفيدة لدعم عباداتك اليومية ونموك الروحي.</string>
+    <string name="tool_esma">أسماء الله\nالحسنى</string>
+    <string name="tool_namaz_rehberi">دليل\nالصلاة</string>
+    <string name="tool_zikirmatik">مسبحة</string>
+    <string name="tool_dini_gunler">أيام دينية</string>
+    <string name="tool_zekat">حساب\nالزكاة</string>
+    <string name="gunun_duasi_title">دعاء اليوم</string>
+
+    <!-- Welcome -->
+    <string name="welcome_greeting">السلام عليكم</string>
+    <string name="welcome_subtitle">بوابتك إلى السكينة</string>
+    <string name="btn_start">ابدأ</string>
+    <string name="welcome_title">مرحباً بكم في هلالي</string>
+    <string name="welcome_desc">نحتاج إلى موقعك لحساب أوقات الصلاة.</string>
+    <string name="location_info">منح إذن الموقع يضمن أدق حساب للأوقات.</string>
+    <string name="search_city">ابحث عن مدينة...</string>
+    <string name="btn_complete">إتمام</string>
+    <string name="btn_get_location">ضبط موقعي</string>
+    <string name="btn_skip">الضبط لاحقاً</string>
+    <string name="select_language">اختيار اللغة</string>
+    <string name="select_language_en">Language Selection</string>
+    <string name="select_language_desc">يرجى اختيار اللغة التي ترغب في استخدامها.</string>
+    <string name="select_location">ضبط الموقع</string>
+    <string name="manual_location">إضافة يدوياً</string>
+    <string name="auto_location">البحث عن الموقع</string>
+    <string name="select_city">اختر المدينة</string>
+    <string name="select_district">اختر الحي</string>
+    <string name="btn_continue">استمرار</string>
+    <string name="lang_tr">التركية</string>
+    <string name="lang_en">الإنجليزية</string>
+    <string name="lang_ar">العربية</string>
+    <string name="lang_de">الألمانية</string>
+    <string name="or">أو</string>
+    <string name="toast_location_permission_denied">تم رفض إذن الموقع. يمكنك الاختيار يدوياً.</string>
+    <string name="toast_select_city_district">يرجى اختيار المدينة والحي.</string>
+    <string name="home_pro_title">هلالي ديني</string>
+    <string name="fab_nearest_mosque">أقرب مسجد</string>
+    <string name="location_saved">تم حفظ الموقع بنجاح.</string>
+    <string name="exact_alarm_permission_required">مطلوب إذن التنبيه الدقيق لتلقي الإشعارات بالضبط في أوقات الصلاة.</string>
+    <string name="allow">سماح</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">أوقات الصلاة</string>
+    <string name="notification_channel_desc">إشعارات وتنبيهات أوقات الصلاة</string>
+    <string name="notification_exact_title">وقت الصلاة</string>
+    <string name="notification_exact_content">حان الآن وقت صلاة %s.</string>
+    <string name="notification_pre_45_title">بقي 45 دقيقة</string>
+    <string name="notification_pre_45_content">متبقي 45 دقيقة على صلاة %s.</string>
+    <string name="notification_pre_15_title">بقي 15 دقيقة</string>
+    <string name="notification_pre_15_content">متبقي 15 دقيقة على صلاة %s.</string>
+
+    <!-- Location Helper Strings -->
+    <string name="location_fetching">جاري تحديد موقعك، يرجى الانتظار&#8230;</string>
+    <string name="location_disabled">خدمات الموقع معطلة. يرجى تفعيل GPS.</string>
+    <string name="location_not_found">تعذر تحديد موقعك. يرجى اختيار المدينة والحي يدوياً.</string>
+
+    <!-- Qibla Extra Strings -->
+    <string name="qibla_location_required">يرجى ضبط موقعك لحساب اتجاه القبلة.</string>
+    <string name="qibla_no_sensor">لم يتم العثور على مستشعر البوصلة في جهازك.</string>
+    <string name="btn_set_location">ضبط الموقع</string>
+
+    <!-- Zekat and Zikirmatik Strings -->
+    <string name="gold_price_per_gram">سعر جرام الذهب (TL)</string>
+    <string name="zekat_result_amount">مقدار الزكاة: %.2f TL</string>
+    <string name="zekat_result_below_nisap">مقدار الزكاة: 0 TL (ثروتك أقل من حد النصاب [%.2f TL])</string>
+    <string name="reset_confirm_title">إعادة ضبط المسبحة</string>
+    <string name="reset_confirm_msg">هل أنت تأكد من أنك تريد إعادة ضبط العداد؟</string>
+    <string name="target_reached_msg">تهانينا! لقد وصلت إلى هدف الذكر المحدد.</string>
+    <string name="target_label">الهدف: %d</string>
+    <string name="target_free">حر</string>
+    <string name="cancel">إلغاء</string>
+    <string name="yes">نعم</string>
+
+    <!-- Drawer Strings -->
+    <string name="nav_change_location">تغيير الموقع</string>
+    <string name="nav_change_language">تغيير اللغة</string>
+
+    <!-- Nearest Mosque -->
+    <string name="tool_nearest_mosque">أقرب مسجد</string>
+    <string name="tool_nearest_mosque_desc">ابحث عن المساجد القريبة على خرائط Google.</string>
+</resources>

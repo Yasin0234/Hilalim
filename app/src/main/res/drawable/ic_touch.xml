@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Prayer Beads Ring (Tesbih) -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,2.5a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M16.5,3.8a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M19.7,7.3a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M20.5,12a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M19.7,16.7a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M16.5,20.2a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M12,21.5a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M7.5,20.2a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M4.3,16.7a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M3.5,12a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M4.3,7.3a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z M7.5,3.8a1.25,1.25 0,1 0,0,-2.5a1.25,1.25 0,0 0,0,2.5z" />
+
+    <!-- Center Tally Counter Disc -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,6a6,6 0,1 0,0,12a6,6 0,0 0,0,-12zM12,16.5a4.5,4.5 0,1 1,0,-9a4.5,4.5 0,0 1,0,9z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,9a3,3 0,1 0,0,6a3,3 0,0 0,0,-6z" />
+</vector>

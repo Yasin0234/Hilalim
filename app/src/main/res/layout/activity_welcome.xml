@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <!-- Step 1: Greeting / Landing Screen -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/step_greeting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/logo_card"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="120dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:id="@+id/welcome_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp"
+                android:contentDescription="@string/logo_desc"
+                android:src="@drawable/ic_logo" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_greeting_animated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/welcome_greeting"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo_card" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="0.7"
+            android:text="@string/welcome_subtitle"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_greeting_animated" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="48dp"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:text="@string/btn_start"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="36dp"
+            app:icon="@drawable/ic_next"
+            app:iconGravity="textEnd"
+            app:iconPadding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- The rest of the onboarding steps (Language/Location) inside a ScrollView -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/onboarding_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <!-- Step 2: Language Selection -->
+            <LinearLayout
+                android:id="@+id/step_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="@string/select_language"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/select_language_en"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:gravity="center"
+                    android:text="@string/select_language_desc"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:orientation="vertical">
+
+                    <!-- TR -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_tr"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_marginBottom="12dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:strokeWidth="1dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingHorizontal="20dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/lang_tr"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="16sp" />
+                            <RadioButton
+                                android:id="@+id/radio_tr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:clickable="false" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- EN -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_en"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_marginBottom="12dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:strokeWidth="1dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingHorizontal="20dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/lang_en"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="16sp" />
+                            <RadioButton
+                                android:id="@+id/radio_en"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:clickable="false" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- DE -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_de"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_marginBottom="12dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:strokeWidth="1dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingHorizontal="20dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/lang_de"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="16sp" />
+                            <RadioButton
+                                android:id="@+id/radio_de"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:clickable="false" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- AR -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_ar"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_marginBottom="12dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:strokeWidth="1dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingHorizontal="20dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentEnd="true"
+                                android:text="@string/lang_ar"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="16sp" />
+                            <RadioButton
+                                android:id="@+id/radio_ar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:clickable="false" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_lang_continue"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:text="@string/btn_continue"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textStyle="bold"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_next"
+                    app:iconGravity="textEnd" />
+
+            </LinearLayout>
+
+            <!-- Step 3: Location Selection -->
+            <LinearLayout
+                android:id="@+id/step_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="@string/select_location"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:gravity="center"
+                    android:text="@string/welcome_desc"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_auto_location"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:text="@string/auto_location"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorSecondary"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_explore_24"
+                    app:iconGravity="textStart"
+                    app:iconTint="?attr/colorSecondary"
+                    app:strokeColor="?attr/colorSecondary"
+                    app:strokeWidth="1dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="24dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:dividerColor="?attr/colorOutlineVariant" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:text="@string/or"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/colorOutline"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:dividerColor="?attr/colorOutlineVariant" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxStrokeColor="?attr/colorOutlineVariant"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_search_rounded"
+                    app:startIconTint="?attr/colorSecondary"
+                    app:endIconTint="?attr/colorSecondary">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:hint="@string/search_city"
+                        android:inputType="none"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- District selection (hidden by default, shows after city) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_district_container"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:visibility="gone"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusTopStart="16dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_district"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:hint="@string/select_district"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_info_rounded"
+                        app:tint="?attr/colorSecondary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/location_info"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="?attr/colorSecondary"
+                    android:text="@string/btn_complete"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorOnSecondary"
+                    android:textStyle="bold"
+                    app:cornerRadius="32dp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

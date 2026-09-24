@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/txt_verse_id"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_tool_icon"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/primary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_verse_ar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="end"
+            android:text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
+            android:textColor="@color/primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_verse_tr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Rahmân ve Rahîm olan Allah'ın adıyla."
+            android:textColor="@color/secondary"
+            android:textSize="15sp"
+            android:lineSpacingExtra="4dp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

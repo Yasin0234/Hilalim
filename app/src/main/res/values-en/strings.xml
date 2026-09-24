@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">Hilalim</string>
+    <string name="app_name_part1">Hilalim</string>
+    <string name="app_name_part2"> Religious</string>
+    <string name="slogan">YOUR ISLAMIC COMPANION</string>
+    <string name="splash_title">HILALIM PRAYER TIME</string>
+
+    <!-- Dashboard -->
+    <string name="nav_home">Home</string>
+    <string name="nav_quran">Quran</string>
+    <string name="nav_qibla">Qibla</string>
+    <string name="nav_tools">Tools</string>
+    <string name="sure_ara">Search Surah&#8230;</string>
+
+    <!-- Home -->
+    <string name="next_prayer_label">NEXT PRAYER</string>
+    <string name="vakitler_title">Prayer Times</string>
+    <string name="imsak">Fajr</string>
+    <string name="gunes">Sunrise</string>
+    <string name="ogle">Dhuhr</string>
+    <string name="ikindi">Asr</string>
+    <string name="aksam">Maghrib</string>
+    <string name="yatsi">Isha</string>
+    <string name="gunun_ayeti_title">VERSE OF THE DAY</string>
+
+    <!-- Qibla -->
+    <string name="qibla_title">Qibla Direction</string>
+    <string name="calibration_title">Compass Calibration</string>
+    <string name="calibration_desc">For accurate results, calibrate your phone by moving it in a figure-eight (8) motion. Stay away from magnetic fields.</string>
+
+    <!-- Tools -->
+    <string name="tools_main_title">Islamic Tools</string>
+    <string name="tools_subtitle">Useful tools to support your daily worship and spiritual growth.</string>
+    <string name="tool_esma">Asma-ul\nHusna</string>
+    <string name="tool_namaz_rehberi">Prayer\nGuide</string>
+    <string name="tool_zikirmatik">Tasbih</string>
+    <string name="tool_dini_gunler">Religious Days</string>
+    <string name="tool_zekat">Zakat\nCalculator</string>
+    <string name="gunun_duasi_title">Dua of the Day</string>
+
+    <!-- Welcome -->
+    <string name="welcome_greeting">Salam Alaykum</string>
+    <string name="welcome_subtitle">Your gateway to serenity</string>
+    <string name="btn_start">Start</string>
+    <string name="welcome_title">Welcome to Hilalim</string>
+    <string name="welcome_desc">We need your location to calculate prayer times.</string>
+    <string name="location_info">Granting location permission ensures the most accurate calculation of times.</string>
+    <string name="search_city">Search City...</string>
+    <string name="btn_complete">Complete</string>
+    <string name="btn_get_location">Set My Location</string>
+    <string name="btn_skip">Set later</string>
+    <string name="select_language">Language Selection</string>
+    <string name="select_language_en">Language Selection</string>
+    <string name="select_language_desc">Please select the language you would like to use.</string>
+    <string name="select_location">Set Location</string>
+    <string name="manual_location">Add Manually</string>
+    <string name="auto_location">Find Location</string>
+    <string name="select_city">Select City</string>
+    <string name="select_district">Select District</string>
+    <string name="btn_continue">Continue</string>
+    <string name="lang_tr">Turkish</string>
+    <string name="lang_en">English</string>
+    <string name="lang_ar">Arabic</string>
+    <string name="lang_de">German</string>
+    <string name="or">or</string>
+    <string name="toast_location_permission_denied">Location permission denied. You can select manually.</string>
+    <string name="toast_select_city_district">Please select city and district.</string>
+    <string name="home_pro_title">HilalimDini</string>
+    <string name="fab_nearest_mosque">Nearest Mosque</string>
+    <string name="location_saved">Location saved successfully.</string>
+    <string name="exact_alarm_permission_required">Exact alarm permission is required to receive notifications exactly at prayer times.</string>
+    <string name="allow">Allow</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Prayer Times</string>
+    <string name="notification_channel_desc">Prayer time and reminder notifications</string>
+    <string name="notification_exact_title">Prayer Time</string>
+    <string name="notification_exact_content">It is time for %s.</string>
+    <string name="notification_pre_45_title">45 Minutes To Prayer</string>
+    <string name="notification_pre_45_content">45 minutes left until %s.</string>
+    <string name="notification_pre_15_title">15 Minutes To Prayer</string>
+    <string name="notification_pre_15_content">15 minutes left until %s.</string>
+
+    <!-- Location Helper Strings -->
+    <string name="location_fetching">Getting your location, please wait&#8230;</string>
+    <string name="location_disabled">Location services disabled. Please enable GPS.</string>
+    <string name="location_not_found">Could not determine location. Please select city/district manually.</string>
+
+    <!-- Qibla Extra Strings -->
+    <string name="qibla_location_required">Please set your location to calculate Qibla direction.</string>
+    <string name="qibla_no_sensor">Compass (magnetometer) sensor not found on your device.</string>
+    <string name="btn_set_location">Set Location</string>
+
+    <!-- Zekat and Zikirmatik Strings -->
+    <string name="gold_price_per_gram">Gold Price Per Gram ($/TL)</string>
+    <string name="zekat_result_amount">Zakat Amount: %.2f TL</string>
+    <string name="zekat_result_below_nisap">Zakat Amount: 0 TL (Your wealth is below Nisab threshold [%.2f TL])</string>
+    <string name="reset_confirm_title">Reset Tasbih</string>
+    <string name="reset_confirm_msg">Are you sure you want to reset the counter?</string>
+    <string name="target_reached_msg">Congratulations! You have reached your target count.</string>
+    <string name="target_label">Target: %d</string>
+    <string name="target_free">Free</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+
+    <!-- Drawer Strings -->
+    <string name="nav_change_location">Change Location</string>
+    <string name="nav_change_language">Change Language</string>
+
+    <!-- Nearest Mosque -->
+    <string name="tool_nearest_mosque">Nearest Mosque</string>
+    <string name="tool_nearest_mosque_desc">Find nearby mosques on Google Maps.</string>
+</resources>

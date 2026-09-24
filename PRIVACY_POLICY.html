@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilalim Ezan Vakti - Gizlilik Politikası</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #1a5f7a;
+            border-bottom: 2px solid #1a5f7a;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .date {
+            color: #666;
+            font-style: italic;
+        }
+        a {
+            color: #1a5f7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hilalim Ezan Vakti - Gizlilik Politikası</h1>
+        <p class="date">Son Güncelleme Tarihi: 23 Şubat 2026</p>
+
+        <p><strong>Korkut Yazılım A.Ş.</strong> ("Şirket", "Biz") olarak, <strong>Hilalim Ezan Vakti</strong> ("Uygulama") kullanıcılarımızın ("Kullanıcı", "Siz") gizliliğine ve kişisel verilerinin korunmasına büyük önem veriyoruz. İşbu Gizlilik Politikası, Uygulamamızı kullanırken toplanan, işlenen ve saklanan veriler hakkında sizi bilgilendirmek amacıyla hazırlanmıştır.</p>
+
+        <h2>1. Toplanan Veriler ve Kullanım Amaçları</h2>
+        <h3>a. Konum Verisi (Location Data)</h3>
+        <p><strong>Toplanan Veri:</strong> Hassas Konum (<code>ACCESS_FINE_LOCATION</code>) ve Yaklaşık Konum (<code>ACCESS_COARSE_LOCATION</code>).</p>
+        <p><strong>Kullanım Amacı:</strong> Bulunduğunuz konuma en uygun ve doğru ezan vakitlerini hesaplamak, Kıble yönünü hassas şekilde belirlemek ve konumunuza özel vakit çizelgesini sunmak.</p>
+        <p><strong>Saklama ve Paylaşım:</strong> Konum verileriniz yalnızca anlık hesaplamalar için cihazınızda işlenir; sunucularımızda saklanmaz, profil çıkarma veya reklam takibi amacıyla kullanılmaz ve üçüncü taraflarla paylaşılmaz.</p>
+
+        <h3>b. Cihaz İçi Yerel Depolama Verileri (Local Data)</h3>
+        <p><strong>Toplanan Veri:</strong> Zikirmatik sayıları, seçilen varsayılan şehir/konum, bildirim tercihleri ve uygulama içi ayarlar.</p>
+        <p><strong>Kullanım Amacı:</strong> Uygulamayı her açtığınızda tercihlerinizi hatırlamak ve zikir verilerinizi kaybetmemenizi sağlamak.</p>
+        <p><strong>Saklama ve Paylaşım:</strong> Bu veriler tamamen cihazınızın yerel hafızasında saklanır. Şirketimiz veya uzak sunucular ile paylaşılmaz.</p>
+
+        <h3>c. İletişim / Sunucu İstek Verileri</h3>
+        <p><strong>Toplanan Veri:</strong> Namaz vakitlerini güncellerken kullanılan standart IP adresi ve teknik cihaz istek bilgileri.</p>
+        <p><strong>Kullanım Amacı:</strong> Güvenli ağ iletişimi sağlamak ve güncel ezan vakti verilerini API sunucularımızdan çekmek (<code>INTERNET</code> izni).</p>
+
+        <h2>2. Uygulama Tarafından İstenen İzinler ve Nedenleri</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>İzin Adı</th>
+                    <th>Amaç</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>ACCESS_FINE_LOCATION</code> & <code>ACCESS_COARSE_LOCATION</code></td>
+                    <td>Bulunduğunuz yerin ezan vakitlerini ve Kıble açısını doğru hesaplamak için kullanılır.</td>
+                </tr>
+                <tr>
+                    <td><code>POST_NOTIFICATIONS</code></td>
+                    <td>Ezan vakitlerinde bildirim ve hatırlatıcı gönderebilmek için kullanılır.</td>
+                </tr>
+                <tr>
+                    <td><code>SCHEDULE_EXACT_ALARM</code></td>
+                    <td>Ezan vakitlerinde tam zamanında alarm ve sesli uyarı çalabilmek için gereklidir.</td>
+                </tr>
+                <tr>
+                    <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+                    <td>Cihazınız yeniden başlatıldığında ezan vakti alarmlarının aksamadan kurulmasını sağlar.</td>
+                </tr>
+                <tr>
+                    <td><code>VIBRATE</code></td>
+                    <td>Zikirmatik kullanımı ve bildirim esnasında dokunsal geri bildirim (titreşim) sağlamak için kullanılır.</td>
+                </tr>
+                <tr>
+                    <td><code>INTERNET</code></td>
+                    <td>Güncel namaz vakitlerini ve dini gün verilerini sunucudan indirmek için kullanılır.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. Üçüncü Taraf Servisleri ve Paylaşım</h2>
+        <p>Hilalim Ezan Vakti, kişisel verilerinizi hiçbir koşulda satmaz, kiralamaz veya pazarlama amacıyla üçüncü taraf şirketlerle paylaşmaz.</p>
+        <p>Uygulama içinde yalnızca aşağıdaki standart altyapı hizmetleri kullanılır:</p>
+        <ul>
+            <li><strong>Google Play Hizmetleri (Google Play Services / Location API):</strong> Cihazınızın konumunu güvenli ve hızlı bir şekilde tespit etmek amacıyla Google servisleri kullanılır. Google'ın gizlilik politikasına <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> adresinden ulaşabilirsiniz.</li>
+        </ul>
+
+        <h2>4. Veri Güvenliği</h2>
+        <p>Toplanan veya yerel olarak saklanan verilerin güvenliği bizim için esastır. Cihazınızda saklanan veriler Android işletim sisteminin sunduğu güvenli depolama alanlarında muhafaza edilir. Sunucu ile iletişimde SSL/TLS şifreleme protokolleri kullanılır.</p>
+
+        <h2>5. Çocukların Gizliliği (Children's Privacy)</h2>
+        <p>Uygulamamız her yaştan kullanıcıya (çocuklar dahil) uygundur. 13 yaşın altındaki çocuklardan bilerek ve isteyerek herhangi bir kişisel veri toplamıyoruz.</p>
+
+        <h2>6. KVKK ve GDPR Kapsamındaki Haklarınız</h2>
+        <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Genel Veri Koruma Tüzüğü (GDPR) kapsamında;</p>
+        <ul>
+            <li>Hakkınızda işlenen bir kişisel veri bulunup bulunmadığını öğrenme,</li>
+            <li>Cihazınızdaki verileri dilediğiniz zaman uygulama verilerini temizleyerek veya uygulamayı kaldırarak silme,</li>
+            <li>İzin verdiğiniz konum ve bildirim izinlerini cihazınızın <strong>Ayarlar > Uygulamalar > Hilalim</strong> bölümünden dilediğiniz zaman iptal etme hakkına sahipsiniz.</li>
+        </ul>
+
+        <h2>7. Gizlilik Politikasındaki Değişiklikler</h2>
+        <p>İşbu Gizlilik Politikası zaman zaman güncellenebilir. Politikada yapılan güncellemeler bu sayfada veya uygulama içerisindeki duyurular aracılığıyla yayınlanacaktır.</p>
+
+        <h2>8. İletişim</h2>
+        <p>Gizlilik Politikamız veya kişisel verilerinizle ilgili her türlü soru, görüş ve talepleriniz için bizimle iletişime geçebilirsiniz:</p>
+        <ul>
+            <li><strong>Şirket Unvanı:</strong> Korkut Yazılım A.Ş. / Demiral Medya</li>
+            <li><strong>Uygulama Adı:</strong> Hilalim Ezan Vakti</li>
+            <li><strong>E-posta:</strong> info@korkutsoftware.com</li>
+            <li><strong>Web Sitesi:</strong> <a href="https://www.korkutsoftware.com" target="_blank">https://www.korkutsoftware.com</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Using a slightly different gradient for light mode to maintain contrast -->
+    <gradient
+        android:startColor="#1A365D"
+        android:endColor="#0F2922"
+        android:angle="270" />
+    <corners android:radius="24dp" />
+</shape>

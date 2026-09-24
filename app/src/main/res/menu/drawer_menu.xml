@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_rounded"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_quran"
+            android:icon="@drawable/ic_quran_rounded"
+            android:title="@string/nav_quran" />
+        <item
+            android:id="@+id/nav_qibla"
+            android:icon="@drawable/ic_qibla_rounded"
+            android:title="@string/nav_qibla" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_tools_rounded"
+            android:title="@string/nav_tools" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_location"
+                android:icon="@drawable/ic_location_rounded"
+                android:title="@string/nav_change_location" />
+            <item
+                android:id="@+id/nav_language"
+                android:icon="@drawable/ic_settings_rounded"
+                android:title="@string/nav_change_language" />
+        </menu>
+    </item>
+
+</menu>

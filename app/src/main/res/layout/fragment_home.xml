@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="120dp">
+
+            <!-- Header Title -->
+            <TextView
+                android:id="@+id/header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="serif"
+                android:text="@string/home_pro_title"
+                android:textColor="?attr/colorSecondary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Date/Location Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/date_card"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/header_title"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_gradient_card">
+
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_marginEnd="-20dp"
+                        android:alpha="0.8"
+                        android:src="@drawable/ic_logo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_calendar_rounded"
+                                app:tint="?attr/colorSecondary" />
+
+                            <TextView
+                                android:id="@+id/txt_hijri_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="@string/hijri_date_mock"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_location_rounded"
+                                app:tint="?attr/colorSecondary" />
+
+                            <TextView
+                                android:id="@+id/txt_location_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="@string/location_mock"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Next Prayer Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/countdown_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:layout_constraintTop_toBottomOf="@id/date_card"
+                app:strokeColor="?attr/colorOutlineVariant"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/lbl_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.1"
+                        android:text="@string/next_prayer_label"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_next_prayer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/next_prayer_name_mock"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lbl_next" />
+
+                    <TextView
+                        android:id="@+id/txt_next_prayer_countdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/next_prayer_time_mock"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_next_prayer_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/txt_next_prayer_name" />
+
+                    <ProgressBar
+                        android:id="@+id/prayer_progress"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="16dp"
+                        android:progress="65"
+                        android:progressDrawable="@drawable/progress_rounded"
+                        app:layout_constraintTop_toBottomOf="@id/txt_next_prayer_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Prayer Times List -->
+            <LinearLayout
+                android:id="@+id/prayer_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp"
+                app:layout_constraintTop_toBottomOf="@id/countdown_card">
+
+                <!-- Imsak -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_imsak"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                        <ImageView android:id="@+id/ic_imsak" android:layout_width="20dp" android:layout_height="20dp" android:layout_centerVertical="true" android:src="@drawable/ic_imsak" app:tint="?attr/colorSecondary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/ic_imsak" android:layout_marginStart="16dp" android:layout_centerVertical="true" android:text="@string/imsak" android:textColor="?attr/colorOnSurface" />
+                        <TextView android:id="@+id/txt_imsak_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="@string/imsak_time_mock" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Gunes -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_gunes"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                        <ImageView android:id="@+id/ic_gunes" android:layout_width="20dp" android:layout_height="20dp" android:layout_centerVertical="true" android:src="@drawable/ic_gunes" app:tint="?attr/colorSecondary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/ic_gunes" android:layout_marginStart="16dp" android:layout_centerVertical="true" android:text="@string/gunes" android:textColor="?attr/colorOnSurface" />
+                        <TextView android:id="@+id/txt_gunes_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="@string/gunes_time_mock" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Ogle -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_ogle"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                        <ImageView android:id="@+id/ic_ogle" android:layout_width="20dp" android:layout_height="20dp" android:layout_centerVertical="true" android:src="@drawable/ic_ogle" app:tint="?attr/colorSecondary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/ic_ogle" android:layout_marginStart="16dp" android:layout_centerVertical="true" android:text="@string/ogle" android:textColor="?attr/colorOnSurface" />
+                        <TextView android:id="@+id/txt_ogle_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="@string/ogle_time_mock" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Ikindi (Active Highlight) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_ikindi"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="?attr/colorSecondary"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="6dp">
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                        <ImageView android:id="@+id/ic_ikindi" android:layout_width="24dp" android:layout_height="24dp" android:layout_centerVertical="true" android:src="@drawable/ic_ikindi" app:tint="?attr/colorOnSecondary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/ic_ikindi" android:layout_marginStart="16dp" android:layout_centerVertical="true" android:text="@string/ikindi" android:textColor="?attr/colorOnSecondary" android:textStyle="bold" android:textSize="18sp" />
+                        <TextView android:id="@+id/txt_ikindi_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="@string/ikindi_time_mock" android:textColor="?attr/colorOnSecondary" android:textStyle="bold" android:textSize="18sp" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Aksam -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_aksam"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                        <ImageView android:id="@+id/ic_aksam" android:layout_width="20dp" android:layout_height="20dp" android:layout_centerVertical="true" android:src="@drawable/ic_aksam" app:tint="?attr/colorSecondary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/ic_aksam" android:layout_marginStart="16dp" android:layout_centerVertical="true" android:text="@string/aksam" android:textColor="?attr/colorOnSurface" />
+                        <TextView android:id="@+id/txt_aksam_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="@string/aksam_time_mock" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Yatsi -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_yatsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                        <ImageView android:id="@+id/ic_yatsi" android:layout_width="20dp" android:layout_height="20dp" android:layout_centerVertical="true" android:src="@drawable/ic_yatsi" app:tint="?attr/colorSecondary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/ic_yatsi" android:layout_marginStart="16dp" android:layout_centerVertical="true" android:text="@string/yatsi" android:textColor="?attr/colorOnSurface" />
+                        <TextView android:id="@+id/txt_yatsi_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="@string/yatsi_time_mock" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Verse of the Day Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/prayer_list"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gold_gradient"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_book"
+                        app:tint="#111415" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:letterSpacing="0.1"
+                        android:text="@string/gunun_ayeti_title"
+                        android:textColor="#111415"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="6dp"
+                        android:text="@string/gunun_ayeti_content_mock"
+                        android:textColor="#111415"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/gunun_ayeti_ref_mock"
+                        android:textColor="#111415"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB: Find Nearest Mosque -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_mosque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:text="@string/fab_nearest_mosque"
+        android:textColor="?attr/colorOnSecondary"
+        app:backgroundTint="?attr/colorSecondary"
+        app:icon="@drawable/ic_mosque"
+        app:iconTint="?attr/colorOnSecondary" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
