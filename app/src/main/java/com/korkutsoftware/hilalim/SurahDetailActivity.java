@@ -29,7 +29,10 @@ public class SurahDetailActivity extends BaseActivity {
 
     private RecyclerView rv;
     private ProgressBar progressBar;
-    private TextView txtNoContent;
+    private TextView txtNoContent, txtTitle;
+    private int currentSurahId = 1;
+    private List<SurahInfo> allSurahInfos = null;
+
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
@@ -40,9 +43,9 @@ public class SurahDetailActivity extends BaseActivity {
         setContentView(R.layout.activity_surah_detail);
 
         String surahName = getIntent().getStringExtra("surah_name");
-        int surahId = getIntent().getIntExtra("surah_id", 1);
+        currentSurahId = getIntent().getIntExtra("surah_id", 1);
 
-        TextView txtTitle = findViewById(R.id.txt_surah_name_main);
+        txtTitle = findViewById(R.id.txt_surah_name_main);
         txtTitle.setText(surahName != null ? surahName : "Sure Detayı");
 
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
@@ -53,7 +56,49 @@ public class SurahDetailActivity extends BaseActivity {
 
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-        loadDataAsync(surahId);
+        findViewById(R.id.btn_prev_surah).setOnClickListener(v -> navigateSurah(-1));
+        findViewById(R.id.btn_next_surah).setOnClickListener(v -> navigateSurah(1));
+
+        loadSurahListAsync();
+        loadDataAsync(currentSurahId);
+    }
+
+    private void navigateSurah(int delta) {
+        int targetId = currentSurahId + delta;
+        if (targetId >= 1 && targetId <= 114) {
+            currentSurahId = targetId;
+            updateSurahTitle(currentSurahId);
+            loadDataAsync(currentSurahId);
+        }
+    }
+
+    private void updateSurahTitle(int surahId) {
+        if (allSurahInfos != null) {
+            for (SurahInfo info : allSurahInfos) {
+                if (info.id == surahId) {
+                    txtTitle.setText(info.name);
+                    return;
+                }
+            }
+        }
+        txtTitle.setText("Sure " + surahId);
+    }
+
+    private void loadSurahListAsync() {
+        executorService.execute(() -> {
+            try {
+                InputStream is = getAssets().open("surahs.json");
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+                String json = new String(buffer, StandardCharsets.UTF_8);
+                allSurahInfos = new Gson().fromJson(json, new TypeToken<List<SurahInfo>>(){}.getType());
+                mainHandler.post(() -> updateSurahTitle(currentSurahId));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void loadDataAsync(int surahId) {
@@ -99,6 +144,11 @@ public class SurahDetailActivity extends BaseActivity {
             e.printStackTrace();
         }
         return new ArrayList<>();
+    }
+
+    private static class SurahInfo {
+        int id;
+        String name;
     }
 
     private static class SurahVerses {

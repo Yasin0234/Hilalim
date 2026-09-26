@@ -2299,16 +2299,106 @@
       { "id": 30, "ar": "قُلْ أَرَأَيْتُمْ إِنْ أَصْبَحَ مَاؤُكُمْ غَوْرًا فَمَنْ يَأْتِيكُمْ بِمَاءٍ مَعِينٍ", "tr": "De ki: 'Söyler misiniz; eğer suyunuz yerin dibine çekiliverse, size kim temiz bir akar su getirebilir?'" }
     ]
   },
-  { "surah_id": 68, "verses": [] },
-  { "surah_id": 69, "verses": [] },
-  { "surah_id": 70, "verses": [] },
-  { "surah_id": 71, "verses": [] },
-  { "surah_id": 72, "verses": [] },
-  { "surah_id": 73, "verses": [] },
-  { "surah_id": 74, "verses": [] },
-  { "surah_id": 75, "verses": [] },
-  { "surah_id": 76, "verses": [] },
-  { "surah_id": 77, "verses": [] },
+  {
+    "surah_id": 68,
+    "verses": [
+      { "id": 1, "ar": "نٓ ۚ وَالْقَلَمِ وَمَا يَسْطُرُونَ", "tr": "Nûn. Kaleme ve (yazanların) satır satır yazdırdıklarına andolsun." },
+      { "id": 2, "ar": "مَا أَنْتَ بِنِعْمَةِ رَبِّكَ بِمَجْنُونٍ", "tr": "Sen, Rabbinin nimeti sayesinde bir mecnun değilsin." },
+      { "id": 3, "ar": "وَإِنَّ لَكَ لَأَجْرًا غَيْرَ مَمْنُونٍ", "tr": "Şüphesiz senin için kesintisiz bir mükâfat vardır." },
+      { "id": 4, "ar": "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ", "tr": "Ve sen yüce bir ahlâk üzerindesin." },
+      { "id": 5, "ar": "فَسَتُبْصِرُ وَيُبْصِرُونَ", "tr": "Yakında sen de göreceksin, onlar da görecekler." }
+    ]
+  },
+  {
+    "surah_id": 69,
+    "verses": [
+      { "id": 1, "ar": "الْحَاقَّةُ", "tr": "Gerçekleşecek olan (kıyamet)!" },
+      { "id": 2, "ar": "مَا الْحَاقَّةُ", "tr": "Nedir o gerçekleşecek olan?" },
+      { "id": 3, "ar": "وَمَا أَدْرَاكَ مَا الْحَاقَّةُ", "tr": "Gerçekleşecek olanın ne olduğunu sen ne bileceksin?" },
+      { "id": 4, "ar": "كَذَّبَتْ ثَمُودُ وَعَادٌ بِالْقَارِعَةِ", "tr": "Semûd ve Âd kavimleri, o kapı çalan felaketi (kıyameti) yalanladılar." },
+      { "id": 5, "ar": "فَأَمَّا ثَمُودُ فَأُهْلِكُوا بِالطَّاغِيَةِ", "tr": "Semûd kavmine gelince, onlar korkunç bir sarsıntı ile helâk edildiler." }
+    ]
+  },
+  {
+    "surah_id": 70,
+    "verses": [
+      { "id": 1, "ar": "سَأَلَ سَائِلٌ بِعَذَابٍ وَاقِعٍ", "tr": "Bir isteyen, gerçekleşecek olan azabı istedi." },
+      { "id": 2, "ar": "لِلْكَافِرِينَ لَيْسَ لَهُ دَافِعٌ", "tr": "Kâfirler için ki, onu engelleyecek hiçbir güç yoktur." },
+      { "id": 3, "ar": "مِنَ اللَّهِ ذِي الْمَعَارِجِ", "tr": "Yüce derecelerin (yükselme yollarının) sahibi olan Allah'tan." },
+      { "id": 4, "ar": "تَعْرُجُ الْمَلَائِكَةُ وَالرُّوحُ إِلَيْهِ فِي يَوْمٍ كَانَ مِقْدَارُهُ خَمْسِينَ أَلْفَ سَنَةٍ", "tr": "Melekler ve Ruh (Cebrail), miktarı elli bin yıl olan bir günde O'na yükselirler." },
+      { "id": 5, "ar": "فَاصْبِرْ صَبْرًا جَمِيلًا", "tr": "Şimdi sen güzel bir sabırla sabret." }
+    ]
+  },
+  {
+    "surah_id": 71,
+    "verses": [
+      { "id": 1, "ar": "إِنَّا أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِ أَنْ أَنْذِرْ قَوْمَكَ مِنْ قَبْلِ أَنْ يَأْتِيَهُمْ عَذَابٌ أَلِيمٌ", "tr": "Şüphesiz biz Nûh'u, 'Kavmine elem dolu bir azap gelmeden önce onları uyar' diye kendi kavmine gönderdik." },
+      { "id": 2, "ar": "قَالَ يَا قَوْمِ إِنِّي لَكُمْ نَذِيرٌ مُبِينٌ", "tr": "Nûh dedi ki: 'Ey kavmim! Şüphesiz ben sizin için apaçık bir uyarıcıyım.'" },
+      { "id": 3, "ar": "أَنِ اعْبُدُوا اللَّهَ وَاتَّقُوهُ وَأَطِيعُونِ", "tr": "'Allah'a kulluk edin, O'na karşı gelmekten sakının ve bana itaat edin.'" },
+      { "id": 4, "ar": "يَغْفِرْ لَكُمْ مِنْ ذُنُوبِكُمْ وَيُؤَخِّرْكُمْ إِلَىٰ أَجَلٍ مُسَمًّى ۚ إِنَّ أَجَلَ اللَّهِ إِذَا جَاءَ لَا يُؤَخَّرُ ۖ لَوْ كُنْتُمْ تَعْلَمُونَ", "tr": "'Ki günahlarınızı bağışlasın ve sizi belirlenmiş bir süreye kadar ertelesin. Şüphesiz Allah'ın eceli geldiğinde ertelenmez. Keşke bilseydiniz!'" },
+      { "id": 5, "ar": "قَالَ رَبِّ إِنِّي دَعَوْتُ قَوْمِي لَيْلًا وَنَهَارًا", "tr": "(Nûh) dedi ki: 'Rabbim! Ben kavmimi gece gündüz (hakka) davet ettim.'" }
+    ]
+  },
+  {
+    "surah_id": 72,
+    "verses": [
+      { "id": 1, "ar": "قُلْ أُوحِيَ إِلَيَّ أَنَّهُ اسْتَمَعَ نَفَرٌ مِنَ الْجِنِّ فَقَالُوا إِنَّا سَمِعْنَا قُرْآنًا عَجَبًا", "tr": "De ki: 'Bana vahyolundu ki, cinlerden bir topluluk (Kur'an'ı) dinlemiş ve şöyle demişler: Şüphesiz biz hayranlık verici bir Kur'an dinledik.'" },
+      { "id": 2, "ar": "يَهْدِي إِلَى الرُّشْدِ فَآمَنَّا بِهِ ۖ وَلَنْ نُشْرِكَ بِرَبِّنَا أَحَدًا", "tr": "'O doğru yola iletiyor, biz de ona iman ettik. Rabbimize hiçbir şeyi asla ortak koşmayacağız.'" },
+      { "id": 3, "ar": "وَأَنَّهُ تَعَالَىٰ جَدُّ رَبِّنَا مَا اتَّخَذَ صَاحِبَةً وَلَا وَلَدًا", "tr": "'Şüphesiz Rabbimizin şanı çok yücedir. O, ne bir eş edinmiştir, ne de bir çocuk.'" },
+      { "id": 4, "ar": "وَأَنَّهُ كَانَ يَقُولُ سَفِيهُنَا عَلَى اللَّهِ شَطَطًا", "tr": "'Meğer bizim akılsızımız (İblis), Allah hakkında saçma sapan şeyler söylüyormuş.'" },
+      { "id": 5, "ar": "وَأَنَّا ظَنَنَّا أَنْ لَنْ تَقُولَ الْإِنْسُ وَالْجِنُّ عَلَى اللَّهِ كَذِبًا", "tr": "'Biz ise, insanların ve cinlerin Allah'a karşı asla yalan söylemeyeceklerini sanmıştık.'" }
+    ]
+  },
+  {
+    "surah_id": 73,
+    "verses": [
+      { "id": 1, "ar": "يَا أَيُّهَا الْمُزَّمِّلُ", "tr": "Ey örtüsüne bürünen (Peygamber)!" },
+      { "id": 2, "ar": "قُمِ اللَّيْلَ إِلَّا قَلِيلًا", "tr": "Geceleyin kalk (namaz kıl); ancak az bir kısmı hariç." },
+      { "id": 3, "ar": "نِصْفَهُ أَوِ انْقُصْ مِنْهُ قَلِيلًا", "tr": "Gecenin yarısını yahut ondan biraz eksilt." },
+      { "id": 4, "ar": "أَوْ زِدْ عَلَيْهِ وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا", "tr": "Yahut onu artır ve Kur'an'ı ağır ağır, tane tane oku." },
+      { "id": 5, "ar": "إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا", "tr": "Şüphesiz biz sana ağır bir söz (vahiy) vahyedeceğiz." }
+    ]
+  },
+  {
+    "surah_id": 74,
+    "verses": [
+      { "id": 1, "ar": "يَا أَيُّهَا الْمُدَّثِّرُ", "tr": "Ey bürünüp sarınan (Peygamber)!" },
+      { "id": 2, "ar": "قُمْ فَأَنْذِرْ", "tr": "Kalk ve uyar!" },
+      { "id": 3, "ar": "وَرَبَّكَ فَكَبِّرْ", "tr": "Rabbini yücelt!" },
+      { "id": 4, "ar": "وَثِيَابَكَ فَطَهِّرْ", "tr": "Elbiseni temizle!" },
+      { "id": 5, "ar": "وَالرُّجْزَ فَاهْجُرْ", "tr": "Kötü şeylerden (putlardan) uzak dur!" }
+    ]
+  },
+  {
+    "surah_id": 75,
+    "verses": [
+      { "id": 1, "ar": "لَا أُقْسِمُ بِيَوْمِ الْقِيَامَةِ", "tr": "Kıyamet gününe andolsun," },
+      { "id": 2, "ar": "وَلَا أُقْسِمُ بِالنَّفْسِ اللَّوَّامَةِ", "tr": "(Kötülükten dolayı) kendini kınayan nefse andolsun ki (şüphesiz diriltileceksiniz)." },
+      { "id": 3, "ar": "أَيَحْسَبُ الْإِنْسَانُ أَلَّنْ نَجْمَعَ عِظَامَهُ", "tr": "İnsan, kemiklerini bir araya toplayamayacağımızı mı sanıyor?" },
+      { "id": 4, "ar": "بَلَىٰ قَادِرِينَ عَلَىٰ أَنْ نُسَوِّيَ بَنَانَهُ", "tr": "Evet, bizim onun parmak uçlarını bile aynen eski haline getirmeye gücümüz yeter." },
+      { "id": 5, "ar": "بَلْ يُرِيدُ الْإِنْسَانُ لِيَفْجُرَ أَمَامَهُ", "tr": "Fakat insan, önündeki geleceğinde de günah işlemek ister." }
+    ]
+  },
+  {
+    "surah_id": 76,
+    "verses": [
+      { "id": 1, "ar": "هَلْ أَتَىٰ عَلَى الْإِنْسَانِ حِينٌ مِنَ الدَّهْرِ لَمْ يَكُنْ شَيْئًا مَذْكُورًا", "tr": "İnsanın üzerinden, henüz anılan bir şey olmadığı uzun bir süre geçmedi mi?" },
+      { "id": 2, "ar": "إِنَّا خَلَقْنَا الْإِنْسَانَ مِنْ نُطْفَةٍ أَمْشَاجٍ نَبْتَلِيهِ فَجَعَلْنَاهُ سَمِيعًا بَصِيرًا", "tr": "Şüphesiz biz insanı imtihan etmek için karmaşık bir nutfeden yarattık da onu işiten ve gören yaptık." },
+      { "id": 3, "ar": "إِنَّا هَدَيْنَاهُ السَّبِيلَ إِمَّا شَاكِرًا وَإِمَّا كَفُورًا", "tr": "Şüphesiz biz ona doğru yolu gösterdik; ister şükreden olsun, ister nankör." },
+      { "id": 4, "ar": "إِنَّا أَعْتَدْنَا لِلْكَافِرِينَ سَلَاسِلَ وَأَغْلَالًا وَسَعِيرًا", "tr": "Şüphesiz biz kâfirler için zincirler, halkalar ve alevli bir ateş hazırladık." },
+      { "id": 5, "ar": "إِنَّ الْأَبْرَارَ يَشْرَبُونَ مِنْ كَأْسٍ كَانَ مِزَاجُهَا كَافُورًا", "tr": "Şüphesiz iyiler, karışımı kâfûr olan bir kadehten içerler." }
+    ]
+  },
+  {
+    "surah_id": 77,
+    "verses": [
+      { "id": 1, "ar": "وَالْمُرْسَلَاتِ عُرْفًا", "tr": "Birbiri peşinden gönderilenlere," },
+      { "id": 2, "ar": "فَالْعَاصِفَاتِ عَصْفًا", "tr": "Şiddetle esip savuranlara," },
+      { "id": 3, "ar": "وَالنَّاشِرَاتِ نَشْرًا", "tr": "(Bulutları) yaydıkça yayanlara," },
+      { "id": 4, "ar": "فَالْفَارِقَاتِ فَرْقًا", "tr": "(Hak ile batılı) birbirinden ayıranlara," },
+      { "id": 5, "ar": "فَالْمُلْقِيَاتِ ذِكْرًا", "tr": "Öğüt getirenlere andolsun ki," }
+    ]
+  },
   {
     "surah_id": 78,
     "verses": [
