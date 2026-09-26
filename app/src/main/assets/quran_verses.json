@@ -543,6 +543,256 @@
         "tr": "Onlar ne zaman bir söz vermişlerse, içlerinden bir grup bu sözü bozup atmadı mı? Zaten onların çoğu iman etmezler."
       },
       {
+        "id": 101,
+        "ar": "وَلَمَّا جَاءَهُمْ رَسُولٌ مِّنْ عِندِ اللَّهِ مُصَدِّقٌ لِّمَا مَعَهُمْ نَبَذَ فَرِيقٌ مِّنَ الَّذِينَ أُوتُوا الْكِتَابَ كِتَابَ اللَّهِ وَرَاءَ ظُهُورِهِمْ كَأَنَّهُمْ لَا يَعْلَمُونَ",
+        "tr": "Yanlarındakini doğrulayan bir Peygamber, Allah katından onlara gelince Kitap verilenlerden bir takımı, bilmiyorlarmış gibi, Allah'ın Kitabı'nı arkalarına attılar."
+      },
+      {
+        "id": 102,
+        "ar": "وَاتَّبَعُوا مَا تَتْلُو الشَّيَاطِينُ عَلَىٰ مُلْكِ سُلَيْمَانَ ۖ وَمَا كَفَرَ سُلَيْمَانُ وَلَٰكِنَّ الشَّيَاطِينَ كَفَرُوا يُعَلِّمُونَ النَّاسَ السِّحْرَ وَمَا أُنزِلَ عَلَى الْمَلَكَيْنِ بِبَابِلَ هَارُوتَ وَمَارُوتَ ۚ وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّىٰ يَقُولَا إِنَّمَا نَحْنُ فِتْنَةٌ فَلَا تَكْفُرْ ۖ فَيَتَعَلَّمُونَ مِنْهُمَا مَا يُفَرِّقُونَ بِهِ بَيْنَ الْمَرْءِ وَزَوْجِهِ ۚ وَمَا هُم بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ ۚ وَيَتَعَلَّمُونَ مَا يَضُرُّهُمْ وَلَا يَنفَعُهُمْ ۚ وَلَقَدْ عَلِمُوا لَمَنِ اشْتَرَاهُ مَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ ۚ وَلَبِئْسَ مَا شَرَوْا بِهِ أَنفُسَهُمْ ۚ لَوْ كَانُوا يَعْلَمُونَ",
+        "tr": "Şeytanların Süleyman'ın hükümdarlığı hakkında söylediklerine uydular. Oysa Süleyman kafir değildi, ama insanlara sihri öğreten şeytanlar kafir olmuşlardı. Babil'de, melek denilen Harut ve Marut'a bir şey indirilmemişti. Bu ikisi \"Biz sadece imtihan ediyoruz, sakın inkar etme\" demedikçe kimseye bir şey öğretmezlerdi. Halbuki bu ikisinden, koca ile karısının arasını ayıracak şeyler öğreniyorlardı. Oysa Allah'ın izni olmadıkça onlar kimseye zarar veremezlerdi. Kendilerine zarar verecek, faydalı olmayacak şeyler öğreniyorlardı. And olsun ki, onu satın alanın ahiretten bir nasibi olmadığını biliyorlardı. Kendilerini karşılığında sattıkları şeyin ne kötü olduğunu keşke bilselerdi!"
+      },
+      {
+        "id": 103,
+        "ar": "وَلَوْ أَنَّهُمْ آمَنُوا وَاتَّقَوْا لَمَثُوبَةٌ مِّنْ عِندِ اللَّهِ خَيْرٌ ۖ لَّوْ كَانُوا يَعْلَمُونَ",
+        "tr": "Onlar inanıp, Allah'a karşı gelmekten sakınsalardı, Allah katından olan sevab daha hayırlı olurdu. Keşke bilselerdi!"
+      },
+      {
+        "id": 104,
+        "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَقُولُوا رَاعِنَا وَقُولُوا انظُرْنَا وَاسْمَعُوا ۗ وَلِلْكَافِرِينَ عَذَابٌ أَلِيمٌ",
+        "tr": "Ey inananlar! Peygamber'e, \"Bizi de dinle\" (raina; kötü anlama gelebilecek söz) demeyin, \"Bizi gözet\" (unzurna) deyin ve dinleyin, inkar edenlere elem verici azab vardır."
+      },
+      {
+        "id": 105,
+        "ar": "مَّا يَوَدُّ الَّذِينَ كَفَرُوا مِنْ أَهْلِ الْكِتَابِ وَلَا الْمُشْرِكِينَ أَن يُنَزَّلَ عَلَيْكُم مِّنْ خَيْرٍ مِّن رَّبِّكُمْ ۗ وَاللَّهُ يَخْتَصُّ بِرَحْمَتِهِ مَن يَشَاءُ ۚ وَاللَّهُ ذُو الْفَضْلِ الْعَظِيمِ",
+        "tr": "Kitap ehlinden ve Allah'a eş koşanlardan inkar edenler, Rabbinizden size bir iyilik gelmesini istemezler. Allah, rahmetini dilediğine tahsis eder. Allah büyük nimet sahibidir."
+      },
+      {
+        "id": 106,
+        "ar": "۞ مَا نَنسَخْ مِنْ آيَةٍ أَوْ نُنسِهَا نَأْتِ بِخَيْرٍ مِّنْهَا أَوْ مِثْلِهَا ۗ أَلَمْ تَعْلَمْ أَنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+        "tr": "Herhangi bir ayetin hükmünü yürürlükten kaldırır veya unutturursak, onun yerine daha hayırlısını veya onun benzerini getiririz. Allah'ın her şeye kadir olduğunu bilmez misin?"
+      },
+      {
+        "id": 107,
+        "ar": "أَلَمْ تَعْلَمْ أَنَّ اللَّهَ لَهُ مُلْكُ السَّمَاوَاتِ وَالْأَرْضِ ۗ وَمَا لَكُم مِّن دُونِ اللَّهِ مِن وَلِيٍّ وَلَا نَصِيرٍ",
+        "tr": "Göklerin ve yerin Hükümdarlığının Allah'a aid olduğunu bilmez misin? Allah'tan başka dost ve yardımcınız yoktur."
+      },
+      {
+        "id": 108,
+        "ar": "أَمْ تُرِيدُونَ أَن تَسْأَلُوا رَسُولَكُمْ كَمَا سُئِلَ مُوسَىٰ مِن قَبْلُ ۗ وَمَن يَتَبَدَّلِ الْكُفْرَ بِالْإِيمَانِ فَقَدْ ضَلَّ سَوَاءَ السَّبِيلِ",
+        "tr": "Yoksa, daha önce Musa'nın sorguya çekildiği gibi, siz de peygamberinizi sorguya mı çekmek istiyorsunuz? İmanı inkarla değiştiren, şüphesiz doğru yoldan sapmış olur."
+      },
+      {
+        "id": 109,
+        "ar": "وَدَّ كَثِيرٌ مِّنْ أَهْلِ الْكِتَابِ لَوْ يَرُدُّونَكُم مِّن بَعْدِ إِيمَانِكُمْ كُفَّارًا حَسَدًا مِّنْ عِندِ أَنفُسِهِم مِّن بَعْدِ مَا تَبَيَّنَ لَهُمُ الْحَقُّ ۖ فَاعْفُوا وَاصْفَحُوا حَتَّىٰ يَأْتِيَ اللَّهُ بِأَمْرِهِ ۗ إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+        "tr": "Kitap ehlinin çoğu, hak kendilerine apaçık belli olduktan sonra, içlerindeki çekememezlikten ötürü, sizi, inandıktan sonra küfre döndürmeyi isterler. Allah'ın emri gelene kadar onları affedin, geçin. Allah muhakkak her şeye Kadir'dir."
+      },
+      {
+        "id": 110,
+        "ar": "وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ ۚ وَمَا تُقَدِّمُوا لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ اللَّهِ ۗ إِنَّ اللَّهَ بِمَا تَعْمَلُونَ بَصِيرٌ",
+        "tr": "Namazı kılın, zekatı verin, kendiniz için önden gönderdiğiniz her hayrı Allah katında bulacaksınız. Allah yaptıklarınızı şüphesiz görür."
+      },
+      {
+        "id": 111,
+        "ar": "وَقَالُوا لَن يَدْخُلَ الْجَنَّةَ إِلَّا مَن كَانَ هُودًا أَوْ نَصَارَىٰ ۗ تِلْكَ أَمَانِيُّهُمْ ۗ قُلْ هَاتُوا بُرْهَانَكُمْ إِن كُنتُمْ صَادِقِينَ",
+        "tr": "\"Yahudi veya Hıristiyan olmayan kimse elbette cennete girmeyecek\" dediler; bu onların kuruntularıdır. De ki: \"Sözünüz doğru ise delillerinizi getirin\"."
+      },
+      {
+        "id": 112,
+        "ar": "بَلَىٰ مَنْ أَسْلَمَ وَجْهَهُ لِلَّهِ وَهُوَ مُحْسِنٌ فَلَهُ أَجْرُهُ عِندَ رَبِّهِ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
+        "tr": "Hayır, öyle değil; iyilik yaparak kendini Allah'a veren kimsenin ecri Rabbi'nin katındadır. Onlara korku yoktur, onlar üzülmeyeceklerdir."
+      },
+      {
+        "id": 113,
+        "ar": "وَقَالَتِ الْيَهُودُ لَيْسَتِ النَّصَارَىٰ عَلَىٰ شَيْءٍ وَقَالَتِ النَّصَارَىٰ لَيْسَتِ الْيَهُودُ عَلَىٰ شَيْءٍ وَهُمْ يَتْلُونَ الْكِتَابَ ۗ كَذَٰلِكَ قَالَ الَّذِينَ لَا يَعْلَمُونَ مِثْلَ قَوْلِهِمْ ۚ فَاللَّهُ يَحْكُمُ بَيْنَهُمْ يَوْمَ الْقِيَامَةِ فِيمَا كَانُوا فِيهِ يَخْتَلِفُونَ",
+        "tr": "Yahudiler \"Hıristiyanlar bir temel üzerinde değil\" dediler, Hıristiyanlar da \"Yahudiler bir temel üzerinde değil\" dediler; oysa onlar Kitaplarını da okuyorlar. Bilgisizler de tıpkı onların söylediklerini söylemiştir. Allah, kıyamet günü, anlaşmazlığa düştükleri şeylerde onların arasında hüküm verecektir."
+      },
+      {
+        "id": 114,
+        "ar": "وَمَنْ أَظْلَمُ مِمَّن مَّنَعَ مَسَاجِدَ اللَّهِ أَن يُذْكَرَ فِيهَا اسْمُهُ وَسَعَىٰ فِي خَرَابِهَا ۚ أُولَٰئِكَ مَا كَانَ لَهُمْ أَن يَدْخُلُوهَا إِلَّا خَائِفِينَ ۚ لَهُمْ فِي الدُّنْيَا خِزْيٌ وَلَهُمْ فِي الْآخِرَةِ عَذَابٌ عَظِيمٌ",
+        "tr": "Allah'ın mescidlerinde O'nun isminin anılmasını yasak eden ve oraların yıkılmasına çalışan kimseden daha zalim kim vardır? Onların oralara korkmadan girememeleri gerekir. Dünyada rezillik onlaradır, ahirette büyük azab da onlaradır."
+      },
+      {
+        "id": 115,
+        "ar": "وَلِلَّهِ الْمَشْرِقُ وَالْمَغْرِبُ ۚ فَأَيْنَمَا تُوَلُّوا فَثَمَّ وَجْهُ اللَّهِ ۚ إِنَّ اللَّهَ وَاسِعٌ عَلِيمٌ",
+        "tr": "Doğu da batı da Allah'ındır, nereye dönerseniz Allah'ın yönü orasıdır. Doğrusu Allah her yeri kaplar ve her şeyi bilir."
+      },
+      {
+        "id": 116,
+        "ar": "وَقَالُوا اتَّخَذَ اللَّهُ وَلَدًا ۗ سُبْحَانَهُ ۖ بَل لَّهُ مَا فِي السَّمَاوَاتِ وَالْأَرْضِ ۖ كُلٌّ لَّهُ قَانِتُونَ",
+        "tr": "\"Allah oğul edindi\" dediler; haşa, oysa, göklerde ve yerde olanlar O'nundur. Hepsi O'na boyun eğmişlerdir."
+      },
+      {
+        "id": 117,
+        "ar": "بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ ۖ وَإِذَا قَضَىٰ أَمْرًا فَإِنَّمَا يَقُولُ لَهُ كُن فَيَكُونُ",
+        "tr": "Gökleri ve yeri yoktan var eden Allah'tır. O, bir işin olmasını dilerse, ona ancak \"ol\" der ve olur."
+      },
+      {
+        "id": 118,
+        "ar": "وَقَالَ الَّذِينَ لَا يَعْلَمُونَ لَوْلَا يُكَلِّمُنَا اللَّهُ أَوْ تَأْتِينَا آيَةٌ ۗ كَذَٰلِكَ قَالَ الَّذِينَ مِن قَبْلِهِم مِّثْلَ قَوْلِهِمْ ۘ تَشَابَهَتْ قُلُوبُهُمْ ۗ قَدْ بَيَّنَّا الْآيَاتِ لِقَوْمٍ يُوقِنُونَ",
+        "tr": "Bilmeyenler: \"Allah bizimle konuşmalı veya bize bir ayet gelmeli değil miydi?\" dediler. Onlardan öncekiler de onların söylediklerinin tıpkısını söylemişlerdi. Kalbleri birbirine benzedi. Kesinlikle inanan kimseler için ayetleri açıklamışızdır."
+      },
+      {
+        "id": 119,
+        "ar": "إِنَّا أَرْسَلْنَاكَ بِالْحَقِّ بَشِيرًا وَنَذِيرًا ۖ وَلَا تُسْأَلُ عَنْ أَصْحَابِ الْجَحِيمِ",
+        "tr": "Doğrusu Biz, seni hak ile, müjdeci ve uyarıcı olarak göndermişizdir. Sen, cehennemliklerden sorumlu tutulmayacaksın."
+      },
+      {
+        "id": 120,
+        "ar": "وَلَن تَرْضَىٰ عَنكَ الْيَهُودُ وَلَا النَّصَارَىٰ حَتَّىٰ تَتَّبِعَ مِلَّتَهُمْ ۗ قُلْ إِنَّ هُدَى اللَّهِ هُوَ الْهُدَىٰ ۗ وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُم بَعْدَ الَّذِي جَاءَكَ مِنَ الْعِلْمِ ۙ مَا لَكَ مِنَ اللَّهِ مِن وَلِيٍّ وَلَا نَصِيرٍ",
+        "tr": "Kendi dinlerine uymadıkça, Yahudi ve Hıristiyanlar senden asla hoşnud olmayacaklardır. De ki: \"Doğru yol, ancak Allah'ın yoludur\". Sana gelen ilimden sonra onların heveslerine uyarsan, and olsun ki, Allah'tan sana ne bir dost ve ne de bir yardımcı olur."
+      },
+      {
+        "id": 121,
+        "ar": "الَّذِينَ آتَيْنَاهُمُ الْكِتَابَ يَتْلُونَهُ حَقَّ تِلَاوَتِهِ أُولَٰئِكَ يُؤْمِنُونَ بِهِ ۗ وَمَن يَكْفُرْ بِهِ فَأُولَٰئِكَ هُمُ الْخَاسِرُونَ",
+        "tr": "Kendilerine verdiğimiz Kitabı gereğince okuyanlar var ya, işte ona ancak onlar inanırlar. Onu inkar edenler ise kaybedenlerdir."
+      },
+      {
+        "id": 122,
+        "ar": "يَا بَنِي إِسْرَائِيلَ اذْكُرُوا نِعْمَتِيَ الَّتِي أَنْعَمْتُ عَلَيْكُمْ وَأَنِّي فَضَّلْتُكُمْ عَلَى الْعَالَمِينَ",
+        "tr": "Ey İsrailoğulları! Size verdiğim nimeti ve sizi bir zamanlar alemlere üstün tuttuğumu hatırlayın."
+      },
+      {
+        "id": 123,
+        "ar": "وَاتَّقُوا يَوْمًا لَّا تَجْزِي نَفْسٌ عَن نَّفْسٍ شَيْئًا وَلَا يُقْبَلُ مِنْهَا عَدْلٌ وَلَا تَنفَعُهَا شَفَاعَةٌ وَلَا هُمْ يُنصَرُونَ",
+        "tr": "Kimsenin kimse namına bir şey ödemeyeceği, hiç kimseden fidye alınmayacağı, kimseye şefaatin yarar sağlamayacağı ve onların yardım görmeyeceği günden korunun."
+      },
+      {
+        "id": 124,
+        "ar": "۞ وَإِذِ ابْتَلَىٰ إِبْرَاهِيمَ رَبُّهُ بِكَلِمَاتٍ فَأَتَمَّهُنَّ ۖ قَالَ إِنِّي جَاعِلُكَ لِلنَّاسِ إِمَامًا ۖ قَالَ وَمِن ذُرِّيَّتِي ۖ قَالَ لَا يَنَالُ عَهْدِي الظَّالِمِينَ",
+        "tr": "Rabbi İbrahim'i bir takım emirlerle denemiş, o da onları yerine getirmişti. Allah, \"seni insanlara önder kılacağım\" demişti. O \"soyumdan da\" deyince, \"zalimler benim ahdime erişemez\" buyurmuştu."
+      },
+      {
+        "id": 125,
+        "ar": "وَإِذْ جَعَلْنَا الْبَيْتَ مَثَابَةً لِّلنَّاسِ وَأَمْنًا وَاتَّخِذُوا مِن مَّقَامِ إِبْرَاهِيمَ مُصَلًّى ۖ وَعَهِدْنَا إِلَىٰ إِبْرَاهِيمَ وَإِسْمَاعِيلَ أَن طَهِّرَا بَيْتِيَ لِلطَّائِفِينَ وَالْعَاكِفِينَ وَالرُّكَّعِ السُّجُودِ",
+        "tr": "Kabeyi, insanlar için toplanma ve güven yeri kılmıştık. İbrahim'in makamını namaz yeri edinin, dedik. Evimi ziyaret edenler, kendini ibadete verenler, rüku ve secde edenler için temiz tutun diye İbrahim ve İsmail'e ahd verdik."
+      },
+      {
+        "id": 126,
+        "ar": "وَإِذْ قَالَ إِبْرَاهِيمُ رَبِّ اجْعَلْ هَٰذَا بَلَدًا آمِنًا وَارْزُقْ أَهْلَهُ مِنَ الثَّمَرَاتِ مَنْ آمَنَ مِنْهُم بِاللَّهِ وَالْيَوْمِ الْآخِرِ ۖ قَالَ وَمَن كَفَرَ فَأُمَتِّعُهُ قَلِيلًا ثُمَّ أَضْطَرُّهُ إِلَىٰ عَذَابِ النَّارِ ۖ وَبِئْسَ الْمَصِيرُ",
+        "tr": "İbrahim: \"Rabbim! Burasını emin bir şehir kıl, halkından, Allah'a ve ahiret gününe inananları ürünlerle rızıklandır\" demişti. Allah da: \"İnkar edeni de az bir müddet geçindirir, sonra da onu ateşin azabına uğramak zorunda bırakırım, ne kötü sonuç\" buyurmuştu."
+      },
+      {
+        "id": 127,
+        "ar": "وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+        "tr": "İbrahim ve İsmail, Kabenin temellerini yükseltiyordu: \"Rabbimiz! Yaptığımızı kabul buyur. Şüphesiz ki, Sen hem işitir hem bilirsin\""
+      },
+      {
+        "id": 128,
+        "ar": "رَبَّنَا وَاجْعَلْنَا مُسْلِمَيْنِ لَكَ وَمِن ذُرِّيَّتِنَا أُمَّةً مُّسْلِمَةً لَّكَ وَأَرِنَا مَنَاسِكَنَا وَتُبْ عَلَيْنَا ۖ إِنَّكَ أَنتَ التَّوَّابُ الرَّحِيمُ",
+        "tr": "\"Rabbimiz! İkimizi Sana teslim olanlardan kıl, soyumuzdan da Sana teslim olanlardan bir ümmet yetiştir. Bize ibadet yollarımızı göster, tevbemizi kabul buyur, çünkü tevbeleri daima kabul eden, merhametli olan ancak Sensin\"."
+      },
+      {
+        "id": 129,
+        "ar": "رَبَّنَا وَابْعَثْ فِيهِمْ رَسُولًا مِّنْهُمْ يَتْلُو عَلَيْهِمْ آيَاتِكَ وَيُعَلِّمُهُمُ الْكِتَابَ وَالْحِكْمَةَ وَيُزَكِّيهِمْ ۚ إِنَّكَ أَنتَ الْعَزِيزُ الْحَكِيمُ",
+        "tr": "\"Rabbimiz! İçlerinden onlara Senin ayetlerini okuyan, Kitabı ve hikmeti öğreten, onları her kötülükten arıtan bir peygamber gönder. Doğrusu güçlü ve Hakim olan ancak Sensin\"."
+      },
+      {
+        "id": 130,
+        "ar": "وَمَن يَرْغَبُ عَن مِّلَّةِ إِبْرَاهِيمَ إِلَّا مَن سَفِهَ نَفْسَهُ ۚ وَلَقَدِ اصْطَفَيْنَاهُ فِي الدُّنْيَا ۖ وَإِنَّهُ فِي الْآخِرَةِ لَمِنَ الصَّالِحِينَ",
+        "tr": "Kendini bilmezden başkası İbrahim'in dininden yüz çevirmez. And olsun ki, dünyada onu seçtik, şüphesiz o, ahirette de iyilerdendir."
+      },
+      {
+        "id": 131,
+        "ar": "إِذْ قَالَ لَهُ رَبُّهُ أَسْلِمْ ۖ قَالَ أَسْلَمْتُ لِرَبِّ الْعَالَمِينَ",
+        "tr": "Rabbi ona: \"Teslim ol\" buyurduğunda, \"Alemlerin Rabbine teslim oldum\" demişti."
+      },
+      {
+        "id": 132,
+        "ar": "وَوَصَّىٰ بِهَا إِبْرَاهِيمُ بَنِيهِ وَيَعْقُوبُ يَا بَنِيَّ إِنَّ اللَّهَ اصْطَفَىٰ لَكُمُ الدِّينَ فَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+        "tr": "İbrahim bunu oğullarına vasiyet etti. Yakub da: \"Oğullarım! Allah dini size seçti, siz de ancak O'na teslim olmuş olarak can verin\" dedi."
+      },
+      {
+        "id": 133,
+        "ar": "أَمْ كُنتُمْ شُهَدَاءَ إِذْ حَضَرَ يَعْقُوبَ الْمَوْتُ إِذْ قَالَ لِبَنِيهِ مَا تَعْبُدُونَ مِن بَعْدِي قَالُوا نَعْبُدُ إِلَٰهَكَ وَإِلَٰهَ آبَائِكَ إِبْرَاهِيمَ وَإِسْمَاعِيلَ وَإِسْحَاقَ إِلَٰهًا وَاحِدًا وَنَحْنُ لَهُ مُسْلِمُونَ",
+        "tr": "Yoksa Yakub can verirken sizler yanında mı idiniz? O, oğullarına: \"Benden sonra kime kulluk edeceksiniz?\" diye sormuştu; Onlar da: \"Senin Tanrına ve ataların İbrahim, İsmail, İshak'ın Tanrısı olan tek Tanrıya kulluk edeceğiz, bizler O'na teslim olmuşuzdur\" demişlerdi."
+      },
+      {
+        "id": 134,
+        "ar": "تِلْكَ أُمَّةٌ قَدْ خَلَتْ ۖ لَهَا مَا كَسَبَتْ وَلَكُم مَّا كَسَبْتُمْ ۖ وَلَا تُسْأَلُونَ عَمَّا كَانُوا يَعْمَلُونَ",
+        "tr": "Onlar geçmiş birer ümmettir. Kazandıkları kendilerine, sizin kazandıklarınız da sizedir. Onların yapmış olduklarından sorumlu değilsiniz."
+      },
+      {
+        "id": 135,
+        "ar": "وَقَالُوا كُونُوا هُودًا أَوْ نَصَارَىٰ تَهْتَدُوا ۗ قُلْ بَلْ مِلَّةَ إِبْرَاهِيمَ حَنِيفًا ۖ وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+        "tr": "\"Yahudi veya Hıristiyan olun ki doğru yolu bulasınız\" dediler. \"Doğruya yönelmiş olan ve Allah'a eş koşanlardan olmayan İbrahim'in dinine uyarız\" de."
+      },
+      {
+        "id": 136,
+        "ar": "قُولُوا آمَنَّا بِاللَّهِ وَمَا أُنزِلَ إِلَيْنَا وَمَا أُنزِلَ إِلَىٰ إِبْرَاهِيمَ وَإِسْمَاعِيلَ وَإِسْحَاقَ وَيَعْقُوبَ وَالْأَسْبَاطِ وَمَا أُوتِيَ مُوسَىٰ وَعِيسَىٰ وَمَا أُوتِيَ النَّبِيُّونَ مِن رَّبِّهِمْ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِّنْهُمْ وَنَحْنُ لَهُ مُسْلِمُونَ",
+        "tr": "\"Allah'a, bize gönderilene, İbrahim'e, İsmail'e, İshak'a, Yakub'a ve torunlarına gönderilene, Musa ve İsa'ya verilene, Rableri tarafından peygamberlere verilene, onları birbirinden ayırt etmeyerek inandık, biz O'na teslim olanlarız\" deyin."
+      },
+      {
+        "id": 137,
+        "ar": "فَإِنْ آمَنُوا بِمِثْلِ مَا آمَنتُم بِهِ فَقَدِ اهْتَدَوا ۖ وَّإِن تَوَلَّوْا فَإِنَّمَا هُمْ فِي شِقَاقٍ ۖ فَسَيَكْفِيكَهُمُ اللَّهُ ۚ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+        "tr": "Sizin inandığınız gibi inanmış olsalar, doğru yolu bulmuş olurlar. Yüz çevirirlerse, şüphesiz onlar çıkmazdadırlar. Onlara karşı sana Allah yetecektir. O, işitir ve bilir."
+      },
+      {
+        "id": 138,
+        "ar": "صِبْغَةَ اللَّهِ ۖ وَمَنْ أَحْسَنُ مِنَ اللَّهِ صِبْغَةً ۖ وَنَحْنُ لَهُ عَابِدُونَ",
+        "tr": "Allah'ın verdiği renge uyun; rengi Allah'ınkinden daha güzel olan kim vardır? \"Biz O'na kulluk edenleriz\" deyin."
+      },
+      {
+        "id": 139,
+        "ar": "قُلْ أَتُحَاجُّونَنَا فِي اللَّهِ وَهُوَ رَبُّنَا وَرَبُّكُمْ وَلَنَا أَعْمَالُنَا وَلَكُمْ أَعْمَالُكُمْ وَنَحْنُ لَهُ مُخْلِصُونَ",
+        "tr": "De ki: \"Bizim ve sizin Rabbiniz olan Allah hakkında bize karşı hüccet mi gösteriyorsunuz? Bizim yaptıklarımız kendimize, sizin yaptıklarınız de kendinize aittir. Biz O'na karşı samimiyiz\"."
+      },
+      {
+        "id": 140,
+        "ar": "أَمْ تَقُولُونَ إِنَّ إِبْرَاهِيمَ وَإِسْمَاعِيلَ وَإِسْحَاقَ وَيَعْقُوبَ وَالْأَسْبَاطَ كَانُوا هُودًا أَوْ نَصَارَىٰ ۗ قُلْ أَأَنتُمْ أَعْلَمُ أَمِ اللَّهُ ۗ وَمَنْ أَظْلَمُ مِمَّن كَتَمَ شَهَادَةً عِندَهُ مِنَ اللَّهِ ۗ وَمَا اللَّهُ بِغَافِلٍ عَمَّا تَعْمَلُونَ",
+        "tr": "Yoksa İbrahim, İsmail, İshak, Yakub ve torunlarının Yahudi veya Hıristiyan olduklarını mı söylüyorsunuz? Peki, siz mi yoksa Allah mı daha iyi bilir? de. Allah tarafından kendisine bildirilen bir gerçeği gizleyenden daha zalim kim vardır? Allah yaptıklarınızdan gafil değildir."
+      },
+      {
+        "id": 141,
+        "ar": "تِلْكَ أُمَّةٌ قَدْ خَلَتْ ۖ لَهَا مَا كَسَبَتْ وَلَكُم مَّا كَسَبْتُمْ ۖ وَلَا تُسْأَلُونَ عَمَّا كَانُوا يَعْمَلُونَ",
+        "tr": "Onlar geçmiş birer ümmettir. Kazandıkları kendilerine, sizin kazandıklarınız da sizedir. Onların yapmış olduklarından sorumlu değilsiniz."
+      },
+      {
+        "id": 142,
+        "ar": "۞ سَيَقُولُ السُّفَهَاءُ مِنَ النَّاسِ مَا وَلَّاهُمْ عَن قِبْلَتِهِمُ الَّتِي كَانُوا عَلَيْهَا ۚ قُل لِّلَّهِ الْمَشْرِقُ وَالْمَغْرِبُ ۚ يَهْدِي مَن يَشَاءُ إِلَىٰ صِرَاطٍ مُّسْتَقِيمٍ",
+        "tr": "İnsanların beyinsizleri, \"Yöneldikleri kıbleden onları çeviren nedir?\" diyecekler; de ki: \"Doğu ve batı Allah'ındır. O, dilediğini doğru yola eriştirir\"."
+      },
+      {
+        "id": 143,
+        "ar": "وَكَذَٰلِكَ جَعَلْنَاكُمْ أُمَّةً وَسَطًا لِّتَكُونُوا شُهَدَاءَ عَلَى النَّاسِ وَيَكُونَ الرَّسُولُ عَلَيْكُمْ شَهِيدًا ۗ وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنتَ عَلَيْهَا إِلَّا لِنَعْلَمَ مَن يَتَّبِعُ الرَّسُولَ مِمَّن يَنقَلِبُ عَلَىٰ عَقِبَيْهِ ۚ وَإِن كَانَتْ لَكَبِيرَةً إِلَّا عَلَى الَّذِينَ هَدَى اللَّهُ ۗ وَمَا كَانَ اللَّهُ لِيُضِيعَ إِيمَانَكُمْ ۚ إِنَّ اللَّهَ بِالنَّاسِ لَرَءُوفٌ رَّحِيمٌ",
+        "tr": "Böylece sizi insanlara şahid ve örnek olmanız için tam ortada bulunan bir ümmet kıldık. Peygamber de size şahid ve örnektir. Senin yöneldiğin yönü, Peygambere uyanları, cayacaklardan ayırdetmek için kıble yaptık. Doğrusu Allah'ın yola koyduğu kimselerden başkasına bu ağır bir şeydir. Allah ibadetlerinizi boşa çıkaracak değildir. Doğrusu Allah insanlara şefkat gösterir, merhamet eder."
+      },
+      {
+        "id": 144,
+        "ar": "قَدْ نَرَىٰ تَقَلُّبَ وَجْهِكَ فِي السَّمَاءِ ۖ فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا ۚ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ ۚ وَحَيْثُ مَا كُنتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ ۗ وَإِنَّ الَّذِينَ أُوتُوا الْكِتَابَ لَيَعْلَمُونَ أَنَّهُ الْحَقُّ مِن رَّبِّهِمْ ۗ وَمَا اللَّهُ بِغَافِلٍ عَمَّا يَعْمَلُونَ",
+        "tr": "Yüzünü göğe çevirip durduğunu görüyoruz. Hoşnud olacağın kıbleye seni elbette çevireceğiz. Artık yüzünü Mescid-i Haram semtine çevir; bulunduğunuz yerde yüzlerinizi o yöne çevirin. Doğrusu Kitap verilenler, bunun Rab'lerinden bir gerçek olduğunu bilirler. Allah onların yaptıklarından gafil değildir."
+      },
+      {
+        "id": 145,
+        "ar": "وَلَئِنْ أَتَيْتَ الَّذِينَ أُوتُوا الْكِتَابَ بِكُلِّ آيَةٍ مَّا تَبِعُوا قِبْلَتَكَ ۚ وَمَا أَنتَ بِتَابِعٍ قِبْلَتَهُمْ ۚ وَمَا بَعْضُهُم بِتَابِعٍ قِبْلَةَ بَعْضٍ ۚ وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُم مِّن بَعْدِ مَا جَاءَكَ مِنَ الْعِلْمِ ۙ إِنَّكَ إِذًا لَّمِنَ الظَّالِمِينَ",
+        "tr": "Sen, Kitap verilenlere her türlü delili getirsen, yine de kıblene uymazlar; sen de onların kıblesine uyacak değilsin. Onlar birbirlerinin kıblesine de uymazlar. And olsun ki, eğer sana gelen ilimden sonra onların heveslerine uyarsan, şüphesiz o zaman zulmedenlerden olursun."
+      },
+      {
+        "id": 146,
+        "ar": "الَّذِينَ آتَيْنَاهُمُ الْكِتَابَ يَعْرِفُونَهُ كَمَا يَعْرِفُونَ أَبْنَاءَهُمْ ۖ وَإِنَّ فَرِيقًا مِّنْهُمْ لَيَكْتُمُونَ الْحَقَّ وَهُمْ يَعْلَمُونَ",
+        "tr": "Kendilerine Kitap verdiklerimiz, onu (peygamberi) oğullarını tanıdıkları gibi tanırlar. Onlardan bir takımı, doğrusu bile bile hakkı gizlerler."
+      },
+      {
+        "id": 147,
+        "ar": "الْحَقُّ مِن رَّبِّكَ ۖ فَلَا تَكُونَنَّ مِنَ الْمُمْتَرِينَ",
+        "tr": "Gerçek Rabb'indendir, sakın şüphelenenlerden olma."
+      },
+      {
+        "id": 148,
+        "ar": "وَلِكُلٍّ وِجْهَةٌ هُوَ مُوَلِّيهَا ۖ فَاسْتَبِقُوا الْخَيْرَاتِ ۚ أَيْنَ مَا تَكُونُوا يَأْتِ بِكُمُ اللَّهُ جَمِيعًا ۚ إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+        "tr": "Herkesin yöneldiği bir yön vardır. Hayırlı işlerde birbirinizle yarışın. Nerede olursanız olun Allah sizi bir araya toplar, Allah şüphesiz her şeye Kadir'dir."
+      },
+      {
+        "id": 149,
+        "ar": "وَمِنْ حَيْثُ خَرَجْتَ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ ۖ وَإِنَّهُ لَلْحَقُّ مِن رَّبِّكَ ۗ وَمَا اللَّهُ بِغَافِلٍ عَمَّا تَعْمَلُونَ",
+        "tr": "Her nereden yola çıkarsan, yüzünü Mescid-i Haram semtine çevir, şüphesiz bu Rabbinden bir haktır. Allah, yaptıklarınızdan gafil değildir."
+      },
+      {
+        "id": 150,
+        "ar": "وَمِنْ حَيْثُ خَرَجْتَ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ ۚ وَحَيْثُ مَا كُنتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ لِئَلَّا يَكُونَ لِلنَّاسِ عَلَيْكُمْ حُجَّةٌ إِلَّا الَّذِينَ ظَلَمُوا مِنْهُمْ فَلَا تَخْشَوْهُمْ وَاخْشَوْنِي وَلِأُتِمَّ نِعْمَتِي عَلَيْكُمْ وَلَعَلَّكُمْ تَهْتَدُونَ",
+        "tr": "Her nereden çıkarsan, yüzünü Mescid-i Haram semtine çevir. İnsanların zulmedenlerinden başkalarının size karşı gösterecekleri bir hüccet olmaması için, her nerede olursanız, yüzlerinizi oranın semtine çevirin, bu hususta onlardan korkmayın. Benden korkun da size olan nimetimi tamamlayayım. Böylece doğru yolu bulursunuz."
+      },
+      {
         "id": 255,
         "ar": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
         "tr": "Allah, kendisinden başka hiçbir ilâh olmayandır; diridir, her şeyin varlığı O'na bağlıdır ve dayalıdır. O'nu ne bir uyuklama tutar ne de bir uyku. Göklerdeki ve yerdeki her şey O'nundur. İzni olmaksızın O'nun katında şefaat edecek kimdir? O, kulların önlerindekini ve arkalarındakini bilir. Onlar O'nun ilminden, kendisinin dilediği kadarından başka bir şeyi kavrayamazlar. O'nun kürsüsü gökleri ve yeri kuşatmıştır. Onları koruyup gözetmek O'na ağır gelmez. O, yücedir, büyüktür."
@@ -861,6 +1111,156 @@
         "id": 60,
         "ar": "الْحَقُّ مِن رَّبِّكَ فَلَا تَكُن مِّنَ الْمُمْتَرِينَ",
         "tr": "Bu gerçek senin Rabbindendir. O halde sakın şüphe edenlerden olma!"
+      },
+      {
+        "id": 61,
+        "ar": "فَمَنْ حَاجَّكَ فِيهِ مِن بَعْدِ مَا جَاءَكَ مِنَ الْعِلْمِ فَقُلْ تَعَالَوْا نَدْعُ أَبْنَاءَنَا وَأَبْنَاءَكُمْ وَنِسَاءَنَا وَنِسَاءَكُمْ وَأَنفُسَنَا وَأَنفُسَكُمْ ثُمَّ نَبْتَهِلْ فَنَجْعَل لَّعْنَتَ اللَّهِ عَلَى الْكَاذِبِينَ",
+        "tr": "Sana ilim geldikten sonra, bu hususta seninle kim tartışacak olursa, de ki: \"Gelin, oğullarımızı, oğullarınızı, kadınlarımızı, kadınlarınızı, kendimizi ve kendinizi çağıralım, sonra lanetleşelim de, Allah'ın lanetinin yalancılara olmasını dileyelim\"."
+      },
+      {
+        "id": 62,
+        "ar": "إِنَّ هَٰذَا لَهُوَ الْقَصَصُ الْحَقُّ ۚ وَمَا مِنْ إِلَٰهٍ إِلَّا اللَّهُ ۚ وَإِنَّ اللَّهَ لَهُوَ الْعَزِيزُ الْحَكِيمُ",
+        "tr": "Şüphesiz bu anlatılanlar gerçek olaylardır. Allah'tan başka tanrı yoktur. Doğrusu Allah güçlüdür, Hakim'dir."
+      },
+      {
+        "id": 63,
+        "ar": "فَإِن تَوَلَّوْا فَإِنَّ اللَّهَ عَلِيمٌ بِالْمُفْسِدِينَ",
+        "tr": "Eğer yüz çevirirlerse, şüphesiz Allah bozguncuları bilir."
+      },
+      {
+        "id": 64,
+        "ar": "قُلْ يَا أَهْلَ الْكِتَابِ تَعَالَوْا إِلَىٰ كَلِمَةٍ سَوَاءٍ بَيْنَنَا وَبَيْنَكُمْ أَلَّا نَعْبُدَ إِلَّا اللَّهَ وَلَا نُشْرِكَ بِهِ شَيْئًا وَلَا يَتَّخِذَ بَعْضُنَا بَعْضًا أَرْبَابًا مِّن دُونِ اللَّهِ ۚ فَإِن تَوَلَّوْا فَقُولُوا اشْهَدُوا بِأَنَّا مُسْلِمُونَ",
+        "tr": "De ki: \"Ey Kitap ehli! Ancak Allah'a kulluk etmek, O'na bir şeyi eş koşmamak, Allah'ı bırakıp birbirimizi rab olarak benimsememek üzere, bizimle sizin aranızda müşterek bir söze gelin\". Eğer yüz çevirirlerse: \"Bizim müslüman olduğumuza şahid olun\" deyin."
+      },
+      {
+        "id": 65,
+        "ar": "يَا أَهْلَ الْكِتَابِ لِمَ تُحَاجُّونَ فِي إِبْرَاهِيمَ وَمَا أُنزِلَتِ التَّوْرَاةُ وَالْإِنجِيلُ إِلَّا مِن بَعْدِهِ ۚ أَفَلَا تَعْقِلُونَ",
+        "tr": "Ey Kitap ehli! İbrahim hakkında niçin tartışıyorsunuz? Tevrat da, İncil de şüphesiz ondan sonra indirilmiştir. Akletmiyor musunuz?"
+      },
+      {
+        "id": 66,
+        "ar": "هَا أَنتُمْ هَٰؤُلَاءِ حَاجَجْتُمْ فِيمَا لَكُم بِهِ عِلْمٌ فَلِمَ تُحَاجُّونَ فِيمَا لَيْسَ لَكُم بِهِ عِلْمٌ ۚ وَاللَّهُ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ",
+        "tr": "Siz, hadi bilginiz olan şey üzerinde tartışanlarsınız. Ama bilginiz olmayan şey hakkında niçin tartışırsınız? Oysa Allah bilir, sizler bilmezsiniz."
+      },
+      {
+        "id": 67,
+        "ar": "مَا كَانَ إِبْرَاهِيمُ يَهُودِيًّا وَلَا نَصْرَانِيًّا وَلَٰكِن كَانَ حَنِيفًا مُّسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+        "tr": "İbrahim, yahudi de, hıristiyan da değildi, ama doğruya yönelen bir müslimdi; ortak koşanlardan değildi."
+      },
+      {
+        "id": 68,
+        "ar": "إِنَّ أَوْلَى النَّاسِ بِإِبْرَاهِيمَ لَلَّذِينَ اتَّبَعُوهُ وَهَٰذَا النَّبِيُّ وَالَّذِينَ آمَنُوا ۗ وَاللَّهُ وَلِيُّ الْمُؤْمِنِينَ",
+        "tr": "Doğrusu İbrahim'e en yakın olanlar, ona uyanlar, bu Peygamber ve inananlardır. Allah inananların dostudur."
+      },
+      {
+        "id": 69,
+        "ar": "وَدَّت طَّائِفَةٌ مِّنْ أَهْلِ الْكِتَابِ لَوْ يُضِلُّونَكُمْ وَمَا يُضِلُّونَ إِلَّا أَنفُسَهُمْ وَمَا يَشْعُرُونَ",
+        "tr": "Kitap ehlinden bir takımı sizi sapıtmak isterler; oysa kendilerini saptırırlar da farkına varmazlar."
+      },
+      {
+        "id": 70,
+        "ar": "يَا أَهْلَ الْكِتَابِ لِمَ تَكْفُرُونَ بِآيَاتِ اللَّهِ وَأَنتُمْ تَشْهَدُونَ",
+        "tr": "Ey Kitap ehli! Sizler göz göre göre Allah'ın ayetlerini niçin inkar ediyorsunuz?"
+      },
+      {
+        "id": 71,
+        "ar": "يَا أَهْلَ الْكِتَابِ لِمَ تَلْبِسُونَ الْحَقَّ بِالْبَاطِلِ وَتَكْتُمُونَ الْحَقَّ وَأَنتُمْ تَعْلَمُونَ",
+        "tr": "Ey Kitap ehli! Niçin hakkı batıla karıştırıyor ve bile bile hakkı gizliyorsunuz?"
+      },
+      {
+        "id": 72,
+        "ar": "وَقَالَت طَّائِفَةٌ مِّنْ أَهْلِ الْكِتَابِ آمِنُوا بِالَّذِي أُنزِلَ عَلَى الَّذِينَ آمَنُوا وَجْهَ النَّهَارِ وَاكْفُرُوا آخِرَهُ لَعَلَّهُمْ يَرْجِعُونَ",
+        "tr": "Kitap ehlinden bir takımı şöyle dedi: \"İnananlara indirilene günün başında inanın, sonunda inkar edin ki, belki dönerler ve dininize uyanlardan başkasına inanmayın\". De ki: \"Doğru yol Allah'ın yoludur\". Ve yine başkasına da verildiğine veya Rabbinizin katında Müslümanların karşı delil getirip sizi alt edeceğine inanmayın, derler. De ki: \"Doğrusu bol nimet Allah'ın elindedir, onu dilediğine verir. Allah'ın fazlı her şeyi kaplar, O her şeyi bilir\"."
+      },
+      {
+        "id": 73,
+        "ar": "وَلَا تُؤْمِنُوا إِلَّا لِمَن تَبِعَ دِينَكُمْ قُلْ إِنَّ الْهُدَىٰ هُدَى اللَّهِ أَن يُؤْتَىٰ أَحَدٌ مِّثْلَ مَا أُوتِيتُمْ أَوْ يُحَاجُّوكُمْ عِندَ رَبِّكُمْ ۗ قُلْ إِنَّ الْفَضْلَ بِيَدِ اللَّهِ يُؤْتِيهِ مَن يَشَاءُ ۗ وَاللَّهُ وَاسِعٌ عَلِيمٌ",
+        "tr": "Kitap ehlinden bir takımı şöyle dedi: \"İnananlara indirilene günün başında inanın, sonunda inkar edin ki, belki dönerler ve dininize uyanlardan başkasına inanmayın\". De ki: \"Doğru yol Allah'ın yoludur\". Ve yine başkasına da verildiğine veya Rabbinizin katında Müslümanların karşı delil getirip sizi alt edeceğine inanmayın, derler. De ki: \"Doğrusu bol nimet Allah'ın elindedir, onu dilediğine verir. Allah'ın fazlı her şeyi kaplar, O her şeyi bilir\"."
+      },
+      {
+        "id": 74,
+        "ar": "يَخْتَصُّ بِرَحْمَتِهِ مَن يَشَاءُ ۗ وَاللَّهُ ذُو الْفَضْلِ الْعَظِيمِ",
+        "tr": "\"Rahmetini dilediğine tahsis eder, Allah büyük, bol nimet sahibidir\"."
+      },
+      {
+        "id": 75,
+        "ar": "۞ وَمِنْ أَهْلِ الْكِتَابِ مَنْ إِن تَأْمَنْهُ بِقِنطَارٍ يُؤَدِّهِ إِلَيْكَ وَمِنْهُم مَّنْ إِن تَأْمَنْهُ بِدِينَارٍ لَّا يُؤَدِّهِ إِلَيْكَ إِلَّا مَا دُمْتَ عَلَيْهِ قَائِمًا ۗ ذَٰلِكَ بِأَنَّهُمْ قَالُوا لَيْسَ عَلَيْنَا فِي الْأُمِّيِّينَ سَبِيلٌ وَيَقُولُونَ عَلَى اللَّهِ الْكَذِبَ وَهُمْ يَعْلَمُونَ",
+        "tr": "Kitap ehli arasında kantarla emanet bıraksan onu sana ödeyen ve bir lira emanet etsen, tepesine dikilmedikçe onu sana ödemeyen vardır. Bu, onların: \"Kitapsızlara karşı üzerimize bir sorumluluk yoktur\" demelerindendir. Onlar bile bile Allah'a karşı yalan söylemektedirler."
+      },
+      {
+        "id": 76,
+        "ar": "بَلَىٰ مَنْ أَوْفَىٰ بِعَهْدِهِ وَاتَّقَىٰ فَإِنَّ اللَّهَ يُحِبُّ الْمُتَّقِينَ",
+        "tr": "Hayır, öyle değil; ahdini yerine getiren ve günahtan sakınan bilsin ki, Allah sakınanları şüphesiz sever."
+      },
+      {
+        "id": 77,
+        "ar": "إِنَّ الَّذِينَ يَشْتَرُونَ بِعَهْدِ اللَّهِ وَأَيْمَانِهِمْ ثَمَنًا قَلِيلًا أُولَٰئِكَ لَا خَلَاقَ لَهُمْ فِي الْآخِرَةِ وَلَا يُكَلِّمُهُمُ اللَّهُ وَلَا يَنظُرُ إِلَيْهِمْ يَوْمَ الْقِيَامَةِ وَلَا يُزَكِّيهِمْ وَلَهُمْ عَذَابٌ أَلِيمٌ",
+        "tr": "Allah'ın ahdini ve yeminlerini az bir değere değişenlerin, işte onların, ahirette bir payları yoktur. Allah onlara kıyamet günü hitab etmeyecek, onlara bakmayacak, onları temize çıkarmayacaktır. Elem verici azab onlar içindir."
+      },
+      {
+        "id": 78,
+        "ar": "وَإِنَّ مِنْهُمْ لَفَرِيقًا يَلْوُونَ أَلْسِنَتَهُم بِالْكِتَابِ لِتَحْسَبُوهُ مِنَ الْكِتَابِ وَمَا هُوَ مِنَ الْكِتَابِ وَيَقُولُونَ هُوَ مِنْ عِندِ اللَّهِ وَمَا هُوَ مِنْ عِندِ اللَّهِ وَيَقُولُونَ عَلَى اللَّهِ الْكَذِبَ وَهُمْ يَعْلَمُونَ",
+        "tr": "Onlardan bir takımı, Kitapta olmadığı halde Kitaptan zannedesiniz diye dillerini eğip bükerler. O, Allah katından olmadığı halde: \"Allah katındandır\" derler, bile bile Allah'a karşı yalan söylerler."
+      },
+      {
+        "id": 79,
+        "ar": "مَا كَانَ لِبَشَرٍ أَن يُؤْتِيَهُ اللَّهُ الْكِتَابَ وَالْحُكْمَ وَالنُّبُوَّةَ ثُمَّ يَقُولَ لِلنَّاسِ كُونُوا عِبَادًا لِّي مِن دُونِ اللَّهِ وَلَٰكِن كُونُوا رَبَّانِيِّينَ بِمَا كُن��ُمْ تُعَلِّمُونَ الْكِتَابَ وَبِمَا كُنتُمْ تَد��رُسُونَ",
+        "tr": "Allah'ın kendisine Kitap'ı, hükmü, peygamberliği verdiği insanoğluna: \"Allah'ı bırakıp bana kulluk edin\" demek yaraşmaz, fakat: \"Kitabı öğrettiğinize, okuduğunuza göre Rabb'e kul olun\" demek yaraşır."
+      },
+      {
+        "id": 80,
+        "ar": "وَلَا يَأْمُرَكُمْ أَن تَتَّخِذُوا الْمَلَائِكَةَ وَالنَّبِيِّينَ أَرْبَابًا ۗ أَيَأْمُرُكُم بِالْكُفْرِ بَعْدَ إِذْ أَنتُم مُّسْلِمُونَ",
+        "tr": "Size melekleri, peygamberleri Rab olarak benimsemenizi emretmesi de yaraşmaz. Siz müslüman olduktan sonra, size inkar etmeyi mi emredecek?"
+      },
+      {
+        "id": 81,
+        "ar": "وَإِذْ أَخَذَ اللَّهُ مِيثَاقَ النَّبِيِّينَ لَمَا آتَيْتُكُم مِّن كِتَابٍ وَحِكْمَةٍ ثُمَّ جَاءَكُمْ رَسُولٌ مُّصَدِّقٌ لِّمَا مَعَكُمْ لَتُؤْمِنُنَّ بِهِ وَلَتَنصُرُنَّهُ ۚ قَالَ أَأَقْرَرْتُمْ وَأَخَذْتُمْ عَلَىٰ ذَٰلِكُمْ إِصْرِي ۖ قَالُوا أَقْرَرْنَا ۚ قَالَ فَاشْهَدُوا وَأَنَا مَعَكُم مِّنَ الشَّاهِدِينَ",
+        "tr": "Allah peygamberlerden ahid almıştı: \"And olsun ki size Kitap, hikmet verdim; sizde olanı tasdik eden bir peygamber gelecek, ona mutlaka inanacaksınız ve ona mutlaka yardım edeceksiniz, ikrar edip bu ahdi kabul ettiniz mi?\" demişti. \"İkrar ettik\" demişlerdi de: \"Şahid olun, Ben de sizinle beraber şahidlerdenim\" demişti."
+      },
+      {
+        "id": 82,
+        "ar": "فَمَن تَوَلَّىٰ بَعْدَ ذَٰلِكَ فَأُولَٰئِكَ هُمُ الْفَاسِقُونَ",
+        "tr": "Bunun ardından yüz çeviren var ya, işte onlar fasık olanlardır."
+      },
+      {
+        "id": 83,
+        "ar": "أَفَغَيْرَ دِينِ اللَّهِ يَبْغُونَ وَلَهُ أَسْلَمَ مَن فِي السَّمَاوَاتِ وَالْأَرْضِ طَوْعًا وَكَرْهًا وَإِلَيْهِ يُرْجَعُونَ",
+        "tr": "Allah'ın dininden başka bir din mi arzu ediyorlar? Oysa göklerde ve yerde kim varsa, ister istemez O'na teslim olmuştur, O'na döneceklerdir."
+      },
+      {
+        "id": 84,
+        "ar": "قُلْ آمَنَّا بِاللَّهِ وَمَا أُنزِلَ عَلَيْنَا وَمَا أُنزِلَ عَلَىٰ إِبْرَاهِيمَ وَإِسْمَاعِيلَ وَإِسْحَاقَ وَيَعْقُوبَ وَالْأَسْبَاطِ وَمَا أُوتِيَ مُوسَىٰ وَعِيسَىٰ وَالنَّبِيُّونَ مِن رَّبِّهِمْ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِّنْهُمْ وَنَحْنُ لَهُ مُسْلِمُونَ",
+        "tr": "\"Allah'a, bize indirilene, İbrahim'e, İsmail'e, İshak'a, Yakub'a ve torunlarına indirilene, Rableri tarafından Musa, İsa ve peygamberlere verilene inandık, onları birbirinden ayırt etmeyiz, biz O'na teslim olanlarız\" de."
+      },
+      {
+        "id": 85,
+        "ar": "وَمَن يَبْتَغِ غَيْرَ الْإِسْلَامِ دِينًا فَلَن يُقْبَلَ مِنْهُ وَهُوَ فِي الْآخِرَةِ مِنَ الْخَاسِرِينَ",
+        "tr": "Kim İslam'dan başka bir dine yönelirse, onunki kabul edilmeyecektir. O ahirette de kaybedenlerdendir."
+      },
+      {
+        "id": 86,
+        "ar": "كَيْفَ يَهْدِي اللَّهُ قَوْمًا كَفَرُوا بَعْدَ إِيمَانِهِمْ وَشَهِدُوا أَنَّ الرَّسُولَ حَقٌّ وَجَاءَهُمُ الْبَيِّنَاتُ ۚ وَاللَّهُ لَا يَهْدِي الْقَوْمَ الظَّالِمِينَ",
+        "tr": "İnandıktan, peygamberin hak olduğuna şehadet ettikten, kendilerine belgeler geldikten sonra inkar eden bir milleti Allah nasıl doğru yola eriştirir? Allah zalimleri doğru yola eriştirmez."
+      },
+      {
+        "id": 87,
+        "ar": "أُولَٰئِكَ جَزَاؤُهُمْ أَنَّ عَلَيْهِمْ لَعْنَةَ اللَّهِ وَالْمَلَائِكَةِ وَالنَّاسِ أَجْمَعِينَ",
+        "tr": "İşte bunların cezası, Allah'ın, meleklerin, insanların hepsinin lanetine uğramalarıdır."
+      },
+      {
+        "id": 88,
+        "ar": "خَالِدِينَ فِيهَا لَا يُخَفَّفُ عَنْهُمُ الْعَذَابُ وَلَا هُمْ يُنظَرُونَ",
+        "tr": "Orada temellidirler; onlardan azab hafifletilmez; onların azabı geciktirilmez."
+      },
+      {
+        "id": 89,
+        "ar": "إِلَّا الَّذِينَ تَابُوا مِن بَعْدِ ذَٰلِكَ وَأَصْلَحُوا فَإِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",
+        "tr": "Ancak bunun ardından tevbe edip düzelenler müstesnadır. Doğrusu Allah bağışlar ve merhamet eder."
+      },
+      {
+        "id": 90,
+        "ar": "إِنَّ الَّذِينَ كَفَرُوا بَعْدَ إِيمَانِهِمْ ثُمَّ ازْدَادُوا كُفْرًا لَّن تُقْبَلَ تَوْبَتُهُمْ وَأُولَٰئِكَ هُمُ الضَّالُّونَ",
+        "tr": "İnandıktan sonra inkar edip, inkarda aşırı gidenler var ya, onların tevbeleri kabul edilmeyecektir. İşte sapıklar onlardır."
       }
     ]
   },
@@ -1166,6 +1566,156 @@
         "id": 60,
         "ar": "أَلَمْ تَرَ إِلَى الَّذِينَ يَزْعُمُونَ أَنَّهُمْ آمَنُوا بِمَا أُنزِلَ إِلَيْكَ وَمَا أُنزِلَ مِن قَبْلِكَ يُرِيدُونَ أَن يَتَحَاكَمُوا إِلَى الطَّاغُوتِ وَقَدْ أُمِرُوا أَن يَكْفُرُوا بِهِ وَيُرِيدُ الشَّيْطَانُ أَن يُضِلَّهُمْ ضَلَالًا بَعِيدًا",
         "tr": "(Ey Muhammed!) Sana indirilen Kur’an’a ve senden önce indirilene iman ettiklerini iddia edenleri görmüyor musun? Tâğût’u inkâr etmeleri kendilerine emrolunduğu halde, onun önünde muhakeme olmak istiyorlar. Şeytan da onları derin bir sapıklığa düşürmek istiyor."
+      },
+      {
+        "id": 61,
+        "ar": "وَإِذَا قِيلَ لَهُمْ تَعَالَوْا إِلَىٰ مَا أَنزَلَ اللَّهُ وَإِلَى الرَّسُولِ رَأَيْتَ الْمُنَافِقِينَ يَصُدُّونَ عَنكَ صُدُودًا",
+        "tr": "Onlara: \"Allah'ın indirdiğine ve Peygambere gelin\" dendiği zaman, münafıkların senden büsbütün uzaklaştıklarını görürsün."
+      },
+      {
+        "id": 62,
+        "ar": "فَكَيْفَ إِذَا أَصَابَتْهُم مُّصِيبَةٌ بِمَا قَدَّمَتْ أَيْدِيهِمْ ثُمَّ جَاءُوكَ يَحْلِفُونَ بِاللَّهِ إِنْ أَرَدْنَا إِلَّا إِحْسَانًا وَتَوْفِيقًا",
+        "tr": "Başlarına kendi işlediklerinden ötürü bir musibet çattığında sana gelip: \"Biz, iyilik etmek ve uzlaştırmaktan başka bir şey istemedik\" diye de nasıl Allah'a yemin ederler?"
+      },
+      {
+        "id": 63,
+        "ar": "أُولَٰئِكَ الَّذِينَ يَعْلَمُ اللَّهُ مَا فِي قُلُوبِهِمْ فَأَعْرِضْ عَنْهُمْ وَعِظْهُمْ وَقُل لَّهُمْ فِي أَنفُسِهِمْ قَوْلًا بَلِيغًا",
+        "tr": "İşte bunlarin kalblerinde olanı Allah bilir. Onlardan yüz çevir, onlara öğüt ver, kendilerine tesirli sözler söyle."
+      },
+      {
+        "id": 64,
+        "ar": "وَمَا أَرْسَلْنَا مِن رَّسُولٍ إِلَّا لِيُطَاعَ بِإِذْنِ اللَّهِ ۚ وَلَوْ أَنَّهُمْ إِذ ظَّلَمُوا أَنفُسَهُمْ جَاءُوك�� فَاسْتَغْفَرُوا اللَّهَ وَاسْتَغْفَرَ لَهُمُ الرَّسُولُ لَوَجَدُوا اللَّهَ تَوَّابًا رَّحِيمًا",
+        "tr": "Biz her peygamberi ancak, Allah'ın izniyle, itaat olunması için gönderdik. Onlar, kendilerine yazık ettiklerinde, sana gelip Allah'tan mağfiret dileseler ve Peygamber de onlara mağfiret dileseydi, Allah'ın tevbeleri daima kabul ve merhamet eden olduğunu görürlerdi."
+      },
+      {
+        "id": 65,
+        "ar": "فَلَا وَرَبِّكَ لَا يُؤْمِنُونَ حَتَّىٰ يُحَكِّمُوكَ فِيمَا شَجَرَ بَيْنَهُمْ ثُمَّ لَا يَجِدُوا فِي أَنفُسِهِمْ حَرَجًا مِّمَّا قَضَيْتَ وَيُسَلِّمُوا تَسْلِيمًا",
+        "tr": "Hayır; Rabb'ine and olsun ki, aralarında çekiştikleri şeylerde seni hakem tayin edip, sonra senin verdiğin hükmü içlerinde bir sıkıntı duymadan tamamen kabul etmedikçe inanmış olmazlar."
+      },
+      {
+        "id": 66,
+        "ar": "وَلَوْ أَنَّا كَتَبْنَا عَلَيْهِمْ أَنِ اقْتُلُوا أَنفُسَكُمْ أَوِ اخْرُجُوا مِن دِيَارِكُم مَّا فَعَلُوهُ إِلَّا قَلِيلٌ مِّنْهُمْ ۖ وَلَوْ أَنَّهُمْ فَعَلُوا مَا يُوعَظُونَ بِهِ لَكَانَ خَيْرًا لَّهُمْ وَأَشَدَّ تَثْبِيتًا",
+        "tr": "Şayet onlara \"Kendinizi öldürün\" yahut \"Memleketinizden çıkın\" diye emretmiş olsaydık, pek azından başkaları bunu yapmazlardı. Kendilerine verilen öğüdü yerine getirmiş olsalardı onlar için daha iyi ve daha sağlam olurdu."
+      },
+      {
+        "id": 67,
+        "ar": "وَإِذًا لَّآتَيْنَاهُم مِّن لَّدُنَّا أَجْرًا عَظِيمًا",
+        "tr": "O zaman onlara kendi katımızdan büyük bir ecir verir ve onları doğru yola eriştirirdik."
+      },
+      {
+        "id": 68,
+        "ar": "وَلَهَدَيْنَاهُمْ صِرَاطًا مُّسْتَقِيمًا",
+        "tr": "O zaman onlara kendi katımızdan büyük bir ecir verir ve onları doğru yola eriştirirdik."
+      },
+      {
+        "id": 69,
+        "ar": "وَمَن يُطِعِ اللَّهَ وَالرَّسُولَ فَأُولَٰئِكَ مَعَ الَّذِينَ أَنْعَمَ اللَّهُ عَلَيْهِم مِّنَ النَّبِيِّينَ وَالصِّدِّيقِينَ وَالشُّهَدَاءِ وَالصَّالِحِينَ ۚ وَحَسُنَ أُولَٰئِكَ رَفِيقًا",
+        "tr": "Kim Allah'a ve Peygambere itaat ederse, işte onlar Allah'ın nimetine eriştirdiği peygamberlerle, dosdoğru olanlar, şehidler ve iyilerle beraberdirler. Onlar ne iyi arkadaştırlar!"
+      },
+      {
+        "id": 70,
+        "ar": "ذَٰلِكَ الْفَضْلُ مِنَ اللَّهِ ۚ وَكَفَىٰ بِاللَّهِ عَلِيمًا",
+        "tr": "Bu nimet, Allah'tandır. Bilen olarak Allah yeter."
+      },
+      {
+        "id": 71,
+        "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا خُذُوا حِذْرَكُمْ فَانفِرُوا ثُبَاتٍ أَوِ انفِرُوا جَمِيعًا",
+        "tr": "Ey İnananlar! İhtiyatlı davranın, bölük bölük veya hep birden savaşa gidin."
+      },
+      {
+        "id": 72,
+        "ar": "وَإِنَّ مِنكُمْ لَمَن لَّيُبَطِّئَنَّ فَإِنْ أَصَابَتْكُم مُّصِيبَةٌ قَالَ قَدْ أَنْعَمَ اللَّهُ عَلَيَّ إِذْ لَمْ أَكُن مَّعَهُمْ شَهِيدًا",
+        "tr": "Şüphesiz aranızda pek ağır davrananlar vardır; size bir musibet gelirse: \"Allah bana iyilikte bulundu, çünkü onlarla beraber bulunmadim\" der."
+      },
+      {
+        "id": 73,
+        "ar": "وَلَئِنْ أَصَابَكُمْ فَضْلٌ مِّنَ اللَّهِ لَيَقُولَنَّ كَأَن لَّمْ تَكُن بَيْنَكُمْ وَبَيْنَهُ مَوَدَّةٌ يَا لَيْتَنِي كُنتُ مَعَهُمْ فَأَفُوزَ فَوْزًا عَظِيمًا",
+        "tr": "Allah'tan size bir nimet erişse, and olsun ki, sizinle kendi arasında bir dostluk yokmuş gibi: \"Keşki onlarla beraber olsaydım da ben de büyük bir başarı kazansaydım\" der."
+      },
+      {
+        "id": 74,
+        "ar": "۞ فَلْيُقَاتِلْ فِي سَبِيلِ اللَّهِ الَّذِينَ يَشْرُونَ الْحَيَاةَ الدُّنْيَا بِالْآخِرَةِ ۚ وَمَن يُقَاتِلْ فِي سَبِيلِ اللَّهِ فَيُقْتَلْ أَوْ يَغْلِبْ فَسَوْفَ نُؤْتِيهِ أَجْرًا عَظِيمًا",
+        "tr": "O halde, dünya hayatı yerine ahireti alanlar, Allah yolunda savaşsınlar. Kim Allah yolunda savaşır, öldürülür veya galib gelirse, Biz ona büyük bir ecir vereceğiz."
+      },
+      {
+        "id": 75,
+        "ar": "وَمَا لَكُمْ لَا تُقَاتِلُونَ فِي سَبِيلِ اللَّهِ وَالْمُسْتَضْعَفِينَ مِنَ الرِّجَالِ وَالنِّسَاءِ وَالْوِلْدَانِ الَّذِينَ يَقُولُونَ رَبَّنَا أَخْرِجْنَا مِنْ هَٰذِهِ الْقَرْيَةِ الظَّالِمِ أَهْلُهَا وَاجْعَل لَّنَا مِن لَّدُنكَ وَلِيًّا وَاجْعَل لَّنَا مِن لَّدُنكَ نَصِيرًا",
+        "tr": "Size ne oluyor da: \"Rabbimiz! Bizi halkı zalim olan bu şehirden çıkar, katından bize bir sahip çıkan gönder, katından bize bir yardımcı lutfet\" diyen zavallı çocuklar, erkekler ve kadınlar uğrunda ve Allah yolunda savaşmıyorsunuz?"
+      },
+      {
+        "id": 76,
+        "ar": "الَّذِينَ آمَنُوا يُقَاتِلُونَ فِي سَبِيلِ اللَّهِ ۖ وَالَّذِينَ كَفَرُوا يُقَاتِلُونَ فِي سَبِيلِ الطَّاغُوتِ فَقَاتِلُوا أَوْلِيَاءَ الشَّيْطَانِ ۖ إِنَّ كَيْدَ الشَّيْطَانِ كَانَ ضَعِيفًا",
+        "tr": "İnananlar Allah yolunda savaşırlar, inkar edenler ise tağut yolunda harbederler. Şeytanın dostlarıyla savaşın, esasen şeytanın hilesi zayıftır."
+      },
+      {
+        "id": 77,
+        "ar": "أَلَمْ تَرَ إِلَى الَّذِينَ قِيلَ لَهُمْ كُفُّوا أَيْدِيَكُمْ وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ فَلَمَّا كُتِبَ عَلَيْهِمُ الْقِتَالُ إِذَا فَرِيقٌ مِّنْهُمْ يَخْشَوْنَ النَّاسَ كَخَشْيَةِ اللَّهِ أَوْ أَشَدَّ خَشْيَةً ۚ وَقَالُوا رَبَّنَا لِمَ كَتَبْتَ عَلَيْنَا الْقِتَالَ لَوْلَا أَخَّرْتَنَا إِلَىٰ أَجَلٍ قَرِيبٍ ۗ قُلْ مَتَاعُ الدُّنْيَا قَلِيلٌ وَالْآخِرَةُ خَيْرٌ لِّمَنِ اتَّقَىٰ وَلَا تُظْلَمُونَ فَتِيلًا",
+        "tr": "Kendilerine: \"Elinizi savaştan çekin, namaz kılın, zekat verin\" denenleri görmedin mi? Onlara savaş farz kılındığında, içlerinden bir takımı hemen, insanlardan, Allah'tan korkar gibi, hatta daha çok korkarlar ve \"Rabbimiz! Bize savaşı niçin farz kıldın, bizi yakın bir zamana kadar tehir edemez miydin?\" derler. De ki: \"Dünya geçimliği azdır, ahiret, Allah'a karşı gelmekten sakınan için hayırlıdır, size zerre kadar zulmedilmez\"."
+      },
+      {
+        "id": 78,
+        "ar": "أَيْنَمَا تَكُونُوا يُدْرِككُّمُ الْمَوْتُ وَلَوْ كُنتُمْ فِي بُرُوجٍ مُّشَيَّدَةٍ ۗ وَإِن تُصِبْهُمْ حَسَنَةٌ يَقُولُوا هَٰذِهِ مِنْ عِندِ اللَّهِ ۖ وَإِن تُصِبْهُمْ سَيِّئَةٌ يَقُولُوا هَٰذِهِ مِنْ عِندِكَ ۚ قُلْ كُلٌّ مِّنْ عِندِ اللَّهِ ۖ فَمَالِ هَٰؤُلَاءِ الْقَوْمِ لَا يَكَادُونَ يَفْقَهُونَ حَدِيثًا",
+        "tr": "Nerede olursaniz olun, sağlam kaleler içinde bulunsanız bile, ölüm size yetişecektir. Onlara bir iyilik gelirse: \"Bu Allah'tandır\" derler, bir kötülüğe uğrarlarsa \"Bu, senin tarafındandır\" derler. De ki: \"Hepsi Allah'tandır\". Bunlara ne oluyor ki, hiçbir sözü anlamaya yanaşmıyorlar?"
+      },
+      {
+        "id": 79,
+        "ar": "مَّا أَصَابَكَ مِنْ حَسَنَةٍ فَمِنَ اللَّهِ ۖ وَمَا أَصَابَكَ مِن سَيِّئَةٍ فَمِن نَّفْسِكَ ۚ وَأَرْسَلْنَاكَ لِلنَّاسِ رَسُولًا ۚ وَكَفَىٰ بِاللَّهِ شَهِيدًا",
+        "tr": "Sana ne iyilik gelirse Allah'tandır, sana ne kötülük dokunursa kendindendir. Seni insanlara peygamber gönderdik, şahid olarak Allah yeter."
+      },
+      {
+        "id": 80,
+        "ar": "مَّن يُطِعِ الرَّسُولَ فَقَدْ أَطَاعَ اللَّهَ ۖ وَمَن تَوَلَّىٰ فَمَا أَرْسَلْنَاكَ عَلَيْهِمْ حَفِيظًا",
+        "tr": "Peygamber'e itaat eden, Allah'a itaat etmiş olur. Kim yüz çevirirse bilsin ki, Biz seni onlara bekçi göndermedik."
+      },
+      {
+        "id": 81,
+        "ar": "وَيَقُولُونَ طَاعَةٌ فَإِذَا بَرَزُوا مِنْ عِندِكَ بَيَّتَ طَائِفَةٌ مِّنْهُمْ غَيْرَ الَّذِي تَقُولُ ۖ وَاللَّهُ يَكْتُبُ مَا يُبَيِّتُونَ ۖ فَأَعْرِضْ عَنْهُمْ وَتَوَكَّلْ عَلَى اللَّهِ ۚ وَكَفَىٰ بِاللَّهِ وَكِيلًا",
+        "tr": "\"Peki\" derler, fakat senin yanından çıktıklarında, içlerinden bir takımı, geceleyin senin dediklerinden başka bir şey kurarlar. Allah gece tasarladıkların�� yazıyor, onlara aldırış etme. Allah'a güven, vekil olarak Allah yeter."
+      },
+      {
+        "id": 82,
+        "ar": "أَفَلَا يَتَدَبَّرُونَ الْقُرْآنَ ۚ وَلَوْ كَانَ مِنْ عِندِ غَيْرِ اللَّهِ لَوَجَدُوا فِيهِ اخْتِلَافًا كَثِيرًا",
+        "tr": "Kuran'ı durup düşünmüyorlar mı? Eğer o Allah'tan başkasından gelseydi, onda çok aykırılıklar bulurlardı."
+      },
+      {
+        "id": 83,
+        "ar": "وَإِذَا جَاءَهُمْ أَمْرٌ مِّنَ الْأَمْنِ أَوِ الْخَوْفِ أَذَاعُوا بِهِ ۖ وَلَوْ رَدُّوهُ إِلَى الرَّسُولِ وَإِلَىٰ أُولِي الْأَمْرِ مِنْهُمْ لَعَلِمَهُ الَّذِينَ يَسْتَنبِطُونَهُ مِنْهُمْ ۗ وَلَوْلَا فَضْلُ اللَّهِ عَلَيْكُمْ وَرَحْمَتُهُ لَاتَّبَعْتُمُ الشَّيْطَانَ إِلَّا قَلِيلًا",
+        "tr": "Kendilerine güven veya korku hususunda bir haber geldiğinde onu yayarlar; halbuki o haberi Peygamber'e veya kendilerinden buyruk sahibi olanlara götürselerdi, onlardan sonuç çıkarmaya kadir olanlar onu bilirdi. Allah'ın size bol nimeti ve rahmeti olmasaydı, pek azınız bir yana, şeytana uyardınız."
+      },
+      {
+        "id": 84,
+        "ar": "فَقَاتِلْ فِي سَبِيلِ اللَّهِ لَا تُكَلَّفُ إِلَّا نَفْسَكَ ۚ وَحَرِّضِ الْمُؤْمِنِينَ ۖ عَسَى اللَّهُ أَن يَكُفَّ بَأْسَ الَّذِينَ كَفَرُوا ۚ وَاللَّهُ أَشَدُّ بَأْسًا وَأَشَدُّ تَنكِيلًا",
+        "tr": "Allah yolunda savaş; sen ancak kendinden sorumlusun, inananları teşvik et; umulur ki Allah, inkar edenlerin baskınını önler. Allah'ın kahrı da, ibret alınacak cezası da pek şiddetlidir."
+      },
+      {
+        "id": 85,
+        "ar": "مَّن يَشْفَعْ شَفَاعَةً حَسَنَةً يَكُن لَّهُ نَصِيبٌ مِّنْهَا ۖ وَمَن يَشْفَعْ شَفَاعَةً سَيِّئَةً يَكُن لَّهُ كِفْلٌ مِّنْهَا ۗ وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ مُّقِيتًا",
+        "tr": "Kim iyi bir işte aracılık ederse, ona onun sevabından bir pay vardır; kim de kötü bir şeyde aracılık yaparsa, ona o kötülükten bir hisse vardır. Allah, her şeyin karşılığını verir."
+      },
+      {
+        "id": 86,
+        "ar": "وَإِذَا حُيِّيتُم بِتَحِيَّةٍ فَحَيُّوا بِأَحْسَنَ مِنْهَا أَوْ رُدُّوهَا ۗ إِنَّ اللَّهَ كَانَ عَلَىٰ كُلِّ شَيْءٍ حَسِيبًا",
+        "tr": "Size bir selam verildiği zaman, ondan daha iyisiyle selam verin veya ayniyle mukabele edin. Allah her şeyin hesabını gereği gibi yapandır."
+      },
+      {
+        "id": 87,
+        "ar": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۚ لَيَجْمَعَنَّكُمْ إِلَىٰ يَوْمِ الْقِيَامَةِ لَا رَيْبَ فِيهِ ۗ وَمَنْ أَصْدَقُ مِنَ اللَّهِ حَدِيثًا",
+        "tr": "Allah'tan başka tanrı yoktur, geleceğinde şüphe olmayan kıyamet günü, sizi mutlaka toplayacaktır. Allah'tan daha doğru sözlü kim olabilir?"
+      },
+      {
+        "id": 88,
+        "ar": "۞ فَمَا لَكُمْ فِي الْمُنَافِقِينَ فِئَتَيْنِ وَاللَّهُ أَرْكَسَهُم بِمَا كَسَبُوا ۚ أَتُرِيدُونَ أَن تَهْدُوا مَنْ أَضَلَّ اللَّهُ ۖ وَمَن يُضْلِلِ اللَّهُ فَلَن تَجِدَ لَهُ سَبِيلًا",
+        "tr": "Ey müslümanlar! Münafıklar hakkında iki fırka olmanız da niye? Allah onları, yaptıklarından dolayı başaşağı etmiştir. Allah'ın saptırdığını siz mi yola getirmek istiyorsunuz? Allah'ın saptırdığı kimseye sen hiç yol bulamayacaksın."
+      },
+      {
+        "id": 89,
+        "ar": "وَدُّوا لَوْ تَكْفُرُونَ كَمَا كَفَرُوا فَتَكُونُونَ سَوَاءً ۖ فَلَا تَتَّخِذُوا مِنْهُمْ أَوْلِيَاءَ حَتَّىٰ يُهَاجِرُوا فِي سَبِيلِ اللَّهِ ۚ فَإِن تَوَلَّوْا فَخُذُوهُمْ وَاقْتُلُوهُمْ حَيْثُ وَجَدتُّمُوهُمْ ۖ وَلَا تَتَّخِذُوا مِنْهُمْ وَلِيًّا وَلَا نَصِيرًا",
+        "tr": "Onlar kendileri inkar ettikleri gibi, keşki siz de inkar etseniz de eşit olsanız isterler. Allah yolunda hicret etmedikçe onlardan dost edinmeyin. Eğer yüz çevirirlerse onları tutun, bulduğunuz yerde öldürün. Onlardan dost ve yardımcı edinmeyin."
+      },
+      {
+        "id": 90,
+        "ar": "إِلَّا الَّذِينَ يَصِلُونَ إِلَىٰ قَوْمٍ بَيْنَكُمْ وَبَيْنَهُم مِّيثَاقٌ أَوْ جَاءُوكُمْ حَصِرَتْ صُدُورُهُمْ أَن يُقَاتِلُوكُمْ أَوْ يُقَاتِلُوا قَوْمَهُمْ ۚ وَلَوْ شَاءَ اللَّهُ لَسَلَّطَهُمْ عَلَيْكُمْ فَلَقَاتَلُوكُمْ ۚ فَإِنِ اعْتَزَلُوكُمْ فَلَمْ يُقَاتِلُوكُمْ وَأَلْقَوْا إِلَيْكُمُ السَّلَمَ فَمَا جَعَلَ اللَّهُ لَكُمْ عَلَيْهِمْ سَبِيلًا",
+        "tr": "Ancak, sizinle kendileri arasında anlaşma olan bir millete sığınanlar yahut sizinle savaştan veya kendi milletleriyle savaşmaktan bıkarak size başvuranlar müstesnadır. Allah dileseydi onları üzerinize çullandırırdı da sizinle savaşırlardı. Eğer sizden uzak durur, sizinle savaşmaz, size barış teklif ederlerse Allah onlara dokunmanıza izin vermez."
       }
     ]
   },
@@ -1371,6 +1921,106 @@
         "id": 40,
         "ar": "أَلَمْ تَعْلَمْ أَنَّ اللَّهَ لَهُ مُلْكُ السَّمَاوَاتِ وَالْأَرْضِ يُعَذِّبُ مَن يَشَاءُ وَيَغْفِرُ لِمَن يَشَاءُ ۗ وَاللَّهُ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
         "tr": "Bilmez misin ki göklerin ve yerin mülkü Allah'ındır? Allah, dilediğine azap eder, dilediğini ise bağışlar. Allah’ın her şeye gücü yeter."
+      },
+      {
+        "id": 41,
+        "ar": "۞ يَا أَيُّهَا الرَّسُولُ لَا يَحْزُنكَ الَّذِينَ يُسَارِعُونَ فِي الْكُفْرِ مِنَ الَّذِينَ قَالُوا آمَنَّا بِأَفْوَاهِهِمْ وَلَمْ تُؤْمِن قُلُوبُهُمْ ۛ وَمِنَ الَّذِينَ هَادُوا ۛ سَمَّاعُونَ لِلْكَذِبِ سَمَّاعُونَ لِقَوْمٍ آخَرِينَ لَمْ يَأْتُوكَ ۖ يُحَرِّفُونَ الْكَلِمَ مِن بَعْدِ مَوَاضِعِهِ ۖ يَقُولُونَ إِنْ أُوتِيتُمْ هَٰذَا فَخُذُوهُ وَإِن لَّمْ تُؤْتَوْهُ فَاحْذَرُوا ۚ وَمَن يُرِدِ اللَّهُ فِتْنَتَهُ فَلَن تَمْلِكَ لَهُ مِنَ اللَّهِ شَيْئًا ۚ أُولَٰئِكَ الَّذِينَ لَمْ يُرِدِ اللَّهُ أَن يُطَهِّرَ قُلُوبَهُمْ ۚ لَهُمْ فِي الدُّنْيَا خِزْيٌ ۖ وَلَهُمْ فِي الْآخِرَةِ عَذَابٌ عَظِيمٌ",
+        "tr": "Kalbleri inanmamışken, ağızlarıyla, \"İnandık\" diyenler, yahudilerden yalana kulak verenler ve başka bir topluluk hesabına casusluk edenlerden inkara koşanlar seni üzmesin. Sözleri asıl yerlerinden değiştirirler de, \"Böyle bir fetva size verilirse alın, verilmezse kaçının\" derler. Allah'ın fitneye düşmesini dilediği kimse için Allah'a karşı senin elinden bir şey gelmez. İşte onlar Allah'ın, kalblerini arıtmak istemediği kimselerdir. Dünyada rezillik onlaradır. Onlara ahirette de büyük azab vardır."
+      },
+      {
+        "id": 42,
+        "ar": "سَمَّاعُونَ لِلْكَذِبِ أَكَّالُونَ لِلسُّحْتِ ۚ فَإِن جَاءُوكَ فَاحْكُم بَيْنَهُمْ أَوْ أَعْرِضْ عَنْهُمْ ۖ وَإِن تُعْرِضْ عَنْهُمْ فَلَن يَضُرُّوكَ شَيْئًا ۖ وَإِنْ حَكَمْتَ فَاحْكُم بَيْنَهُم بِالْقِسْطِ ۚ إِنَّ اللَّهَ يُحِبُّ الْمُقْسِطِينَ",
+        "tr": "Onlar yalana kulak verirler, haram yerler. Eğer sana gelirlerse aralarında hükmet, yahut onlardan yüz çevir; yüz çevirirsen sana bir zarar veremezler. Eğer hükmedersen aralarında adaletle hüküm ver. Allah adil olanları sever."
+      },
+      {
+        "id": 43,
+        "ar": "وَكَيْفَ يُحَكِّمُونَكَ وَعِندَهُمُ التَّوْرَاةُ فِيهَا حُكْمُ اللَّهِ ثُمَّ يَتَوَلَّوْنَ مِن بَعْدِ ذَٰلِكَ ۚ وَمَا أُولَٰئِكَ بِالْمُؤْمِنِينَ",
+        "tr": "Allah'ın hükmünün bulunduğu Tevrat yanlarında iken, ne yüzle seni hakem tayin ediyorlar da sonra bundan yüz çeviriyorlar? İşte onlar inanmış değillerdir."
+      },
+      {
+        "id": 44,
+        "ar": "إِنَّا أَنزَلْنَا التَّوْرَاةَ فِيهَا هُدًى وَنُورٌ ۚ يَحْكُمُ بِهَا النَّبِيُّونَ الَّذِينَ أَسْلَمُوا لِلَّذِينَ هَادُوا وَالرَّبَّانِيُّونَ وَالْأَحْبَارُ بِمَا اسْتُحْفِظُوا مِن كِتَابِ اللَّهِ وَكَانُوا عَلَيْهِ شُهَدَاءَ ۚ فَلَا تَخْشَوُا النَّاسَ وَاخْشَوْنِ وَلَا تَشْتَرُوا بِآيَاتِي ثَمَنًا قَلِيلًا ۚ وَمَن لَّمْ يَحْكُم بِمَا أَنزَلَ اللَّهُ فَأُولَٰئِكَ هُمُ الْكَافِرُونَ",
+        "tr": "Doğrusu Biz yol gösterici olarak Tevrat'ı indirdik. Kendisini Allah'a teslim etmiş peygamberler, yahudi olanlara onunla ve Rabbe kul olanlar, bilginler de Allah'ın Kitap'ından elde mahfuz kalanla hükmederlerdi. Tevrat'a şahiddiler. O halde insanlardan korkmayın, benden korkun, ayetlerimi hiçbir değerle değiştirmeyin; Allah'ın indirdiği ile hükmetmeyenler, işte onlar kafirlerdir."
+      },
+      {
+        "id": 45,
+        "ar": "وَكَتَبْنَا عَلَيْهِمْ فِيهَا أَنَّ النَّفْسَ بِالنَّفْسِ وَالْعَيْنَ بِالْعَيْنِ وَالْأَنفَ بِالْأَنفِ وَالْأُذُنَ بِالْأُذُنِ وَالسِّنَّ بِالسِّنِّ وَالْجُرُوحَ قِصَاصٌ ۚ فَمَن تَصَدَّقَ بِهِ فَهُوَ كَفَّارَةٌ لَّهُ ۚ وَمَن لَّمْ يَحْكُم بِمَا أَنزَلَ اللَّهُ فَأُولَٰئِكَ هُمُ الظَّالِمُونَ",
+        "tr": "Orada onlara cana can, göze göz, buruna burun, kulağa kulak, dişe dişle ve yaralara karşılıklı ödeşme yazdık. Kim hakkından vazgeçerse bu, onun günahlarına keffaret olur. Allah'ın indirdiği ile hükmetmeyenler, işte onlar zalimlerdir."
+      },
+      {
+        "id": 46,
+        "ar": "وَقَفَّيْنَا عَلَىٰ آثَارِهِم بِعِيسَى ابْنِ مَرْيَمَ مُصَدِّقًا لِّمَا بَيْنَ يَدَيْهِ مِنَ التَّوْرَاةِ ۖ وَآتَيْنَاهُ الْإِنجِيلَ فِيهِ هُدًى وَنُورٌ وَمُصَدِّقًا لِّمَا بَيْنَ يَدَيْهِ مِنَ التَّوْرَاةِ وَهُدًى وَمَوْعِظَةً لِّلْمُتَّقِينَ",
+        "tr": "Onların izi üzerine arkalarından Meryem oğlu İsa'yı, ondan önce gelmiş bulunan Tevrat'ı doğrulayarak gönderdik. Ona, yol gösterici, aydınlatıcı olan ve önünde bulunan Tevrat'ı doğrulayan İncil'i sakınanlara öğüt ve yol gösterici olarak verdik."
+      },
+      {
+        "id": 47,
+        "ar": "وَلْيَحْكُمْ أَهْلُ الْإِنجِيلِ بِمَا أَنزَلَ اللَّهُ فِيهِ ۚ وَمَن لَّمْ يَحْكُم بِمَا أَنزَلَ اللَّهُ فَأُولَٰئِكَ هُمُ الْفَاسِقُونَ",
+        "tr": "İncil sahibleri Allah'ın onda indirdikleri ile hükmetsinler. Allah'ın indirdiği ile hükmetmeyenler, işte onlar fasık olanlardır."
+      },
+      {
+        "id": 48,
+        "ar": "وَأَنزَلْنَا إِلَيْكَ الْكِتَابَ بِالْحَقِّ مُصَدِّقًا لِّمَا بَيْنَ يَدَيْهِ مِنَ الْكِتَابِ وَمُهَيْمِنًا عَلَيْهِ ۖ فَاحْكُم بَيْنَهُم بِمَا أَنزَلَ اللَّهُ ۖ وَلَا تَتَّبِعْ أَهْوَاءَهُمْ عَمَّا جَاءَكَ مِنَ الْحَقِّ ۚ لِكُلٍّ جَعَلْنَا مِنكُمْ شِرْعَةً وَمِنْهَاجًا ۚ وَلَوْ شَاءَ اللَّهُ لَجَعَلَكُمْ أُمَّةً وَاحِدَةً وَلَٰكِن لِّيَبْلُوَكُمْ فِي مَا آتَاكُمْ ۖ فَاسْتَبِقُوا الْخَيْرَاتِ ۚ إِلَى اللَّهِ مَرْجِعُكُمْ جَمِيعًا فَيُنَبِّئُكُم بِمَا كُنتُمْ فِيهِ تَخْتَلِفُونَ",
+        "tr": "Kuran'ı, önce gelen Kitap'ı tasdik ederek ve ona şahid olarak gerçekle sana indirdik. Allah'ın indirdiği ile aralarında hükmet; gerçek olan sana gelmiş bulunduğuna göre, onların heveslerine uyma! Her biriniz için bir yol ve bir yöntem kıldık; eğer Allah dileseydi sizi bir tek ümmet yapardı, fakat bu, verdikleriyle sizi denemesi içindir; o halde iyiliklere koşuşun, hepinizin dönüşü Allah'adır. O, ayrılığa düştüğünüz şeyleri size bildirir."
+      },
+      {
+        "id": 49,
+        "ar": "وَأَنِ احْكُم بَيْنَهُم بِمَا أَنزَلَ اللَّهُ وَلَا تَتَّبِعْ أَهْوَاءَهُمْ وَاحْذَرْهُمْ أَن يَفْتِنُوكَ عَن بَعْضِ مَا أَنزَلَ اللَّهُ إِلَيْكَ ۖ فَإِن تَوَلَّوْا فَاعْلَمْ أَنَّمَا يُرِيدُ اللَّهُ أَن يُصِيبَهُم بِبَعْضِ ذُنُوبِهِمْ ۗ وَإِنَّ كَثِيرًا مِّنَ النَّاسِ لَفَاسِقُونَ",
+        "tr": "O halde, Allah'ın indirdiği Kitap ile aralarında hükmet, Allah'ın sana indirdiği Kuran'ın bir kısmından seni vazgeçirmelerinden sakın, heveslerine uyma; eğer yüz çevirirlerse bil ki, Allah bir kısım günahları yüzünden onları cezalandırmak istiyor. İnsanların çoğu gerçekten fasıktırlar."
+      },
+      {
+        "id": 50,
+        "ar": "أَفَحُكْمَ الْجَاهِلِيَّةِ يَبْغُونَ ۚ وَمَنْ أَحْسَنُ مِنَ اللَّهِ حُكْمًا لِّقَوْمٍ يُوقِنُونَ",
+        "tr": "Cahiliye devri hükmünü mü istiyorlar? Yakinen bilen bir millet için Allah'tan daha iyi hüküm veren kim vardır?"
+      },
+      {
+        "id": 51,
+        "ar": "۞ يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَتَّخِذُوا الْيَهُودَ وَالنَّصَارَىٰ أَوْلِيَاءَ ۘ بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ ۚ وَمَن يَتَوَلَّهُم مِّنكُمْ فَإِنَّهُ مِنْهُمْ ۗ إِنَّ اللَّهَ لَا يَهْدِي الْقَوْمَ الظَّالِمِينَ",
+        "tr": "Ey İnananlar! Yahudileri ve hıristiyanları dost olarak benimsemeyin, onlar birbirlerinin dostudurlar. Sizden kim onlara dost olursa o da onlardandır. Allah zulmeden kimseleri doğru yola eriştirmez."
+      },
+      {
+        "id": 52,
+        "ar": "فَتَرَى الَّذِينَ فِي قُلُوبِهِم مَّرَضٌ يُسَارِعُونَ فِيهِمْ يَقُولُونَ نَخْشَىٰ أَن تُصِيبَنَا دَائِرَةٌ ۚ فَعَسَى اللَّهُ أَن يَأْتِيَ بِالْفَتْحِ أَوْ أَمْرٍ مِّنْ عِندِهِ فَيُصْبِحُوا عَلَىٰ مَا أَسَرُّوا فِي أَنفُسِهِمْ نَادِمِينَ",
+        "tr": "Kalblerinde hastalık olanların, \"Bize bir felaket gelmesinden korkuyoruz\" diyerek onlara koştuğunu görürsün. Olur ki Allah bir zafer verir veya katından bir emir getirir de kalblerinde gizlediklerine içleri yananlara dönerler."
+      },
+      {
+        "id": 53,
+        "ar": "وَيَقُولُ الَّذِينَ آمَنُوا أَهَٰؤُلَاءِ الَّذِينَ أَقْسَمُوا بِاللَّهِ جَهْدَ أَيْمَانِهِمْ ۙ إِنَّهُمْ لَمَعَكُمْ ۚ حَبِطَتْ أَعْمَالُهُمْ فَأَصْبَحُوا خَاسِرِينَ",
+        "tr": "İnananlar, \"Sizinle beraber olduklarına bütün güçleriyle Allah'a yemin edenler bunlar mıdır?\" derler. Onların amelleri boşa gitmiş ve kaybeden kimseler olmuşlardır."
+      },
+      {
+        "id": 54,
+        "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا مَن يَرْتَدَّ مِنكُمْ عَن دِينِهِ فَسَوْفَ يَأْتِي اللَّهُ بِقَوْمٍ يُحِبُّهُمْ وَيُحِبُّونَهُ أَذِلَّةٍ عَلَى الْمُؤْمِنِينَ أَعِزَّةٍ عَلَى الْكَافِرِينَ يُجَاهِدُونَ فِي سَبِيلِ اللَّهِ وَلَا يَخَافُونَ لَوْمَةَ لَائِمٍ ۚ ذَٰلِكَ فَضْلُ اللَّهِ يُؤْتِيهِ مَن يَشَاءُ ۚ وَاللَّهُ وَاسِعٌ عَلِيمٌ",
+        "tr": "Ey İnananlar! Aranızda dininden kim dönerse bilsin ki, Allah, sevdiği ve onların O'nu sevdiği, inananlara karşı alçak gönüllü, inkarcılara karşı güçlü, Allah yolunda cihad eden, yerenin yermesinden korkmayan bir millet getirir. Bu, Allah'ın dilediğine verdiği bol nimetidir. Allah her şeyi kaplar ve bilir."
+      },
+      {
+        "id": 55,
+        "ar": "إِنَّمَا وَلِيُّكُمُ اللَّهُ وَرَسُولُهُ وَالَّذِينَ آمَنُوا الَّذِينَ يُقِيمُونَ الصَّلَاةَ وَيُؤْتُونَ الزَّكَاةَ وَهُمْ رَاكِعُونَ",
+        "tr": "Sizin dostunuz ancak Allah, O'nun Peygamberi ve namaz kılan, zekat veren ve rüku eden müminlerdir."
+      },
+      {
+        "id": 56,
+        "ar": "وَمَن يَتَوَلَّ اللَّهَ وَرَسُولَهُ وَالَّذِينَ آمَنُوا فَإِنَّ حِزْبَ اللَّهِ هُمُ الْغَالِبُونَ",
+        "tr": "Kim Allah'ı, Peygamberini ve inananları dost edinirse bilsin ki, şüphesiz Allah'tan yana olanlar üstün gelirler."
+      },
+      {
+        "id": 57,
+        "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَتَّخِذُوا الَّذِينَ اتَّخَذُوا دِينَكُمْ هُزُوًا وَلَعِبًا مِّنَ الَّذِينَ أُوتُوا الْكِتَابَ مِن قَبْلِكُمْ وَالْكُفَّارَ أَوْلِيَاءَ ۚ وَاتَّقُوا اللَّهَ إِن كُنتُم مُّؤْمِنِينَ",
+        "tr": "Ey İnananlar! Kendilerine sizden önce kitap verilenlerden, dininizi alaya ve eğlenceye alanları ve inkarcıları dost olarak benimsemeyin. İnanıyorsanız Allah'tan sakının."
+      },
+      {
+        "id": 58,
+        "ar": "وَإِذَا نَادَيْتُمْ إِلَى الصَّلَاةِ اتَّخَذُوهَا هُزُوًا وَلَعِبًا ۚ ��َٰلِكَ بِأَنَّهُمْ قَوْمٌ لَّا يَعْقِلُونَ",
+        "tr": "Namaza çağırdığınızda onu alay ve eğlenceye alırlar. Bu, onların akletmeyen bir topluluk olmasındandır."
+      },
+      {
+        "id": 59,
+        "ar": "قُلْ يَا أَهْلَ الْكِتَابِ هَلْ تَنقِمُونَ مِنَّا إِلَّا أَنْ آمَنَّا بِاللَّهِ وَمَا أُنزِلَ إِلَيْنَا وَمَا أُنزِلَ مِن قَبْلُ وَأَنَّ أَكْثَرَكُمْ فَاسِقُونَ",
+        "tr": "De ki, \"Ey kitap ehli! Allah'a, bize indirilene ve daha önce indirilene inanmamızdan ve çoğunuzun fasık olmasından ötürü mü bizden hoşlanmıyorsunuz?\""
+      },
+      {
+        "id": 60,
+        "ar": "قُلْ هَلْ أُنَبِّئُكُم بِشَرٍّ مِّن ذَٰلِكَ مَثُوبَةً عِندَ اللَّهِ ۚ مَن لَّعَنَهُ اللَّهُ وَغَضِبَ عَلَيْهِ وَجَعَلَ مِنْهُمُ الْقِرَدَةَ وَالْخَنَازِيرَ وَعَبَدَ الطَّاغُوتَ ۚ أُولَٰئِكَ شَرٌّ مَّكَانًا وَأَضَلُّ عَن سَوَاءِ السَّبِيلِ",
+        "tr": "\"Allah katında bundan daha kötü bir karşılığın bulunduğunu size haber vereyim mi?\" de, Allah kime lanet ve gazab ederse, kimlerden maymunlar, domuzlar ve şeytana kullar kılarsa, işte onlar yeri en kötü ve doğru yoldan en çok sapmış olanlardır."
       }
     ]
   },
