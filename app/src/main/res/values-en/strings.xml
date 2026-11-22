@@ -157,4 +157,5 @@
     <string name="ezan_playing_desc">Playing Adhan for %s</string>
     <string name="ezan_stop_action">Stop</string>
     <string name="ezan_custom_file_note">Built-in Adhan audio is included; tap the test button to preview it.</string>
+    <string name="select_zikir_title">Select Dhikr</string>
 </resources>
