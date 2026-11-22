@@ -5,12 +5,14 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -47,6 +49,19 @@ public class AdManager {
             AdView adView = new AdView(activity);
             adView.setAdUnitId(BuildConfig.ADMOB_BANNER_ID);
             adView.setAdSize(getAdaptiveBannerSize(activity));
+
+            container.setVisibility(View.GONE);
+            adView.setAdListener(new AdListener() {
+                @Override
+                public void onAdLoaded() {
+                    container.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                    container.setVisibility(View.GONE);
+                }
+            });
 
             container.removeAllViews();
             container.addView(adView, new FrameLayout.LayoutParams(
