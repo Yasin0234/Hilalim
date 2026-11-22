@@ -1,6 +1,8 @@
 package com.korkutsoftware.hilalim;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 public class DiniGunlerActivity extends BaseActivity {
 
@@ -34,18 +37,31 @@ public class DiniGunlerActivity extends BaseActivity {
         RecyclerView rv = findViewById(R.id.rv_days);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-        List<DiniGunItem> items = loadDaysFromJson();
-        rv.setAdapter(new DiniGunAdapter(items));
+        DiniGunAdapter adapter = new DiniGunAdapter(new ArrayList<>());
+        rv.setAdapter(adapter);
+
+        Handler mainHandler = new Handler(Looper.getMainLooper());
+        Executors.newSingleThreadExecutor().execute(() -> {
+            List<DiniGunItem> items = loadDaysFromJson();
+            mainHandler.post(() -> {
+                if (!isFinishing() && !isDestroyed() && items != null) {
+                    adapter.setItems(items);
+                }
+            });
+        });
     }
 
     private List<DiniGunItem> loadDaysFromJson() {
-        try {
-            InputStream is = getAssets().open("dini_gunler.json");
+        try (InputStream is = getAssets().open("dini_gunler.json")) {
             int size = is.available();
             byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            String json = new String(buffer, StandardCharsets.UTF_8);
+            int offset = 0;
+            while (offset < size) {
+                int read = is.read(buffer, offset, size - offset);
+                if (read == -1) break;
+                offset += read;
+            }
+            String json = new String(buffer, 0, offset, StandardCharsets.UTF_8);
             return new Gson().fromJson(json, new TypeToken<List<DiniGunItem>>(){}.getType());
         } catch (IOException e) {
             e.printStackTrace();
@@ -58,10 +74,16 @@ public class DiniGunlerActivity extends BaseActivity {
     }
 
     private class DiniGunAdapter extends RecyclerView.Adapter<DiniGunAdapter.ViewHolder> {
-        private List<DiniGunItem> items;
+        private final List<DiniGunItem> items;
 
         DiniGunAdapter(List<DiniGunItem> items) {
             this.items = items;
+        }
+
+        void setItems(List<DiniGunItem> newItems) {
+            items.clear();
+            items.addAll(newItems);
+            notifyDataSetChanged();
         }
 
         @NonNull

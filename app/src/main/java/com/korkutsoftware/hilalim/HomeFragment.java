@@ -26,6 +26,7 @@ import com.korkutsoftware.hilalim.api.PrayerApiService;
 import com.korkutsoftware.hilalim.api.PrayerResponse;
 import com.korkutsoftware.hilalim.api.RetrofitClient;
 import com.korkutsoftware.hilalim.util.AlarmHelper;
+import com.korkutsoftware.hilalim.util.AppCalculators;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -108,6 +109,28 @@ public class HomeFragment extends Fragment {
         if (fabMosque != null) {
             fabMosque.setOnClickListener(view -> openNearestMosquesOnMap());
         }
+
+        updateDailyVerse(v);
+    }
+
+    private void updateDailyVerse(View root) {
+        TextView txtContent = root.findViewById(R.id.txt_verse_content);
+        TextView txtRef = root.findViewById(R.id.txt_verse_ref);
+        if (txtContent == null || txtRef == null) return;
+
+        String[][] verses = {
+                {"Şüphesiz Allah, adaleti, iyilik yapmayı, yakınlara yardım etmeyi emreder; hayasızlığı, fenalık ve azgınlığı da yasaklar.", "(Nahl Suresi, 90. Ayet)"},
+                {"Kalpler ancak Allah'ı anmakla huzur bulur.", "(Ra'd Suresi, 28. Ayet)"},
+                {"Şüphesiz güçlükle beraber bir kolaylık vardır.", "(İnşirah Suresi, 5. Ayet)"},
+                {"Beni anın ki ben de sizi anayım. Bana şükredin, nankörlük etmeyin.", "(Bakara Suresi, 152. Ayet)"},
+                {"Allah, hiç kimseye gücünün üstünde bir yük yüklemez.", "(Bakara Suresi, 286. Ayet)"},
+                {"Sabır ve namaz ile Allah'tan yardım isteyin.", "(Bakara Suresi, 45. Ayet)"},
+                {"De ki: Rabbim, ilmimi artır.", "(Taha Suresi, 114. Ayet)"}
+        };
+        int dayOfYear = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
+        String[] selected = verses[dayOfYear % verses.length];
+        txtContent.setText(selected[0]);
+        txtRef.setText(selected[1]);
     }
 
     private void openNearestMosquesOnMap() {
@@ -146,22 +169,35 @@ public class HomeFragment extends Fragment {
         String manualCity = prefs.getString("last_city", null);
         String manualDistrict = prefs.getString("last_district", null);
 
+        String locationKey;
         if (manualCity != null && manualDistrict != null) {
-            // Manuel konum seçilmişse direkt onu yaz
             txtLocation.setText(String.format("%s, %s", manualCity, manualDistrict));
+            locationKey = "manual:" + manualCity + "," + manualDistrict;
+        } else if (lat != 0 && lng != 0) {
+            updateCityName(lat, lng);
+            locationKey = "coords:" + lat + "," + lng;
+        } else {
+            txtLocation.setText(R.string.select_location);
+            locationKey = "default:Istanbul,Fatih";
+        }
+
+        String todayStr = new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());
+        String lastFetchedDate = prefs.getString("last_fetched_date", "");
+        String lastFetchedLoc = prefs.getString("last_fetched_location", "");
+        if (currentTimings != null && todayStr.equals(lastFetchedDate) && locationKey.equals(lastFetchedLoc)) {
+            return;
+        }
+
+        if (manualCity != null && manualDistrict != null) {
             if (lat != 0 && lng != 0) {
-                fetchPrayerTimings(lat, lng);
+                fetchPrayerTimings(lat, lng, locationKey);
             } else {
-                fetchPrayerTimingsByCity(manualCity, manualDistrict);
+                fetchPrayerTimingsByCity(manualCity, manualDistrict, locationKey);
             }
         } else if (lat != 0 && lng != 0) {
-            // Otomatik konum seçilmişse Geocoder ile ismi bul
-            updateCityName(lat, lng);
-            fetchPrayerTimings(lat, lng);
+            fetchPrayerTimings(lat, lng, locationKey);
         } else {
-            // Henüz konum seçilmemişse varsayılan varsayılan şehir çek ve konum ayarlama uyarısı ver
-            txtLocation.setText(R.string.select_location);
-            fetchPrayerTimingsByCity("İstanbul", "Fatih");
+            fetchPrayerTimingsByCity("İstanbul", "Fatih", locationKey);
         }
     }
 
@@ -190,13 +226,13 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void fetchPrayerTimings(double lat, double lng) {
+    private void fetchPrayerTimings(double lat, double lng, String locationKey) {
         PrayerApiService apiService = RetrofitClient.getApiService();
         apiService.getTimings(lat, lng, 13).enqueue(new Callback<PrayerResponse>() {
             @Override
             public void onResponse(@NonNull Call<PrayerResponse> call, @NonNull Response<PrayerResponse> response) {
                 if (isAdded() && response.isSuccessful() && response.body() != null) {
-                    cacheData(response.body().data);
+                    cacheData(response.body().data, locationKey);
                     updateUI(response.body().data, true);
                 }
             }
@@ -208,7 +244,7 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void fetchPrayerTimingsByCity(String city, String district) {
+    private void fetchPrayerTimingsByCity(String city, String district, String locationKey) {
         PrayerApiService apiService = RetrofitClient.getApiService();
         String address = district + "," + city + ",Turkey";
         apiService.getTimingsByAddress(address, 13).enqueue(new Callback<PrayerResponse>() {
@@ -217,7 +253,7 @@ public class HomeFragment extends Fragment {
                 if (isAdded() && response.isSuccessful() && response.body() != null) {
                     PrayerResponse.Data data = response.body().data;
                     saveMetaCoordinatesIfNeeded(data);
-                    cacheData(data);
+                    cacheData(data, locationKey);
                     updateUI(data, true);
                 }
             }
@@ -249,11 +285,16 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private void cacheData(PrayerResponse.Data data) {
+    private void cacheData(PrayerResponse.Data data, String locationKey) {
         if (getActivity() == null) return;
         String json = new Gson().toJson(data);
+        String todayStr = new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());
         SharedPreferences prefs = getActivity().getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
-        prefs.edit().putString("cached_prayer_data", json).apply();
+        prefs.edit()
+                .putString("cached_prayer_data", json)
+                .putString("last_fetched_date", todayStr)
+                .putString("last_fetched_location", locationKey)
+                .apply();
     }
 
     private void updateUI(PrayerResponse.Data data, boolean setAlarms) {
@@ -348,8 +389,7 @@ public class HomeFragment extends Fragment {
                             long totalInterval = pCal.getTimeInMillis() - prevCal.getTimeInMillis();
                             long elapsed = now.getTimeInMillis() - prevCal.getTimeInMillis();
                             if (totalInterval > 0 && prayerProgressBar != null) {
-                                int progress = (int) ((elapsed * 100) / totalInterval);
-                                prayerProgressBar.setProgress(Math.max(0, Math.min(100, progress)));
+                                prayerProgressBar.setProgress(AppCalculators.computeProgressPercent(elapsed, totalInterval));
                             }
                         }
                         
@@ -383,8 +423,7 @@ public class HomeFragment extends Fragment {
                         long totalInterval = imsakCal.getTimeInMillis() - yatsiCal.getTimeInMillis();
                         long elapsed = now.getTimeInMillis() - yatsiCal.getTimeInMillis();
                         if (totalInterval > 0 && prayerProgressBar != null) {
-                            int progress = (int) ((elapsed * 100) / totalInterval);
-                            prayerProgressBar.setProgress(Math.max(0, Math.min(100, progress)));
+                            prayerProgressBar.setProgress(AppCalculators.computeProgressPercent(elapsed, totalInterval));
                         }
                     }
                 }
@@ -395,24 +434,33 @@ public class HomeFragment extends Fragment {
     }
 
     private String cleanTime(String timeStr) {
-        if (timeStr == null) return "";
-        return timeStr.trim().split("\\s+")[0];
+        return AppCalculators.cleanPrayerTime(timeStr);
     }
 
     private void highlightPrayer(int nextIndex) {
         int currentIndex = (nextIndex == 0) ? 5 : nextIndex - 1;
         
         View[] cards = {cardImsak, cardGunes, cardOgle, cardIkindi, cardAksam, cardYatsi};
+        int strokeColor = androidx.core.content.ContextCompat.getColor(requireContext(), R.color.secondary);
+        int strokeWidthPx = (int) (2 * getResources().getDisplayMetrics().density);
         for (int i = 0; i < cards.length; i++) {
             if (cards[i] == null) continue;
             if (i == currentIndex) {
                 cards[i].setAlpha(1.0f);
                 cards[i].setScaleX(1.02f);
                 cards[i].setScaleY(1.02f);
+                if (cards[i] instanceof com.google.android.material.card.MaterialCardView) {
+                    com.google.android.material.card.MaterialCardView card = (com.google.android.material.card.MaterialCardView) cards[i];
+                    card.setStrokeColor(strokeColor);
+                    card.setStrokeWidth(strokeWidthPx);
+                }
             } else {
-                cards[i].setAlpha(0.6f);
+                cards[i].setAlpha(0.75f);
                 cards[i].setScaleX(1.0f);
                 cards[i].setScaleY(1.0f);
+                if (cards[i] instanceof com.google.android.material.card.MaterialCardView) {
+                    ((com.google.android.material.card.MaterialCardView) cards[i]).setStrokeWidth(0);
+                }
             }
         }
     }

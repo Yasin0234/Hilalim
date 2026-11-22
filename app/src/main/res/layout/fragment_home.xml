@@ -241,19 +241,19 @@
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Ikindi (Active Highlight) -->
+                <!-- Ikindi -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_ikindi"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="52dp"
                     android:layout_marginBottom="8dp"
-                    app:cardBackgroundColor="?attr/colorSecondary"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="6dp">
+                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
                     <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
-                        <ImageView android:id="@+id/ic_ikindi" android:layout_width="24dp" android:layout_height="24dp" android:layout_centerVertical="true" android:src="@drawable/ic_ikindi" app:tint="?attr/colorOnSecondary" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/ic_ikindi" android:layout_marginStart="16dp" android:layout_centerVertical="true" android:text="@string/ikindi" android:textColor="?attr/colorOnSecondary" android:textStyle="bold" android:textSize="18sp" />
-                        <TextView android:id="@+id/txt_ikindi_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="@string/ikindi_time_mock" android:textColor="?attr/colorOnSecondary" android:textStyle="bold" android:textSize="18sp" />
+                        <ImageView android:id="@+id/ic_ikindi" android:layout_width="20dp" android:layout_height="20dp" android:layout_centerVertical="true" android:src="@drawable/ic_ikindi" app:tint="?attr/colorSecondary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/ic_ikindi" android:layout_marginStart="16dp" android:layout_centerVertical="true" android:text="@string/ikindi" android:textColor="?attr/colorOnSurface" />
+                        <TextView android:id="@+id/txt_ikindi_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="@string/ikindi_time_mock" android:textColor="?attr/colorOnSurface" android:textStyle="bold" />
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -322,6 +322,7 @@
                         android:textSize="13sp"
                         android:textStyle="bold" />
                     <TextView
+                        android:id="@+id/txt_verse_content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -332,6 +333,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
+                        android:id="@+id/txt_verse_ref"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"

@@ -122,4 +122,21 @@
     <string name="btn_save">Save</string>
     <string name="error_prayer_times_load">Could not load prayer times. Please check your internet connection.</string>
     <string name="retry">Retry</string>
+
+    <!-- Qibla / Zekat / Surah / Tools Localization -->
+    <string name="qibla_direction_format">Makkah Direction: %.1f°</string>
+    <string name="zekat_title">Zakat Calculator</string>
+    <string name="zekat_cash_hint">Cash (TL)</string>
+    <string name="zekat_gold_hint">Gold (Grams)</string>
+    <string name="zekat_calculate">Calculate</string>
+    <string name="zekat_invalid_input">Please enter valid numeric values.</string>
+    <string name="surah_detail_title">Surah Details</string>
+    <string name="surah_no_content">Verses for this surah will be added soon.\nPlease check back later.</string>
+    <string name="desc_back">Back</string>
+    <string name="desc_prev_surah">Previous Surah</string>
+    <string name="desc_next_surah">Next Surah</string>
+    <string name="aylik_vakitler_title">Monthly Prayer Times</string>
+    <string name="aylik_vakitler_error">Could not load monthly prayer times.</string>
+    <string name="namaz_rehberi_title">Prayer Guide</string>
+    <string name="zikirmatik_tap">TAP</string>
 </resources>

@@ -122,4 +122,21 @@
     <string name="btn_save">حفظ</string>
     <string name="error_prayer_times_load">تعذر تحميل أوقات الصلاة. يرجى التحقق من اتصالك بالإنترنت.</string>
     <string name="retry">إعادة المحاولة</string>
+
+    <!-- Qibla / Zekat / Surah / Tools Localization -->
+    <string name="qibla_direction_format">اتجاه مكة: %.1f°</string>
+    <string name="zekat_title">حاسبة الزكاة</string>
+    <string name="zekat_cash_hint">النقد (TL)</string>
+    <string name="zekat_gold_hint">الذهب (غرام)</string>
+    <string name="zekat_calculate">احسب</string>
+    <string name="zekat_invalid_input">يرجى إدخال قيم رقمية صالحة.</string>
+    <string name="surah_detail_title">تفاصيل السورة</string>
+    <string name="surah_no_content">سيتم إضافة آيات هذه السورة قريباً.\nيرجى التحقق لاحقاً.</string>
+    <string name="desc_back">رجوع</string>
+    <string name="desc_prev_surah">السورة السابقة</string>
+    <string name="desc_next_surah">السورة التالية</string>
+    <string name="aylik_vakitler_title">أوقات الصلاة الشهرية</string>
+    <string name="aylik_vakitler_error">تعذر تحميل أوقات الصلاة الشهرية.</string>
+    <string name="namaz_rehberi_title">دليل الصلاة</string>
+    <string name="zikirmatik_tap">اضغط</string>
 </resources>

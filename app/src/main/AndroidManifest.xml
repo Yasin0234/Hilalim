@@ -69,6 +69,14 @@
             android:name=".DiniGunlerActivity"
             android:exported="false"
             android:theme="@style/Theme.Hilalim" />
+        <activity
+            android:name=".AylikVakitlerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Hilalim" />
+        <activity
+            android:name=".NamazRehberiActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Hilalim" />
 
         <receiver
             android:name=".NotificationReceiver"

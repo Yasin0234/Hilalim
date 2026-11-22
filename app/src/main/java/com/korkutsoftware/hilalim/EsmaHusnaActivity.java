@@ -1,6 +1,8 @@
 package com.korkutsoftware.hilalim;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 public class EsmaHusnaActivity extends BaseActivity {
 
@@ -33,19 +36,32 @@ public class EsmaHusnaActivity extends BaseActivity {
 
         RecyclerView rv = findViewById(R.id.rv_esma);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        
-        List<EsmaItem> items = loadEsmaFromJson();
-        rv.setAdapter(new EsmaAdapter(items));
+
+        EsmaAdapter adapter = new EsmaAdapter(new ArrayList<>());
+        rv.setAdapter(adapter);
+
+        Handler mainHandler = new Handler(Looper.getMainLooper());
+        Executors.newSingleThreadExecutor().execute(() -> {
+            List<EsmaItem> items = loadEsmaFromJson();
+            mainHandler.post(() -> {
+                if (!isFinishing() && !isDestroyed() && items != null) {
+                    adapter.setItems(items);
+                }
+            });
+        });
     }
 
     private List<EsmaItem> loadEsmaFromJson() {
-        try {
-            InputStream is = getAssets().open("esma.json");
+        try (InputStream is = getAssets().open("esma.json")) {
             int size = is.available();
             byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            String json = new String(buffer, StandardCharsets.UTF_8);
+            int offset = 0;
+            while (offset < size) {
+                int read = is.read(buffer, offset, size - offset);
+                if (read == -1) break;
+                offset += read;
+            }
+            String json = new String(buffer, 0, offset, StandardCharsets.UTF_8);
             return new Gson().fromJson(json, new TypeToken<List<EsmaItem>>(){}.getType());
         } catch (IOException e) {
             e.printStackTrace();
@@ -59,10 +75,16 @@ public class EsmaHusnaActivity extends BaseActivity {
     }
 
     private class EsmaAdapter extends RecyclerView.Adapter<EsmaAdapter.ViewHolder> {
-        private List<EsmaItem> items;
+        private final List<EsmaItem> items;
 
         EsmaAdapter(List<EsmaItem> items) {
             this.items = items;
+        }
+
+        void setItems(List<EsmaItem> newItems) {
+            items.clear();
+            items.addAll(newItems);
+            notifyDataSetChanged();
         }
 
         @NonNull

@@ -24,4 +24,21 @@ public interface PrayerApiService {
             @Query("address") String address,
             @Query("method") int method
     );
+
+    @GET("v1/calendar")
+    Call<MonthlyPrayerResponse> getMonthlyCalendar(
+            @Query("latitude") double latitude,
+            @Query("longitude") double longitude,
+            @Query("method") int method,
+            @Query("month") int month,
+            @Query("year") int year
+    );
+
+    @GET("v1/calendarByAddress")
+    Call<MonthlyPrayerResponse> getMonthlyCalendarByAddress(
+            @Query("address") String address,
+            @Query("method") int method,
+            @Query("month") int month,
+            @Query("year") int year
+    );
 }

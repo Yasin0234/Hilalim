@@ -2,6 +2,8 @@ package com.korkutsoftware.hilalim;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -26,6 +28,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 public class QuranFragment extends Fragment {
 
@@ -46,9 +49,9 @@ public class QuranFragment extends Fragment {
         RecyclerView rv = view.findViewById(R.id.rv_surah);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        List<SurahItem> items = loadSurahsFromJson();
-        adapter = new SurahAdapter(items);
+        adapter = new SurahAdapter(new ArrayList<>());
         rv.setAdapter(adapter);
+        loadSurahsAsync();
 
         EditText etSearch = view.findViewById(R.id.et_search);
         etSearch.addTextChangedListener(new TextWatcher() {
@@ -65,14 +68,30 @@ public class QuranFragment extends Fragment {
         });
     }
 
-    private List<SurahItem> loadSurahsFromJson() {
-        try {
-            InputStream is = requireContext().getAssets().open("surahs.json");
+    private void loadSurahsAsync() {
+        android.content.Context appContext = requireContext().getApplicationContext();
+        Handler mainHandler = new Handler(Looper.getMainLooper());
+        Executors.newSingleThreadExecutor().execute(() -> {
+            List<SurahItem> loaded = loadSurahsFromJson(appContext);
+            mainHandler.post(() -> {
+                if (isAdded() && adapter != null && loaded != null) {
+                    adapter.setItems(loaded);
+                }
+            });
+        });
+    }
+
+    private List<SurahItem> loadSurahsFromJson(android.content.Context context) {
+        try (InputStream is = context.getAssets().open("surahs.json")) {
             int size = is.available();
             byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            String json = new String(buffer, StandardCharsets.UTF_8);
+            int offset = 0;
+            while (offset < size) {
+                int read = is.read(buffer, offset, size - offset);
+                if (read == -1) break;
+                offset += read;
+            }
+            String json = new String(buffer, 0, offset, StandardCharsets.UTF_8);
             return new Gson().fromJson(json, new TypeToken<List<SurahItem>>(){}.getType());
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,6 +111,14 @@ public class QuranFragment extends Fragment {
         SurahAdapter(List<SurahItem> items) {
             this.items = new ArrayList<>(items);
             this.itemsFull = new ArrayList<>(items);
+        }
+
+        void setItems(List<SurahItem> newItems) {
+            items.clear();
+            items.addAll(newItems);
+            itemsFull.clear();
+            itemsFull.addAll(newItems);
+            notifyDataSetChanged();
         }
 
         @NonNull

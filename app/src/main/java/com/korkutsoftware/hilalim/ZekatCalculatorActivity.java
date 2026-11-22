@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 
+import com.korkutsoftware.hilalim.util.AppCalculators;
+
 import java.util.Locale;
 
 public class ZekatCalculatorActivity extends BaseActivity {
@@ -31,19 +33,16 @@ public class ZekatCalculatorActivity extends BaseActivity {
             Double goldPrice = parseDoubleSafe(etGoldPrice.getText() != null ? etGoldPrice.getText().toString() : "", 3000.0);
 
             if (cash == null || gold == null || goldPrice == null || cash < 0 || gold < 0 || goldPrice <= 0) {
-                Toast.makeText(this, "Lütfen geçerli sayısal değerler giriniz.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.zekat_invalid_input, Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            // Nisap calculation: 80.18 gram gold
-            double nisapThreshold = 80.18 * goldPrice;
-            double totalWealth = cash + (gold * goldPrice);
+            AppCalculators.ZekatResult result = AppCalculators.calculateZekat(cash, gold, goldPrice);
 
-            if (totalWealth >= nisapThreshold) {
-                double zekat = totalWealth * 0.025; // 1/40 (2.5%)
-                txtResult.setText(String.format(Locale.getDefault(), getString(R.string.zekat_result_amount), zekat));
+            if (result.isEligible) {
+                txtResult.setText(String.format(Locale.getDefault(), getString(R.string.zekat_result_amount), result.zekatAmount));
             } else {
-                txtResult.setText(String.format(Locale.getDefault(), getString(R.string.zekat_result_below_nisap), nisapThreshold));
+                txtResult.setText(String.format(Locale.getDefault(), getString(R.string.zekat_result_below_nisap), result.nisapThreshold));
             }
         });
     }

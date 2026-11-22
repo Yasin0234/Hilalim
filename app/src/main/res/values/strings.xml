@@ -139,4 +139,21 @@
     <!-- Network -->
     <string name="error_prayer_times_load">Namaz vakitleri yüklenemedi. İnternet bağlantınızı kontrol edin.</string>
     <string name="retry">Tekrar Dene</string>
+
+    <!-- Qibla / Zekat / Surah / Tools Localization -->
+    <string name="qibla_direction_format">Mekke Yönü: %.1f°</string>
+    <string name="zekat_title">Zekat Hesapla</string>
+    <string name="zekat_cash_hint">Nakit Para (TL)</string>
+    <string name="zekat_gold_hint">Altın (Gram)</string>
+    <string name="zekat_calculate">Hesapla</string>
+    <string name="zekat_invalid_input">Lütfen geçerli sayısal değerler giriniz.</string>
+    <string name="surah_detail_title">Sure Detayı</string>
+    <string name="surah_no_content">Bu surenin ayetleri yakında eklenecektir.\nLütfen daha sonra tekrar kontrol edin.</string>
+    <string name="desc_back">Geri</string>
+    <string name="desc_prev_surah">Önceki Sure</string>
+    <string name="desc_next_surah">Sonraki Sure</string>
+    <string name="aylik_vakitler_title">Aylık Namaz Vakitleri</string>
+    <string name="aylik_vakitler_error">Aylık vakitler yüklenemedi.</string>
+    <string name="namaz_rehberi_title">Namaz Rehberi</string>
+    <string name="zikirmatik_tap">TIKLA</string>
 </resources>

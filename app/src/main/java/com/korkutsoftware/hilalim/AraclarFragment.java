@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import java.util.Calendar;
 
 public class AraclarFragment extends Fragment {
 
@@ -58,16 +60,45 @@ public class AraclarFragment extends Fragment {
             startActivity(new Intent(getActivity(), DiniGunlerActivity.class));
         });
 
+        View btnSettings = view.findViewById(R.id.btn_settings);
+        if (btnSettings != null) {
+            btnSettings.setOnClickListener(v -> {
+                Intent intent = new Intent(getActivity(), WelcomeActivity.class);
+                intent.putExtra("language_only", true);
+                startActivity(intent);
+            });
+        }
+
         View cardAylik = view.findViewById(R.id.card_aylik_vakitler);
         if (cardAylik != null) {
             cardAylik.setOnClickListener(v -> {
-                Toast.makeText(getContext(), "Aylık vakitler yakında eklenecektir.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), AylikVakitlerActivity.class));
             });
         }
 
         view.findViewById(R.id.card_namaz_rehberi).setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Namaz Rehberi yakında eklenecektir.", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getActivity(), NamazRehberiActivity.class));
         });
+
+        updateDailyDua(view);
+    }
+
+    private void updateDailyDua(View root) {
+        TextView txtArabic = root.findViewById(R.id.dua_arabic);
+        TextView txtTranslation = root.findViewById(R.id.dua_turkish);
+        if (txtArabic == null || txtTranslation == null) return;
+
+        String[][] duas = {
+                {"رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ", "\"Rabbimiz! Bize dünyada da iyilik ver, ahirette de iyilik ver ve bizi ateş azabından koru.\""},
+                {"رَبِّ زِدْنِي عِلْمًا", "\"Rabbim! İlmimi artır.\""},
+                {"رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً", "\"Rabbimiz! Bizi hidayete erdirdikten sonra kalplerimizi eğriltme ve katından bize rahmet bağışla.\""},
+                {"حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ", "\"Allah bize yeter, O ne güzel vekildir.\""},
+                {"اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ", "\"Allah'ım! Seni zikretmek, sana şükretmek ve sana güzelce ibadet etmek için bana yardım et.\""}
+        };
+        int dayOfYear = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
+        String[] selected = duas[dayOfYear % duas.length];
+        txtArabic.setText(selected[0]);
+        txtTranslation.setText(selected[1]);
     }
 
     private void openNearestMosquesOnMap() {

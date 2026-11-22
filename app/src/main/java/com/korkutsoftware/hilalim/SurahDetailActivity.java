@@ -48,7 +48,7 @@ public class SurahDetailActivity extends BaseActivity {
         currentSurahId = getIntent().getIntExtra("surah_id", 1);
 
         txtTitle = findViewById(R.id.txt_surah_name_main);
-        txtTitle.setText(surahName != null ? surahName : "Sure Detayı");
+        txtTitle.setText(surahName != null ? surahName : getString(R.string.surah_detail_title));
 
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 

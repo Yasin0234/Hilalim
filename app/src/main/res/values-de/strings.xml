@@ -122,4 +122,21 @@
     <string name="btn_save">Speichern</string>
     <string name="error_prayer_times_load">Gebetszeiten konnten nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung.</string>
     <string name="retry">Erneut versuchen</string>
+
+    <!-- Qibla / Zekat / Surah / Tools Localization -->
+    <string name="qibla_direction_format">Richtung Mekka: %.1f°</string>
+    <string name="zekat_title">Zakat-Rechner</string>
+    <string name="zekat_cash_hint">Bargeld (TL)</string>
+    <string name="zekat_gold_hint">Gold (Gramm)</string>
+    <string name="zekat_calculate">Berechnen</string>
+    <string name="zekat_invalid_input">Bitte geben Sie gültige Zahlenwerte ein.</string>
+    <string name="surah_detail_title">Sure-Details</string>
+    <string name="surah_no_content">Die Verse dieser Sure werden bald hinzugefügt.\nBitte schauen Sie später noch einmal vorbei.</string>
+    <string name="desc_back">Zurück</string>
+    <string name="desc_prev_surah">Vorherige Sure</string>
+    <string name="desc_next_surah">Nächste Sure</string>
+    <string name="aylik_vakitler_title">Monatliche Gebetszeiten</string>
+    <string name="aylik_vakitler_error">Monatliche Gebetszeiten konnten nicht geladen werden.</string>
+    <string name="namaz_rehberi_title">Gebetsführer</string>
+    <string name="zikirmatik_tap">TIPPEN</string>
 </resources>

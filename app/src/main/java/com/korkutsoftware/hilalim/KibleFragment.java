@@ -21,6 +21,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.korkutsoftware.hilalim.util.AppCalculators;
+
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executors;
@@ -101,22 +103,11 @@ public class KibleFragment extends Fragment implements SensorEventListener {
     }
 
     private void calculateQiblaForCoords(double userLat, double userLng) {
-        double mekkaLat = Math.toRadians(21.422487);
-        double mekkaLng = Math.toRadians(39.826206);
-        double userLatRad = Math.toRadians(userLat);
-        double userLngRad = Math.toRadians(userLng);
-
-        double deltaLng = mekkaLng - userLngRad;
-        double y = Math.sin(deltaLng);
-        double x = Math.cos(userLatRad) * Math.tan(mekkaLat) - Math.sin(userLatRad) * Math.cos(deltaLng);
-
-        double qiblaRad = Math.atan2(y, x);
-        qiblaDegree = (float) Math.toDegrees(qiblaRad);
-        if (qiblaDegree < 0) qiblaDegree += 360;
+        qiblaDegree = AppCalculators.calculateQiblaBearing(userLat, userLng);
 
         if (txtLocationInfo != null) {
             txtLocationInfo.setOnClickListener(null);
-            txtLocationInfo.setText(String.format(Locale.getDefault(), "Mekke Yönü: %.1f°", qiblaDegree));
+            txtLocationInfo.setText(getString(R.string.qibla_direction_format, qiblaDegree));
         }
 
         if (qiblaIndicator != null) {
