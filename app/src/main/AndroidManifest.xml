@@ -76,6 +76,10 @@
             android:exported="false"
             android:theme="@style/Theme.Hilalim" />
         <activity
+            android:name=".DiniGunDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Hilalim" />
+        <activity
             android:name=".AylikVakitlerActivity"
             android:exported="false"
             android:theme="@style/Theme.Hilalim" />

@@ -70,7 +70,7 @@ public class DiniGunlerActivity extends BaseActivity {
     }
 
     private static class DiniGunItem {
-        String name, date;
+        String name, date, guide_id;
     }
 
     private class DiniGunAdapter extends RecyclerView.Adapter<DiniGunAdapter.ViewHolder> {
@@ -98,6 +98,15 @@ public class DiniGunlerActivity extends BaseActivity {
             DiniGunItem item = items.get(position);
             holder.txtName.setText(item.name);
             holder.txtDate.setText(item.date);
+            holder.itemView.setOnClickListener(v -> {
+                if (item.guide_id != null && !item.guide_id.isEmpty()) {
+                    android.content.Intent intent = new android.content.Intent(DiniGunlerActivity.this, DiniGunDetailActivity.class);
+                    intent.putExtra("day_name", item.name);
+                    intent.putExtra("day_date", item.date);
+                    intent.putExtra("guide_id", item.guide_id);
+                    startActivity(intent);
+                }
+            });
         }
 
         @Override
