@@ -158,4 +158,5 @@
     <string name="ezan_stop_action">Stoppen</string>
     <string name="ezan_custom_file_note">Integrierter Adhan-Ton ist enthalten; tippen Sie zum Testen auf die Schaltfläche.</string>
     <string name="select_zikir_title">Dhikr wählen</string>
+    <string name="widget_desc">Gebetszeiten und Countdown bis zum nächsten Gebet</string>
 </resources>

@@ -321,8 +321,11 @@ public class HomeFragment extends Fragment {
         }
 
         startTimer();
-        if (setAlarms && getContext() != null) {
-            AlarmHelper.setAlarms(getContext(), data.timings);
+        if (getContext() != null) {
+            PrayerWidgetProvider.updateAllWidgets(getContext());
+            if (setAlarms) {
+                AlarmHelper.setAlarms(getContext(), data.timings);
+            }
         }
     }
 
