@@ -3,6 +3,7 @@ package com.korkutsoftware.hilalim;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -16,8 +17,10 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.korkutsoftware.hilalim.util.AdManager;
 import com.korkutsoftware.hilalim.util.LocaleHelper;
 
 public class Dashboard extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,6 +28,7 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
     private DrawerLayout drawerLayout;
     private BottomNavigationView bottomNav;
     private String currentLang;
+    private AdView bannerAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +82,11 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
             bottomNav.setSelectedItemId(R.id.nav_home);
         }
 
+        FrameLayout adContainer = findViewById(R.id.ad_banner_container);
+        if (adContainer != null) {
+            bannerAdView = AdManager.loadBanner(this, adContainer);
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -124,8 +133,27 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
     @Override
     protected void onResume() {
         super.onResume();
+        if (bannerAdView != null) {
+            bannerAdView.resume();
+        }
         if (currentLang != null && !currentLang.equals(LocaleHelper.getLanguage(this))) {
             recreate();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        if (bannerAdView != null) {
+            bannerAdView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (bannerAdView != null) {
+            bannerAdView.destroy();
+        }
+        super.onDestroy();
     }
 }

@@ -18,8 +18,18 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     buildTypes {
+        debug {
+            buildConfigField "String", "ADMOB_BANNER_ID", "\"ca-app-pub-3940256099942544/6300978111\""
+            buildConfigField "String", "ADMOB_INTERSTITIAL_ID", "\"ca-app-pub-3940256099942544/1033173712\""
+        }
         release {
+            buildConfigField "String", "ADMOB_BANNER_ID", "\"ca-app-pub-7360108740614201/8942923467\""
+            buildConfigField "String", "ADMOB_INTERSTITIAL_ID", "\"ca-app-pub-7360108740614201/2012272656\""
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'src/main/keepRules/rules.keep'
@@ -41,6 +51,7 @@ dependencies {
     implementation libs.retrofit
     implementation libs.retrofit.converter.gson
     implementation libs.play.services.location
+    implementation libs.play.services.ads
 
     testImplementation libs.junit
     androidTestImplementation libs.espresso.core

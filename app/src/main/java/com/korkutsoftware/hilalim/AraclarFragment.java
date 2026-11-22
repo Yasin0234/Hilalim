@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.korkutsoftware.hilalim.util.AdManager;
+
 import java.util.Calendar;
 
 public class AraclarFragment extends Fragment {
@@ -45,19 +47,19 @@ public class AraclarFragment extends Fragment {
         }
 
         view.findViewById(R.id.card_esma).setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), EsmaHusnaActivity.class));
+            openToolWithAd(EsmaHusnaActivity.class);
         });
 
         view.findViewById(R.id.card_zikirmatik).setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), ZikirmatikActivity.class));
+            openToolWithAd(ZikirmatikActivity.class);
         });
 
         view.findViewById(R.id.card_zekat).setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), ZekatCalculatorActivity.class));
+            openToolWithAd(ZekatCalculatorActivity.class);
         });
 
         view.findViewById(R.id.card_dini_gunler).setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), DiniGunlerActivity.class));
+            openToolWithAd(DiniGunlerActivity.class);
         });
 
         View btnSettings = view.findViewById(R.id.btn_settings);
@@ -72,15 +74,24 @@ public class AraclarFragment extends Fragment {
         View cardAylik = view.findViewById(R.id.card_aylik_vakitler);
         if (cardAylik != null) {
             cardAylik.setOnClickListener(v -> {
-                startActivity(new Intent(getActivity(), AylikVakitlerActivity.class));
+                openToolWithAd(AylikVakitlerActivity.class);
             });
         }
 
         view.findViewById(R.id.card_namaz_rehberi).setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), NamazRehberiActivity.class));
+            openToolWithAd(NamazRehberiActivity.class);
         });
 
         updateDailyDua(view);
+    }
+
+    private void openToolWithAd(Class<?> activityClass) {
+        if (getActivity() == null) return;
+        AdManager.showInterstitialIfReady(requireActivity(), () -> {
+            if (isAdded()) {
+                startActivity(new Intent(getActivity(), activityClass));
+            }
+        });
     }
 
     private void updateDailyDua(View root) {
