@@ -1,8 +1,11 @@
-# Keep Gson / Retrofit model classes and fields
--keep class com.korkutsoftware.hilalim.api.** { *; }
--keep class com.korkutsoftware.hilalim.model.** { *; }
--keepclassmembers class com.korkutsoftware.hilalim.**$* {
-    <fields>;
-}
+# Keep Gson / Retrofit model classes, inner classes, and TypeTokens
 -keepattributes Signature,InnerClasses,EnclosingMethod
 -keepattributes *Annotation*
+-keep class com.google.gson.reflect.TypeToken { *; }
+-keep class * extends com.google.gson.reflect.TypeToken
+-keep class com.korkutsoftware.hilalim.api.** { *; }
+-keep class com.korkutsoftware.hilalim.model.** { *; }
+-keep class com.korkutsoftware.hilalim.**$* { *; }
+-keepclassmembers class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}

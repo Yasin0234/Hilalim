@@ -1,4 +1,4 @@
-# Hilalim Ezan Vakti v1.1 (Version Code 2) - Sürüm Notları
+# Hilalim Ezan Vakti v1.1 (Version Code 4) - Sürüm Notları
 
 ---
 
@@ -6,31 +6,28 @@
 > **Not:** Google Play Console sürüm notları sınırı maksimum **500 karakterdir**.
 
 ```text
-Hilalim Ezan Vakti v1.1 Güncellemesi Yayınlandı! 🌙
+Hilalim Ezan Vakti Güncellendi! 🌙
 
-Bu sürümde yapılan yenilikler ve iyileştirmeler:
-• Diyanet uyumlu tam vakitler ve hassas Kıble Pusulası geliştirmeleri.
-• Vakit bildirimleri ve alarm altyapısı güçlendirildi.
-• Sure okuma, Zikirmatik ve Esma-ül Hüsna bölümleri güncellendi.
-• Pratik Zekat Hesaplayıcı ve Dini Günler takvimi eklendi.
-• Performans artırıldı, uygulama açılış hızı iyileştirildi ve hatalar giderildi.
+Yenilikler ve İyileştirmeler:
+• Vakit gelince dahili ezan okuma ve gelişmiş bildirim yönetimi eklendi.
+• Zikirmatik'e Arapça ve okunuşlu zikir seçimi ile yerel sayaç kaydı eklendi.
+• Dini Günler bölümüne 2027 takvimi ve detaylı kandil/bayram rehberleri eklendi.
+• Aylık Namaz Vakitleri ve Namaz Rehberi araçları eklendi.
+• Manuel konumlarda Kıble pusulası, karanlık mod ve üst bar görünümü düzeltildi.
 
 Hayırlı ibadetler dileriz.
 ```
 
 ---
 
-## 2. Detaylı Sürüm Notları (Sosyal Medya, Web sitesi veya Uygulama İçi Duyurular İçin)
+## 2. Google Play Console Release Notes (English - en-US)
+```text
+Hilalim Prayer Time Updated! 🌙
 
-### 🚀 Yenilikler ve Özellikler
-- **Namaz Vakitleri & Sayacı:** Konumunuza özel Diyanet uyumlu anlık ezan vakitleri ve sıradaki vakte kalan süre sayacı optimize edildi.
-- **Vakit Bildirimleri & Alarmlar:** Bildirim altyapısı yenilendi; cihaz yeniden başlatılsa dahi alarmların aksamadan çalışması sağlandı.
-- **Kıble Pusulası:** Pusula kalibrasyon rehberi ve hassas yön tespiti iyileştirildi.
-- **Zikirmatik:** Titreşimli dokunsal geri bildirim ve pratik kullanım geliştirmeleri yapıldı.
-- **Zekat Hesaplayıcı:** Varlıklarınıza göre hızlı zekat hesabı yapabilmeniz için Zekat Hesaplama aracı eklendi.
-- **Dini Günler & Esma-ül Hüsna:** Hicri takvim, mübarek gün/geceler ve Allah'ın 99 ismi modülleri güncellendi.
-
-### 🛠️ İyileştirmeler & Düzeltmeler
-- Android 14+ (API 34+) ve yeni cihaz uyumluluğu artırıldı.
-- Arka plan servisleri ve bellek kullanımı optimize edilerek pil tüketimi düşürüldü.
-- Arayüz akıcılığı ve font okunabilirliği artırıldı.
+What's New:
+• Added built-in Adhan audio playback and per-prayer notification management.
+• Added selectable Arabic/transliterated dhikr list with local counter persistence in Tasbih.
+• Added 2027 Religious Days calendar with detailed guides and duas.
+• Added Monthly Prayer Times and Prayer Guide tools.
+• Fixed Qibla compass for manual locations, dark mode contrast, and status bar layout.
+```

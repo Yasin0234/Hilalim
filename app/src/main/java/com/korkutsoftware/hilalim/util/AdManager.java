@@ -2,6 +2,8 @@ package com.korkutsoftware.hilalim.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -30,24 +32,33 @@ public class AdManager {
     public static void init(@NonNull Context context) {
         if (isInitialized) return;
         isInitialized = true;
-        Context appContext = context.getApplicationContext();
-        MobileAds.initialize(appContext, initializationStatus -> preloadInterstitial(appContext));
+        try {
+            Context appContext = context.getApplicationContext();
+            MobileAds.initialize(appContext, initializationStatus ->
+                    new Handler(Looper.getMainLooper()).post(() -> preloadInterstitial(appContext))
+            );
+        } catch (Throwable ignored) {
+        }
     }
 
     public static AdView loadBanner(@NonNull Activity activity, @NonNull FrameLayout container) {
-        init(activity);
-        AdView adView = new AdView(activity);
-        adView.setAdUnitId(BuildConfig.ADMOB_BANNER_ID);
-        adView.setAdSize(getAdaptiveBannerSize(activity));
+        try {
+            init(activity);
+            AdView adView = new AdView(activity);
+            adView.setAdUnitId(BuildConfig.ADMOB_BANNER_ID);
+            adView.setAdSize(getAdaptiveBannerSize(activity));
 
-        container.removeAllViews();
-        container.addView(adView, new FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        ));
+            container.removeAllViews();
+            container.addView(adView, new FrameLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            ));
 
-        adView.loadAd(new AdRequest.Builder().build());
-        return adView;
+            adView.loadAd(new AdRequest.Builder().build());
+            return adView;
+        } catch (Throwable ignored) {
+            return null;
+        }
     }
 
     private static AdSize getAdaptiveBannerSize(@NonNull Activity activity) {
@@ -61,25 +72,29 @@ public class AdManager {
         if (interstitialAd != null || isLoadingInterstitial) return;
         isLoadingInterstitial = true;
 
-        Context appContext = context.getApplicationContext();
-        InterstitialAd.load(
-                appContext,
-                BuildConfig.ADMOB_INTERSTITIAL_ID,
-                new AdRequest.Builder().build(),
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd ad) {
-                        interstitialAd = ad;
-                        isLoadingInterstitial = false;
-                    }
+        try {
+            Context appContext = context.getApplicationContext();
+            InterstitialAd.load(
+                    appContext,
+                    BuildConfig.ADMOB_INTERSTITIAL_ID,
+                    new AdRequest.Builder().build(),
+                    new InterstitialAdLoadCallback() {
+                        @Override
+                        public void onAdLoaded(@NonNull InterstitialAd ad) {
+                            interstitialAd = ad;
+                            isLoadingInterstitial = false;
+                        }
 
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        interstitialAd = null;
-                        isLoadingInterstitial = false;
+                        @Override
+                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                            interstitialAd = null;
+                            isLoadingInterstitial = false;
+                        }
                     }
-                }
-        );
+            );
+        } catch (Throwable ignored) {
+            isLoadingInterstitial = false;
+        }
     }
 
     public static void showInterstitialIfReady(@NonNull Activity activity, @NonNull Runnable onProceed) {

@@ -156,8 +156,12 @@ public class HomeFragment extends Fragment {
         SharedPreferences prefs = getActivity().getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
         String cachedJson = prefs.getString("cached_prayer_data", null);
         if (cachedJson != null) {
-            PrayerResponse.Data data = new Gson().fromJson(cachedJson, PrayerResponse.Data.class);
-            updateUI(data, false);
+            try {
+                PrayerResponse.Data data = new Gson().fromJson(cachedJson, PrayerResponse.Data.class);
+                updateUI(data, false);
+            } catch (Exception e) {
+                Log.e("HomeFragment", "Error loading cached data", e);
+            }
         }
     }
 
