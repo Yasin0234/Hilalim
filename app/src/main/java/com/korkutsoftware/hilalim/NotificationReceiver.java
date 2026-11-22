@@ -32,6 +32,8 @@ public class NotificationReceiver extends BroadcastReceiver {
 
         if (prayerKey != null) {
             showNotification(context, prayerKey, typeIndex);
+            // Re-schedule next day's alarms so notifications continue without opening the app daily
+            AlarmHelper.rescheduleAlarmsFromCache(context);
         }
     }
 

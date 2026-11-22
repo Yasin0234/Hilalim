@@ -7,7 +7,11 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +21,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.Executors;
 
 public class KibleFragment extends Fragment implements SensorEventListener {
 
@@ -73,35 +79,79 @@ public class KibleFragment extends Fragment implements SensorEventListener {
         SharedPreferences prefs = requireActivity().getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
         float userLat = prefs.getFloat("last_lat", 0);
         float userLng = prefs.getFloat("last_lng", 0);
+        String manualCity = prefs.getString("last_city", null);
+        String manualDistrict = prefs.getString("last_district", null);
 
         if (userLat != 0 && userLng != 0) {
-            double mekkaLat = Math.toRadians(21.422487);
-            double mekkaLng = Math.toRadians(39.826206);
-            double userLatRad = Math.toRadians(userLat);
-            double userLngRad = Math.toRadians(userLng);
-
-            double deltaLng = mekkaLng - userLngRad;
-            double y = Math.sin(deltaLng);
-            double x = Math.cos(userLatRad) * Math.tan(mekkaLat) - Math.sin(userLatRad) * Math.cos(deltaLng);
-            
-            double qiblaRad = Math.atan2(y, x);
-            qiblaDegree = (float) Math.toDegrees(qiblaRad);
-            if (qiblaDegree < 0) qiblaDegree += 360;
-
-            if (txtLocationInfo != null) {
-                txtLocationInfo.setText(String.format(Locale.getDefault(), "Mekke Yönü: %.1f°", qiblaDegree));
-            }
-            
-            if (qiblaIndicator != null) {
-                qiblaIndicator.setRotation(qiblaDegree);
-            }
+            calculateQiblaForCoords(userLat, userLng);
+        } else if (manualCity != null && manualDistrict != null) {
+            resolveManualLocationForQibla(manualCity, manualDistrict);
         } else {
-            if (txtLocationInfo != null) {
-                txtLocationInfo.setText(R.string.qibla_location_required);
-                txtLocationInfo.setOnClickListener(v -> {
-                    startActivity(new Intent(getActivity(), LocationActivity.class));
-                });
+            showLocationRequired();
+        }
+    }
+
+    private void calculateQiblaForCoords(double userLat, double userLng) {
+        double mekkaLat = Math.toRadians(21.422487);
+        double mekkaLng = Math.toRadians(39.826206);
+        double userLatRad = Math.toRadians(userLat);
+        double userLngRad = Math.toRadians(userLng);
+
+        double deltaLng = mekkaLng - userLngRad;
+        double y = Math.sin(deltaLng);
+        double x = Math.cos(userLatRad) * Math.tan(mekkaLat) - Math.sin(userLatRad) * Math.cos(deltaLng);
+
+        double qiblaRad = Math.atan2(y, x);
+        qiblaDegree = (float) Math.toDegrees(qiblaRad);
+        if (qiblaDegree < 0) qiblaDegree += 360;
+
+        if (txtLocationInfo != null) {
+            txtLocationInfo.setOnClickListener(null);
+            txtLocationInfo.setText(String.format(Locale.getDefault(), "Mekke Yönü: %.1f°", qiblaDegree));
+        }
+
+        if (qiblaIndicator != null) {
+            qiblaIndicator.setRotation(qiblaDegree);
+        }
+    }
+
+    private void resolveManualLocationForQibla(String city, String district) {
+        Context appContext = requireContext().getApplicationContext();
+        Executors.newSingleThreadExecutor().execute(() -> {
+            try {
+                Geocoder geocoder = new Geocoder(appContext, Locale.getDefault());
+                List<Address> addresses = geocoder.getFromLocationName(district + ", " + city + ", Turkey", 1);
+                if (addresses != null && !addresses.isEmpty()) {
+                    double lat = addresses.get(0).getLatitude();
+                    double lng = addresses.get(0).getLongitude();
+                    appContext.getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE)
+                            .edit()
+                            .putFloat("last_lat", (float) lat)
+                            .putFloat("last_lng", (float) lng)
+                            .apply();
+                    new Handler(Looper.getMainLooper()).post(() -> {
+                        if (isAdded()) {
+                            calculateQiblaForCoords(lat, lng);
+                        }
+                    });
+                    return;
+                }
+            } catch (Exception ignored) {
             }
+            new Handler(Looper.getMainLooper()).post(() -> {
+                if (isAdded()) {
+                    showLocationRequired();
+                }
+            });
+        });
+    }
+
+    private void showLocationRequired() {
+        if (txtLocationInfo != null) {
+            txtLocationInfo.setText(R.string.qibla_location_required);
+            txtLocationInfo.setOnClickListener(v -> {
+                startActivity(new Intent(getActivity(), LocationActivity.class));
+            });
         }
     }
 

@@ -12,6 +12,16 @@ public class PrayerResponse {
         
         @SerializedName("date")
         public DateInfo date;
+
+        @SerializedName("meta")
+        public Meta meta;
+    }
+
+    public static class Meta {
+        @SerializedName("latitude")
+        public double latitude;
+        @SerializedName("longitude")
+        public double longitude;
     }
 
     public static class Timings {

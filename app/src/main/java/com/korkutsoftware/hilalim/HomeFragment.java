@@ -214,8 +214,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(@NonNull Call<PrayerResponse> call, @NonNull Response<PrayerResponse> response) {
                 if (isAdded() && response.isSuccessful() && response.body() != null) {
-                    cacheData(response.body().data);
-                    updateUI(response.body().data, true);
+                    PrayerResponse.Data data = response.body().data;
+                    saveMetaCoordinatesIfNeeded(data);
+                    cacheData(data);
+                    updateUI(data, true);
                 }
             }
 
@@ -223,6 +225,18 @@ public class HomeFragment extends Fragment {
             public void onFailure(@NonNull Call<PrayerResponse> call, @NonNull Throwable t) {
             }
         });
+    }
+
+    private void saveMetaCoordinatesIfNeeded(PrayerResponse.Data data) {
+        if (getActivity() == null || data == null || data.meta == null) return;
+        if (data.meta.latitude == 0 && data.meta.longitude == 0) return;
+        SharedPreferences prefs = getActivity().getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
+        if (prefs.getString("last_city", null) != null) {
+            prefs.edit()
+                    .putFloat("last_lat", (float) data.meta.latitude)
+                    .putFloat("last_lng", (float) data.meta.longitude)
+                    .apply();
+        }
     }
 
     private void cacheData(PrayerResponse.Data data) {
@@ -233,15 +247,15 @@ public class HomeFragment extends Fragment {
     }
 
     private void updateUI(PrayerResponse.Data data, boolean setAlarms) {
-        if (data == null) return;
+        if (data == null || data.timings == null) return;
         currentTimings = data.timings;
 
-        txtImsak.setText(data.timings.fajr);
-        txtGunes.setText(data.timings.sunrise);
-        txtOgle.setText(data.timings.dhuhr);
-        txtIkindi.setText(data.timings.asr);
-        txtAksam.setText(data.timings.maghrib);
-        txtYatsi.setText(data.timings.isha);
+        txtImsak.setText(cleanTime(data.timings.fajr));
+        txtGunes.setText(cleanTime(data.timings.sunrise));
+        txtOgle.setText(cleanTime(data.timings.dhuhr));
+        txtIkindi.setText(cleanTime(data.timings.asr));
+        txtAksam.setText(cleanTime(data.timings.maghrib));
+        txtYatsi.setText(cleanTime(data.timings.isha));
 
         if (data.date != null && data.date.hijri != null) {
             String hijriStr = String.format("%s %s %s", 
@@ -281,15 +295,22 @@ public class HomeFragment extends Fragment {
                 getString(R.string.aksam),
                 getString(R.string.yatsi)
         };
-        String[] times = {currentTimings.fajr, currentTimings.sunrise, currentTimings.dhuhr, 
-                         currentTimings.asr, currentTimings.maghrib, currentTimings.isha};
+        String[] times = {
+                cleanTime(currentTimings.fajr),
+                cleanTime(currentTimings.sunrise),
+                cleanTime(currentTimings.dhuhr),
+                cleanTime(currentTimings.asr),
+                cleanTime(currentTimings.maghrib),
+                cleanTime(currentTimings.isha)
+        };
 
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.US);
         Calendar now = Calendar.getInstance();
         
         try {
             boolean found = false;
             for (int i = 0; i < times.length; i++) {
+                if (times[i].isEmpty()) continue;
                 Date pDate = sdf.parse(times[i]);
                 if (pDate != null) {
                     Calendar pCal = Calendar.getInstance();
@@ -304,7 +325,7 @@ public class HomeFragment extends Fragment {
                         
                         // Progress Bar Logic
                         int prevIndex = (i == 0) ? times.length - 1 : i - 1;
-                        Date prevDate = sdf.parse(times[prevIndex]);
+                        Date prevDate = times[prevIndex].isEmpty() ? null : sdf.parse(times[prevIndex]);
                         if (prevDate != null) {
                             Calendar prevCal = Calendar.getInstance();
                             prevCal.setTime(prevDate);
@@ -316,9 +337,9 @@ public class HomeFragment extends Fragment {
 
                             long totalInterval = pCal.getTimeInMillis() - prevCal.getTimeInMillis();
                             long elapsed = now.getTimeInMillis() - prevCal.getTimeInMillis();
-                            int progress = (int) ((elapsed * 100) / totalInterval);
-                            if (prayerProgressBar != null) {
-                                prayerProgressBar.setProgress(progress);
+                            if (totalInterval > 0 && prayerProgressBar != null) {
+                                int progress = (int) ((elapsed * 100) / totalInterval);
+                                prayerProgressBar.setProgress(Math.max(0, Math.min(100, progress)));
                             }
                         }
                         
@@ -328,7 +349,7 @@ public class HomeFragment extends Fragment {
                 }
             }
 
-            if (!found) {
+            if (!found && !times[0].isEmpty()) {
                 // After Yatsi, next is Imsak tomorrow
                 Date imsakDate = sdf.parse(times[0]);
                 if (imsakDate != null) {
@@ -343,7 +364,7 @@ public class HomeFragment extends Fragment {
                     highlightPrayer(0);
 
                     // Progress Bar for Yatsi -> Imsak
-                    Date yatsiDate = sdf.parse(times[5]);
+                    Date yatsiDate = times[5].isEmpty() ? null : sdf.parse(times[5]);
                     if (yatsiDate != null) {
                         Calendar yatsiCal = Calendar.getInstance();
                         yatsiCal.setTime(yatsiDate);
@@ -351,9 +372,9 @@ public class HomeFragment extends Fragment {
                         
                         long totalInterval = imsakCal.getTimeInMillis() - yatsiCal.getTimeInMillis();
                         long elapsed = now.getTimeInMillis() - yatsiCal.getTimeInMillis();
-                        int progress = (int) ((elapsed * 100) / totalInterval);
-                        if (prayerProgressBar != null) {
-                            prayerProgressBar.setProgress(progress);
+                        if (totalInterval > 0 && prayerProgressBar != null) {
+                            int progress = (int) ((elapsed * 100) / totalInterval);
+                            prayerProgressBar.setProgress(Math.max(0, Math.min(100, progress)));
                         }
                     }
                 }
@@ -361,6 +382,11 @@ public class HomeFragment extends Fragment {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    private String cleanTime(String timeStr) {
+        if (timeStr == null) return "";
+        return timeStr.trim().split("\\s+")[0];
     }
 
     private void highlightPrayer(int nextIndex) {
