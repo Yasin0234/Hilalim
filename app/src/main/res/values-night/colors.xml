@@ -48,4 +48,5 @@
     <color name="text_muted">#80E1E3E4</color>
     <color name="card_stroke">#33D4AF37</color>
     <color name="selected_lang_bg">#25D4AF37</color>
+    <color name="header_bg">@color/deep_green</color>
 </resources>

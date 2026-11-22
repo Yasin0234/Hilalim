@@ -143,10 +143,10 @@
             <!-- Qibla Needle (Indicator) -->
             <ImageView
                 android:id="@+id/qibla_indicator"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_kible"
-                app:tint="@color/secondary"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:contentDescription="@string/qibla_title"
+                android:src="@drawable/ic_qibla_needle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

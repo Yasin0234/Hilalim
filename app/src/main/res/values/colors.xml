@@ -87,4 +87,5 @@
     <color name="text_muted">#80191C1D</color>
     <color name="card_stroke">#33D4AF37</color>
     <color name="selected_lang_bg">#15D4AF37</color>
+    <color name="header_bg">#735C00</color>
 </resources>

@@ -83,8 +83,8 @@
                 android:background="@android:color/transparent"
                 app:elevation="0dp"
                 app:labelVisibilityMode="labeled"
-                app:itemIconTint="?attr/colorPrimary"
-                app:itemTextColor="?attr/colorPrimary"
+                app:itemIconTint="@color/bottom_nav_selector"
+                app:itemTextColor="@color/bottom_nav_selector"
                 app:itemRippleColor="?attr/colorSecondary"
                 app:menu="@menu/bottom_nav_menu" />
         </com.google.android.material.card.MaterialCardView>

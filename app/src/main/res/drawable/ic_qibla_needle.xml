@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- North-pointing Qibla needle (0 degrees = straight up) -->
+    <path
+        android:fillColor="#D4AF37"
+        android:pathData="M24,4 L31,26 L24,22 L17,26 Z" />
+    <path
+        android:fillColor="#60D4AF37"
+        android:pathData="M24,44 L17,26 L24,22 L31,26 Z" />
+</vector>
