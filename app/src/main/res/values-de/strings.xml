@@ -139,4 +139,22 @@
     <string name="aylik_vakitler_error">Monatliche Gebetszeiten konnten nicht geladen werden.</string>
     <string name="namaz_rehberi_title">Gebetsführer</string>
     <string name="zikirmatik_tap">TIPPEN</string>
+
+    <!-- Notification & Ezan Settings -->
+    <string name="nav_notifications">Benachrichtigungen &amp; Adhan</string>
+    <string name="notif_settings_title">Benachrichtigungen &amp; Adhan</string>
+    <string name="notif_general_section">Allgemeine Einstellungen</string>
+    <string name="notif_master_toggle">Gebetsbenachrichtigungen</string>
+    <string name="notif_master_desc">Alle Gebetsbenachrichtigungen ein-/ausschalten</string>
+    <string name="notif_ezan_toggle">Adhan zur Gebetszeit abspielen</string>
+    <string name="notif_ezan_desc">Adhan-Ton abspielen, wenn die Gebetszeit beginnt</string>
+    <string name="notif_pre_45_toggle">45 Minuten vorher erinnern</string>
+    <string name="notif_pre_15_toggle">15 Minuten vorher erinnern</string>
+    <string name="notif_prayers_section">Benachrichtigungen pro Gebet</string>
+    <string name="ezan_test_play">Adhan testen</string>
+    <string name="ezan_test_stop">Adhan stoppen</string>
+    <string name="ezan_playing_title">Adhan läuft</string>
+    <string name="ezan_playing_desc">Adhan für %s wird abgespielt</string>
+    <string name="ezan_stop_action">Stoppen</string>
+    <string name="ezan_custom_file_note">Integrierter Adhan-Ton ist enthalten; tippen Sie zum Testen auf die Schaltfläche.</string>
 </resources>

@@ -156,4 +156,22 @@
     <string name="aylik_vakitler_error">Aylık vakitler yüklenemedi.</string>
     <string name="namaz_rehberi_title">Namaz Rehberi</string>
     <string name="zikirmatik_tap">TIKLA</string>
+
+    <!-- Notification & Ezan Settings -->
+    <string name="nav_notifications">Bildirimler &amp; Ezan</string>
+    <string name="notif_settings_title">Bildirim &amp; Ezan Yönetimi</string>
+    <string name="notif_general_section">Genel Ayarlar</string>
+    <string name="notif_master_toggle">Namaz Bildirimleri</string>
+    <string name="notif_master_desc">Tüm vakit bildirimlerini açıp kapatın</string>
+    <string name="notif_ezan_toggle">Vakit Gelince Ezan Oku</string>
+    <string name="notif_ezan_desc">Namaz vakti girdiğinde sesli ezan okunsun</string>
+    <string name="notif_pre_45_toggle">45 Dakika Önce Hatırlat</string>
+    <string name="notif_pre_15_toggle">15 Dakika Önce Hatırlat</string>
+    <string name="notif_prayers_section">Vakit Bazlı Bildirimler</string>
+    <string name="ezan_test_play">Ezanı Test Et</string>
+    <string name="ezan_test_stop">Ezanı Durdur</string>
+    <string name="ezan_playing_title">Ezan Okunuyor</string>
+    <string name="ezan_playing_desc">%s vakti ezanı okunuyor</string>
+    <string name="ezan_stop_action">Durdur</string>
+    <string name="ezan_custom_file_note">Dahili ezan sesi uygulamaya yüklüdür; test butonuyla hemen dinleyebilirsiniz.</string>
 </resources>

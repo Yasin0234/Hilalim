@@ -139,4 +139,22 @@
     <string name="aylik_vakitler_error">Could not load monthly prayer times.</string>
     <string name="namaz_rehberi_title">Prayer Guide</string>
     <string name="zikirmatik_tap">TAP</string>
+
+    <!-- Notification & Ezan Settings -->
+    <string name="nav_notifications">Notifications &amp; Adhan</string>
+    <string name="notif_settings_title">Notification &amp; Adhan Settings</string>
+    <string name="notif_general_section">General Settings</string>
+    <string name="notif_master_toggle">Prayer Notifications</string>
+    <string name="notif_master_desc">Enable or disable all prayer notifications</string>
+    <string name="notif_ezan_toggle">Recite Adhan at Prayer Time</string>
+    <string name="notif_ezan_desc">Play Adhan audio when prayer time arrives</string>
+    <string name="notif_pre_45_toggle">Remind 45 Minutes Before</string>
+    <string name="notif_pre_15_toggle">Remind 15 Minutes Before</string>
+    <string name="notif_prayers_section">Per-Prayer Notifications</string>
+    <string name="ezan_test_play">Test Adhan</string>
+    <string name="ezan_test_stop">Stop Adhan</string>
+    <string name="ezan_playing_title">Adhan Playing</string>
+    <string name="ezan_playing_desc">Playing Adhan for %s</string>
+    <string name="ezan_stop_action">Stop</string>
+    <string name="ezan_custom_file_note">Built-in Adhan audio is included; tap the test button to preview it.</string>
 </resources>

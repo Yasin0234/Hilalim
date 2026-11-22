@@ -6,9 +6,11 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import com.korkutsoftware.hilalim.util.AlarmHelper;
 
@@ -116,5 +118,14 @@ public class NotificationReceiver extends BroadcastReceiver {
 
         int notificationId = (int) (System.currentTimeMillis() % 100000);
         notificationManager.notify(notificationId, builder.build());
+
+        SharedPreferences prefs = context.getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
+        boolean ezanEnabled = prefs.getBoolean("notif_ezan_enabled", true);
+        if (typeIndex == AlarmHelper.TYPE_EXACT && ezanEnabled && !"sunrise".equals(prayerKey)) {
+            Intent ezanIntent = new Intent(context, EzanPlayerService.class);
+            ezanIntent.setAction(EzanPlayerService.ACTION_PLAY_EZAN);
+            ezanIntent.putExtra(EzanPlayerService.EXTRA_PRAYER_NAME, prayerName);
+            ContextCompat.startForegroundService(context, ezanIntent);
+        }
     }
 }

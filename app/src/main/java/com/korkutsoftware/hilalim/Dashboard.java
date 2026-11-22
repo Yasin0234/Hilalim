@@ -121,6 +121,8 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
             bottomNav.setSelectedItemId(R.id.nav_qibla);
         } else if (id == R.id.nav_tools) {
             bottomNav.setSelectedItemId(R.id.nav_tools);
+        } else if (id == R.id.nav_notifications) {
+            startActivity(new Intent(this, NotificationSettingsActivity.class));
         } else if (id == R.id.nav_location) {
             startActivity(new Intent(this, LocationActivity.class));
         } else if (id == R.id.nav_language) {

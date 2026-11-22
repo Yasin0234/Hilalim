@@ -23,6 +23,10 @@
     <item android:title="">
         <menu>
             <item
+                android:id="@+id/nav_notifications"
+                android:icon="@drawable/ic_notifications"
+                android:title="@string/nav_notifications" />
+            <item
                 android:id="@+id/nav_location"
                 android:icon="@drawable/ic_location_rounded"
                 android:title="@string/nav_change_location" />

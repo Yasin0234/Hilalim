@@ -139,4 +139,22 @@
     <string name="aylik_vakitler_error">تعذر تحميل أوقات الصلاة الشهرية.</string>
     <string name="namaz_rehberi_title">دليل الصلاة</string>
     <string name="zikirmatik_tap">اضغط</string>
+
+    <!-- Notification & Ezan Settings -->
+    <string name="nav_notifications">الإشعارات والأذان</string>
+    <string name="notif_settings_title">إدارة الإشعارات والأذان</string>
+    <string name="notif_general_section">الإعدادات العامة</string>
+    <string name="notif_master_toggle">إشعارات الصلاة</string>
+    <string name="notif_master_desc">تفعيل أو إيقاف جميع إشعارات الأوقات</string>
+    <string name="notif_ezan_toggle">تشغيل الأذان عند الوقت</string>
+    <string name="notif_ezan_desc">تشغيل صوت الأذان عند دخول وقت الصلاة</string>
+    <string name="notif_pre_45_toggle">التذكير قبل 45 دقيقة</string>
+    <string name="notif_pre_15_toggle">التذكير قبل 15 دقيقة</string>
+    <string name="notif_prayers_section">إشعارات حسب الوقت</string>
+    <string name="ezan_test_play">تجربة الأذان</string>
+    <string name="ezan_test_stop">إيقاف الأذان</string>
+    <string name="ezan_playing_title">الأذان يرفع الآن</string>
+    <string name="ezan_playing_desc">يرفع الآن أذان %s</string>
+    <string name="ezan_stop_action">إيقاف</string>
+    <string name="ezan_custom_file_note">صوت الأذان مدمج في التطبيق؛ يمكنك تجربته عبر زر الاختبار.</string>
 </resources>

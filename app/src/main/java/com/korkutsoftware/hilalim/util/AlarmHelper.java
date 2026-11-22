@@ -44,6 +44,13 @@ public class AlarmHelper {
         // Clear existing alarms first
         cancelAllAlarms(context);
 
+        SharedPreferences prefs = context.getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
+        if (!prefs.getBoolean("notif_enabled", true)) {
+            return;
+        }
+        boolean pre45Enabled = prefs.getBoolean("notif_pre_45", true);
+        boolean pre15Enabled = prefs.getBoolean("notif_pre_15", true);
+
         String[] times = {
                 cleanTime(timings.fajr),
                 cleanTime(timings.sunrise),
@@ -61,6 +68,7 @@ public class AlarmHelper {
 
         for (int i = 0; i < times.length; i++) {
             if (times[i] == null || times[i].isEmpty()) continue;
+            if (!prefs.getBoolean("notif_prayer_" + PRAYER_KEYS[i], true)) continue;
             try {
                 Date parsedTime = sdf.parse(times[i]);
                 if (parsedTime == null) continue;
@@ -77,6 +85,8 @@ public class AlarmHelper {
                 long basePrayerTimeMs = baseCal.getTimeInMillis();
 
                 for (int type = 0; type < TYPE_OFFSETS_MS.length; type++) {
+                    if (type == TYPE_PRE_45 && !pre45Enabled) continue;
+                    if (type == TYPE_PRE_15 && !pre15Enabled) continue;
                     long triggerMs = basePrayerTimeMs + TYPE_OFFSETS_MS[type];
 
                     // If time has passed today, schedule for tomorrow
