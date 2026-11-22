@@ -16,6 +16,7 @@ public class ZekatCalculatorActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_zekat_calculator);
+        applySystemBarInsets(findViewById(android.R.id.content));
 
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 

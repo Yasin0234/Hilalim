@@ -61,6 +61,15 @@ public class KibleFragment extends Fragment implements SensorEventListener {
             startActivity(new Intent(getActivity(), LocationActivity.class));
         });
 
+        View btnSettings = view.findViewById(R.id.btn_settings);
+        if (btnSettings != null) {
+            btnSettings.setOnClickListener(v -> {
+                Intent intent = new Intent(getActivity(), WelcomeActivity.class);
+                intent.putExtra("language_only", true);
+                startActivity(intent);
+            });
+        }
+
         sensorManager = (SensorManager) requireActivity().getSystemService(Context.SENSOR_SERVICE);
         if (sensorManager != null) {
             accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);

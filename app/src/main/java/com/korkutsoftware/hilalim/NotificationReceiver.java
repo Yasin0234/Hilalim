@@ -106,7 +106,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         );
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_logo)
+                .setSmallIcon(R.drawable.ic_mosque)
                 .setContentTitle(titleText)
                 .setContentText(contentText)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)

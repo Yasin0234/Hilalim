@@ -24,6 +24,7 @@ public class ZikirmatikActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_zikirmatik);
+        applySystemBarInsets(findViewById(android.R.id.content));
 
         prefs = getSharedPreferences("hilalim_prefs", MODE_PRIVATE);
         count = prefs.getInt("zikir_count", 0);

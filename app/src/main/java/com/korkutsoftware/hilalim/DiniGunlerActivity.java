@@ -27,6 +27,7 @@ public class DiniGunlerActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dini_gunler);
+        applySystemBarInsets(findViewById(android.R.id.content));
 
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 

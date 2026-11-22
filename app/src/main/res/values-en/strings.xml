@@ -110,4 +110,16 @@
     <!-- Nearest Mosque -->
     <string name="tool_nearest_mosque">Nearest Mosque</string>
     <string name="tool_nearest_mosque_desc">Find nearby mosques on Google Maps.</string>
+
+    <!-- Additional Translations -->
+    <string name="search_hint">Search&#8230;</string>
+    <string name="logo_desc">Hilalim Logo</string>
+    <string name="drawer_open">Open Menu</string>
+    <string name="drawer_close">Close Menu</string>
+    <string name="tool_aylik_vakitler">Monthly Prayer\nTimes</string>
+    <string name="tool_aylik_vakitler_desc">Detailed prayer times and imsakiye for the whole month.</string>
+    <string name="gunun_duasi_turkish">\"Our Lord! Give us in this world that which is good and in the Hereafter that which is good, and save us from the torment of the Fire.\"</string>
+    <string name="btn_save">Save</string>
+    <string name="error_prayer_times_load">Could not load prayer times. Please check your internet connection.</string>
+    <string name="retry">Retry</string>
 </resources>

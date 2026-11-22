@@ -32,6 +32,7 @@ public class SurahDetailActivity extends BaseActivity {
     private TextView txtNoContent, txtTitle;
     private int currentSurahId = 1;
     private List<SurahInfo> allSurahInfos = null;
+    private List<SurahVerses> allSurahVerses = null;
 
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -41,6 +42,7 @@ public class SurahDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_surah_detail);
+        applySystemBarInsets(findViewById(android.R.id.content));
 
         String surahName = getIntent().getStringExtra("surah_name");
         currentSurahId = getIntent().getIntExtra("surah_id", 1);
@@ -123,18 +125,23 @@ public class SurahDetailActivity extends BaseActivity {
 
     private List<VerseItem> loadVersesFromJson(int surahId) {
         try {
-            InputStream is = getAssets().open("quran_verses.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            int read = is.read(buffer);
-            is.close();
-            if (read == -1) return new ArrayList<>();
-            
-            String json = new String(buffer, StandardCharsets.UTF_8);
-            List<SurahVerses> allSurahs = new Gson().fromJson(json, new TypeToken<List<SurahVerses>>(){}.getType());
-            
-            if (allSurahs != null) {
-                for (SurahVerses surah : allSurahs) {
+            if (allSurahVerses == null) {
+                try (InputStream is = getAssets().open("quran_verses.json")) {
+                    int size = is.available();
+                    byte[] buffer = new byte[size];
+                    int offset = 0;
+                    while (offset < size) {
+                        int read = is.read(buffer, offset, size - offset);
+                        if (read == -1) break;
+                        offset += read;
+                    }
+                    String json = new String(buffer, 0, offset, StandardCharsets.UTF_8);
+                    allSurahVerses = new Gson().fromJson(json, new TypeToken<List<SurahVerses>>(){}.getType());
+                }
+            }
+
+            if (allSurahVerses != null) {
+                for (SurahVerses surah : allSurahVerses) {
                     if (surah.surah_id == surahId) {
                         return surah.verses;
                     }

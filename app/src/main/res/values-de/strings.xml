@@ -97,7 +97,7 @@
     <string name="zekat_result_below_nisap">Zakat-Betrag: 0 TL (Ihr Vermögen liegt unter der Nisab-Schwelle [%.2f TL])</string>
     <string name="reset_confirm_title">Tasbih zurücksetzen</string>
     <string name="reset_confirm_msg">Möchten Sie den Zähler wirklich zurücksetzen?</string>
-    <string name="target_reached_msg">Herzlichen Glückwunsch! Sie haben Ihr Zieldatum erreicht.</string>
+    <string name="target_reached_msg">Herzlichen Glückwunsch! Sie haben Ihre Zielanzahl erreicht.</string>
     <string name="target_label">Ziel: %d</string>
     <string name="target_free">Frei</string>
     <string name="cancel">Abbrechen</string>
@@ -110,4 +110,16 @@
     <!-- Nearest Mosque -->
     <string name="tool_nearest_mosque">Nächste Moschee</string>
     <string name="tool_nearest_mosque_desc">Finden Sie nahegelegene Moscheen auf Google Maps.</string>
+
+    <!-- Additional Translations -->
+    <string name="search_hint">Suchen&#8230;</string>
+    <string name="logo_desc">Hilalim Logo</string>
+    <string name="drawer_open">Menü öffnen</string>
+    <string name="drawer_close">Menü schließen</string>
+    <string name="tool_aylik_vakitler">Monatliche\nGebetszeiten</string>
+    <string name="tool_aylik_vakitler_desc">Detaillierte Gebetszeiten und Imsakiye für den ganzen Monat.</string>
+    <string name="gunun_duasi_turkish">\"Unser Herr, gib uns im Diesseits Gutes und im Jenseits Gutes und bewahre uns vor der Strafe des Feuers.\"</string>
+    <string name="btn_save">Speichern</string>
+    <string name="error_prayer_times_load">Gebetszeiten konnten nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung.</string>
+    <string name="retry">Erneut versuchen</string>
 </resources>

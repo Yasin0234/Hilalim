@@ -203,6 +203,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull Call<PrayerResponse> call, @NonNull Throwable t) {
+                showNetworkErrorIfEmpty();
             }
         });
     }
@@ -223,8 +224,17 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull Call<PrayerResponse> call, @NonNull Throwable t) {
+                showNetworkErrorIfEmpty();
             }
         });
+    }
+
+    private void showNetworkErrorIfEmpty() {
+        if (isAdded() && getView() != null && currentTimings == null) {
+            Snackbar.make(getView(), R.string.error_prayer_times_load, Snackbar.LENGTH_LONG)
+                    .setAction(R.string.retry, v -> loadFreshData())
+                    .show();
+        }
     }
 
     private void saveMetaCoordinatesIfNeeded(PrayerResponse.Data data) {

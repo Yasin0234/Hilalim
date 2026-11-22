@@ -134,9 +134,10 @@ public class QuranFragment extends Fragment {
                 if (constraint == null || constraint.length() == 0) {
                     filteredList.addAll(itemsFull);
                 } else {
-                    String filterPattern = constraint.toString().toLowerCase().trim();
+                    java.util.Locale trLocale = new java.util.Locale("tr");
+                    String filterPattern = constraint.toString().toLowerCase(trLocale).trim();
                     for (SurahItem item : itemsFull) {
-                        if (item.name.toLowerCase().contains(filterPattern)) {
+                        if (item.name.toLowerCase(trLocale).contains(filterPattern)) {
                             filteredList.add(item);
                         }
                     }

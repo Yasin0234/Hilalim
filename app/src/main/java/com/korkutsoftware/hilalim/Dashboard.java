@@ -18,15 +18,18 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.korkutsoftware.hilalim.util.LocaleHelper;
 
 public class Dashboard extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
     private BottomNavigationView bottomNav;
+    private String currentLang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        currentLang = LocaleHelper.getLanguage(this);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dashboard);
 
@@ -109,10 +112,20 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
         } else if (id == R.id.nav_location) {
             startActivity(new Intent(this, LocationActivity.class));
         } else if (id == R.id.nav_language) {
-            startActivity(new Intent(this, WelcomeActivity.class));
+            Intent intent = new Intent(this, WelcomeActivity.class);
+            intent.putExtra("language_only", true);
+            startActivity(intent);
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (currentLang != null && !currentLang.equals(LocaleHelper.getLanguage(this))) {
+            recreate();
+        }
     }
 }

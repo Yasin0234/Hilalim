@@ -47,12 +47,14 @@ public class LocationActivity extends BaseActivity {
     private AutoCompleteTextView spinnerCity, spinnerDistrict;
     private final Map<String, List<String>> cityDistricts = new HashMap<>();
     private final List<String> cityNames = new ArrayList<>();
+    private ArrayAdapter<String> cityAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_location);
+        applySystemBarInsets(findViewById(android.R.id.content));
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationOnClickListener(v -> finish());
@@ -98,7 +100,7 @@ public class LocationActivity extends BaseActivity {
     private void setupLocationSelection() {
         loadCityData();
 
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, cityNames);
+        cityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, cityNames);
         spinnerCity.setAdapter(cityAdapter);
 
         View districtContainer = findViewById(R.id.input_district_container);
@@ -141,6 +143,8 @@ public class LocationActivity extends BaseActivity {
                             cityNames.addAll(names);
                             cityDistricts.clear();
                             cityDistricts.putAll(districts);
+                            cityAdapter = new ArrayAdapter<>(LocationActivity.this, android.R.layout.simple_dropdown_item_1line, cityNames);
+                            spinnerCity.setAdapter(cityAdapter);
                         });
                     }
                 }

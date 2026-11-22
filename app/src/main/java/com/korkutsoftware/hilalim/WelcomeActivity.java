@@ -65,8 +65,10 @@ public class WelcomeActivity extends BaseActivity {
 
     private final Map<String, List<String>> cityDistricts = new HashMap<>();
     private final List<String> cityNames = new ArrayList<>();
+    private ArrayAdapter<String> cityAdapter;
 
     private boolean greetingFinished = false;
+    private boolean languageOnly = false;
     private static final String KEY_GREETING_FINISHED = "greeting_finished";
 
     @Override
@@ -78,6 +80,7 @@ public class WelcomeActivity extends BaseActivity {
         if (savedInstanceState != null) {
             greetingFinished = savedInstanceState.getBoolean(KEY_GREETING_FINISHED, false);
         }
+        languageOnly = getIntent().getBooleanExtra("language_only", false);
 
         greetingText = getString(R.string.welcome_greeting);
         stepGreeting = findViewById(R.id.step_greeting);
@@ -98,7 +101,8 @@ public class WelcomeActivity extends BaseActivity {
         findViewById(R.id.card_de).setOnClickListener(v -> selectLanguage("de"));
         findViewById(R.id.btn_lang_continue).setOnClickListener(v -> updateLocale(selectedLang));
 
-        selectLanguage("tr");
+        String initialLang = LocaleHelper.isLanguageSelected(this) ? LocaleHelper.getLanguage(this) : "tr";
+        selectLanguage(LocaleHelper.isSupported(initialLang) ? initialLang : "tr");
 
         locationPermissionLauncher = registerForActivityResult(
                 new ActivityResultContracts.RequestMultiplePermissions(),
@@ -140,7 +144,9 @@ public class WelcomeActivity extends BaseActivity {
             return insets;
         });
 
-        if (greetingFinished) {
+        if (languageOnly) {
+            showLanguageStep();
+        } else if (greetingFinished) {
             stepGreeting.setVisibility(View.GONE);
             if (LocaleHelper.isLanguageSelected(this)) {
                 showLocationStep();
@@ -195,7 +201,7 @@ public class WelcomeActivity extends BaseActivity {
     private void setupLocationSelection() {
         loadCityData();
 
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, cityNames);
+        cityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, cityNames);
         spinnerCity.setAdapter(cityAdapter);
 
         View districtContainer = findViewById(R.id.input_district_container);
@@ -238,6 +244,10 @@ public class WelcomeActivity extends BaseActivity {
                             cityNames.addAll(names);
                             cityDistricts.clear();
                             cityDistricts.putAll(districts);
+                            if (cityAdapter != null) {
+                                cityAdapter = new ArrayAdapter<>(WelcomeActivity.this, android.R.layout.simple_dropdown_item_1line, cityNames);
+                                spinnerCity.setAdapter(cityAdapter);
+                            }
                         });
                     }
                 }
@@ -320,6 +330,10 @@ public class WelcomeActivity extends BaseActivity {
 
     private void updateLocale(String lang) {
         LocaleHelper.setLocale(this, lang);
+        if (languageOnly) {
+            finish();
+            return;
+        }
         greetingFinished = true;
         recreate();
     }

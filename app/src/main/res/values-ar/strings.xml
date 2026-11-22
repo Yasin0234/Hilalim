@@ -96,7 +96,7 @@
     <string name="zekat_result_amount">مقدار الزكاة: %.2f TL</string>
     <string name="zekat_result_below_nisap">مقدار الزكاة: 0 TL (ثروتك أقل من حد النصاب [%.2f TL])</string>
     <string name="reset_confirm_title">إعادة ضبط المسبحة</string>
-    <string name="reset_confirm_msg">هل أنت تأكد من أنك تريد إعادة ضبط العداد؟</string>
+    <string name="reset_confirm_msg">هل أنت متأكد من أنك تريد إعادة ضبط العداد؟</string>
     <string name="target_reached_msg">تهانينا! لقد وصلت إلى هدف الذكر المحدد.</string>
     <string name="target_label">الهدف: %d</string>
     <string name="target_free">حر</string>
@@ -110,4 +110,16 @@
     <!-- Nearest Mosque -->
     <string name="tool_nearest_mosque">أقرب مسجد</string>
     <string name="tool_nearest_mosque_desc">ابحث عن المساجد القريبة على خرائط Google.</string>
+
+    <!-- Additional Translations -->
+    <string name="search_hint">ابحث&#8230;</string>
+    <string name="logo_desc">شعار هلالي</string>
+    <string name="drawer_open">فتح القائمة</string>
+    <string name="drawer_close">إغلاق القائمة</string>
+    <string name="tool_aylik_vakitler">أوقات الصلاة\nالشهرية</string>
+    <string name="tool_aylik_vakitler_desc">أوقات الصلاة التفصيلية وإمساكية الشهر كاملاً.</string>
+    <string name="gunun_duasi_turkish">\"ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار.\"</string>
+    <string name="btn_save">حفظ</string>
+    <string name="error_prayer_times_load">تعذر تحميل أوقات الصلاة. يرجى التحقق من اتصالك بالإنترنت.</string>
+    <string name="retry">إعادة المحاولة</string>
 </resources>

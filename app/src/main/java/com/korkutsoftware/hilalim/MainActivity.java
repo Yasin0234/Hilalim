@@ -15,6 +15,22 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends BaseActivity {
 
+    private final Handler splashHandler = new Handler(Looper.getMainLooper());
+    private final Runnable splashRunnable = () -> {
+        if (isFinishing() || isDestroyed()) return;
+        SharedPreferences prefs = getSharedPreferences("hilalim_prefs", MODE_PRIVATE);
+        boolean onboardingCompleted = prefs.getBoolean("onboarding_completed", false);
+
+        Intent intent;
+        if (onboardingCompleted) {
+            intent = new Intent(MainActivity.this, Dashboard.class);
+        } else {
+            intent = new Intent(MainActivity.this, WelcomeActivity.class);
+        }
+        startActivity(intent);
+        finish();
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,18 +43,12 @@ public class MainActivity extends BaseActivity {
         });
 
         // Splash delay and redirection
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            SharedPreferences prefs = getSharedPreferences("hilalim_prefs", MODE_PRIVATE);
-            boolean onboardingCompleted = prefs.getBoolean("onboarding_completed", false);
+        splashHandler.postDelayed(splashRunnable, 2500); // 2.5 seconds splash
+    }
 
-            Intent intent;
-            if (onboardingCompleted) {
-                intent = new Intent(MainActivity.this, Dashboard.class);
-            } else {
-                intent = new Intent(MainActivity.this, WelcomeActivity.class);
-            }
-            startActivity(intent);
-            finish();
-        }, 2500); // 2.5 seconds splash
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        splashHandler.removeCallbacks(splashRunnable);
     }
 }
