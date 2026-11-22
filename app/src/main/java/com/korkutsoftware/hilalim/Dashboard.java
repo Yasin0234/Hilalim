@@ -87,9 +87,12 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
             bannerAdView = AdManager.loadBanner(this, adContainer);
         }
 
+        android.view.View mainContent = findViewById(R.id.main_content);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, 0, systemBars.right, 0);
+            if (mainContent != null) {
+                mainContent.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            }
             return insets;
         });
 
