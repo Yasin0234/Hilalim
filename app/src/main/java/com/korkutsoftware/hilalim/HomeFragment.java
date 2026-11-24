@@ -34,6 +34,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 import java.util.concurrent.Executors;
 
 import retrofit2.Call;
@@ -111,6 +112,53 @@ public class HomeFragment extends Fragment {
         }
 
         updateDailyVerse(v);
+        setupRandomDuaCard(v);
+    }
+
+    private final List<DualarActivity.DuaItem> homeDuaPool = new java.util.ArrayList<>();
+    private final Random duaRandom = new Random();
+
+    private void setupRandomDuaCard(View root) {
+        View cardDua = root.findViewById(R.id.card_daily_dua);
+        View btnRefresh = root.findViewById(R.id.btn_refresh_dua);
+        if (cardDua != null) {
+            cardDua.setOnClickListener(view -> {
+                if (getActivity() != null) {
+                    startActivity(new Intent(getActivity(), DualarActivity.class));
+                }
+            });
+        }
+        if (btnRefresh != null) {
+            btnRefresh.setOnClickListener(view -> showRandomDua(root));
+        }
+
+        Context ctx = getContext();
+        if (ctx == null) return;
+        Context appContext = ctx.getApplicationContext();
+        Executors.newSingleThreadExecutor().execute(() -> {
+            List<DualarActivity.DuaItem> loaded = DualarActivity.readDuasFromAssets(appContext);
+            new Handler(Looper.getMainLooper()).post(() -> {
+                if (!isAdded() || loaded == null || loaded.isEmpty()) return;
+                homeDuaPool.clear();
+                homeDuaPool.addAll(loaded);
+                showRandomDua(root);
+            });
+        });
+    }
+
+    private void showRandomDua(View root) {
+        if (homeDuaPool.isEmpty()) return;
+        DualarActivity.DuaItem dua = homeDuaPool.get(duaRandom.nextInt(homeDuaPool.size()));
+        TextView txtTitle = root.findViewById(R.id.txt_home_dua_title);
+        TextView txtArabic = root.findViewById(R.id.txt_home_dua_arabic);
+        TextView txtOkunus = root.findViewById(R.id.txt_home_dua_okunus);
+        TextView txtAnlam = root.findViewById(R.id.txt_home_dua_anlam);
+        TextView txtKaynak = root.findViewById(R.id.txt_home_dua_kaynak);
+        if (txtTitle != null) txtTitle.setText(dua.title);
+        if (txtArabic != null) txtArabic.setText(dua.arabic);
+        if (txtOkunus != null) txtOkunus.setText(dua.okunus);
+        if (txtAnlam != null) txtAnlam.setText(dua.anlam);
+        if (txtKaynak != null) txtKaynak.setText(dua.kaynak);
     }
 
     private void updateDailyVerse(View root) {

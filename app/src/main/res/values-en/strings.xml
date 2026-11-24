@@ -165,4 +165,13 @@
     <string name="posture_ruku">Ruku</string>
     <string name="posture_secde">Sujud</string>
     <string name="posture_kade">Jalsa / Sitting</string>
+    <string name="tool_dualar">Duas</string>
+    <string name="dualar_title">Duas &amp; Supplications</string>
+    <string name="dualar_search_hint">Search dua or topic&#8230;</string>
+    <string name="dualar_all">All</string>
+    <string name="dua_copied">Dua copied to clipboard</string>
+    <string name="dua_reading_label">Transliteration:</string>
+    <string name="dua_meaning_label">Meaning:</string>
+    <string name="qibla_aligned">Qibla Aligned ✓</string>
+    <string name="qibla_turn_hint">Align the needle with the top marker</string>
 </resources>

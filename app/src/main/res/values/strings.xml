@@ -182,4 +182,13 @@
     <string name="posture_ruku">Rükû</string>
     <string name="posture_secde">Secde</string>
     <string name="posture_kade">Ka\'de (Oturuş)</string>
+    <string name="tool_dualar">Dualar</string>
+    <string name="dualar_title">Dualar &amp; Zikirler</string>
+    <string name="dualar_search_hint">Dua veya konu ara&#8230;</string>
+    <string name="dualar_all">Tümü</string>
+    <string name="dua_copied">Dua panoya kopyalandı</string>
+    <string name="dua_reading_label">Okunuşu:</string>
+    <string name="dua_meaning_label">Anlamı:</string>
+    <string name="qibla_aligned">Kıble Hizalandı ✓</string>
+    <string name="qibla_turn_hint">İbreyi yukarıdaki işarete hizalayın</string>
 </resources>

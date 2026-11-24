@@ -82,6 +82,16 @@ public class AraclarFragment extends Fragment {
             openToolWithAd(NamazRehberiActivity.class);
         });
 
+        View cardDualar = view.findViewById(R.id.card_dualar);
+        if (cardDualar != null) {
+            cardDualar.setOnClickListener(v -> openToolWithAd(DualarActivity.class));
+        }
+
+        View cardNotifications = view.findViewById(R.id.card_notifications);
+        if (cardNotifications != null) {
+            cardNotifications.setOnClickListener(v -> openToolWithAd(NotificationSettingsActivity.class));
+        }
+
         updateDailyDua(view);
     }
 

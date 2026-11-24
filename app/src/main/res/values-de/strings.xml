@@ -165,4 +165,13 @@
     <string name="posture_ruku">Ruku (Verbeugung)</string>
     <string name="posture_secde">Sujud (Niederwerfung)</string>
     <string name="posture_kade">Sitzen (Taschahhud)</string>
+    <string name="tool_dualar">Duas</string>
+    <string name="dualar_title">Duas &amp; Bittgebete</string>
+    <string name="dualar_search_hint">Dua oder Thema suchen&#8230;</string>
+    <string name="dualar_all">Alle</string>
+    <string name="dua_copied">Dua in die Zwischenablage kopiert</string>
+    <string name="dua_reading_label">Aussprache:</string>
+    <string name="dua_meaning_label">Bedeutung:</string>
+    <string name="qibla_aligned">Qibla ausgerichtet ✓</string>
+    <string name="qibla_turn_hint">Nadel auf die obere Markierung ausrichten</string>
 </resources>

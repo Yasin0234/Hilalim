@@ -30,7 +30,7 @@ import java.util.concurrent.Executors;
 public class KibleFragment extends Fragment implements SensorEventListener {
 
     private View compassView, qiblaIndicator;
-    private TextView txtDegree, txtLocationInfo;
+    private TextView txtDegree, txtLocationInfo, txtQiblaStatus;
     private SensorManager sensorManager;
     private Sensor accelerometer, magnetometer;
 
@@ -58,19 +58,11 @@ public class KibleFragment extends Fragment implements SensorEventListener {
         qiblaIndicator = view.findViewById(R.id.qibla_indicator);
         txtDegree = view.findViewById(R.id.degree_label);
         txtLocationInfo = view.findViewById(R.id.qibla_subtitle);
+        txtQiblaStatus = view.findViewById(R.id.txt_qibla_status);
 
         view.findViewById(R.id.btn_location).setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), LocationActivity.class));
         });
-
-        View btnSettings = view.findViewById(R.id.btn_settings);
-        if (btnSettings != null) {
-            btnSettings.setOnClickListener(v -> {
-                Intent intent = new Intent(getActivity(), WelcomeActivity.class);
-                intent.putExtra("language_only", true);
-                startActivity(intent);
-            });
-        }
 
         sensorManager = (SensorManager) requireActivity().getSystemService(Context.SENSOR_SERVICE);
         if (sensorManager != null) {
@@ -185,11 +177,11 @@ public class KibleFragment extends Fragment implements SensorEventListener {
         }
 
         if (hasGravity && hasGeomagnetic) {
-            float[] R = new float[9];
-            float[] I = new float[9];
-            if (SensorManager.getRotationMatrix(R, I, gravity, geomagnetic)) {
+            float[] rotationMatrix = new float[9];
+            float[] inclinationMatrix = new float[9];
+            if (SensorManager.getRotationMatrix(rotationMatrix, inclinationMatrix, gravity, geomagnetic)) {
                 float[] orientation = new float[3];
-                SensorManager.getOrientation(R, orientation);
+                SensorManager.getOrientation(rotationMatrix, orientation);
                 float azimuth = (float) Math.toDegrees(orientation[0]);
                 azimuth = (azimuth + 360) % 360;
 
@@ -199,6 +191,17 @@ public class KibleFragment extends Fragment implements SensorEventListener {
 
                 if (txtDegree != null) {
                     txtDegree.setText(String.format(Locale.getDefault(), "%.0f°", azimuth));
+                }
+
+                if (txtQiblaStatus != null && getContext() != null && qiblaDegree > 0f) {
+                    float diff = Math.abs(((azimuth - qiblaDegree + 540f) % 360f) - 180f);
+                    if (diff <= 5f) {
+                        txtQiblaStatus.setText(R.string.qibla_aligned);
+                        txtQiblaStatus.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.secondary));
+                    } else {
+                        txtQiblaStatus.setText(R.string.qibla_turn_hint);
+                        txtQiblaStatus.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.text_muted));
+                    }
                 }
             }
         }

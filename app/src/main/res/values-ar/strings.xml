@@ -165,4 +165,13 @@
     <string name="posture_ruku">الركوع</string>
     <string name="posture_secde">السجود</string>
     <string name="posture_kade">الجلوس (التشهد)</string>
+    <string name="tool_dualar">الأدعية</string>
+    <string name="dualar_title">الأدعية والأذكار</string>
+    <string name="dualar_search_hint">ابحث عن دعاء أو موضوع&#8230;</string>
+    <string name="dualar_all">الكل</string>
+    <string name="dua_copied">تم نسخ الدعاء</string>
+    <string name="dua_reading_label">النطق:</string>
+    <string name="dua_meaning_label">المعنى:</string>
+    <string name="qibla_aligned">القبلة متطابقة ✓</string>
+    <string name="qibla_turn_hint">قم بمحاذاة السهم مع المؤشر العلوي</string>
 </resources>
