@@ -1,9 +1,31 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="960"
-    android:viewportHeight="960">
-  <path
-      android:fillColor="#000000"
-      android:pathData="M480,600q-50,0 -85,-35t-35,-85q0,-50 35,-85t85,-35q50,0 85,35t35,85q0,50 -35,85t-85,35ZM440,240v-160h80v160h-80ZM440,880v-160h80v160h-80ZM240,520h-160v-80h160v80ZM880,520h-160v-80h160v80ZM312,312l-112,-112l56,-56l112,112l-56,56ZM760,760l-112,-112l56,-56l112,112l-56,56ZM648,312l-56,-56l112,-112l56,56l-112,112ZM256,760l-56,-56l112,-112l56,56l-112,112Z"/>
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Gunes: Rising sun arc above horizon with morning rays -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,4.5 C12.55,4.5 13,4.95 13,5.5 V8 C13,8.55 12.55,9 12,9 C11.45,9 11,8.55 11,8 V5.5 C11,4.95 11.45,4.5 12,4.5 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M6.0,7.5 L7.4,6.1 L9.2,7.9 L7.8,9.3 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M18.0,7.5 L16.6,6.1 L14.8,7.9 L16.2,9.3 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3.5,12.5 L4.2,10.7 L6.5,11.6 L5.8,13.4 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M20.5,12.5 L19.8,10.7 L17.5,11.6 L18.2,13.4 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M7,16 C7,13.24 9.24,11 12,11 C14.76,11 17,13.24 17,16 H15 C15,14.34 13.66,13 12,13 C10.34,13 9,14.34 9,16 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3,17.5 H21 C21.55,17.5 22,17.95 22,18.5 C22,19.05 21.55,19.5 21,19.5 H3 C2.45,19.5 2,19.05 2,18.5 C2,17.95 2.45,17.5 3,17.5 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M8,20.8 H16 C16.45,20.8 16.8,21.15 16.8,21.6 C16.8,22.05 16.45,22.4 16,22.4 H8 C7.55,22.4 7.2,22.05 7.2,21.6 C7.2,21.15 7.55,20.8 8,20.8 Z" />
 </vector>

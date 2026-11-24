@@ -27,7 +27,7 @@
             android:contentDescription="@null"
             android:padding="10dp"
             android:src="@drawable/ic_imsak"
-            app:tint="?attr/colorSecondary" />
+            app:tint="@color/secondary" />
 
         <LinearLayout
             android:layout_width="0dp"

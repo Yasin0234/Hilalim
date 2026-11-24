@@ -296,7 +296,7 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingVertical="4dp">
-                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:contentDescription="@null" android:src="@drawable/ic_imsak" app:tint="?attr/colorSecondary" />
+                        <ImageView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/bg_tool_icon" android:padding="8dp" android:contentDescription="@null" android:src="@drawable/ic_imsak" app:tint="@color/secondary" />
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:layout_weight="1" android:text="@string/imsak" android:textColor="?attr/colorOnSurface" android:textSize="15sp" />
                         <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_fajr" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -310,7 +310,7 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingVertical="4dp">
-                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:contentDescription="@null" android:src="@drawable/ic_gunes" app:tint="?attr/colorSecondary" />
+                        <ImageView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/bg_tool_icon" android:padding="8dp" android:contentDescription="@null" android:src="@drawable/ic_gunes" app:tint="@color/secondary" />
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:layout_weight="1" android:text="@string/gunes" android:textColor="?attr/colorOnSurface" android:textSize="15sp" />
                         <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_sunrise" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -324,7 +324,7 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingVertical="4dp">
-                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:contentDescription="@null" android:src="@drawable/ic_ogle" app:tint="?attr/colorSecondary" />
+                        <ImageView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/bg_tool_icon" android:padding="8dp" android:contentDescription="@null" android:src="@drawable/ic_ogle" app:tint="@color/secondary" />
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:layout_weight="1" android:text="@string/ogle" android:textColor="?attr/colorOnSurface" android:textSize="15sp" />
                         <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_dhuhr" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -338,7 +338,7 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingVertical="4dp">
-                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:contentDescription="@null" android:src="@drawable/ic_ikindi" app:tint="?attr/colorSecondary" />
+                        <ImageView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/bg_tool_icon" android:padding="8dp" android:contentDescription="@null" android:src="@drawable/ic_ikindi" app:tint="@color/secondary" />
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:layout_weight="1" android:text="@string/ikindi" android:textColor="?attr/colorOnSurface" android:textSize="15sp" />
                         <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_asr" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -352,7 +352,7 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingVertical="4dp">
-                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:contentDescription="@null" android:src="@drawable/ic_aksam" app:tint="?attr/colorSecondary" />
+                        <ImageView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/bg_tool_icon" android:padding="8dp" android:contentDescription="@null" android:src="@drawable/ic_aksam" app:tint="@color/secondary" />
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:layout_weight="1" android:text="@string/aksam" android:textColor="?attr/colorOnSurface" android:textSize="15sp" />
                         <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_maghrib" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -366,7 +366,7 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingVertical="4dp">
-                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:contentDescription="@null" android:src="@drawable/ic_yatsi" app:tint="?attr/colorSecondary" />
+                        <ImageView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/bg_tool_icon" android:padding="8dp" android:contentDescription="@null" android:src="@drawable/ic_yatsi" app:tint="@color/secondary" />
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:layout_weight="1" android:text="@string/yatsi" android:textColor="?attr/colorOnSurface" android:textSize="15sp" />
                         <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_isha" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                     </LinearLayout>
