@@ -135,7 +135,7 @@ public class DiniGunDetailActivity extends BaseActivity {
                 case "check":
                     return R.drawable.ic_calendar_event;
                 case "dua":
-                    return R.drawable.ic_pray;
+                    return R.drawable.ic_dua_hands;
                 case "quran":
                     return R.drawable.ic_book;
                 case "heart":

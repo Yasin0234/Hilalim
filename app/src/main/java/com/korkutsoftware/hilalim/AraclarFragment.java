@@ -1,8 +1,12 @@
 package com.korkutsoftware.hilalim;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +18,16 @@ import androidx.fragment.app.Fragment;
 
 import com.korkutsoftware.hilalim.util.AdManager;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.Executors;
 
 public class AraclarFragment extends Fragment {
+
+    private final List<DualarActivity.DuaItem> duaPool = new ArrayList<>();
+    private final Random duaRandom = new Random();
 
     public AraclarFragment() {
     }
@@ -35,7 +46,7 @@ public class AraclarFragment extends Fragment {
         });
 
         View.OnClickListener openMosquesListener = v -> openNearestMosquesOnMap();
-        
+
         View cardMosque = view.findViewById(R.id.card_nearest_mosque);
         if (cardMosque != null) {
             cardMosque.setOnClickListener(openMosquesListener);
@@ -92,6 +103,16 @@ public class AraclarFragment extends Fragment {
             cardNotifications.setOnClickListener(v -> openToolWithAd(NotificationSettingsActivity.class));
         }
 
+        View cardDailyDua = view.findViewById(R.id.card_araclar_daily_dua);
+        if (cardDailyDua != null) {
+            cardDailyDua.setOnClickListener(v -> openToolWithAd(DualarActivity.class));
+        }
+
+        View btnRefreshDua = view.findViewById(R.id.btn_araclar_refresh_dua);
+        if (btnRefreshDua != null) {
+            btnRefreshDua.setOnClickListener(v -> showRandomDua(view));
+        }
+
         updateDailyDua(view);
     }
 
@@ -105,6 +126,50 @@ public class AraclarFragment extends Fragment {
     }
 
     private void updateDailyDua(View root) {
+        showFallbackDua(root);
+        Context ctx = getContext();
+        if (ctx == null) return;
+        Context appContext = ctx.getApplicationContext();
+        Executors.newSingleThreadExecutor().execute(() -> {
+            List<DualarActivity.DuaItem> loaded = DualarActivity.readDuasFromAssets(appContext);
+            new Handler(Looper.getMainLooper()).post(() -> {
+                if (!isAdded() || loaded == null || loaded.isEmpty()) return;
+                duaPool.clear();
+                duaPool.addAll(loaded);
+                int dayOfYear = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
+                bindDuaItem(root, duaPool.get(dayOfYear % duaPool.size()));
+            });
+        });
+    }
+
+    private void showRandomDua(View root) {
+        if (!duaPool.isEmpty()) {
+            bindDuaItem(root, duaPool.get(duaRandom.nextInt(duaPool.size())));
+        } else {
+            showFallbackDua(root);
+        }
+    }
+
+    private void bindDuaItem(View root, DualarActivity.DuaItem dua) {
+        TextView txtArabic = root.findViewById(R.id.dua_arabic);
+        TextView txtTranslation = root.findViewById(R.id.dua_turkish);
+        TextView txtSource = root.findViewById(R.id.txt_araclar_dua_source);
+        if (txtArabic != null) txtArabic.setText(dua.arabic);
+        if (txtTranslation != null) txtTranslation.setText(dua.anlam);
+        if (txtSource != null) {
+            if (!TextUtils.isEmpty(dua.kaynak)) {
+                txtSource.setText(dua.title + " • " + dua.kaynak);
+                txtSource.setVisibility(View.VISIBLE);
+            } else if (!TextUtils.isEmpty(dua.title)) {
+                txtSource.setText(dua.title);
+                txtSource.setVisibility(View.VISIBLE);
+            } else {
+                txtSource.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private void showFallbackDua(View root) {
         TextView txtArabic = root.findViewById(R.id.dua_arabic);
         TextView txtTranslation = root.findViewById(R.id.dua_turkish);
         if (txtArabic == null || txtTranslation == null) return;
