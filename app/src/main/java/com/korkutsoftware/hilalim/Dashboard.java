@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -24,7 +23,6 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.korkutsoftware.hilalim.util.AdManager;
 import com.korkutsoftware.hilalim.util.LocaleHelper;
@@ -163,19 +161,6 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
         return BuildConfig.VERSION_NAME;
     }
 
-    private void showAboutDialog() {
-        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_about, null);
-        TextView txtAboutVersion = dialogView.findViewById(R.id.txt_about_version);
-        if (txtAboutVersion != null) {
-            txtAboutVersion.setText(getString(R.string.app_version_format, getAppVersionName()));
-        }
-        new MaterialAlertDialogBuilder(this)
-                .setTitle(R.string.nav_about)
-                .setView(dialogView)
-                .setPositiveButton(android.R.string.ok, null)
-                .show();
-    }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -202,7 +187,7 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
             startActivity(intent);
         } else if (id == R.id.nav_about) {
             checkableDestination = false;
-            showAboutDialog();
+            startActivity(new Intent(this, AboutActivity.class));
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

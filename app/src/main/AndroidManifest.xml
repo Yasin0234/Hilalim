@@ -99,6 +99,10 @@
             android:name=".NotificationSettingsActivity"
             android:exported="false"
             android:theme="@style/Theme.Hilalim" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Hilalim" />
 
         <service
             android:name=".EzanPlayerService"

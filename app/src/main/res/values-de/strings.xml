@@ -184,4 +184,9 @@
     <string name="nav_about">Über die App</string>
     <string name="about_description">Hilalim Gebetszeiten ist Ihr islamischer Alltagsbegleiter mit genauen Gebetszeiten, dem Heiligen Koran, Qibla-Kompass, Duas, Asma-ul Husna, Dhikr-Zähler, Zakat-Rechner und religiösen Feiertagen in einem modernen Design.</string>
     <string name="app_version_format">Version %s</string>
+    <string name="about_producers_title">Produzenten</string>
+    <string name="about_producer_role">Produzent</string>
+    <string name="about_developers_title">Softwareentwickler</string>
+    <string name="about_developer_role">Softwareentwickler</string>
+    <string name="about_companies_title">Entwickelt von</string>
 </resources>

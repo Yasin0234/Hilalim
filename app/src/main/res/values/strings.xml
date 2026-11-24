@@ -202,4 +202,11 @@
     <string name="about_description">Hilalim Ezan Vakti; namaz vakitleri, Kur\'an-ı Kerim, Kıble pusulası, Dualar, Esma-ül Hüsna, Zikirmatik, Zekat hesaplayıcı ve dini günler rehberini tek bir sade ve modern arayüzde sunan İslami yaşam yardımcınızdır.</string>
     <string name="app_version_format">Sürüm %s</string>
     <string name="drawer_copyright" translatable="false">© 2026 Korkut Teknoloji, Yazılım ve Medya A.Ş. ve Demiral Medya Tarafından Geliştirilmiştir.</string>
+    <string name="about_producers_title">Yapımcılar</string>
+    <string name="about_producer_role">Yapımcı</string>
+    <string name="about_developers_title">Yazılım Geliştiricileri</string>
+    <string name="about_developer_role">Yazılım Geliştirici</string>
+    <string name="about_companies_title">Geliştirici Kuruluşlar</string>
+    <string name="company_korkut" translatable="false">Korkut Teknoloji, Yazılım ve Medya A.Ş.</string>
+    <string name="company_demiral" translatable="false">Demiral Medya</string>
 </resources>

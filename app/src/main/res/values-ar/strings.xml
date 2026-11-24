@@ -184,4 +184,9 @@
     <string name="nav_about">حول التطبيق</string>
     <string name="about_description">تطبيق هلالي لمواقيت الصلاة هو رفيقك الإسلامي اليومي، يجمع مواقيت الصلاة والقرآن الكريم وبوصلة القبلة والأدعية وأسماء الله الحسنى والمسبحة وحاسبة الزكاة والمناسبات الدينية في واجهة عصرية.</string>
     <string name="app_version_format">الإصدار %s</string>
+    <string name="about_producers_title">المنتجون</string>
+    <string name="about_producer_role">منتج</string>
+    <string name="about_developers_title">مطورو البرمجيات</string>
+    <string name="about_developer_role">مطور برمجيات</string>
+    <string name="about_companies_title">المؤسسات المطورة</string>
 </resources>
