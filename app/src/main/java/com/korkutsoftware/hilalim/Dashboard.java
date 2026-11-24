@@ -1,9 +1,14 @@
 package com.korkutsoftware.hilalim;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -19,6 +24,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.korkutsoftware.hilalim.util.AdManager;
 import com.korkutsoftware.hilalim.util.LocaleHelper;
@@ -27,6 +33,7 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
 
     private DrawerLayout drawerLayout;
     private BottomNavigationView bottomNav;
+    private NavigationView navigationView;
     private String currentLang;
     private AdView bannerAdView;
 
@@ -44,13 +51,28 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
         }
 
         drawerLayout = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+        toggle.setDrawerIndicatorEnabled(false);
+        toggle.setHomeAsUpIndicator(R.drawable.ic_menu);
+        toggle.setToolbarNavigationClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        toolbar.setNavigationIcon(R.drawable.ic_menu);
+
+        TextView txtDrawerVersion = findViewById(R.id.txt_drawer_version);
+        if (txtDrawerVersion != null) {
+            txtDrawerVersion.setText(getString(R.string.app_version_format, getAppVersionName()));
+        }
 
         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnItemSelectedListener(item -> {
@@ -71,6 +93,7 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, selectedFragment)
                         .commit();
+                navigationView.setCheckedItem(itemId);
             }
             return true;
         });
@@ -80,6 +103,7 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
                     .replace(R.id.fragment_container, new HomeFragment())
                     .commit();
             bottomNav.setSelectedItemId(R.id.nav_home);
+            navigationView.setCheckedItem(R.id.nav_home);
         }
 
         FrameLayout adContainer = findViewById(R.id.ad_banner_container);
@@ -87,11 +111,30 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
             bannerAdView = AdManager.loadBanner(this, adContainer);
         }
 
-        android.view.View mainContent = findViewById(R.id.main_content);
+        View mainContent = findViewById(R.id.main_content);
+        View drawerFooter = findViewById(R.id.drawer_footer);
+        View navHeader = navigationView.getHeaderCount() > 0 ? navigationView.getHeaderView(0) : null;
+        int navHeaderTopBase = navHeader != null ? navHeader.getPaddingTop() : 0;
+        int footerBottomBase = drawerFooter != null ? drawerFooter.getPaddingBottom() : 0;
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             if (mainContent != null) {
                 mainContent.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            }
+            if (navHeader != null) {
+                navHeader.setPadding(
+                        navHeader.getPaddingLeft(),
+                        navHeaderTopBase + systemBars.top,
+                        navHeader.getPaddingRight(),
+                        navHeader.getPaddingBottom());
+            }
+            if (drawerFooter != null) {
+                drawerFooter.setPadding(
+                        drawerFooter.getPaddingLeft(),
+                        drawerFooter.getPaddingTop(),
+                        drawerFooter.getPaddingRight(),
+                        footerBottomBase + systemBars.bottom);
             }
             return insets;
         });
@@ -109,9 +152,34 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
         });
     }
 
+    private String getAppVersionName() {
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            if (pInfo != null && pInfo.versionName != null) {
+                return pInfo.versionName;
+            }
+        } catch (PackageManager.NameNotFoundException ignored) {
+        }
+        return BuildConfig.VERSION_NAME;
+    }
+
+    private void showAboutDialog() {
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_about, null);
+        TextView txtAboutVersion = dialogView.findViewById(R.id.txt_about_version);
+        if (txtAboutVersion != null) {
+            txtAboutVersion.setText(getString(R.string.app_version_format, getAppVersionName()));
+        }
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.nav_about)
+                .setView(dialogView)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+        boolean checkableDestination = true;
 
         if (id == R.id.nav_home) {
             bottomNav.setSelectedItemId(R.id.nav_home);
@@ -122,17 +190,23 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
         } else if (id == R.id.nav_tools) {
             bottomNav.setSelectedItemId(R.id.nav_tools);
         } else if (id == R.id.nav_notifications) {
+            checkableDestination = false;
             startActivity(new Intent(this, NotificationSettingsActivity.class));
         } else if (id == R.id.nav_location) {
+            checkableDestination = false;
             startActivity(new Intent(this, LocationActivity.class));
         } else if (id == R.id.nav_language) {
+            checkableDestination = false;
             Intent intent = new Intent(this, WelcomeActivity.class);
             intent.putExtra("language_only", true);
             startActivity(intent);
+        } else if (id == R.id.nav_about) {
+            checkableDestination = false;
+            showAboutDialog();
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
+        return checkableDestination;
     }
 
     @Override

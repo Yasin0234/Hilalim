@@ -180,4 +180,8 @@
     <string name="quran_verse_copied">تم نسخ الآية</string>
     <string name="quran_surah_format">سورة %d</string>
     <string name="quran_clear_search">مسح البحث</string>
+    <string name="drawer_settings_section">الإعدادات والمعلومات</string>
+    <string name="nav_about">حول التطبيق</string>
+    <string name="about_description">تطبيق هلالي لمواقيت الصلاة هو رفيقك الإسلامي اليومي، يجمع مواقيت الصلاة والقرآن الكريم وبوصلة القبلة والأدعية وأسماء الله الحسنى والمسبحة وحاسبة الزكاة والمناسبات الدينية في واجهة عصرية.</string>
+    <string name="app_version_format">الإصدار %s</string>
 </resources>

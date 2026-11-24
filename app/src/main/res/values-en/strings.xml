@@ -180,4 +180,8 @@
     <string name="quran_verse_copied">Verse copied to clipboard</string>
     <string name="quran_surah_format">Surah %d</string>
     <string name="quran_clear_search">Clear search</string>
+    <string name="drawer_settings_section">Settings &amp; Info</string>
+    <string name="nav_about">About App</string>
+    <string name="about_description">Hilalim Prayer Times is your daily Islamic companion offering accurate prayer times, Holy Quran, Qibla compass, Duas, Asma-ul Husna, Dhikr counter, Zakat calculator, and religious days in a clean, modern interface.</string>
+    <string name="app_version_format">Version %s</string>
 </resources>

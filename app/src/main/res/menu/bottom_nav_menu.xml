@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_nav_home"
         android:title="@string/nav_home" />
     <item
         android:id="@+id/nav_quran"
-        android:icon="@drawable/ic_book"
+        android:icon="@drawable/ic_nav_quran"
         android:title="@string/nav_quran" />
     <item
         android:id="@+id/nav_qibla"
-        android:icon="@drawable/ic_kible"
+        android:icon="@drawable/ic_nav_qibla"
         android:title="@string/nav_qibla" />
     <item
         android:id="@+id/nav_tools"
-        android:icon="@drawable/ic_arac"
+        android:icon="@drawable/ic_nav_tools"
         android:title="@string/nav_tools" />
 </menu>

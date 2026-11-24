@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/group_main"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_home_rounded"
+            android:icon="@drawable/ic_nav_home"
             android:title="@string/nav_home" />
         <item
             android:id="@+id/nav_quran"
-            android:icon="@drawable/ic_quran_rounded"
+            android:icon="@drawable/ic_nav_quran"
             android:title="@string/nav_quran" />
         <item
             android:id="@+id/nav_qibla"
-            android:icon="@drawable/ic_qibla_rounded"
+            android:icon="@drawable/ic_nav_qibla"
             android:title="@string/nav_qibla" />
         <item
             android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_tools_rounded"
+            android:icon="@drawable/ic_nav_tools"
             android:title="@string/nav_tools" />
     </group>
 
-    <item android:title="">
+    <item android:title="@string/drawer_settings_section">
         <menu>
             <item
                 android:id="@+id/nav_notifications"
@@ -32,8 +34,12 @@
                 android:title="@string/nav_change_location" />
             <item
                 android:id="@+id/nav_language"
-                android:icon="@drawable/ic_settings_rounded"
+                android:icon="@drawable/ic_language"
                 android:title="@string/nav_change_language" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="@string/nav_about" />
         </menu>
     </item>
 
