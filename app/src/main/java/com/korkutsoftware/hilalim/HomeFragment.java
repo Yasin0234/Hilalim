@@ -106,6 +106,29 @@ public class HomeFragment extends Fragment {
         
         prayerProgressBar = v.findViewById(R.id.prayer_progress);
 
+        View dateCard = v.findViewById(R.id.date_card);
+        if (dateCard != null) {
+            dateCard.setOnClickListener(view -> {
+                if (getActivity() != null) {
+                    startActivity(new Intent(getActivity(), LocationActivity.class));
+                }
+            });
+        }
+
+        View btnMonthlyTimes = v.findViewById(R.id.btn_home_monthly_times);
+        if (btnMonthlyTimes != null) {
+            btnMonthlyTimes.setOnClickListener(view -> {
+                if (getActivity() != null) {
+                    startActivity(new Intent(getActivity(), AylikVakitlerActivity.class));
+                }
+            });
+        }
+
+        View btnCopyVerse = v.findViewById(R.id.btn_copy_home_verse);
+        if (btnCopyVerse != null) {
+            btnCopyVerse.setOnClickListener(view -> copyDailyVerse(v));
+        }
+
         View fabMosque = v.findViewById(R.id.fab_mosque);
         if (fabMosque != null) {
             fabMosque.setOnClickListener(view -> openNearestMosquesOnMap());
@@ -179,6 +202,19 @@ public class HomeFragment extends Fragment {
         String[] selected = verses[dayOfYear % verses.length];
         txtContent.setText(selected[0]);
         txtRef.setText(selected[1]);
+    }
+
+    private void copyDailyVerse(View root) {
+        if (getContext() == null) return;
+        TextView txtContent = root.findViewById(R.id.txt_verse_content);
+        TextView txtRef = root.findViewById(R.id.txt_verse_ref);
+        if (txtContent == null || txtRef == null) return;
+        android.content.ClipboardManager clipboard =
+                (android.content.ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+        if (clipboard == null) return;
+        String text = txtContent.getText() + "\n" + txtRef.getText();
+        clipboard.setPrimaryClip(android.content.ClipData.newPlainText(getString(R.string.gunun_ayeti_title), text));
+        android.widget.Toast.makeText(getContext(), R.string.quran_verse_copied, android.widget.Toast.LENGTH_SHORT).show();
     }
 
     private void openNearestMosquesOnMap() {
@@ -496,25 +532,30 @@ public class HomeFragment extends Fragment {
         int currentIndex = (nextIndex == 0) ? 5 : nextIndex - 1;
         
         View[] cards = {cardImsak, cardGunes, cardOgle, cardIkindi, cardAksam, cardYatsi};
-        int strokeColor = androidx.core.content.ContextCompat.getColor(requireContext(), R.color.secondary);
-        int strokeWidthPx = (int) (2 * getResources().getDisplayMetrics().density);
+        int activeStrokeColor = androidx.core.content.ContextCompat.getColor(requireContext(), R.color.secondary);
+        int defaultStrokeColor = androidx.core.content.ContextCompat.getColor(requireContext(), R.color.card_stroke);
+        float density = getResources().getDisplayMetrics().density;
+        int activeStrokePx = (int) (2 * density);
+        int defaultStrokePx = Math.max(1, (int) density);
         for (int i = 0; i < cards.length; i++) {
             if (cards[i] == null) continue;
             if (i == currentIndex) {
                 cards[i].setAlpha(1.0f);
-                cards[i].setScaleX(1.02f);
-                cards[i].setScaleY(1.02f);
+                cards[i].setScaleX(1.015f);
+                cards[i].setScaleY(1.015f);
                 if (cards[i] instanceof com.google.android.material.card.MaterialCardView) {
                     com.google.android.material.card.MaterialCardView card = (com.google.android.material.card.MaterialCardView) cards[i];
-                    card.setStrokeColor(strokeColor);
-                    card.setStrokeWidth(strokeWidthPx);
+                    card.setStrokeColor(activeStrokeColor);
+                    card.setStrokeWidth(activeStrokePx);
                 }
             } else {
-                cards[i].setAlpha(0.75f);
+                cards[i].setAlpha(0.88f);
                 cards[i].setScaleX(1.0f);
                 cards[i].setScaleY(1.0f);
                 if (cards[i] instanceof com.google.android.material.card.MaterialCardView) {
-                    ((com.google.android.material.card.MaterialCardView) cards[i]).setStrokeWidth(0);
+                    com.google.android.material.card.MaterialCardView card = (com.google.android.material.card.MaterialCardView) cards[i];
+                    card.setStrokeColor(defaultStrokeColor);
+                    card.setStrokeWidth(defaultStrokePx);
                 }
             }
         }
