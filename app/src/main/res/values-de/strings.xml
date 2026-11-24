@@ -174,4 +174,10 @@
     <string name="dua_meaning_label">Bedeutung:</string>
     <string name="qibla_aligned">Qibla ausgerichtet ✓</string>
     <string name="qibla_turn_hint">Nadel auf die obere Markierung ausrichten</string>
+    <string name="quran_main_title">Der Heilige Koran</string>
+    <string name="quran_subtitle">114 Suren • Lesen &amp; Entdecken</string>
+    <string name="quran_continue_reading">Weiterlesen</string>
+    <string name="quran_verse_copied">Vers in die Zwischenablage kopiert</string>
+    <string name="quran_surah_format">Sure %d</string>
+    <string name="quran_clear_search">Suche löschen</string>
 </resources>

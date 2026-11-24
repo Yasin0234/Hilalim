@@ -191,4 +191,10 @@
     <string name="dua_meaning_label">Anlamı:</string>
     <string name="qibla_aligned">Kıble Hizalandı ✓</string>
     <string name="qibla_turn_hint">İbreyi yukarıdaki işarete hizalayın</string>
+    <string name="quran_main_title">Kur\'an-ı Kerim</string>
+    <string name="quran_subtitle">114 Sure • Arapça ve Meal</string>
+    <string name="quran_continue_reading">Kaldığın Yerden Devam Et</string>
+    <string name="quran_verse_copied">Ayet panoya kopyalandı</string>
+    <string name="quran_surah_format">%d. Sure</string>
+    <string name="quran_clear_search">Aramayı Temizle</string>
 </resources>

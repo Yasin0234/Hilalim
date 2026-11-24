@@ -3,47 +3,93 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="16dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+    app:cardCornerRadius="20dp"
     app:cardElevation="2dp"
-    app:strokeWidth="0dp">
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="18dp">
 
-        <TextView
-            android:id="@+id/txt_verse_id"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/bg_tool_icon"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/primary"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="36dp"
+                android:layout_height="36dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:alpha="0.24"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_diamond"
+                    app:tint="?attr/colorSecondary" />
+
+                <TextView
+                    android:id="@+id/txt_verse_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/btn_copy_verse"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/quran_verse_copied"
+                android:focusable="true"
+                android:padding="8dp"
+                android:src="@drawable/ic_copy"
+                app:tint="?attr/colorSecondary" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/txt_verse_ar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:gravity="end"
+            android:lineSpacingExtra="8dp"
             android:text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
-            android:textColor="@color/primary"
-            android:textSize="24sp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="23sp"
             android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="12dp"
+            android:background="@color/card_stroke" />
 
         <TextView
             android:id="@+id/txt_verse_tr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="4dp"
             android:text="Rahmân ve Rahîm olan Allah'ın adıyla."
-            android:textColor="@color/secondary"
-            android:textSize="15sp"
-            android:lineSpacingExtra="4dp" />
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="15sp" />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

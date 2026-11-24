@@ -174,4 +174,10 @@
     <string name="dua_meaning_label">Meaning:</string>
     <string name="qibla_aligned">Qibla Aligned ✓</string>
     <string name="qibla_turn_hint">Align the needle with the top marker</string>
+    <string name="quran_main_title">Holy Quran</string>
+    <string name="quran_subtitle">114 Surahs • Read &amp; Explore</string>
+    <string name="quran_continue_reading">Continue Reading</string>
+    <string name="quran_verse_copied">Verse copied to clipboard</string>
+    <string name="quran_surah_format">Surah %d</string>
+    <string name="quran_clear_search">Clear search</string>
 </resources>

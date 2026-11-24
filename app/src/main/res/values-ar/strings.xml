@@ -174,4 +174,10 @@
     <string name="dua_meaning_label">المعنى:</string>
     <string name="qibla_aligned">القبلة متطابقة ✓</string>
     <string name="qibla_turn_hint">قم بمحاذاة السهم مع المؤشر العلوي</string>
+    <string name="quran_main_title">القرآن الكريم</string>
+    <string name="quran_subtitle">١١٤ سورة • تلاوة وتدبر</string>
+    <string name="quran_continue_reading">متابعة القراءة</string>
+    <string name="quran_verse_copied">تم نسخ الآية</string>
+    <string name="quran_surah_format">سورة %d</string>
+    <string name="quran_clear_search">مسح البحث</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.korkutsoftware.hilalim;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -28,11 +30,21 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.Executors;
 
 public class QuranFragment extends Fragment {
 
+    public static final String PREFS_QURAN = "hilalim_quran_prefs";
+    public static final String KEY_LAST_SURAH_ID = "last_surah_id";
+    public static final String KEY_LAST_SURAH_NAME = "last_surah_name";
+
     private SurahAdapter adapter;
+    private View cardContinueReading;
+    private View btnClearSearch;
+    private TextView txtLastSurahName;
+    private int lastSurahId = 1;
+    private String lastSurahName = "Fatiha";
 
     public QuranFragment() {
     }
@@ -46,6 +58,14 @@ public class QuranFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        cardContinueReading = view.findViewById(R.id.card_continue_reading);
+        btnClearSearch = view.findViewById(R.id.btn_clear_search);
+        txtLastSurahName = view.findViewById(R.id.txt_last_surah_name);
+
+        if (cardContinueReading != null) {
+            cardContinueReading.setOnClickListener(v -> openSurah(lastSurahId, lastSurahName));
+        }
+
         RecyclerView rv = view.findViewById(R.id.rv_surah);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -54,22 +74,60 @@ public class QuranFragment extends Fragment {
         loadSurahsAsync();
 
         EditText etSearch = view.findViewById(R.id.et_search);
+        if (btnClearSearch != null) {
+            btnClearSearch.setOnClickListener(v -> etSearch.setText(""));
+        }
+
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                boolean hasQuery = s != null && s.length() > 0;
+                if (btnClearSearch != null) {
+                    btnClearSearch.setVisibility(hasQuery ? View.VISIBLE : View.GONE);
+                }
+                if (cardContinueReading != null) {
+                    cardContinueReading.setVisibility(hasQuery ? View.GONE : View.VISIBLE);
+                }
                 adapter.getFilter().filter(s);
             }
 
             @Override
             public void afterTextChanged(Editable s) {}
         });
+
+        refreshContinueReadingCard();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshContinueReadingCard();
+    }
+
+    private void refreshContinueReadingCard() {
+        Context ctx = getContext();
+        if (ctx == null) return;
+        SharedPreferences prefs = ctx.getSharedPreferences(PREFS_QURAN, Context.MODE_PRIVATE);
+        lastSurahId = prefs.getInt(KEY_LAST_SURAH_ID, 1);
+        lastSurahName = prefs.getString(KEY_LAST_SURAH_NAME, "Fatiha");
+        if (txtLastSurahName != null) {
+            txtLastSurahName.setText(getString(R.string.quran_surah_format, lastSurahId) + " • " + lastSurahName);
+        }
+    }
+
+    private void openSurah(int surahId, String surahName) {
+        if (getActivity() == null) return;
+        Intent intent = new Intent(getActivity(), SurahDetailActivity.class);
+        intent.putExtra("surah_id", surahId);
+        intent.putExtra("surah_name", surahName);
+        startActivity(intent);
     }
 
     private void loadSurahsAsync() {
-        android.content.Context appContext = requireContext().getApplicationContext();
+        Context appContext = requireContext().getApplicationContext();
         Handler mainHandler = new Handler(Looper.getMainLooper());
         Executors.newSingleThreadExecutor().execute(() -> {
             List<SurahItem> loaded = loadSurahsFromJson(appContext);
@@ -81,7 +139,7 @@ public class QuranFragment extends Fragment {
         });
     }
 
-    private List<SurahItem> loadSurahsFromJson(android.content.Context context) {
+    private List<SurahItem> loadSurahsFromJson(Context context) {
         try (InputStream is = context.getAssets().open("surahs.json")) {
             int size = is.available();
             byte[] buffer = new byte[size];
@@ -136,12 +194,7 @@ public class QuranFragment extends Fragment {
             holder.txtNameAr.setText(item.name_ar);
             holder.txtDesc.setText(item.desc);
 
-            holder.itemView.setOnClickListener(v -> {
-                Intent intent = new Intent(getActivity(), SurahDetailActivity.class);
-                intent.putExtra("surah_id", item.id);
-                intent.putExtra("surah_name", item.name);
-                startActivity(intent);
-            });
+            holder.itemView.setOnClickListener(v -> openSurah(item.id, item.name));
         }
 
         @Override
@@ -161,10 +214,14 @@ public class QuranFragment extends Fragment {
                 if (constraint == null || constraint.length() == 0) {
                     filteredList.addAll(itemsFull);
                 } else {
-                    java.util.Locale trLocale = new java.util.Locale("tr");
+                    Locale trLocale = new Locale("tr");
                     String filterPattern = constraint.toString().toLowerCase(trLocale).trim();
                     for (SurahItem item : itemsFull) {
-                        if (item.name.toLowerCase(trLocale).contains(filterPattern)) {
+                        boolean matchName = item.name != null && item.name.toLowerCase(trLocale).contains(filterPattern);
+                        boolean matchId = String.valueOf(item.id).equals(filterPattern);
+                        boolean matchAr = item.name_ar != null && item.name_ar.contains(filterPattern);
+                        boolean matchDesc = item.desc != null && item.desc.toLowerCase(trLocale).contains(filterPattern);
+                        if (matchName || matchId || matchAr || matchDesc) {
                             filteredList.add(item);
                         }
                     }
