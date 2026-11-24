@@ -42,10 +42,17 @@ public class PrayerResponse {
     public static class DateInfo {
         @SerializedName("hijri")
         public Hijri hijri;
+        @SerializedName("gregorian")
+        public Gregorian gregorian;
         @SerializedName("readable")
         public String readable;
     }
-    
+
+    public static class Gregorian {
+        @SerializedName("date")
+        public String date;
+    }
+
     public static class Hijri {
         @SerializedName("day")
         public String day;
@@ -54,8 +61,10 @@ public class PrayerResponse {
         @SerializedName("year")
         public String year;
     }
-    
+
     public static class Month {
+        @SerializedName("number")
+        public int number;
         @SerializedName("en")
         public String en;
     }

@@ -22,11 +22,16 @@ import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
 import com.google.android.material.snackbar.Snackbar;
+import com.korkutsoftware.hilalim.api.MonthlyPrayerResponse;
 import com.korkutsoftware.hilalim.api.PrayerApiService;
 import com.korkutsoftware.hilalim.api.PrayerResponse;
 import com.korkutsoftware.hilalim.api.RetrofitClient;
 import com.korkutsoftware.hilalim.util.AlarmHelper;
 import com.korkutsoftware.hilalim.util.AppCalculators;
+import com.korkutsoftware.hilalim.util.LocaleHelper;
+import com.korkutsoftware.hilalim.util.OngoingPrayerNotificationHelper;
+import com.korkutsoftware.hilalim.util.PrayerCacheHelper;
+import com.korkutsoftware.hilalim.util.ShareCardHelper;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -129,6 +134,11 @@ public class HomeFragment extends Fragment {
             btnCopyVerse.setOnClickListener(view -> copyDailyVerse(v));
         }
 
+        View btnShareVerse = v.findViewById(R.id.btn_share_home_verse);
+        if (btnShareVerse != null) {
+            btnShareVerse.setOnClickListener(view -> shareDailyVerse(v));
+        }
+
         View fabMosque = v.findViewById(R.id.fab_mosque);
         if (fabMosque != null) {
             fabMosque.setOnClickListener(view -> openNearestMosquesOnMap());
@@ -140,10 +150,12 @@ public class HomeFragment extends Fragment {
 
     private final List<DualarActivity.DuaItem> homeDuaPool = new java.util.ArrayList<>();
     private final Random duaRandom = new Random();
+    private DualarActivity.DuaItem currentHomeDua = null;
 
     private void setupRandomDuaCard(View root) {
         View cardDua = root.findViewById(R.id.card_daily_dua);
         View btnRefresh = root.findViewById(R.id.btn_refresh_dua);
+        View btnShareDua = root.findViewById(R.id.btn_share_home_dua);
         if (cardDua != null) {
             cardDua.setOnClickListener(view -> {
                 if (getActivity() != null) {
@@ -153,6 +165,9 @@ public class HomeFragment extends Fragment {
         }
         if (btnRefresh != null) {
             btnRefresh.setOnClickListener(view -> showRandomDua(root));
+        }
+        if (btnShareDua != null) {
+            btnShareDua.setOnClickListener(view -> shareDailyDua(root));
         }
 
         Context ctx = getContext();
@@ -172,6 +187,7 @@ public class HomeFragment extends Fragment {
     private void showRandomDua(View root) {
         if (homeDuaPool.isEmpty()) return;
         DualarActivity.DuaItem dua = homeDuaPool.get(duaRandom.nextInt(homeDuaPool.size()));
+        currentHomeDua = dua;
         TextView txtTitle = root.findViewById(R.id.txt_home_dua_title);
         TextView txtArabic = root.findViewById(R.id.txt_home_dua_arabic);
         TextView txtOkunus = root.findViewById(R.id.txt_home_dua_okunus);
@@ -184,24 +200,55 @@ public class HomeFragment extends Fragment {
         if (txtKaynak != null) txtKaynak.setText(dua.kaynak);
     }
 
+    private void shareDailyDua(View root) {
+        if (getContext() == null) return;
+        if (currentHomeDua != null) {
+            ShareCardHelper.showShareOptionsDialog(
+                    getContext(),
+                    currentHomeDua.title,
+                    currentHomeDua.arabic,
+                    currentHomeDua.anlam,
+                    currentHomeDua.kaynak
+            );
+            return;
+        }
+        TextView txtArabic = root.findViewById(R.id.txt_home_dua_arabic);
+        TextView txtAnlam = root.findViewById(R.id.txt_home_dua_anlam);
+        ShareCardHelper.showShareOptionsDialog(
+                getContext(),
+                getString(R.string.gunun_duasi_title),
+                txtArabic != null ? txtArabic.getText().toString() : "",
+                txtAnlam != null ? txtAnlam.getText().toString() : "",
+                ""
+        );
+    }
+
     private void updateDailyVerse(View root) {
         TextView txtContent = root.findViewById(R.id.txt_verse_content);
         TextView txtRef = root.findViewById(R.id.txt_verse_ref);
         if (txtContent == null || txtRef == null) return;
 
-        String[][] verses = {
-                {"Şüphesiz Allah, adaleti, iyilik yapmayı, yakınlara yardım etmeyi emreder; hayasızlığı, fenalık ve azgınlığı da yasaklar.", "(Nahl Suresi, 90. Ayet)"},
-                {"Kalpler ancak Allah'ı anmakla huzur bulur.", "(Ra'd Suresi, 28. Ayet)"},
-                {"Şüphesiz güçlükle beraber bir kolaylık vardır.", "(İnşirah Suresi, 5. Ayet)"},
-                {"Beni anın ki ben de sizi anayım. Bana şükredin, nankörlük etmeyin.", "(Bakara Suresi, 152. Ayet)"},
-                {"Allah, hiç kimseye gücünün üstünde bir yük yüklemez.", "(Bakara Suresi, 286. Ayet)"},
-                {"Sabır ve namaz ile Allah'tan yardım isteyin.", "(Bakara Suresi, 45. Ayet)"},
-                {"De ki: Rabbim, ilmimi artır.", "(Taha Suresi, 114. Ayet)"}
-        };
+        String[] texts = getResources().getStringArray(R.array.daily_verses_text);
+        String[] refs = getResources().getStringArray(R.array.daily_verses_ref);
+        if (texts.length == 0 || texts.length != refs.length) return;
         int dayOfYear = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
-        String[] selected = verses[dayOfYear % verses.length];
-        txtContent.setText(selected[0]);
-        txtRef.setText(selected[1]);
+        int idx = dayOfYear % texts.length;
+        txtContent.setText(texts[idx]);
+        txtRef.setText(refs[idx]);
+    }
+
+    private void shareDailyVerse(View root) {
+        if (getContext() == null) return;
+        TextView txtContent = root.findViewById(R.id.txt_verse_content);
+        TextView txtRef = root.findViewById(R.id.txt_verse_ref);
+        if (txtContent == null || txtRef == null) return;
+        ShareCardHelper.showShareOptionsDialog(
+                getContext(),
+                getString(R.string.gunun_ayeti_title),
+                null,
+                txtContent.getText().toString(),
+                txtRef.getText().toString()
+        );
     }
 
     private void copyDailyVerse(View root) {
@@ -237,15 +284,9 @@ public class HomeFragment extends Fragment {
 
     private void loadCachedData() {
         if (getActivity() == null) return;
-        SharedPreferences prefs = getActivity().getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
-        String cachedJson = prefs.getString("cached_prayer_data", null);
-        if (cachedJson != null) {
-            try {
-                PrayerResponse.Data data = new Gson().fromJson(cachedJson, PrayerResponse.Data.class);
-                updateUI(data, false);
-            } catch (Exception e) {
-                Log.e("HomeFragment", "Error loading cached data", e);
-            }
+        PrayerResponse.Data data = PrayerCacheHelper.getTodayData(getActivity());
+        if (data != null) {
+            updateUI(data, false);
         }
     }
 
@@ -272,6 +313,7 @@ public class HomeFragment extends Fragment {
         String todayStr = new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());
         String lastFetchedDate = prefs.getString("last_fetched_date", "");
         String lastFetchedLoc = prefs.getString("last_fetched_location", "");
+        prefetchMonthlyCacheIfNeeded(locationKey);
         if (currentTimings != null && todayStr.equals(lastFetchedDate) && locationKey.equals(lastFetchedLoc)) {
             return;
         }
@@ -353,6 +395,34 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    private void prefetchMonthlyCacheIfNeeded(String locationKey) {
+        Context ctx = getContext();
+        if (ctx == null) return;
+        Calendar cal = Calendar.getInstance();
+        int month = cal.get(Calendar.MONTH) + 1;
+        int year = cal.get(Calendar.YEAR);
+        if (PrayerCacheHelper.hasMonthlyCacheFor(ctx, locationKey, month, year)) {
+            return;
+        }
+        Context appContext = ctx.getApplicationContext();
+        PrayerCacheHelper.LocationSpec spec = PrayerCacheHelper.getCurrentLocationSpec(appContext);
+        PrayerCacheHelper.createMonthlyCall(spec, month, year).enqueue(new Callback<MonthlyPrayerResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<MonthlyPrayerResponse> call, @NonNull Response<MonthlyPrayerResponse> response) {
+                if (response.isSuccessful() && response.body() != null && response.body().data != null) {
+                    PrayerCacheHelper.saveMonthlyCalendar(appContext, response.body().data, locationKey, month, year);
+                    if (isAdded() && currentTimings != null) {
+                        AlarmHelper.setAlarms(appContext, currentTimings);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<MonthlyPrayerResponse> call, @NonNull Throwable t) {
+            }
+        });
+    }
+
     private void showNetworkErrorIfEmpty() {
         if (isAdded() && getView() != null && currentTimings == null) {
             Snackbar.make(getView(), R.string.error_prayer_times_load, Snackbar.LENGTH_LONG)
@@ -396,10 +466,13 @@ public class HomeFragment extends Fragment {
         txtAksam.setText(cleanTime(data.timings.maghrib));
         txtYatsi.setText(cleanTime(data.timings.isha));
 
-        if (data.date != null && data.date.hijri != null) {
-            String hijriStr = String.format("%s %s %s", 
-                    data.date.hijri.day, 
-                    data.date.hijri.month.en, 
+        if (data.date != null && data.date.hijri != null && data.date.hijri.month != null) {
+            String lang = getContext() != null ? LocaleHelper.getLanguage(getContext()) : "tr";
+            String localizedMonth = AppCalculators.localizeHijriMonth(
+                    data.date.hijri.month.number, data.date.hijri.month.en, lang);
+            String hijriStr = String.format("%s %s %s",
+                    data.date.hijri.day,
+                    localizedMonth,
                     data.date.hijri.year);
             txtHijri.setText(hijriStr);
         }
@@ -407,6 +480,7 @@ public class HomeFragment extends Fragment {
         startTimer();
         if (getContext() != null) {
             PrayerWidgetProvider.updateAllWidgets(getContext());
+            OngoingPrayerNotificationHelper.updateOrCancel(getContext());
             if (setAlarms) {
                 AlarmHelper.setAlarms(getContext(), data.timings);
             }

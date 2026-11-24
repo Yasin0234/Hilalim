@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.korkutsoftware.hilalim.util.AlarmHelper;
+import com.korkutsoftware.hilalim.util.OngoingPrayerNotificationHelper;
 
 public class NotificationSettingsActivity extends BaseActivity {
 
@@ -28,6 +29,7 @@ public class NotificationSettingsActivity extends BaseActivity {
         prefs = getSharedPreferences("hilalim_prefs", MODE_PRIVATE);
 
         bindSwitch(R.id.switch_master, "notif_enabled", true);
+        bindSwitch(R.id.switch_ongoing_notif, OngoingPrayerNotificationHelper.PREF_ONGOING_ENABLED, true);
         bindSwitch(R.id.switch_ezan, "notif_ezan_enabled", true);
         bindSwitch(R.id.switch_pre_45, "notif_pre_45", true);
         bindSwitch(R.id.switch_pre_15, "notif_pre_15", true);

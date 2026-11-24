@@ -25,6 +25,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.korkutsoftware.hilalim.util.ShareCardHelper;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -201,6 +202,16 @@ public class DualarActivity extends BaseActivity {
                 holder.txtNot.setVisibility(View.GONE);
             }
 
+            if (holder.btnShare != null) {
+                holder.btnShare.setOnClickListener(v -> ShareCardHelper.showShareOptionsDialog(
+                        DualarActivity.this,
+                        item.title,
+                        item.arabic,
+                        item.anlam,
+                        item.kaynak
+                ));
+            }
+
             holder.btnCopy.setOnClickListener(v -> {
                 String fullText = item.title + "\n\n" + item.arabic + "\n\n" + item.okunus + "\n\n" + item.anlam + "\n(" + item.kaynak + ")";
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -218,7 +229,7 @@ public class DualarActivity extends BaseActivity {
 
         class ViewHolder extends RecyclerView.ViewHolder {
             TextView txtCategory, txtTitle, txtArabic, txtOkunus, txtAnlam, txtNot, txtKaynak;
-            ImageView btnCopy;
+            ImageView btnCopy, btnShare;
 
             ViewHolder(View v) {
                 super(v);
@@ -229,6 +240,7 @@ public class DualarActivity extends BaseActivity {
                 txtAnlam = v.findViewById(R.id.txt_dua_anlam);
                 txtNot = v.findViewById(R.id.txt_dua_not);
                 txtKaynak = v.findViewById(R.id.txt_dua_kaynak);
+                btnShare = v.findViewById(R.id.btn_share_dua);
                 btnCopy = v.findViewById(R.id.btn_copy_dua);
             }
         }

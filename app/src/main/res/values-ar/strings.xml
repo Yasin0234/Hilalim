@@ -189,4 +189,84 @@
     <string name="about_developers_title">مطورو البرمجيات</string>
     <string name="about_developer_role">مطور برمجيات</string>
     <string name="about_companies_title">المؤسسات المطورة</string>
+
+    <!-- v1.1.1 Features -->
+    <string name="ongoing_notif_channel_name">شريط المواقيت الدائم</string>
+    <string name="ongoing_notif_channel_desc">يعرض وقت الصلاة القادم باستمرار في شريط الإشعارات</string>
+    <string name="ongoing_notif_title_format">القادم: %1$s • %2$s</string>
+    <string name="notif_ongoing_toggle">شريط المواقيت الدائم</string>
+    <string name="notif_ongoing_desc">تثبيت وقت الصلاة القادم وجدول اليوم في الإشعارات</string>
+    <string name="prev_month">الشهر السابق</string>
+    <string name="next_month">الشهر التالي</string>
+    <string name="today_badge">اليوم</string>
+    <string name="qibla_calibration_needed_title">يلزم معايرة البوصلة</string>
+    <string name="qibla_calibration_needed_desc">دقة البوصلة منخفضة. حرّك الهاتف على شكل رقم (8).</string>
+    <string name="quran_text_settings">إعدادات القراءة</string>
+    <string name="quran_bookmark_toggle">إشارة مرجعية</string>
+    <string name="quran_tab_surahs">السور</string>
+    <string name="quran_tab_bookmarks">المحفوظات</string>
+    <string name="quran_tab_bookmarks_count">المحفوظات (%d)</string>
+    <string name="quran_bookmarks_empty">لا توجد آيات محفوظة بعد.\nاضغط على أيقونة القلب لحفظ أي آية هنا.</string>
+    <string name="quran_verse_format">الآية %d</string>
+    <string name="font_size_small">خط صغير</string>
+    <string name="font_size_medium">خط متوسط</string>
+    <string name="font_size_large">خط كبير</string>
+    <string name="font_size_xlarge">خط كبير جداً</string>
+    <string name="quran_hide_translation">النص العربي فقط</string>
+    <string name="quran_show_translation">إظهار الترجمة</string>
+    <string name="quran_bookmark_added">تم حفظ الآية في المحفوظات</string>
+    <string name="quran_bookmark_removed">تمت إزالة الآية من المحفوظات</string>
+    <string name="share_title">مشاركة</string>
+    <string name="share_as_card">مشاركة كبطاقة مصورة</string>
+    <string name="share_as_text">مشاركة كنص</string>
+    <string name="share_error">تعذر إنشاء البطاقة.</string>
+    <string name="tesbihat_mode_label">تسبيح ٣٣×٣</string>
+    <string name="tesbihat_started">بدأ تسبيح بعد الصلاة (٣٣×٣)</string>
+    <string name="tesbihat_completed">تم التسبيح بحمد الله. تقبل الله طاعتكم.</string>
+    <string name="add_custom_zikir">إضافة ذكر مخصص</string>
+    <string name="custom_zikir_name_hint">اسم الذكر (مثال: يا لطيف)</string>
+    <string name="custom_zikir_arabic_hint">النص العربي (اختياري)</string>
+    <string name="custom_zikir_empty">يرجى إدخال اسم الذكر.</string>
+    <string name="zikir_stats_format">اليوم: %1$d • الإجمالي: %2$d</string>
+    <string name="esma_title">أسماء الله الحسنى</string>
+    <string name="esma_search_hint">ابحث عن اسم أو معنى&#8230;</string>
+    <string name="esma_open_in_zikirmatik">التسبيح في المسبحة (٩٩)</string>
+    <string name="days_left_format">متبقي %d يوم</string>
+    <string name="days_passed_label">انتهى</string>
+
+    <string-array name="daily_verses_text">
+        <item>إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ وَإِيتَاءِ ذِي الْقُرْبَىٰ وَيَنْهَىٰ عَنِ الْفَحْشَاءِ وَالْمُنكَرِ</item>
+        <item>أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</item>
+        <item>فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</item>
+        <item>فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ</item>
+        <item>لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا</item>
+        <item>وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ</item>
+        <item>وَقُل رَّبِّ زِدْنِي عِلْمًا</item>
+        <item>وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ</item>
+        <item>وَلَا تَسْتَوِي الْحَسَنَةُ وَلَا السَّيِّئَةُ ادْفَعْ بِالَّتِي هِيَ أَحْسَنُ</item>
+        <item>إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</item>
+        <item>فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ</item>
+        <item>رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</item>
+        <item>وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ وَاللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ</item>
+        <item>لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا</item>
+        <item>إِنَّ الصَّلَاةَ تَنْهَىٰ عَنِ الْفَحْشَاءِ وَالْمُنكَرِ</item>
+    </string-array>
+
+    <string-array name="daily_verses_ref">
+        <item>(سورة النحل، ٩٠)</item>
+        <item>(سورة الرعد، ٢٨)</item>
+        <item>(سورة الشرح، ٥)</item>
+        <item>(سورة البقرة، ١٥٢)</item>
+        <item>(سورة البقرة، ٢٨٦)</item>
+        <item>(سورة البقرة، ٤٥)</item>
+        <item>(سورة طه، ١١٤)</item>
+        <item>(سورة البقرة، ١٨٦)</item>
+        <item>(سورة فصلت، ٣٤)</item>
+        <item>(سورة البقرة، ١٥٣)</item>
+        <item>(سورة الزلزلة، ٧)</item>
+        <item>(سورة البقرة، ٢٠١)</item>
+        <item>(سورة الحديد، ٤)</item>
+        <item>(سورة الزمر، ٥٣)</item>
+        <item>(سورة العنكبوت، ٤٥)</item>
+    </string-array>
 </resources>

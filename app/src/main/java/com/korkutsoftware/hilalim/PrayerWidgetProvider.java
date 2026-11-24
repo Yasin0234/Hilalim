@@ -63,15 +63,9 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
             views.setTextViewText(R.id.widget_location, context.getString(R.string.app_name));
         }
 
-        String cachedJson = prefs.getString("cached_prayer_data", null);
-        if (cachedJson != null) {
-            try {
-                PrayerResponse.Data data = new Gson().fromJson(cachedJson, PrayerResponse.Data.class);
-                if (data != null && data.timings != null) {
-                    bindTimings(context, views, data.timings);
-                }
-            } catch (Exception ignored) {
-            }
+        PrayerResponse.Data data = com.korkutsoftware.hilalim.util.PrayerCacheHelper.getTodayData(context);
+        if (data != null && data.timings != null) {
+            bindTimings(context, views, data.timings);
         }
 
         appWidgetManager.updateAppWidget(appWidgetId, views);

@@ -10,16 +10,20 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.korkutsoftware.hilalim.util.AppCalculators;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.Executors;
 
@@ -46,6 +50,10 @@ public class DiniGunlerActivity extends BaseActivity {
             mainHandler.post(() -> {
                 if (!isFinishing() && !isDestroyed() && items != null) {
                     adapter.setItems(items);
+                    int nextPos = adapter.getNextUpcomingIndex();
+                    if (nextPos > 0) {
+                        rv.post(() -> rv.scrollToPosition(nextPos));
+                    }
                 }
             });
         });
@@ -75,6 +83,8 @@ public class DiniGunlerActivity extends BaseActivity {
 
     private class DiniGunAdapter extends RecyclerView.Adapter<DiniGunAdapter.ViewHolder> {
         private final List<DiniGunItem> items;
+        private final Calendar today = Calendar.getInstance();
+        private int nextUpcomingIndex = -1;
 
         DiniGunAdapter(List<DiniGunItem> items) {
             this.items = items;
@@ -83,7 +93,20 @@ public class DiniGunlerActivity extends BaseActivity {
         void setItems(List<DiniGunItem> newItems) {
             items.clear();
             items.addAll(newItems);
+            nextUpcomingIndex = -1;
+            int minNonNegative = Integer.MAX_VALUE;
+            for (int i = 0; i < items.size(); i++) {
+                int delta = AppCalculators.computeDaysUntilTurkishDate(items.get(i).date, today);
+                if (delta >= 0 && delta < minNonNegative) {
+                    minNonNegative = delta;
+                    nextUpcomingIndex = i;
+                }
+            }
             notifyDataSetChanged();
+        }
+
+        int getNextUpcomingIndex() {
+            return nextUpcomingIndex;
         }
 
         @NonNull
@@ -98,6 +121,35 @@ public class DiniGunlerActivity extends BaseActivity {
             DiniGunItem item = items.get(position);
             holder.txtName.setText(item.name);
             holder.txtDate.setText(item.date);
+
+            int daysDelta = AppCalculators.computeDaysUntilTurkishDate(item.date, today);
+            if (daysDelta == Integer.MIN_VALUE) {
+                holder.txtDaysLeft.setVisibility(View.GONE);
+                holder.itemView.setAlpha(1.0f);
+            } else if (daysDelta == 0) {
+                holder.txtDaysLeft.setVisibility(View.VISIBLE);
+                holder.txtDaysLeft.setText(R.string.today_badge);
+                holder.itemView.setAlpha(1.0f);
+            } else if (daysDelta > 0) {
+                holder.txtDaysLeft.setVisibility(View.VISIBLE);
+                holder.txtDaysLeft.setText(getString(R.string.days_left_format, daysDelta));
+                holder.itemView.setAlpha(1.0f);
+            } else {
+                holder.txtDaysLeft.setVisibility(View.VISIBLE);
+                holder.txtDaysLeft.setText(R.string.days_passed_label);
+                holder.itemView.setAlpha(0.6f);
+            }
+
+            if (holder.card != null) {
+                boolean isNext = position == nextUpcomingIndex;
+                float density = getResources().getDisplayMetrics().density;
+                holder.card.setStrokeColor(ContextCompat.getColor(
+                        DiniGunlerActivity.this,
+                        isNext ? R.color.secondary : R.color.card_stroke
+                ));
+                holder.card.setStrokeWidth((int) ((isNext ? 2f : 1f) * density));
+            }
+
             holder.itemView.setOnClickListener(v -> {
                 if (item.guide_id != null && !item.guide_id.isEmpty()) {
                     android.content.Intent intent = new android.content.Intent(DiniGunlerActivity.this, DiniGunDetailActivity.class);
@@ -115,12 +167,15 @@ public class DiniGunlerActivity extends BaseActivity {
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
-            TextView txtName, txtDate;
+            MaterialCardView card;
+            TextView txtName, txtDate, txtDaysLeft;
 
             ViewHolder(View v) {
                 super(v);
+                card = v.findViewById(R.id.card_dini_gun);
                 txtName = v.findViewById(R.id.txt_day_name);
                 txtDate = v.findViewById(R.id.txt_day_date);
+                txtDaysLeft = v.findViewById(R.id.txt_days_left);
             }
         }
     }

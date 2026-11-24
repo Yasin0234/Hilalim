@@ -73,6 +73,22 @@
                     android:visibility="gone" />
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/btn_text_settings"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_hero_icon"
+                android:clickable="true"
+                android:contentDescription="@string/quran_text_settings"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:text="@string/placeholder_aa"
+                android:textColor="@color/gold"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/btn_prev_surah"
                 android:layout_width="36dp"

@@ -189,4 +189,84 @@
     <string name="about_developers_title">Software Developers</string>
     <string name="about_developer_role">Software Developer</string>
     <string name="about_companies_title">Developed By</string>
+
+    <!-- v1.1.1 Features -->
+    <string name="ongoing_notif_channel_name">Persistent Prayer Bar</string>
+    <string name="ongoing_notif_channel_desc">Shows the next prayer time continuously in the notification shade</string>
+    <string name="ongoing_notif_title_format">Next: %1$s • %2$s</string>
+    <string name="notif_ongoing_toggle">Persistent Prayer Bar</string>
+    <string name="notif_ongoing_desc">Pin upcoming prayer time and daily schedule in notifications</string>
+    <string name="prev_month">Previous Month</string>
+    <string name="next_month">Next Month</string>
+    <string name="today_badge">Today</string>
+    <string name="qibla_calibration_needed_title">Calibration Needed</string>
+    <string name="qibla_calibration_needed_desc">Compass accuracy is low. Move your phone in a figure-8 motion.</string>
+    <string name="quran_text_settings">Reading Settings</string>
+    <string name="quran_bookmark_toggle">Bookmark</string>
+    <string name="quran_tab_surahs">Surahs</string>
+    <string name="quran_tab_bookmarks">Bookmarks</string>
+    <string name="quran_tab_bookmarks_count">Bookmarks (%d)</string>
+    <string name="quran_bookmarks_empty">No bookmarks yet.\nTap the heart icon on any verse to save it here.</string>
+    <string name="quran_verse_format">Verse %d</string>
+    <string name="font_size_small">Small Text</string>
+    <string name="font_size_medium">Medium Text</string>
+    <string name="font_size_large">Large Text</string>
+    <string name="font_size_xlarge">Extra Large Text</string>
+    <string name="quran_hide_translation">Arabic Only</string>
+    <string name="quran_show_translation">Show Translation</string>
+    <string name="quran_bookmark_added">Verse added to bookmarks</string>
+    <string name="quran_bookmark_removed">Verse removed from bookmarks</string>
+    <string name="share_title">Share</string>
+    <string name="share_as_card">Share as Image Card</string>
+    <string name="share_as_text">Share as Text</string>
+    <string name="share_error">Could not generate share card.</string>
+    <string name="tesbihat_mode_label">Tasbihat 33×3</string>
+    <string name="tesbihat_started">Post-prayer Tasbihat started (33×3)</string>
+    <string name="tesbihat_completed">Tasbihat completed. May Allah accept it.</string>
+    <string name="add_custom_zikir">Add Custom Dhikr</string>
+    <string name="custom_zikir_name_hint">Dhikr name (e.g. Ya Latif)</string>
+    <string name="custom_zikir_arabic_hint">Arabic text (optional)</string>
+    <string name="custom_zikir_empty">Please enter a dhikr name.</string>
+    <string name="zikir_stats_format">Today: %1$d • Total: %2$d</string>
+    <string name="esma_title">Asma-ul Husna</string>
+    <string name="esma_search_hint">Search name or meaning&#8230;</string>
+    <string name="esma_open_in_zikirmatik">Count in Tasbih (99)</string>
+    <string name="days_left_format">%d days left</string>
+    <string name="days_passed_label">Passed</string>
+
+    <string-array name="daily_verses_text">
+        <item>Indeed, Allah orders justice and good conduct and giving to relatives, and forbids immorality and bad conduct.</item>
+        <item>Unquestionably, by the remembrance of Allah hearts are assured.</item>
+        <item>For indeed, with hardship will be ease.</item>
+        <item>So remember Me; I will remember you. And be grateful to Me and do not deny Me.</item>
+        <item>Allah does not charge a soul except with that within its capacity.</item>
+        <item>And seek help through patience and prayer.</item>
+        <item>Say, My Lord, increase me in knowledge.</item>
+        <item>And when My servants ask you concerning Me, indeed I am near. I respond to the invocation of the supplicant.</item>
+        <item>Not equal are the good deed and the bad. Repel evil by that which is better.</item>
+        <item>Indeed, Allah is with the patient.</item>
+        <item>So whoever does an atom\'s weight of good will see it.</item>
+        <item>Our Lord, give us in this world that which is good and in the Hereafter that which is good.</item>
+        <item>And He is with you wherever you are. And Allah, of what you do, is Seeing.</item>
+        <item>Do not despair of the mercy of Allah. Indeed, Allah forgives all sins.</item>
+        <item>Indeed, prayer prohibits immorality and wrongdoing.</item>
+    </string-array>
+
+    <string-array name="daily_verses_ref">
+        <item>(Surah An-Nahl, 90)</item>
+        <item>(Surah Ar-Ra\'d, 28)</item>
+        <item>(Surah Ash-Sharh, 5)</item>
+        <item>(Surah Al-Baqarah, 152)</item>
+        <item>(Surah Al-Baqarah, 286)</item>
+        <item>(Surah Al-Baqarah, 45)</item>
+        <item>(Surah Taha, 114)</item>
+        <item>(Surah Al-Baqarah, 186)</item>
+        <item>(Surah Fussilat, 34)</item>
+        <item>(Surah Al-Baqarah, 153)</item>
+        <item>(Surah Az-Zalzalah, 7)</item>
+        <item>(Surah Al-Baqarah, 201)</item>
+        <item>(Surah Al-Hadid, 4)</item>
+        <item>(Surah Az-Zumar, 53)</item>
+        <item>(Surah Al-Ankabut, 45)</item>
+    </string-array>
 </resources>

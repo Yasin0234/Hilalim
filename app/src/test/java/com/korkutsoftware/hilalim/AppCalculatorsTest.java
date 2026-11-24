@@ -55,4 +55,31 @@ public class AppCalculatorsTest {
         assertEquals(50, AppCalculators.computeProgressPercent(500, 1000));
         assertEquals(100, AppCalculators.computeProgressPercent(1500, 1000));
     }
+
+    @Test
+    public void applyMagneticDeclination_normalizesAcrossZeroAnd360() {
+        assertEquals(5.5f, AppCalculators.applyMagneticDeclination(359.5f, 6.0f), 0.01f);
+        assertEquals(356.0f, AppCalculators.applyMagneticDeclination(2.0f, -6.0f), 0.01f);
+        assertEquals(156.0f, AppCalculators.applyMagneticDeclination(150.0f, 6.0f), 0.01f);
+    }
+
+    @Test
+    public void localizeHijriMonth_supportsAllFourLanguages() {
+        assertEquals("Ramazan", AppCalculators.localizeHijriMonth(9, "Ramaḍān", "tr"));
+        assertEquals("رمضان", AppCalculators.localizeHijriMonth(9, "Ramaḍān", "ar"));
+        assertEquals("Ramadan", AppCalculators.localizeHijriMonth(9, "Ramaḍān", "de"));
+        assertEquals("Ramaḍān", AppCalculators.localizeHijriMonth(9, "Ramaḍān", "en"));
+        assertEquals("Şaban", AppCalculators.localizeHijriMonth(8, "Sha'ban", "tr"));
+    }
+
+    @Test
+    public void computeDaysUntilTurkishDate_handlesFutureTodayPast() {
+        java.util.Calendar base = java.util.Calendar.getInstance();
+        base.set(2026, java.util.Calendar.MARCH, 20, 10, 0, 0);
+
+        assertEquals(0, AppCalculators.computeDaysUntilTurkishDate("20 Mart 2026", base));
+        assertEquals(26, AppCalculators.computeDaysUntilTurkishDate("15 Nisan 2026", base));
+        assertEquals(-18, AppCalculators.computeDaysUntilTurkishDate("2 Mart 2026", base));
+        assertEquals(Integer.MIN_VALUE, AppCalculators.computeDaysUntilTurkishDate("invalid", base));
+    }
 }

@@ -124,18 +124,45 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Mode Filter Chips (All Surahs / Bookmarks) -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_quran_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/search_container"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_quran_surahs"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/quran_tab_surahs" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_quran_bookmarks"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quran_tab_bookmarks" />
+    </com.google.android.material.chip.ChipGroup>
+
     <!-- Continue Reading Hero Card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_continue_reading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         app:cardCornerRadius="22dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/search_container"
+        app:layout_constraintTop_toBottomOf="@id/chip_group_quran_mode"
         app:strokeColor="@color/card_stroke"
         app:strokeWidth="1dp">
 
@@ -204,6 +231,21 @@
                 app:tint="@color/gold" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/txt_bookmarks_empty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:gravity="center"
+        android:text="@string/quran_bookmarks_empty"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_continue_reading" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_surah"

@@ -46,19 +46,18 @@ public class AlarmHelper {
 
         SharedPreferences prefs = context.getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
         if (!prefs.getBoolean("notif_enabled", true)) {
+            OngoingPrayerNotificationHelper.updateOrCancel(context);
             return;
         }
         boolean pre45Enabled = prefs.getBoolean("notif_pre_45", true);
         boolean pre15Enabled = prefs.getBoolean("notif_pre_15", true);
 
-        String[] times = {
-                cleanTime(timings.fajr),
-                cleanTime(timings.sunrise),
-                cleanTime(timings.dhuhr),
-                cleanTime(timings.asr),
-                cleanTime(timings.maghrib),
-                cleanTime(timings.isha)
-        };
+        Calendar tomorrowCal = Calendar.getInstance();
+        tomorrowCal.add(Calendar.DAY_OF_MONTH, 1);
+        PrayerResponse.Timings tomorrowTimings = PrayerCacheHelper.getTimingsForDateOrFallback(context, tomorrowCal, timings);
+
+        String[] times = extractTimes(timings);
+        String[] tomorrowTimes = extractTimes(tomorrowTimings);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         if (alarmManager == null) return;
@@ -84,16 +83,28 @@ public class AlarmHelper {
 
                 long basePrayerTimeMs = baseCal.getTimeInMillis();
 
+                // Prepare tomorrow's exact prayer time if available in monthly cache
+                Calendar tomorrowBaseCal = (Calendar) baseCal.clone();
+                tomorrowBaseCal.add(Calendar.DAY_OF_MONTH, 1);
+                if (tomorrowTimes[i] != null && !tomorrowTimes[i].isEmpty()) {
+                    Date tParsed = sdf.parse(tomorrowTimes[i]);
+                    if (tParsed != null) {
+                        Calendar tPrayer = Calendar.getInstance();
+                        tPrayer.setTime(tParsed);
+                        tomorrowBaseCal.set(Calendar.HOUR_OF_DAY, tPrayer.get(Calendar.HOUR_OF_DAY));
+                        tomorrowBaseCal.set(Calendar.MINUTE, tPrayer.get(Calendar.MINUTE));
+                    }
+                }
+                long tomorrowPrayerTimeMs = tomorrowBaseCal.getTimeInMillis();
+
                 for (int type = 0; type < TYPE_OFFSETS_MS.length; type++) {
                     if (type == TYPE_PRE_45 && !pre45Enabled) continue;
                     if (type == TYPE_PRE_15 && !pre15Enabled) continue;
                     long triggerMs = basePrayerTimeMs + TYPE_OFFSETS_MS[type];
 
-                    // If time has passed today, schedule for tomorrow
+                    // If time has passed today, schedule using tomorrow's cached time
                     if (triggerMs <= nowMs) {
-                        Calendar tomorrowCal = (Calendar) baseCal.clone();
-                        tomorrowCal.add(Calendar.DAY_OF_MONTH, 1);
-                        triggerMs = tomorrowCal.getTimeInMillis() + TYPE_OFFSETS_MS[type];
+                        triggerMs = tomorrowPrayerTimeMs + TYPE_OFFSETS_MS[type];
                     }
 
                     int requestCode = (i * 10) + type;
@@ -115,6 +126,21 @@ public class AlarmHelper {
                 Log.e(TAG, "Error parsing prayer time: " + times[i], e);
             }
         }
+        OngoingPrayerNotificationHelper.updateOrCancel(context);
+    }
+
+    private static String[] extractTimes(PrayerResponse.Timings timings) {
+        if (timings == null) {
+            return new String[]{"", "", "", "", "", ""};
+        }
+        return new String[]{
+                cleanTime(timings.fajr),
+                cleanTime(timings.sunrise),
+                cleanTime(timings.dhuhr),
+                cleanTime(timings.asr),
+                cleanTime(timings.maghrib),
+                cleanTime(timings.isha)
+        };
     }
 
     private static String cleanTime(String timeStr) {
@@ -160,17 +186,11 @@ public class AlarmHelper {
 
     public static void rescheduleAlarmsFromCache(Context context) {
         if (context == null) return;
-        SharedPreferences prefs = context.getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
-        String cachedJson = prefs.getString("cached_prayer_data", null);
-        if (cachedJson != null) {
-            try {
-                PrayerResponse.Data data = new Gson().fromJson(cachedJson, PrayerResponse.Data.class);
-                if (data != null && data.timings != null) {
-                    setAlarms(context, data.timings);
-                }
-            } catch (Exception e) {
-                Log.e(TAG, "Error rescheduling alarms from cache", e);
-            }
+        PrayerResponse.Data data = PrayerCacheHelper.getTodayData(context);
+        if (data != null && data.timings != null) {
+            setAlarms(context, data.timings);
+        } else {
+            OngoingPrayerNotificationHelper.updateOrCancel(context);
         }
     }
 

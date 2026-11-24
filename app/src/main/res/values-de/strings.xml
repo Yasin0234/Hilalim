@@ -189,4 +189,84 @@
     <string name="about_developers_title">Softwareentwickler</string>
     <string name="about_developer_role">Softwareentwickler</string>
     <string name="about_companies_title">Entwickelt von</string>
+
+    <!-- v1.1.1 Features -->
+    <string name="ongoing_notif_channel_name">Dauerhafte Gebetsleiste</string>
+    <string name="ongoing_notif_channel_desc">Zeigt die nächste Gebetszeit dauerhaft in der Benachrichtigungsleiste an</string>
+    <string name="ongoing_notif_title_format">Nächstes: %1$s • %2$s</string>
+    <string name="notif_ongoing_toggle">Dauerhafte Gebetsleiste</string>
+    <string name="notif_ongoing_desc">Nächste Gebetszeit und Tagesplan dauerhaft in Benachrichtigungen anzeigen</string>
+    <string name="prev_month">Vorheriger Monat</string>
+    <string name="next_month">Nächster Monat</string>
+    <string name="today_badge">Heute</string>
+    <string name="qibla_calibration_needed_title">Kalibrierung erforderlich</string>
+    <string name="qibla_calibration_needed_desc">Kompassgenauigkeit gering. Bewegen Sie das Telefon in einer Achterform (8).</string>
+    <string name="quran_text_settings">Leseeinstellungen</string>
+    <string name="quran_bookmark_toggle">Lesezeichen</string>
+    <string name="quran_tab_surahs">Suren</string>
+    <string name="quran_tab_bookmarks">Lesezeichen</string>
+    <string name="quran_tab_bookmarks_count">Lesezeichen (%d)</string>
+    <string name="quran_bookmarks_empty">Noch keine Lesezeichen.\nTippen Sie auf das Herzsymbol eines Verses, um ihn zu speichern.</string>
+    <string name="quran_verse_format">Vers %d</string>
+    <string name="font_size_small">Kleine Schrift</string>
+    <string name="font_size_medium">Mittlere Schrift</string>
+    <string name="font_size_large">Große Schrift</string>
+    <string name="font_size_xlarge">Sehr große Schrift</string>
+    <string name="quran_hide_translation">Nur Arabisch</string>
+    <string name="quran_show_translation">Übersetzung anzeigen</string>
+    <string name="quran_bookmark_added">Vers zu Lesezeichen hinzugefügt</string>
+    <string name="quran_bookmark_removed">Vers aus Lesezeichen entfernt</string>
+    <string name="share_title">Teilen</string>
+    <string name="share_as_card">Als Bildkarte teilen</string>
+    <string name="share_as_text">Als Text teilen</string>
+    <string name="share_error">Karte konnte nicht erstellt werden.</string>
+    <string name="tesbihat_mode_label">Tasbihat 33×3</string>
+    <string name="tesbihat_started">Gebets-Tasbihat gestartet (33×3)</string>
+    <string name="tesbihat_completed">Tasbihat abgeschlossen. Möge Allah es annehmen.</string>
+    <string name="add_custom_zikir">Eigenes Dhikr hinzufügen</string>
+    <string name="custom_zikir_name_hint">Dhikr-Name (z. B. Ya Latif)</string>
+    <string name="custom_zikir_arabic_hint">Arabischer Text (optional)</string>
+    <string name="custom_zikir_empty">Bitte geben Sie einen Dhikr-Namen ein.</string>
+    <string name="zikir_stats_format">Heute: %1$d • Gesamt: %2$d</string>
+    <string name="esma_title">Asma-ul Husna</string>
+    <string name="esma_search_hint">Name oder Bedeutung suchen&#8230;</string>
+    <string name="esma_open_in_zikirmatik">Im Tasbih zählen (99)</string>
+    <string name="days_left_format">Noch %d Tage</string>
+    <string name="days_passed_label">Vergangen</string>
+
+    <string-array name="daily_verses_text">
+        <item>Wahrlich, Allah gebietet Gerechtigkeit, Güte und Hilfsbereitschaft gegenüber den Verwandten.</item>
+        <item>Wahrlich, im Gedenken Allahs finden die Herzen Ruhe.</item>
+        <item>Wahrlich, mit der Erschwernis geht die Erleichterung einher.</item>
+        <item>Gedenkt Meiner, so gedenke Ich eurer. Und seid Mir dankbar und seid nicht undankbar.</item>
+        <item>Allah erlegt keiner Seele mehr auf, als sie zu leisten vermag.</item>
+        <item>Sucht Hilfe durch Geduld und Gebet.</item>
+        <item>Sprich: Mein Herr, mehre mein Wissen.</item>
+        <item>Und wenn dich Meine Diener nach Mir fragen, so bin Ich nahe. Ich erhöre den Ruf des Rufenden.</item>
+        <item>Nicht gleich sind die gute Tat und die schlechte. Wehre das Böse mit dem Besseren ab.</item>
+        <item>Wahrlich, Allah ist mit den Geduldigen.</item>
+        <item>Wer auch nur ein Stäubchen Gutes tut, der wird es sehen.</item>
+        <item>Unser Herr, gib uns im Diesseits Gutes und im Jenseits Gutes.</item>
+        <item>Und Er ist mit euch, wo immer ihr seid. Und Allah sieht wohl, was ihr tut.</item>
+        <item>Verzweifelt nicht an der Barmherzigkeit Allahs. Wahrlich, Allah vergibt alle Sünden.</item>
+        <item>Wahrlich, das Gebet hält ab von Schändlichem und Verwerflichem.</item>
+    </string-array>
+
+    <string-array name="daily_verses_ref">
+        <item>(Sure An-Nahl, 90)</item>
+        <item>(Sure Ar-Ra\'d, 28)</item>
+        <item>(Sure Asch-Scharh, 5)</item>
+        <item>(Sure Al-Baqara, 152)</item>
+        <item>(Sure Al-Baqara, 286)</item>
+        <item>(Sure Al-Baqara, 45)</item>
+        <item>(Sure Taha, 114)</item>
+        <item>(Sure Al-Baqara, 186)</item>
+        <item>(Sure Fussilat, 34)</item>
+        <item>(Sure Al-Baqara, 153)</item>
+        <item>(Sure Az-Zalzala, 7)</item>
+        <item>(Sure Al-Baqara, 201)</item>
+        <item>(Sure Al-Hadid, 4)</item>
+        <item>(Sure Az-Zumar, 53)</item>
+        <item>(Sure Al-Ankabut, 45)</item>
+    </string-array>
 </resources>

@@ -18,8 +18,8 @@
             android:id="@+id/btn_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:contentDescription="@string/desc_back"
             android:padding="8dp"
-            android:rotation="180"
             android:src="@drawable/ic_back_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dini Günler 2026"
+            android:text="@string/tool_dini_gunler"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"

@@ -52,6 +52,32 @@
                 android:layout_weight="1" />
 
             <ImageView
+                android:id="@+id/btn_bookmark_verse"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/quran_bookmark_toggle"
+                android:focusable="true"
+                android:padding="8dp"
+                android:src="@drawable/ic_heart"
+                app:tint="?attr/colorOnSurfaceVariant" />
+
+            <ImageView
+                android:id="@+id/btn_share_verse"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/share_title"
+                android:focusable="true"
+                android:padding="8dp"
+                android:src="@drawable/ic_share"
+                app:tint="?attr/colorSecondary" />
+
+            <ImageView
                 android:id="@+id/btn_copy_verse"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
@@ -77,6 +103,7 @@
             android:textStyle="bold" />
 
         <View
+            android:id="@+id/divider_verse"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginVertical="12dp"

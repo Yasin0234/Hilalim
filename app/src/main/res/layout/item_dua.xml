@@ -45,6 +45,17 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/btn_share_dua"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/share_title"
+                android:padding="6dp"
+                android:src="@drawable/ic_share"
+                app:tint="?attr/colorSecondary" />
+
+            <ImageView
                 android:id="@+id/btn_copy_dua"
                 android:layout_width="32dp"
                 android:layout_height="32dp"

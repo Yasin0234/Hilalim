@@ -1,15 +1,20 @@
 package com.korkutsoftware.hilalim;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,9 +26,12 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.Executors;
 
 public class EsmaHusnaActivity extends BaseActivity {
+
+    private final Locale trLocale = new Locale("tr");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,22 @@ public class EsmaHusnaActivity extends BaseActivity {
         EsmaAdapter adapter = new EsmaAdapter(new ArrayList<>());
         rv.setAdapter(adapter);
 
+        EditText etSearch = findViewById(R.id.et_search_esma);
+        if (etSearch != null) {
+            etSearch.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    adapter.filter(s != null ? s.toString() : "");
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {}
+            });
+        }
+
         Handler mainHandler = new Handler(Looper.getMainLooper());
         Executors.newSingleThreadExecutor().execute(() -> {
             List<EsmaItem> items = loadEsmaFromJson();
@@ -49,6 +73,21 @@ public class EsmaHusnaActivity extends BaseActivity {
                 }
             });
         });
+    }
+
+    private void showEsmaActionDialog(EsmaItem item) {
+        new AlertDialog.Builder(this)
+                .setTitle(item.arabic + "  •  " + item.turkish)
+                .setMessage(item.meaning)
+                .setPositiveButton(R.string.esma_open_in_zikirmatik, (d, w) -> {
+                    Intent intent = new Intent(this, ZikirmatikActivity.class);
+                    intent.putExtra(ZikirmatikActivity.EXTRA_CUSTOM_ZIKIR_TR, "Ya " + item.turkish);
+                    intent.putExtra(ZikirmatikActivity.EXTRA_CUSTOM_ZIKIR_AR, "يَا " + item.arabic);
+                    intent.putExtra(ZikirmatikActivity.EXTRA_CUSTOM_TARGET, 99);
+                    startActivity(intent);
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
     }
 
     private List<EsmaItem> loadEsmaFromJson() {
@@ -75,15 +114,37 @@ public class EsmaHusnaActivity extends BaseActivity {
     }
 
     private class EsmaAdapter extends RecyclerView.Adapter<EsmaAdapter.ViewHolder> {
-        private final List<EsmaItem> items;
+        private final List<EsmaItem> itemsFull = new ArrayList<>();
+        private final List<EsmaItem> items = new ArrayList<>();
 
-        EsmaAdapter(List<EsmaItem> items) {
-            this.items = items;
+        EsmaAdapter(List<EsmaItem> initial) {
+            setItems(initial);
         }
 
         void setItems(List<EsmaItem> newItems) {
+            itemsFull.clear();
+            if (newItems != null) itemsFull.addAll(newItems);
             items.clear();
-            items.addAll(newItems);
+            items.addAll(itemsFull);
+            notifyDataSetChanged();
+        }
+
+        void filter(String query) {
+            items.clear();
+            String q = query == null ? "" : query.toLowerCase(trLocale).trim();
+            if (q.isEmpty()) {
+                items.addAll(itemsFull);
+            } else {
+                for (EsmaItem item : itemsFull) {
+                    String hay = ((item.turkish != null ? item.turkish : "") + " "
+                            + (item.meaning != null ? item.meaning : "")).toLowerCase(trLocale);
+                    if (hay.contains(q)
+                            || String.valueOf(item.id).equals(q)
+                            || (item.arabic != null && item.arabic.contains(q))) {
+                        items.add(item);
+                    }
+                }
+            }
             notifyDataSetChanged();
         }
 
@@ -101,6 +162,7 @@ public class EsmaHusnaActivity extends BaseActivity {
             holder.txtArabic.setText(item.arabic);
             holder.txtTurkish.setText(item.turkish);
             holder.txtMeaning.setText(item.meaning);
+            holder.itemView.setOnClickListener(v -> showEsmaActionDialog(item));
         }
 
         @Override

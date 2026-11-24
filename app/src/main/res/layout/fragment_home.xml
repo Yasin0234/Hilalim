@@ -543,6 +543,19 @@
                             android:textStyle="bold" />
 
                         <ImageView
+                            android:id="@+id/btn_share_home_verse"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:contentDescription="@string/share_title"
+                            android:focusable="true"
+                            android:padding="6dp"
+                            android:src="@drawable/ic_share"
+                            app:tint="@color/deep_charcoal" />
+
+                        <ImageView
                             android:id="@+id/btn_copy_home_verse"
                             android:layout_width="32dp"
                             android:layout_height="32dp"
@@ -627,6 +640,19 @@
                             android:textColor="@color/white"
                             android:textSize="15sp"
                             android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/btn_share_home_dua"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:contentDescription="@string/share_title"
+                            android:focusable="true"
+                            android:padding="7dp"
+                            android:src="@drawable/ic_share"
+                            app:tint="@color/gold" />
 
                         <ImageView
                             android:id="@+id/btn_refresh_dua"

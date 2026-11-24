@@ -23,9 +23,10 @@ public class NotificationReceiver extends BroadcastReceiver {
         if (intent == null) return;
 
         String action = intent.getAction();
-        if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
-            // Re-schedule prayer alarms after device reboot
+        if (Intent.ACTION_BOOT_COMPLETED.equals(action) || Intent.ACTION_MY_PACKAGE_REPLACED.equals(action)) {
+            // Re-schedule prayer alarms and ongoing notification after device reboot or app update
             AlarmHelper.rescheduleAlarmsFromCache(context);
+            PrayerWidgetProvider.updateAllWidgets(context);
             return;
         }
 
@@ -34,7 +35,7 @@ public class NotificationReceiver extends BroadcastReceiver {
 
         if (prayerKey != null) {
             showNotification(context, prayerKey, typeIndex);
-            // Re-schedule next day's alarms so notifications continue without opening the app daily
+            // Re-schedule next day's alarms using 30-day cache and refresh ongoing bar + widgets
             AlarmHelper.rescheduleAlarmsFromCache(context);
             PrayerWidgetProvider.updateAllWidgets(context);
         }

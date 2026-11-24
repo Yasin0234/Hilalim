@@ -3,15 +3,19 @@ package com.korkutsoftware.hilalim;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.GeomagneticField;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +23,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.card.MaterialCardView;
 import com.korkutsoftware.hilalim.util.AppCalculators;
 
 import java.util.List;
@@ -30,7 +36,8 @@ import java.util.concurrent.Executors;
 public class KibleFragment extends Fragment implements SensorEventListener {
 
     private View compassView, qiblaIndicator;
-    private TextView txtDegree, txtLocationInfo, txtQiblaStatus;
+    private TextView txtDegree, txtLocationInfo, txtQiblaStatus, txtCalibrationTitle, txtCalibrationDesc;
+    private MaterialCardView calibrationCard;
     private SensorManager sensorManager;
     private Sensor accelerometer, magnetometer;
 
@@ -40,6 +47,8 @@ public class KibleFragment extends Fragment implements SensorEventListener {
     private boolean hasGeomagnetic = false;
 
     private float qiblaDegree = 0f;
+    private float magneticDeclination = 0f;
+    private boolean wasAligned = false;
     private static final float ALPHA = 0.15f; // Low-pass filter factor
 
     public KibleFragment() {
@@ -59,6 +68,9 @@ public class KibleFragment extends Fragment implements SensorEventListener {
         txtDegree = view.findViewById(R.id.degree_label);
         txtLocationInfo = view.findViewById(R.id.qibla_subtitle);
         txtQiblaStatus = view.findViewById(R.id.txt_qibla_status);
+        calibrationCard = view.findViewById(R.id.calibration_card);
+        txtCalibrationTitle = view.findViewById(R.id.txt_calibration_title);
+        txtCalibrationDesc = view.findViewById(R.id.txt_calibration_desc);
 
         view.findViewById(R.id.btn_location).setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), LocationActivity.class));
@@ -96,6 +108,9 @@ public class KibleFragment extends Fragment implements SensorEventListener {
 
     private void calculateQiblaForCoords(double userLat, double userLng) {
         qiblaDegree = AppCalculators.calculateQiblaBearing(userLat, userLng);
+        GeomagneticField geoField = new GeomagneticField(
+                (float) userLat, (float) userLng, 0f, System.currentTimeMillis());
+        magneticDeclination = geoField.getDeclination();
 
         if (txtLocationInfo != null) {
             txtLocationInfo.setOnClickListener(null);
@@ -182,8 +197,8 @@ public class KibleFragment extends Fragment implements SensorEventListener {
             if (SensorManager.getRotationMatrix(rotationMatrix, inclinationMatrix, gravity, geomagnetic)) {
                 float[] orientation = new float[3];
                 SensorManager.getOrientation(rotationMatrix, orientation);
-                float azimuth = (float) Math.toDegrees(orientation[0]);
-                azimuth = (azimuth + 360) % 360;
+                float magneticAzimuth = (float) Math.toDegrees(orientation[0]);
+                float azimuth = AppCalculators.applyMagneticDeclination(magneticAzimuth, magneticDeclination);
 
                 if (compassView != null) {
                     compassView.setRotation(-azimuth);
@@ -195,14 +210,34 @@ public class KibleFragment extends Fragment implements SensorEventListener {
 
                 if (txtQiblaStatus != null && getContext() != null && qiblaDegree > 0f) {
                     float diff = Math.abs(((azimuth - qiblaDegree + 540f) % 360f) - 180f);
-                    if (diff <= 5f) {
+                    if (diff <= 4f) {
                         txtQiblaStatus.setText(R.string.qibla_aligned);
-                        txtQiblaStatus.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.secondary));
+                        txtQiblaStatus.setTextColor(ContextCompat.getColor(requireContext(), R.color.secondary));
+                        if (!wasAligned) {
+                            wasAligned = true;
+                            vibrateAligned();
+                        }
                     } else {
+                        if (diff > 6f) {
+                            wasAligned = false;
+                        }
                         txtQiblaStatus.setText(R.string.qibla_turn_hint);
-                        txtQiblaStatus.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.text_muted));
+                        txtQiblaStatus.setTextColor(ContextCompat.getColor(requireContext(), R.color.text_muted));
                     }
                 }
+            }
+        }
+    }
+
+    private void vibrateAligned() {
+        Context ctx = getContext();
+        if (ctx == null) return;
+        Vibrator vibrator = (Vibrator) ctx.getSystemService(Context.VIBRATOR_SERVICE);
+        if (vibrator != null && vibrator.hasVibrator()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+                vibrator.vibrate(25);
             }
         }
     }
@@ -219,5 +254,25 @@ public class KibleFragment extends Fragment implements SensorEventListener {
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        if (!isAdded() || getContext() == null || sensor == null) return;
+        if (sensor.getType() != Sensor.TYPE_MAGNETIC_FIELD) return;
+
+        boolean lowAccuracy = accuracy == SensorManager.SENSOR_STATUS_UNRELIABLE
+                || accuracy == SensorManager.SENSOR_STATUS_ACCURACY_LOW;
+        if (calibrationCard != null) {
+            int strokeColor = ContextCompat.getColor(
+                    requireContext(),
+                    lowAccuracy ? R.color.md_theme_light_error : R.color.card_stroke
+            );
+            float density = getResources().getDisplayMetrics().density;
+            calibrationCard.setStrokeColor(strokeColor);
+            calibrationCard.setStrokeWidth((int) ((lowAccuracy ? 2f : 1f) * density));
+        }
+        if (txtCalibrationTitle != null) {
+            txtCalibrationTitle.setText(lowAccuracy ? R.string.qibla_calibration_needed_title : R.string.calibration_title);
+        }
+        if (txtCalibrationDesc != null) {
+            txtCalibrationDesc.setText(lowAccuracy ? R.string.qibla_calibration_needed_desc : R.string.calibration_desc);
+        }
     }
 }

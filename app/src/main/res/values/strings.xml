@@ -209,4 +209,84 @@
     <string name="about_companies_title">Geliştirici Kuruluşlar</string>
     <string name="company_korkut" translatable="false">Korkut Teknoloji, Yazılım ve Medya A.Ş.</string>
     <string name="company_demiral" translatable="false">Demiral Medya</string>
+
+    <!-- v1.1.1 Features -->
+    <string name="ongoing_notif_channel_name">Kalıcı Vakit Çubuğu</string>
+    <string name="ongoing_notif_channel_desc">Bildirim panelinde sıradaki namaz vaktini sürekli gösterir</string>
+    <string name="ongoing_notif_title_format">Sıradaki: %1$s • %2$s</string>
+    <string name="notif_ongoing_toggle">Kalıcı Vakit Çubuğu</string>
+    <string name="notif_ongoing_desc">Bildirim panelinde sıradaki vakti ve tüm saatleri sabit göster</string>
+    <string name="prev_month">Önceki Ay</string>
+    <string name="next_month">Sonraki Ay</string>
+    <string name="today_badge">Bugün</string>
+    <string name="qibla_calibration_needed_title">Kalibrasyon Gerekli</string>
+    <string name="qibla_calibration_needed_desc">Pusula hassasiyeti düşük. Telefonunuzu sekiz (8) çizerek kalibre edin.</string>
+    <string name="quran_text_settings">Okuma Ayarları</string>
+    <string name="quran_bookmark_toggle">Yer İmi</string>
+    <string name="quran_tab_surahs">Sureler</string>
+    <string name="quran_tab_bookmarks">Yer İmlerim</string>
+    <string name="quran_tab_bookmarks_count">Yer İmlerim (%d)</string>
+    <string name="quran_bookmarks_empty">Henüz yer imi eklemediniz.\nAyetlerin üzerindeki kalp simgesine dokunarak kaydedebilirsiniz.</string>
+    <string name="quran_verse_format">%d. Ayet</string>
+    <string name="font_size_small">Küçük Yazı</string>
+    <string name="font_size_medium">Orta Yazı</string>
+    <string name="font_size_large">Büyük Yazı</string>
+    <string name="font_size_xlarge">Çok Büyük Yazı</string>
+    <string name="quran_hide_translation">Sadece Arapça</string>
+    <string name="quran_show_translation">Meali Göster</string>
+    <string name="quran_bookmark_added">Ayet yer imlerine eklendi</string>
+    <string name="quran_bookmark_removed">Ayet yer imlerinden çıkarıldı</string>
+    <string name="share_title">Paylaş</string>
+    <string name="share_as_card">Görsel Kart Olarak Paylaş</string>
+    <string name="share_as_text">Metin Olarak Paylaş</string>
+    <string name="share_error">Kart oluşturulurken hata oluştu.</string>
+    <string name="tesbihat_mode_label">Tesbihat 33×3</string>
+    <string name="tesbihat_started">Namaz tesbihatı başladı (33×3)</string>
+    <string name="tesbihat_completed">Namaz tesbihatı tamamlandı. Allah kabul etsin.</string>
+    <string name="add_custom_zikir">Özel Zikir Ekle</string>
+    <string name="custom_zikir_name_hint">Zikir adı (ör. Ya Latif)</string>
+    <string name="custom_zikir_arabic_hint">Arapça okunuş (isteğe bağlı)</string>
+    <string name="custom_zikir_empty">Lütfen bir zikir adı girin.</string>
+    <string name="zikir_stats_format">Bugün: %1$d • Toplam: %2$d</string>
+    <string name="esma_title">Esma-ül Hüsna</string>
+    <string name="esma_search_hint">İsim veya anlam ara&#8230;</string>
+    <string name="esma_open_in_zikirmatik">Zikirmatik\'te Çek (99)</string>
+    <string name="days_left_format">%d gün kaldı</string>
+    <string name="days_passed_label">Geçti</string>
+
+    <string-array name="daily_verses_text">
+        <item>Şüphesiz Allah, adaleti, iyilik yapmayı, yakınlara yardım etmeyi emreder; hayasızlığı, fenalık ve azgınlığı da yasaklar.</item>
+        <item>Kalpler ancak Allah\'ı anmakla huzur bulur.</item>
+        <item>Şüphesiz güçlükle beraber bir kolaylık vardır.</item>
+        <item>Beni anın ki ben de sizi anayım. Bana şükredin, nankörlük etmeyin.</item>
+        <item>Allah, hiç kimseye gücünün üstünde bir yük yüklemez.</item>
+        <item>Sabır ve namaz ile Allah\'tan yardım isteyin.</item>
+        <item>De ki: Rabbim, ilmimi artır.</item>
+        <item>Kullarım sana beni sorduğunda bilsinler ki ben çok yakınım; bana dua ettiğinde dua edenin duasına karşılık veririm.</item>
+        <item>İyilikle kötülük bir olmaz. Sen kötülüğü en güzel bir şekilde sav.</item>
+        <item>Allah, sabredenlerle beraberdir.</item>
+        <item>Kim zerre ağırlığınca bir hayır işlerse onun karşılığını görür.</item>
+        <item>Rabbimiz! Bize dünyada da iyilik ver, ahirette de iyilik ver ve bizi ateş azabından koru.</item>
+        <item>Nerede olursanız olun, O sizinle beraberdir. Allah, yaptıklarınızı hakkıyla görendir.</item>
+        <item>Allah\'ın rahmetinden ümit kesmeyin. Şüphesiz Allah bütün günahları bağışlar.</item>
+        <item>Şüphesiz namaz, hayâsızlıktan ve kötülükten alıkoyar.</item>
+    </string-array>
+
+    <string-array name="daily_verses_ref">
+        <item>(Nahl Suresi, 90. Ayet)</item>
+        <item>(Ra\'d Suresi, 28. Ayet)</item>
+        <item>(İnşirah Suresi, 5. Ayet)</item>
+        <item>(Bakara Suresi, 152. Ayet)</item>
+        <item>(Bakara Suresi, 286. Ayet)</item>
+        <item>(Bakara Suresi, 45. Ayet)</item>
+        <item>(Taha Suresi, 114. Ayet)</item>
+        <item>(Bakara Suresi, 186. Ayet)</item>
+        <item>(Fussilet Suresi, 34. Ayet)</item>
+        <item>(Bakara Suresi, 153. Ayet)</item>
+        <item>(Zilzal Suresi, 7. Ayet)</item>
+        <item>(Bakara Suresi, 201. Ayet)</item>
+        <item>(Hadid Suresi, 4. Ayet)</item>
+        <item>(Zümer Suresi, 53. Ayet)</item>
+        <item>(Ankebut Suresi, 45. Ayet)</item>
+    </string-array>
 </resources>
