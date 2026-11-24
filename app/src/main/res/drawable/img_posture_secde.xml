@@ -1,0 +1,74 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Background matching generated posture cards -->
+    <path
+        android:fillColor="#F5F3E7"
+        android:pathData="M0,0h512v512h-512z" />
+
+    <!-- Prayer Mat -->
+    <path
+        android:fillColor="#0F2922"
+        android:pathData="M56,422 L456,422 L472,442 L40,442 Z" />
+    <path
+        android:strokeColor="#D4AF37"
+        android:strokeWidth="3"
+        android:pathData="M68,427 L444,427 L456,437 L56,437 Z" />
+
+    <!-- Feet / Toes on mat (left side) -->
+    <path
+        android:fillColor="#EBBF99"
+        android:pathData="M118,408 C110,418 112,424 126,424 L152,424 L152,404 Z" />
+
+    <!-- Knees and Lower Legs -->
+    <path
+        android:fillColor="#0F2922"
+        android:pathData="M148,406 C176,396 206,386 228,424 L152,424 Z" />
+
+    <!-- Torso / Back in Sajdah (angled gracefully down toward forehead) -->
+    <path
+        android:fillColor="#0F2922"
+        android:pathData="M180,350 C196,306 238,290 288,312 C332,332 362,364 382,388 L354,414 C318,390 278,382 228,424 L180,398 Z" />
+
+    <!-- Gold Trim Accents on Robe -->
+    <path
+        android:strokeColor="#D4AF37"
+        android:strokeWidth="2.5"
+        android:pathData="M214,322 C264,316 322,340 364,380" />
+    <path
+        android:strokeColor="#D4AF37"
+        android:strokeWidth="2.5"
+        android:pathData="M184,382 C214,376 244,388 266,408" />
+
+    <!-- Arm & Forearm (elbows lifted off ground) -->
+    <path
+        android:fillColor="#14362D"
+        android:pathData="M294,344 L344,394 L374,412 L364,424 L326,404 L276,360 Z" />
+    <path
+        android:strokeColor="#D4AF37"
+        android:strokeWidth="2"
+        android:pathData="M294,344 L344,394 L374,412" />
+
+    <!-- Palm resting flat on mat -->
+    <path
+        android:fillColor="#EBBF99"
+        android:pathData="M362,414 L404,418 C408,419 408,424 402,424 L358,424 Z" />
+
+    <!-- Head & Forehead touching mat -->
+    <path
+        android:fillColor="#EBBF99"
+        android:pathData="M366,374 C388,370 406,384 404,408 C402,420 388,424 374,424 C362,416 356,396 366,374 Z" />
+
+    <!-- Takke / Kufi Cap -->
+    <path
+        android:fillColor="#0F2922"
+        android:pathData="M362,374 C374,358 398,360 404,382 C390,378 376,380 362,374 Z" />
+    <path
+        android:strokeColor="#D4AF37"
+        android:strokeWidth="2"
+        android:pathData="M363,375 C378,379 392,380 403,383" />
+
+</vector>

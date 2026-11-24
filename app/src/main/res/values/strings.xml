@@ -176,4 +176,10 @@
     <string name="ezan_custom_file_note">Dahili ezan sesi uygulamaya yüklüdür; test butonuyla hemen dinleyebilirsiniz.</string>
     <string name="select_zikir_title">Zikir Seç</string>
     <string name="widget_desc">Namaz vakitleri ve sıradaki vakte geri sayım</string>
+    <string name="namaz_postures_title">Namazın Temel Duruşları</string>
+    <string name="namaz_categories_title">Vakitlere Göre Namaz Rehberi</string>
+    <string name="posture_kiyam">Kıyam</string>
+    <string name="posture_ruku">Rükû</string>
+    <string name="posture_secde">Secde</string>
+    <string name="posture_kade">Ka\'de (Oturuş)</string>
 </resources>

@@ -159,4 +159,10 @@
     <string name="ezan_custom_file_note">صوت الأذان مدمج في التطبيق؛ يمكنك تجربته عبر زر الاختبار.</string>
     <string name="select_zikir_title">اختر الذكر</string>
     <string name="widget_desc">أوقات الصلاة والعد التنازلي للوقت القادم</string>
+    <string name="namaz_postures_title">أركان ووضعيات الصلاة</string>
+    <string name="namaz_categories_title">دليل الصلوات حسب الوقت</string>
+    <string name="posture_kiyam">القيام</string>
+    <string name="posture_ruku">الركوع</string>
+    <string name="posture_secde">السجود</string>
+    <string name="posture_kade">الجلوس (التشهد)</string>
 </resources>

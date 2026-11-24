@@ -1,0 +1,304 @@
+[
+  {
+    "id": "sabah",
+    "title": "Sabah Namazı",
+    "subtitle": "4 Rekât • 2 Sünnet + 2 Farz",
+    "icon": "imsak",
+    "sections": [
+      {
+        "heading": "Sabah Namazının Yapısı ve Vakti",
+        "posture": "",
+        "arabic": "",
+        "body": "• 2 rekât sünnet (önce bu kılınır)\n• 2 rekât farz\n\nSabah namazının vakti imsaktan güneş doğana kadardır. Sabah namazının sünneti güçlü (müekked) bir sünnettir; mümkünse terk edilmemelidir."
+      },
+      {
+        "heading": "1. Rekât: Niyet, İftitah Tekbiri ve Kıyam",
+        "posture": "kiyam",
+        "arabic": "اَللّٰهُ أَكْبَرُ",
+        "body": "Kıbleye dönülür, ayaklar arası dört parmak kadar açık tutulur.\nNiyet: \"Niyet ettim Allah rızası için sabah namazının sünnetini kılmaya\" (cemaatle farzda \"imama uydum\" eklenir).\n\n\"Allahü ekber\" denirken eller kaldırılır:\n• Erkekler: Baş parmaklar kulak memesine değecek şekilde kaldırır, ardından sağ eli sol elin üstüne koyup göbek altına bağlar.\n• Kadınlar: Elleri omuz hizasına kadar kaldırır, ardından göğüs üstüne koyar.\n• Bakış secde yerine yöneltilir."
+      },
+      {
+        "heading": "1. Rekât: Sübhaneke, Euzü-Besmele, Fatiha ve Sure",
+        "posture": "kiyam",
+        "arabic": "سُبْحَانَكَ اللّٰهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالٰى جَدُّكَ وَلَا إِلٰهَ غَيْرُكَ",
+        "body": "1) Sübhaneke (yalnızca ilk rekâtın başında):\n\"Sübhâneke Allâhümme ve bihamdik, ve tebârakesmük, ve teâlâ ceddük, ve lâ ilâhe gayruk.\"\n(Anlamı: Allah'ım, seni tüm eksikliklerden uzak tutarım. Sana hamd ederim. Senin adın mübarektir, şanın yücedir, senden başka ilah yoktur.)\n\n2) Euzü-Besmele:\n\"Eûzü billâhi mineş-şeytânir-racîm. Bismillâhir-rahmânir-rahîm.\"\n\n3) Fatiha Suresi:\n\"Elhamdü lillâhi rabbil-âlemîn. Er-rahmânir-rahîm. Mâliki yevmid-dîn. İyyâke na'büdü ve iyyâke neste'în. İhdinas-sırâtal-müstakîm. Sırâtallezîne en'amte aleyhim, gayril-mağdûbi aleyhim ve led-dâllîn.\" Ardından sessizce \"Âmîn\" denir.\n\n4) Zamm-ı Sure (örneğin İhlas Suresi):\n\"Kul hüvallâhü ehad. Allâhüs-samed. Lem yelid ve lem yûled. Ve lem yekün lehû küfüven ehad.\""
+      },
+      {
+        "heading": "1. Rekât: Rükû ve Kavme (Doğrulma)",
+        "posture": "ruku",
+        "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+        "body": "Rükû: \"Allahü ekber\" diyerek eğilinir. Eller dizlerde, sırt ve baş aynı hizada olur. 3 kez \"Sübhâne rabbiyel-azîm\" denir.\n\nKavme (Doğrulma):\nDoğrulurken: \"Semiallâhü limen hamideh.\"\nAyakta tam dikilince: \"Rabbenâ leke'l-hamd.\""
+      },
+      {
+        "heading": "1. Rekât: Secde ve Celse (İki Secde Arası)",
+        "posture": "secde",
+        "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلٰى",
+        "body": "Secde: \"Allahü ekber\" diyerek secdeye gidilir. Önce dizler, sonra eller, sonra alın ve burun yere konur. 3 kez \"Sübhâne rabbiyel-a'lâ\" denir.\n• Erkekler dirseklerini yerden ve yanlardan uzak tutar.\n• Kadınlar kollarını vücuda yaklaştırır, daha kapalı secde eder.\n\nCelse (İki secde arası oturuş):\n\"Allahü ekber\" diyerek başı kaldırıp oturulur. En az \"Sübhanallah\" diyecek kadar beklenir, sonra \"Allahü ekber\" ile ikinci secde yapılır."
+      },
+      {
+        "heading": "2. Rekât",
+        "posture": "kiyam",
+        "arabic": "",
+        "body": "1. İkinci secdeden \"Allahü ekber\" diyerek eller yere dayanmadan ayağa kalkılır.\n2. Eller bağlanır. Sübhaneke okunmaz.\n3. Besmele, Fatiha ve bir sure okunur (ilk rekâttan farklı bir sure olması güzeldir, örneğin Kevser Suresi).\n4. Rükû, kavme ve iki secde aynen yapılır."
+      },
+      {
+        "heading": "Son Oturuş (Ka'de-i Âhire) ve Selam",
+        "posture": "kade",
+        "arabic": "اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ",
+        "body": "İkinci secdeden sonra oturulur:\n• Erkekler: Sol ayak yere yatırılıp üstüne oturulur, sağ ayak parmakları kıbleye dönük dik tutulur.\n• Kadınlar: Ayaklar sağ tarafa çıkarılıp kalçanın üzerine oturulur.\n\nSırasıyla Ettehiyyâtü (\"Eşhedü en lâ ilâhe\" derken işaret parmağı kaldırılır, \"illallah\" derken indirilir), Allâhümme salli, Allâhümme bârik ve Rabbenâ âtinâ okunur.\n\nSelam: Başı önce sağ omuza, sonra sol omuza çevirerek \"Es-selâmü aleyküm ve rahmetullâh\" denir."
+      },
+      {
+        "heading": "2 Rekât Farz Namazı",
+        "posture": "kiyam",
+        "arabic": "",
+        "body": "• Sünnetten sonra kısa bir ara verilir.\n• Erkekler ikamet (kamet) getirir; ezan okunmamışsa ezan da okunur.\n• Niyet: \"Niyet ettim Allah rızası için bugünkü sabah namazının farzını kılmaya.\"\n• Aynı şekilde 2 rekât kılınır. Cemaatle kılınıyorsa imama uyulur."
+      },
+      {
+        "heading": "Namazdan Sonra Tesbihat",
+        "posture": "kade",
+        "arabic": "اَللّٰهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
+        "body": "1. Üç kez \"Estağfirullah\" (أَسْتَغْفِرُ اللّٰهَ)\n2. \"Allâhümme entes-selâm ve minkes-selâm, tebârekte yâ zel-celâli vel-ikrâm.\"\n3. Ayetel Kürsi okunur.\n4. 33 kez Sübhânallah, 33 kez Elhamdülillâh, 34 kez Allâhü ekber çekilir.\n5. Dua ve niyaz edilir."
+      }
+    ]
+  },
+  {
+    "id": "ogle",
+    "title": "Öğle Namazı",
+    "subtitle": "10 Rekât • 4 İlk Sünnet + 4 Farz + 2 Son Sünnet",
+    "icon": "ogle",
+    "sections": [
+      {
+        "heading": "Öğle Namazının Yapısı",
+        "posture": "",
+        "arabic": "",
+        "body": "Öğle namazı toplam 10 rekâttır:\n• Önce 4 rekât ilk sünnet\n• Sonra 4 rekât farz\n• En son 2 rekât son sünnet kılınır."
+      },
+      {
+        "heading": "4 Rekât İlk Sünnet",
+        "posture": "kiyam",
+        "arabic": "",
+        "body": "• 1. Rekât: Kıbleye dönüp \"Niyet ettim Allah rızası için öğle namazının ilk sünnetini kılmaya\" diye niyet edilir. Tekbirden sonra Sübhaneke, Euzü-Besmele, Fatiha ve bir sure okunur. Rükû, kavme ve iki secde yapılır.\n\n• 2. Rekât: \"Allahü ekber\" ile kalkılır. Sübhaneke okunmaz. Besmele, Fatiha ve sure okunur, rükû ve iki secde yapılır. İkinci secdeden sonra ilk oturuşa geçilir. Sünnette Ettehiyyâtü'den sonra Allâhümme salli de okunur (bazı uygulamalarda Bârik de eklenebilir). Sonra kalkılır.\n\n• 3. Rekât: Eller bağlanır ve sünnette Sübhaneke yeniden okunur. Ardından Euzü-Besmele, Fatiha ve sure gelir. Rükû ve iki secde yapılır.\n\n• 4. Rekât: Besmele, Fatiha ve sure okunur. Rükû ve iki secdeden sonra son oturuşta Ettehiyyâtü, Allâhümme salli, Allâhümme bârik ve Rabbenâ âtinâ okunup sağa-sola selam verilir."
+      },
+      {
+        "heading": "4 Rekât Farz",
+        "posture": "ruku",
+        "arabic": "",
+        "body": "• 1. Rekât: Erkekler önce kamet getirir. Niyet: \"Niyet ettim Allah rızası için bugünkü öğle namazının farzını kılmaya.\" İmamın arkasındaysan \"imama uydum\" eklenir. Tekbirle başlayıp Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur. Rükû, kavme ve iki secde yapılır.\n\n• 2. Rekât: Sübhaneke okunmaz. Besmele, Fatiha ve sure okunur, rükû ve secdeler yapılır. İlk oturuşta farzda yalnızca Ettehiyyâtü okunur, salavata geçmeden \"Allahü ekber\" deyip kalkılır.\n\n• 3. Rekât: Sadece Besmele ve Fatiha okunur (Sure ve Sübhaneke okunmaz). Rükû ve iki secde yapılır.\n\n• 4. Rekât: Yine sadece Besmele ve Fatiha okunur. Rükû ve secdelerden sonra son oturuşta Ettehiyyâtü, Salli, Bârik ve Rabbenâ okunup selam verilir."
+      },
+      {
+        "heading": "2 Rekât Son Sünnet",
+        "posture": "kade",
+        "arabic": "",
+        "body": "• 1. Rekât: Niyet: \"Niyet ettim Allah rızası için öğle namazının son sünnetini kılmaya.\" Tekbirden sonra Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur. Rükû ve iki secde yapılır.\n\n• 2. Rekât: Kalkınca Besmele, Fatiha ve sure okunur. Rükû ve secdelerden sonra son oturuşta Ettehiyyâtü, Allâhümme salli, Allâhümme bârik ve Rabbenâ âtinâ okunur, sağa ve sola selam verilir."
+      },
+      {
+        "heading": "Namazdan Sonra Tesbihat",
+        "posture": "kade",
+        "arabic": "سُبْحَانَ اللّٰهِ ❊ اَلْحَمْدُ لِلّٰهِ ❊ اَللّٰهُ أَكْبَرُ",
+        "body": "Namazdan sonra 3 kez \"Estağfirullah\" denir, \"Allâhümme entes-selâm\" duası ve Ayetel Kürsi okunur. Ardından 33 kez Sübhânallah, 33 kez Elhamdülillâh, 33/34 kez Allâhü ekber denir ve dua edilir."
+      }
+    ]
+  },
+  {
+    "id": "ikindi",
+    "title": "İkindi Namazı",
+    "subtitle": "8 Rekât • 4 Sünnet + 4 Farz",
+    "icon": "ikindi",
+    "sections": [
+      {
+        "heading": "İkindi Namazının Yapısı ve Vakti",
+        "posture": "",
+        "arabic": "",
+        "body": "İkindi namazı toplam 8 rekâttır:\n• Önce 4 rekât sünnet\n• Sonra 4 rekât farz\n\nÖğleden farkı, farzdan sonra son sünnetin olmamasıdır. İkindinin sünneti gayr-i müekkeddir; kılmak çok sevaptır ama terk edilirse günah olmaz. Vakti öğle vaktinin bitmesiyle girer ve güneş batıncaya kadar sürer."
+      },
+      {
+        "heading": "4 Rekât Sünnet",
+        "posture": "kiyam",
+        "arabic": "",
+        "body": "• 1. Rekât: \"Niyet ettim Allah rızası için ikindi namazının sünnetini kılmaya\" diye niyet edilir. Tekbirden sonra Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur; rükû, kavme ve iki secde yapılır.\n\n• 2. Rekât: Kalkınca Sübhaneke okunmaz. Besmele, Fatiha ve sure okunur, rükû ve iki secde yapılır. İlk oturuşta Ettehiyyâtü'den sonra Allâhümme salli de okunur, ardından kalkılır.\n\n• 3. Rekât: Eller bağlanır ve Sübhaneke yeniden okunur. Euzü-Besmele, Fatiha ve sure okunur, rükû ve iki secde yapılır.\n\n• 4. Rekât: Besmele, Fatiha ve sure okunur. Rükû ve iki secdeden sonra son oturuşta Ettehiyyâtü, Salli, Bârik ve Rabbenâ okunup selam verilir."
+      },
+      {
+        "heading": "4 Rekât Farz",
+        "posture": "secde",
+        "arabic": "",
+        "body": "• 1. Rekât: Erkekler önce kamet getirir. Niyet: \"Niyet ettim Allah rızası için bugünkü ikindi namazının farzını kılmaya.\" Cemaatte \"imama uydum\" eklenir. Tekbir, Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur; rükû ve secdeler yapılır.\n\n• 2. Rekât: Sübhaneke okunmaz. Besmele, Fatiha ve sure okunur, rükû ve secdeler yapılır. İlk oturuşta yalnızca Ettehiyyâtü okunur ve kalkılır.\n\n• 3. ve 4. Rekâtlar: Sadece Besmele ve Fatiha okunur (sure ve Sübhaneke okunmaz). 4. rekâtın sonunda Ettehiyyâtü, Salli, Bârik ve Rabbenâ okunup sağa-sola selam verilir."
+      },
+      {
+        "heading": "Namazdan Sonra Tesbihat",
+        "posture": "kade",
+        "arabic": "اَللّٰهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
+        "body": "Namazdan sonra 3 kez \"Estağfirullah\" denir, \"Allâhümme entes-selâm\" duası ve Ayetel Kürsi okunur. Sonra 33'er kez Sübhânallah, Elhamdülillâh, Allâhü ekber çekilir ve dua edilir."
+      }
+    ]
+  },
+  {
+    "id": "aksam",
+    "title": "Akşam Namazı",
+    "subtitle": "5 Rekât • 3 Farz + 2 Son Sünnet",
+    "icon": "aksam",
+    "sections": [
+      {
+        "heading": "Akşam Namazının Yapısı ve Vakti",
+        "posture": "",
+        "arabic": "",
+        "body": "Akşam namazı 5 rekâttır:\n• Önce 3 rekât farz\n• Sonra 2 rekât son sünnet\n\nÖğle ve ikindiden farkı, farzın üç rekât olması ve öncesinde sünnet bulunmamasıdır. Vakti güneşin batmasıyla girer, ufuktaki kızıllık (şafak) kaybolup yatsı vakti girene kadar sürer. Vakti kısa olduğu için geciktirmemek gerekir."
+      },
+      {
+        "heading": "3 Rekât Farz",
+        "posture": "kiyam",
+        "arabic": "",
+        "body": "• 1. Rekât: \"Niyet ettim Allah rızası için bugünkü akşam namazının farzını kılmaya\" diye niyet edilir (cemaatte \"imama uydum\" eklenir). Erkekler kamet getirir. Tekbir, Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur; rükû, kavme ve iki secde yapılır.\n\n• 2. Rekât: Sübhaneke okunmaz. Besmele, Fatiha ve sure okunur, rükû ve iki secde yapılır. İlk oturuşta yalnızca Ettehiyyâtü okunur, salavata geçmeden ayağa kalkılır.\n\n• 3. Rekât: Sadece Besmele ve Fatiha okunur (sure ve Sübhaneke okunmaz). Rükû ve iki secdeden sonra son oturuşa geçilir. Ettehiyyâtü, Salli, Bârik ve Rabbenâ okunup sağa-sola selam verilir."
+      },
+      {
+        "heading": "2 Rekât Son Sünnet",
+        "posture": "kade",
+        "arabic": "",
+        "body": "• 1. Rekât: Niyet: \"Niyet ettim Allah rızası için akşam namazının son sünnetini kılmaya.\" Tekbirden sonra Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur. Rükû ve iki secde yapılır.\n\n• 2. Rekât: Kalkınca Besmele, Fatiha ve sure okunur. Rükû ve secdelerden sonra son oturuşta Ettehiyyâtü, Allâhümme salli, Allâhümme bârik ve Rabbenâ âtinâ okunup selam verilir."
+      },
+      {
+        "heading": "Namazdan Sonra Tesbihat",
+        "posture": "kade",
+        "arabic": "سُبْحَانَ اللّٰهِ ❊ اَلْحَمْدُ لِلّٰهِ ❊ اَللّٰهُ أَكْبَرُ",
+        "body": "Namazdan sonra 3 kez \"Estağfirullah\" denir, \"Allâhümme entes-selâm\" duası ve Ayetel Kürsi okunur. Sonra 33'er kez Sübhânallah, Elhamdülillâh, Allâhü ekber denir ve dua edilir."
+      }
+    ]
+  },
+  {
+    "id": "yatsi",
+    "title": "Yatsı ve Vitir Namazı",
+    "subtitle": "13 Rekât • 4 İlk Sünnet + 4 Farz + 2 Son Sünnet + 3 Vitir",
+    "icon": "yatsi",
+    "sections": [
+      {
+        "heading": "Yatsı Namazının Yapısı ve Vakti",
+        "posture": "",
+        "arabic": "",
+        "body": "Yatsı namazı toplam 13 rekâttır:\n• 4 rekât ilk sünnet (gayr-i müekked)\n• 4 rekât farz\n• 2 rekât son sünnet\n• 3 rekât vitir namazı (vacip)\n\nVakti akşamdaki kızıllığın kaybolmasıyla girer ve imsak vaktine kadar sürer. Sünnet ve vitirden sonra isteğe bağlı 2 rekât nafile kılınabilir."
+      },
+      {
+        "heading": "4 Rekât İlk Sünnet",
+        "posture": "kiyam",
+        "arabic": "",
+        "body": "• 1. Rekât: \"Niyet ettim Allah rızası için yatsı namazının ilk sünnetini kılmaya\" diye niyet edilir. Tekbir, Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur; rükû ve secdeler yapılır.\n• 2. Rekât: Besmele, Fatiha ve sure okunur; ilk oturuşta Ettehiyyâtü ve Allâhümme salli okunur.\n• 3. Rekât: Sübhaneke yeniden okunur, ardından Euzü-Besmele, Fatiha ve sure okunur.\n• 4. Rekât: Besmele, Fatiha ve sure okunur; son oturuşta Ettehiyyâtü, Salli, Bârik ve Rabbenâ okunup selam verilir."
+      },
+      {
+        "heading": "4 Rekât Farz",
+        "posture": "ruku",
+        "arabic": "",
+        "body": "• 1. Rekât: Erkekler kamet getirir. Niyet: \"Niyet ettim Allah rızası için bugünkü yatsı namazının farzını kılmaya.\" Tekbir, Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur.\n• 2. Rekât: Besmele, Fatiha ve sure okunur; ilk oturuşta yalnızca Ettehiyyâtü okunur ve kalkılır.\n• 3. ve 4. Rekâtlar: Sadece Besmele ve Fatiha okunur (sure ve Sübhaneke okunmaz). 4. rekât sonunda son oturuşta Ettehiyyâtü, Salli, Bârik ve Rabbenâ okunup selam verilir."
+      },
+      {
+        "heading": "2 Rekât Son Sünnet",
+        "posture": "kade",
+        "arabic": "",
+        "body": "• 1. Rekât: \"Niyet ettim Allah rızası için yatsı namazının son sünnetini kılmaya.\" Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur.\n• 2. Rekât: Besmele, Fatiha ve sure okunur; son oturuşta Ettehiyyâtü, Salli, Bârik ve Rabbenâ okunup selam verilir."
+      },
+      {
+        "heading": "3 Rekât Vitir Namazı (Vacip) ve Kunut",
+        "posture": "kiyam",
+        "arabic": "اَللّٰهُمَّ إِنَّا نَسْتَعِينُكَ وَنَسْتَغْفِرُكَ وَنُؤْمِنُ بِكَ",
+        "body": "• 1. Rekât: \"Niyet ettim Allah rızası için vitir namazını kılmaya.\" Tekbir, Sübhaneke, Euzü-Besmele, Fatiha ve sure okunur; rükû ve iki secde yapılır.\n\n• 2. Rekât: Besmele, Fatiha ve sure okunur; ilk oturuşta yalnızca Ettehiyyâtü okunup kalkılır.\n\n• 3. Rekât (Kunut Tekbiri): Besmele, Fatiha ve bir sure okunur. Ardından \"Allahü ekber\" diyerek eller yeniden kulak hizasına kaldırılıp bağlanır (Kunut Tekbiri). Kunut duaları (\"Allâhümme innâ nesteînük...\" ve \"Allâhümme iyyâke na'büdü...\") okunur. Ezberlenene kadar bunların yerine \"Rabbenâ âtinâ...\" ya da 3 kez \"Allâhümmağfir lî\" okunabilir. Sonra rükû, iki secde ve son oturuş yapılıp selam verilir.\n\nVitir genellikle son sünnetin hemen ardından, tesbihattan önce kılınır."
+      },
+      {
+        "heading": "Namazdan Sonra Tesbihat",
+        "posture": "kade",
+        "arabic": "اَللّٰهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
+        "body": "Namazdan sonra 3 kez \"Estağfirullah\" denir, \"Allâhümme entes-selâm\" duası ve Ayetel Kürsi okunur. Sonra 33'er kez Sübhânallah, Elhamdülillâh, Allâhü ekber çekilir ve dua edilir."
+      }
+    ]
+  },
+  {
+    "id": "okunuslar",
+    "title": "Arapça Okunuşlar & Dualar",
+    "subtitle": "Namaz İçi Sureler, Dualar ve Tesbihat",
+    "icon": "quran",
+    "sections": [
+      {
+        "heading": "Tekbir ve Sübhaneke (Sadece 1. Rekâtta)",
+        "posture": "kiyam",
+        "arabic": "اَللّٰهُ أَكْبَرُ\n\nسُبْحَانَكَ اللّٰهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالٰى جَدُّكَ وَلَا إِلٰهَ غَيْرُكَ",
+        "body": "Tekbir: Allahü ekber.\n\nSübhaneke: Sübhâneke Allâhümme ve bihamdik, ve tebârakesmük, ve teâlâ ceddük, ve lâ ilâhe gayruk."
+      },
+      {
+        "heading": "Euzü-Besmele ve Fatiha Suresi",
+        "posture": "kiyam",
+        "arabic": "أَعُوذُ بِاللّٰهِ مِنَ الشَّيْطَانِ الرَّجِيمِ ❊ بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ\n\nاَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِينَ ❊ الرَّحْمٰنِ الرَّحِيمِ ❊ مَالِكِ يَوْمِ الدِّينِ ❊ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ❊ اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ❊ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+        "body": "Eûzü billâhi mineş-şeytânir-racîm. Bismillâhir-rahmânir-rahîm.\n\nElhamdü lillâhi rabbil-âlemîn. Er-rahmânir-rahîm. Mâliki yevmid-dîn. İyyâke na'büdü ve iyyâke neste'în. İhdinas-sırâtal-müstakîm. Sırâtallezîne en'amte aleyhim, gayril-mağdûbi aleyhim ve led-dâllîn. (Âmîn)"
+      },
+      {
+        "heading": "İhlas ve Kevser Sureleri",
+        "posture": "kiyam",
+        "arabic": "قُلْ هُوَ اللّٰهُ أَحَدٌ ❊ اَللّٰهُ الصَّمَدُ ❊ لَمْ يَلِدْ وَلَمْ يُولَدْ ❊ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ\n\nإِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ ❊ فَصَلِّ لِرَبِّكَ وَانْحَرْ ❊ إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ",
+        "body": "İhlas Suresi: Kul hüvallâhü ehad. Allâhüs-samed. Lem yelid ve lem yûled. Ve lem yekün lehû küfüven ehad.\n\nKevser Suresi: İnnâ a'taynâkel-kevser. Fesalli lirabbike venhar. İnne şânieke hüvel-ebter."
+      },
+      {
+        "heading": "Rükû, Kavme ve Secde Tesbihleri",
+        "posture": "ruku",
+        "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ\n\nسَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ ❊ رَبَّنَا لَكَ الْحَمْدُ\n\nسُبْحَانَ رَبِّيَ الْأَعْلٰى",
+        "body": "• Rükû (3 kez): Sübhâne rabbiyel-azîm.\n• Kavme: Doğrulurken \"Semiallâhü limen hamideh\", dikilince \"Rabbenâ leke'l-hamd\".\n• Secde (3 kez): Sübhâne rabbiyel-a'lâ."
+      },
+      {
+        "heading": "Ettehiyyâtü",
+        "posture": "kade",
+        "arabic": "اَلتَّحِيَّاتُ لِلّٰهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ ❊ اَلسَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهُ ❊ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصَّالِحِينَ ❊ أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ ❊ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+        "body": "Ettehiyyâtü lillâhi ves-salevâtü vet-tayyibât. Es-selâmü aleyke eyyühen-nebiyyü ve rahmetullâhi ve berekâtüh. Es-selâmü aleynâ ve alâ ibâdillâhis-sâlihîn. Eşhedü en lâ ilâhe illallâh ve eşhedü enne Muhammeden abdühû ve resûlüh."
+      },
+      {
+        "heading": "Allâhümme Salli ve Allâhümme Bârik",
+        "posture": "kade",
+        "arabic": "اَللّٰهُمَّ صَلِّ عَلٰى مُحَمَّدٍ وَعَلٰى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى إِبْرَاهِيمَ وَعَلٰى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ\n\nاَللّٰهُمَّ بَارِكْ عَلٰى مُحَمَّدٍ وَعَلٰى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى إِبْرَاهِيمَ وَعَلٰى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+        "body": "Allâhümme salli alâ Muhammedin ve alâ âli Muhammed, kemâ salleyte alâ İbrâhîme ve alâ âli İbrâhîm, inneke hamîdün mecîd.\n\nAllâhümme bârik alâ Muhammedin ve alâ âli Muhammed, kemâ bârekte alâ İbrâhîme ve alâ âli İbrâhîm, inneke hamîdün mecîd."
+      },
+      {
+        "heading": "Rabbenâ Âtinâ ve Selam",
+        "posture": "kade",
+        "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ\n\nاَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ",
+        "body": "Rabbenâ: Rabbenâ âtinâ fid-dünyâ haseneten ve fil-âhirati haseneten ve kınâ azâben-nâr.\n\nSelam (Sağa ve Sola): Es-selâmü aleyküm ve rahmetullâh."
+      },
+      {
+        "heading": "Ayetel Kürsi ve Namaz Sonrası Tesbihat",
+        "posture": "kade",
+        "arabic": "اَللّٰهُ لَا إِلٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+        "body": "• 3 kez Estağfirullah (أَسْتَغْفِرُ اللّٰهَ)\n• Allâhümme entes-selâm ve minkes-selâm, tebârekte yâ zel-celâli vel-ikrâm.\n• Ayetel Kürsi\n• 33 Sübhânallah (سُبْحَانَ اللّٰهِ)\n• 33 Elhamdülillâh (اَلْحَمْدُ لِلّٰهِ)\n• 34 Allâhü ekber (اَللّٰهُ أَكْبَرُ)"
+      }
+    ]
+  },
+  {
+    "id": "temel_bilgiler",
+    "title": "Namazın Şartları, Hatalar ve Bozanlar",
+    "subtitle": "Abdest, Hazırlık ve Dikkat Edilecek Hususlar",
+    "icon": "info",
+    "sections": [
+      {
+        "heading": "Namazın Şartları (Namaza Başlamadan Önce)",
+        "posture": "",
+        "arabic": "",
+        "body": "1. Hadesten taharet: Abdestli olmak (gerekiyorsa gusül).\n2. Necasetten taharet: Beden, elbise ve namaz kılınan yerin temiz olması.\n3. Setr-i avret: Avret yerlerinin örtülmesi. Erkekte göbekten dize kadar, kadında yüz ve eller hariç bütün beden.\n4. İstikbal-i kıble: Kâbe'ye dönmek. Türkiye'de kıble güneydoğuya doğrudur.\n5. Vakit: Namazı kendi vakti içinde kılmak.\n6. Niyet: Hangi namazı kıldığını kalben bilmek (dil ile söylemek şart değil, güzeldir)."
+      },
+      {
+        "heading": "Abdestin Farzları",
+        "posture": "",
+        "arabic": "",
+        "body": "1. Yüzü yıkamak\n2. Elleri dirseklerle beraber yıkamak\n3. Başın dörtte birini meshetmek\n4. Ayakları topuklarla beraber yıkamak"
+      },
+      {
+        "heading": "Namazın İçindeki Farzlar (Rükünler)",
+        "posture": "kiyam",
+        "arabic": "",
+        "body": "1. İftitah Tekbiri (Allahu Ekber)\n2. Kıyam (Ayakta durmak)\n3. Kıraat (Kur'an okumak)\n4. Rükû\n5. Secde\n6. Ka'de-i Âhire (Son oturuş)"
+      },
+      {
+        "heading": "Sık Yapılan Hatalar",
+        "posture": "secde",
+        "arabic": "",
+        "body": "• Rükûda ve secdede acele edip tam durmamak (en az bir tesbih süresi beklenmeli)\n• Kıyamda ellerin sürekli oynatılması\n• Secdede burnun yere değmemesi\n• Selamı verirken yüzün tam çevrilmemesi\n• Sübhaneke'yi ikinci rekâtta tekrar okumak"
+      },
+      {
+        "heading": "Namazı Bozan Durumlar",
+        "posture": "",
+        "arabic": "",
+        "body": "Abdestin bozulması, konuşmak, yemek-içmek, kıbleden yön değiştirmek, kahkaha ile gülmek ve çok hareket etmek (amel-i kesir)."
+      }
+    ]
+  }
+]

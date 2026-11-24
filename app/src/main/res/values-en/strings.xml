@@ -159,4 +159,10 @@
     <string name="ezan_custom_file_note">Built-in Adhan audio is included; tap the test button to preview it.</string>
     <string name="select_zikir_title">Select Dhikr</string>
     <string name="widget_desc">Prayer times and live countdown to the next prayer</string>
+    <string name="namaz_postures_title">Core Prayer Postures</string>
+    <string name="namaz_categories_title">Prayer Guide by Time</string>
+    <string name="posture_kiyam">Qiyam</string>
+    <string name="posture_ruku">Ruku</string>
+    <string name="posture_secde">Sujud</string>
+    <string name="posture_kade">Jalsa / Sitting</string>
 </resources>
