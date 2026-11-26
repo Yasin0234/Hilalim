@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_monthly_day"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -30,7 +31,8 @@
                 android:layout_weight="1"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="26 Kasım 2026 (16 Cemaziyelevvel)" />
 
             <TextView
                 android:id="@+id/txt_today_badge"
@@ -46,7 +48,9 @@
                 android:visibility="gone" />
         </LinearLayout>
 
+        <!-- Normal Mode: 6 Columns -->
         <LinearLayout
+            android:id="@+id/layout_normal_timings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -100,5 +104,79 @@
                 android:gravity="center"
                 android:textSize="12sp" />
         </LinearLayout>
+
+        <!-- Imsakiye Mode: 2 Prominent Columns (Sahur & Iftar) -->
+        <LinearLayout
+            android:id="@+id/layout_imsakiye_timings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <!-- Sahur / Imsak Column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dark_gradient_card"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:id="@+id/lbl_imsakiye_sahur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sahur"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_imsakiye_sahur_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/gold"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="05:42" />
+            </LinearLayout>
+
+            <!-- Iftar / Aksam Column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dark_gradient_card"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:id="@+id/lbl_imsakiye_iftar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/iftar"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_imsakiye_iftar_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/gold"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="18:15" />
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

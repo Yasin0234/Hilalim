@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_square_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark_gradient_card"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- Location & Hijri Date -->
+    <TextView
+        android:id="@+id/widget_square_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#B0BEC5"
+        android:textSize="11sp"
+        tools:text="İstanbul, Fatih" />
+
+    <TextView
+        android:id="@+id/widget_square_hijri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:textColor="#90A4AE"
+        android:textSize="10sp"
+        tools:text="16 Cemaziyelevvel 1448" />
+
+    <!-- Center: Next Prayer Name -->
+    <TextView
+        android:id="@+id/widget_square_prayer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/gold"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="İkindi" />
+
+    <!-- Center: Countdown Chronometer -->
+    <Chronometer
+        android:id="@+id/widget_square_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:format="%s"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <!-- Bottom: Target Time -->
+    <TextView
+        android:id="@+id/widget_square_target_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_countdown_pill"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="3dp"
+        android:textColor="@color/gold"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:text="15:42" />
+
+</LinearLayout>

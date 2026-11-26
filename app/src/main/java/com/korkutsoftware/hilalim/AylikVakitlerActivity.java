@@ -1,9 +1,12 @@
 package com.korkutsoftware.hilalim;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Chronometer;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -13,6 +16,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.card.MaterialCardView;
 import com.korkutsoftware.hilalim.api.MonthlyPrayerResponse;
 import com.korkutsoftware.hilalim.api.PrayerResponse;
@@ -22,6 +26,7 @@ import com.korkutsoftware.hilalim.util.PrayerCacheHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -37,6 +42,14 @@ public class AylikVakitlerActivity extends BaseActivity {
     private final Calendar displayedMonth = Calendar.getInstance();
     private String todayGregorianStr;
 
+    private boolean isImsakiyeMode = false;
+    private View cardImsakiyeLive;
+    private TextView txtImsakiyeTargetLabel;
+    private Chronometer chronoImsakiyeCountdown;
+
+    private List<PrayerResponse.Data> currentLoadedDays;
+    private MonthlyAdapter monthlyAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +58,7 @@ public class AylikVakitlerActivity extends BaseActivity {
         applySystemBarInsets(findViewById(android.R.id.content));
 
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
+        findViewById(R.id.btn_share_imsakiye).setOnClickListener(v -> shareImsakiye());
 
         rvMonthly = findViewById(R.id.rv_monthly);
         progressBar = findViewById(R.id.progress_loading);
@@ -52,7 +66,24 @@ public class AylikVakitlerActivity extends BaseActivity {
         txtMonthYear = findViewById(R.id.txt_month_year);
         rvMonthly.setLayoutManager(new LinearLayoutManager(this));
 
+        cardImsakiyeLive = findViewById(R.id.card_imsakiye_live_info);
+        txtImsakiyeTargetLabel = findViewById(R.id.txt_imsakiye_target_label);
+        chronoImsakiyeCountdown = findViewById(R.id.chrono_imsakiye_countdown);
+
         todayGregorianStr = new SimpleDateFormat("dd-MM-yyyy", Locale.US).format(Calendar.getInstance().getTime());
+
+        MaterialButtonToggleGroup toggleMode = findViewById(R.id.toggle_view_mode);
+        toggleMode.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+            if (!isChecked) return;
+            isImsakiyeMode = (checkedId == R.id.btn_mode_imsakiye);
+            cardImsakiyeLive.setVisibility(isImsakiyeMode ? View.VISIBLE : View.GONE);
+            if (monthlyAdapter != null) {
+                monthlyAdapter.setImsakiyeMode(isImsakiyeMode);
+            }
+            if (isImsakiyeMode) {
+                updateImsakiyeLiveCountdown();
+            }
+        });
 
         findViewById(R.id.btn_prev_month).setOnClickListener(v -> {
             displayedMonth.add(Calendar.MONTH, -1);
@@ -116,10 +147,16 @@ public class AylikVakitlerActivity extends BaseActivity {
     }
 
     private void showList(List<PrayerResponse.Data> days) {
+        currentLoadedDays = days;
         progressBar.setVisibility(View.GONE);
         txtError.setVisibility(View.GONE);
         rvMonthly.setVisibility(View.VISIBLE);
-        rvMonthly.setAdapter(new MonthlyAdapter(days));
+        monthlyAdapter = new MonthlyAdapter(days, isImsakiyeMode);
+        rvMonthly.setAdapter(monthlyAdapter);
+
+        if (isImsakiyeMode) {
+            updateImsakiyeLiveCountdown();
+        }
 
         int todayPos = -1;
         for (int i = 0; i < days.size(); i++) {
@@ -136,20 +173,116 @@ public class AylikVakitlerActivity extends BaseActivity {
         }
     }
 
+    private void updateImsakiyeLiveCountdown() {
+        if (currentLoadedDays == null || currentLoadedDays.isEmpty()) return;
+
+        PrayerResponse.Data todayData = null;
+        for (PrayerResponse.Data d : currentLoadedDays) {
+            if (d != null && d.date != null && d.date.gregorian != null
+                    && todayGregorianStr.equals(d.date.gregorian.date)) {
+                todayData = d;
+                break;
+            }
+        }
+
+        if (todayData == null || todayData.timings == null) {
+            cardImsakiyeLive.setVisibility(View.GONE);
+            return;
+        }
+
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.US);
+        Calendar now = Calendar.getInstance();
+
+        try {
+            String imsakClean = AppCalculators.cleanPrayerTime(todayData.timings.fajr);
+            String aksamClean = AppCalculators.cleanPrayerTime(todayData.timings.maghrib);
+
+            Date imsakDate = sdf.parse(imsakClean);
+            Date aksamDate = sdf.parse(aksamClean);
+
+            if (imsakDate != null && aksamDate != null) {
+                Calendar imsakCal = Calendar.getInstance();
+                imsakCal.setTime(imsakDate);
+                imsakCal.set(now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH));
+
+                Calendar aksamCal = Calendar.getInstance();
+                aksamCal.setTime(aksamDate);
+                aksamCal.set(now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH));
+
+                long targetMs;
+                if (now.before(imsakCal)) {
+                    // Before Sahur
+                    txtImsakiyeTargetLabel.setText(R.string.sahur_countdown_label);
+                    targetMs = imsakCal.getTimeInMillis();
+                } else if (now.before(aksamCal)) {
+                    // Between Sahur and Iftar
+                    txtImsakiyeTargetLabel.setText(R.string.iftar_countdown_label);
+                    targetMs = aksamCal.getTimeInMillis();
+                } else {
+                    // After Iftar, next day Sahur
+                    txtImsakiyeTargetLabel.setText(R.string.sahur_countdown_label);
+                    imsakCal.add(Calendar.DAY_OF_MONTH, 1);
+                    targetMs = imsakCal.getTimeInMillis();
+                }
+
+                long remainingMs = Math.max(0L, targetMs - System.currentTimeMillis());
+                long base = SystemClock.elapsedRealtime() + remainingMs;
+                chronoImsakiyeCountdown.stop();
+                chronoImsakiyeCountdown.setBase(base);
+                chronoImsakiyeCountdown.setCountDown(true);
+                chronoImsakiyeCountdown.start();
+                cardImsakiyeLive.setVisibility(View.VISIBLE);
+            }
+        } catch (Exception e) {
+            cardImsakiyeLive.setVisibility(View.GONE);
+        }
+    }
+
+    private void shareImsakiye() {
+        if (currentLoadedDays == null || currentLoadedDays.isEmpty()) return;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("🌙 Hilalim — ").append(txtMonthYear.getText()).append(" İmsakiyesi\n\n");
+
+        for (PrayerResponse.Data d : currentLoadedDays) {
+            if (d != null && d.date != null && d.timings != null) {
+                String dayStr = d.date.readable != null ? d.date.readable : "";
+                String imsak = AppCalculators.cleanPrayerTime(d.timings.fajr);
+                String iftar = AppCalculators.cleanPrayerTime(d.timings.maghrib);
+                sb.append("• ").append(dayStr).append(" | Sahur: ").append(imsak)
+                        .append(" - İftar: ").append(iftar).append("\n");
+            }
+        }
+
+        sb.append("\nHilalim Mobil Uygulaması ile paylaşıldı.");
+
+        Intent sendIntent = new Intent(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, sb.toString());
+        sendIntent.setType("text/plain");
+        startActivity(Intent.createChooser(sendIntent, getString(R.string.share_imsakiye)));
+    }
+
     private class MonthlyAdapter extends RecyclerView.Adapter<MonthlyAdapter.ViewHolder> {
         private final List<PrayerResponse.Data> items;
+        private boolean imsakiyeMode;
         private final String lang = LocaleHelper.getLanguage(AylikVakitlerActivity.this);
         private final int activeStroke = ContextCompat.getColor(AylikVakitlerActivity.this, R.color.secondary);
         private final int defaultStroke = ContextCompat.getColor(AylikVakitlerActivity.this, R.color.card_stroke);
         private final int activeBg = ContextCompat.getColor(AylikVakitlerActivity.this, R.color.selected_lang_bg);
         private final int defaultBg;
 
-        MonthlyAdapter(List<PrayerResponse.Data> items) {
+        MonthlyAdapter(List<PrayerResponse.Data> items, boolean imsakiyeMode) {
             this.items = items;
+            this.imsakiyeMode = imsakiyeMode;
             android.util.TypedValue tv = new android.util.TypedValue();
             getTheme().resolveAttribute(com.google.android.material.R.attr.colorSurfaceContainer, tv, true);
             defaultBg = tv.resourceId != 0 ? ContextCompat.getColor(AylikVakitlerActivity.this, tv.resourceId)
                     : ContextCompat.getColor(AylikVakitlerActivity.this, R.color.card_bg);
+        }
+
+        void setImsakiyeMode(boolean mode) {
+            this.imsakiyeMode = mode;
+            notifyDataSetChanged();
         }
 
         @NonNull
@@ -181,12 +314,21 @@ public class AylikVakitlerActivity extends BaseActivity {
             }
 
             if (day.timings != null) {
-                holder.txtImsak.setText(getString(R.string.imsak) + "\n" + AppCalculators.cleanPrayerTime(day.timings.fajr));
-                holder.txtGunes.setText(getString(R.string.gunes) + "\n" + AppCalculators.cleanPrayerTime(day.timings.sunrise));
-                holder.txtOgle.setText(getString(R.string.ogle) + "\n" + AppCalculators.cleanPrayerTime(day.timings.dhuhr));
-                holder.txtIkindi.setText(getString(R.string.ikindi) + "\n" + AppCalculators.cleanPrayerTime(day.timings.asr));
-                holder.txtAksam.setText(getString(R.string.aksam) + "\n" + AppCalculators.cleanPrayerTime(day.timings.maghrib));
-                holder.txtYatsi.setText(getString(R.string.yatsi) + "\n" + AppCalculators.cleanPrayerTime(day.timings.isha));
+                if (imsakiyeMode) {
+                    holder.layoutNormal.setVisibility(View.GONE);
+                    holder.layoutImsakiye.setVisibility(View.VISIBLE);
+                    holder.txtImsakiyeSahurTime.setText(AppCalculators.cleanPrayerTime(day.timings.fajr));
+                    holder.txtImsakiyeIftarTime.setText(AppCalculators.cleanPrayerTime(day.timings.maghrib));
+                } else {
+                    holder.layoutNormal.setVisibility(View.VISIBLE);
+                    holder.layoutImsakiye.setVisibility(View.GONE);
+                    holder.txtImsak.setText(getString(R.string.imsak) + "\n" + AppCalculators.cleanPrayerTime(day.timings.fajr));
+                    holder.txtGunes.setText(getString(R.string.gunes) + "\n" + AppCalculators.cleanPrayerTime(day.timings.sunrise));
+                    holder.txtOgle.setText(getString(R.string.ogle) + "\n" + AppCalculators.cleanPrayerTime(day.timings.dhuhr));
+                    holder.txtIkindi.setText(getString(R.string.ikindi) + "\n" + AppCalculators.cleanPrayerTime(day.timings.asr));
+                    holder.txtAksam.setText(getString(R.string.aksam) + "\n" + AppCalculators.cleanPrayerTime(day.timings.maghrib));
+                    holder.txtYatsi.setText(getString(R.string.yatsi) + "\n" + AppCalculators.cleanPrayerTime(day.timings.isha));
+                }
             }
         }
 
@@ -197,19 +339,29 @@ public class AylikVakitlerActivity extends BaseActivity {
 
         class ViewHolder extends RecyclerView.ViewHolder {
             MaterialCardView cardDay;
-            TextView txtDate, txtTodayBadge, txtImsak, txtGunes, txtOgle, txtIkindi, txtAksam, txtYatsi;
+            TextView txtDate, txtTodayBadge;
+            View layoutNormal, layoutImsakiye;
+            TextView txtImsak, txtGunes, txtOgle, txtIkindi, txtAksam, txtYatsi;
+            TextView txtImsakiyeSahurTime, txtImsakiyeIftarTime;
 
             ViewHolder(View v) {
                 super(v);
                 cardDay = v.findViewById(R.id.card_monthly_day);
                 txtDate = v.findViewById(R.id.txt_day_date);
                 txtTodayBadge = v.findViewById(R.id.txt_today_badge);
+
+                layoutNormal = v.findViewById(R.id.layout_normal_timings);
+                layoutImsakiye = v.findViewById(R.id.layout_imsakiye_timings);
+
                 txtImsak = v.findViewById(R.id.txt_imsak);
                 txtGunes = v.findViewById(R.id.txt_gunes);
                 txtOgle = v.findViewById(R.id.txt_ogle);
                 txtIkindi = v.findViewById(R.id.txt_ikindi);
                 txtAksam = v.findViewById(R.id.txt_aksam);
                 txtYatsi = v.findViewById(R.id.txt_yatsi);
+
+                txtImsakiyeSahurTime = v.findViewById(R.id.txt_imsakiye_sahur_time);
+                txtImsakiyeIftarTime = v.findViewById(R.id.txt_imsakiye_iftar_time);
             }
         }
     }

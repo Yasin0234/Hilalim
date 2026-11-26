@@ -269,4 +269,47 @@
         <item>(سورة الزمر، ٥٣)</item>
         <item>(سورة العنكبوت، ٤٥)</item>
     </string-array>
+
+    <!-- Beyza Etap 2 -->
+    <string name="namaz_takibim">متابعة الصلاة</string>
+    <string name="tool_namaz_takip">متابعة الصلاة</string>
+    <string name="tool_namaz_takip_desc">سجل الصلوات اليومية ومتابعة الالتزام</string>
+    <string name="streak_format">%d أيام متتالية</string>
+    <string name="monthly_rate_format">%%%d هذا الشهر</string>
+    <string name="today_label">اليوم</string>
+    <string name="status_waiting">قيد الانتظار</string>
+    <string name="status_prayed">صلّيت</string>
+    <string name="status_congregation">جماعة</string>
+    <string name="status_kaza">قضاء</string>
+    <string name="vakit_vitir">الوتر</string>
+    <string name="kaza_takip_title">متابعة قضاء الصلاة والصيام</string>
+    <string name="tool_kaza_takip">حساب وقضاء الصلوات</string>
+    <string name="tool_kaza_takip_desc">متابعة قضاء الصلوات الفائتة وأيام الصيام</string>
+    <string name="tab_kaza_namaz">صلوات القضاء</string>
+    <string name="tab_kaza_oruc">صيام القضاء</string>
+    <string name="kaza_total_debt_format">إجمالي الصلوات الفائتة: %d صلاة</string>
+    <string name="kaza_total_fasting_format">إجمالي أيام الصيام الفائتة: %d يوم</string>
+    <string name="kaza_progress_format">%%%d تم الإنجاز</string>
+    <string name="btn_kaza_calculate_debt">حساب القضاء</string>
+    <string name="btn_kaza_quick_drop_day">⚡ خصم يوم كامل (-٦ صلوات)</string>
+    <string name="dialog_kaza_calc_title">حساب قضاء الصلوات</string>
+    <string name="dialog_kaza_calc_message">كم سنة من الصلوات الفائتة ترغب في إضافتها؟ (سنة واحدة = ٣٦٥ يوماً لكل صلاة)</string>
+    <string name="dialog_kaza_years_hint">عدد السنوات (مثال: ٣)</string>
+    <string name="dialog_kaza_apply">حساب وإضافة</string>
+    <string name="dialog_kaza_reset">إعادة ضبط العدادات</string>
+    <string name="kaza_dropped_undo">تم خصم صلاة قضاء %s واحدة</string>
+    <string name="kaza_day_dropped_undo">تم خصم يوم كامل من صلوات القضاء</string>
+    <string name="kaza_fasting_dropped_undo">تم خصم يوم صيام قضاء</string>
+    <string name="undo">تراجع</string>
+    <string name="mode_normal">العرض المعتاد</string>
+    <string name="mode_imsakiye">🌙 إمساكية رمضان</string>
+    <string name="sahur_countdown_label">الوقت المتبقي حتى السحور</string>
+    <string name="iftar_countdown_label">الوقت المتبقي حتى الإفطار</string>
+    <string name="share_imsakiye">مشاركة الإمساكية</string>
+    <string name="sahur">السحور</string>
+    <string name="iftar">الإفطار</string>
+    <string name="widget_compact_name">مواقيت هلالي المدمجة (٤x١)</string>
+    <string name="widget_countdown_name">عدّاد هلالي التنازلي (٢x٢)</string>
+    <string name="kaza_fasting_add_month">+٣٠ يوماً (إضافة شهر)</string>
+    <string name="kaza_fasting_reset_confirm">هل أنت متأكد من إعادة ضبط عدادات صيام القضاء؟</string>
 </resources>

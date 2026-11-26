@@ -40,6 +40,9 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
                 updateAppWidget(context, manager, id);
             }
         }
+
+        CompactPrayerWidgetProvider.updateAllWidgets(context);
+        CountdownWidgetProvider.updateAllWidgets(context);
     }
 
     private static void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {

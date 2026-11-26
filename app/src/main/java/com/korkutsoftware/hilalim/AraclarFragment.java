@@ -103,6 +103,24 @@ public class AraclarFragment extends Fragment {
             cardNotifications.setOnClickListener(v -> openToolWithAd(NotificationSettingsActivity.class));
         }
 
+        View cardNamazTakip = view.findViewById(R.id.card_namaz_takip);
+        if (cardNamazTakip != null) {
+            cardNamazTakip.setOnClickListener(v -> {
+                if (getActivity() != null) {
+                    startActivity(new Intent(getActivity(), NamazTakipActivity.class));
+                }
+            });
+        }
+
+        View cardKazaTakip = view.findViewById(R.id.card_kaza_takip);
+        if (cardKazaTakip != null) {
+            cardKazaTakip.setOnClickListener(v -> {
+                if (getActivity() != null) {
+                    startActivity(new Intent(getActivity(), KazaTakipActivity.class));
+                }
+            });
+        }
+
         View cardDailyDua = view.findViewById(R.id.card_araclar_daily_dua);
         if (cardDailyDua != null) {
             cardDailyDua.setOnClickListener(v -> openToolWithAd(DualarActivity.class));

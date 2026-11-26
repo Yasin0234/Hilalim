@@ -53,6 +53,9 @@ dependencies {
     implementation libs.play.services.location
     implementation libs.play.services.ads
 
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler
+
     testImplementation libs.junit
     androidTestImplementation libs.espresso.core
     androidTestImplementation libs.ext.junit

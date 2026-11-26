@@ -269,4 +269,47 @@
         <item>(Sure Az-Zumar, 53)</item>
         <item>(Sure Al-Ankabut, 45)</item>
     </string-array>
+
+    <!-- Beyza Etap 2 -->
+    <string name="namaz_takibim">Gebets-Tracker</string>
+    <string name="tool_namaz_takip">Gebets-Tracker</string>
+    <string name="tool_namaz_takip_desc">Tägliches Gebetstagebuch und Serie</string>
+    <string name="streak_format">%d Tage Serie</string>
+    <string name="monthly_rate_format">%%%d Diesen Monat</string>
+    <string name="today_label">Heute</string>
+    <string name="status_waiting">Wartend</string>
+    <string name="status_prayed">Gebetet</string>
+    <string name="status_congregation">Gemeinschaft</string>
+    <string name="status_kaza">Nachholen (Qada)</string>
+    <string name="vakit_vitir">Witr</string>
+    <string name="kaza_takip_title">Nachholgebete &amp; Fasten-Tracker</string>
+    <string name="tool_kaza_takip">Qada-Tracker</string>
+    <string name="tool_kaza_takip_desc">Verpasste Gebete und Fastentage verfolgen</string>
+    <string name="tab_kaza_namaz">Nachholgebete</string>
+    <string name="tab_kaza_oruc">Nachholfasten</string>
+    <string name="kaza_total_debt_format">Gesamtschuld: %d Gebete</string>
+    <string name="kaza_total_fasting_format">Verbleibendes Nachholfasten: %d Tage</string>
+    <string name="kaza_progress_format">%%%d Abgeschlossen</string>
+    <string name="btn_kaza_calculate_debt">Schuld Berechnen</string>
+    <string name="btn_kaza_quick_drop_day">⚡ 1 ganzen Tag abziehen (-6 Gebete)</string>
+    <string name="dialog_kaza_calc_title">Nachholgebete Berechnen</string>
+    <string name="dialog_kaza_calc_message">Wie viele Jahre möchten Sie hinzufügen? (1 Jahr = 365 Tage für jedes Gebet)</string>
+    <string name="dialog_kaza_years_hint">Anzahl der Jahre (z. B. 3)</string>
+    <string name="dialog_kaza_apply">Berechnen &amp; Hinzufügen</string>
+    <string name="dialog_kaza_reset">Zähler zurücksetzen</string>
+    <string name="kaza_dropped_undo">1 %s abgezogen</string>
+    <string name="kaza_day_dropped_undo">1 Tag Nachholgebete abgezogen</string>
+    <string name="kaza_fasting_dropped_undo">1 Tag Nachholfasten abgezogen</string>
+    <string name="undo">Rückgängig</string>
+    <string name="mode_normal">Normale Ansicht</string>
+    <string name="mode_imsakiye">🌙 Ramadan-Imsakiye</string>
+    <string name="sahur_countdown_label">Verbleibende Zeit bis Sahur</string>
+    <string name="iftar_countdown_label">Verbleibende Zeit bis Iftar</string>
+    <string name="share_imsakiye">Imsakiye Teilen</string>
+    <string name="sahur">Sahur</string>
+    <string name="iftar">Iftar</string>
+    <string name="widget_compact_name">Hilalim Kompaktzeiten (4x1)</string>
+    <string name="widget_countdown_name">Hilalim Countdown (2x2)</string>
+    <string name="kaza_fasting_add_month">+30 Tage (1 Monat hinzufügen)</string>
+    <string name="kaza_fasting_reset_confirm">Möchten Sie den Zähler für das Nachholfasten wirklich zurücksetzen?</string>
 </resources>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_kaza"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Top Header Bar -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/header_bg"
+            android:paddingHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical|start"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@null"
+                android:padding="12dp"
+                android:src="@drawable/ic_back_arrow"
+                app:tint="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/kaza_takip_title"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Segmented Tab Group (Namaz / Oruç) -->
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggle_kaza_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            app:checkedButton="@id/btn_tab_namaz"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tab_namaz"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/tab_kaza_namaz"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:strokeColor="@color/card_stroke" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tab_oruc"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/tab_kaza_oruc"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:strokeColor="@color/card_stroke" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="6dp">
+
+                <!-- Summary Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_kaza_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="@color/card_stroke"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_dark_gradient_card"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:id="@+id/txt_kaza_total_summary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gold"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            tools:text="Toplam Kalan Borç: 1.825 Vakit" />
+
+                        <ProgressBar
+                            android:id="@+id/progress_kaza_bar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="12dp"
+                            android:max="100"
+                            android:progress="34"
+                            android:progressDrawable="@drawable/progress_rounded" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_kaza_progress_label"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#CFD8DC"
+                                android:textSize="13sp"
+                                tools:text="%34 Tamamlandı" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_kaza_calc_action"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:backgroundTint="@color/selected_lang_bg"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:text="@string/btn_kaza_calculate_debt"
+                                android:textColor="@color/secondary"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:cornerRadius="12dp"
+                                app:strokeColor="@color/card_stroke"
+                                app:strokeWidth="1dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SECTION: NAMAZ TAKİBİ -->
+                <LinearLayout
+                    android:id="@+id/layout_section_namaz"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Row 1: Sabah & Öğle -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include
+                            android:id="@+id/card_counter_fajr"
+                            layout="@layout/item_kaza_counter_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <include
+                            android:id="@+id/card_counter_dhuhr"
+                            layout="@layout/item_kaza_counter_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <!-- Row 2: İkindi & Akşam -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include
+                            android:id="@+id/card_counter_asr"
+                            layout="@layout/item_kaza_counter_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <include
+                            android:id="@+id/card_counter_maghrib"
+                            layout="@layout/item_kaza_counter_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <!-- Row 3: Yatsı & Vitir -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include
+                            android:id="@+id/card_counter_isha"
+                            layout="@layout/item_kaza_counter_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <include
+                            android:id="@+id/card_counter_witr"
+                            layout="@layout/item_kaza_counter_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <!-- Quick Action: -6 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_quick_drop_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="12dp"
+                        android:backgroundTint="@color/secondary"
+                        android:text="@string/btn_kaza_quick_drop_day"
+                        android:textColor="@color/deep_charcoal"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="16dp" />
+                </LinearLayout>
+
+                <!-- SECTION: ORUÇ TAKİBİ -->
+                <LinearLayout
+                    android:id="@+id/layout_section_oruc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2dp"
+                        app:strokeColor="@color/card_stroke"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="24dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tab_kaza_oruc"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_fasting_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="16dp"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="48sp"
+                                android:textStyle="bold"
+                                tools:text="30" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_fasting_decrement"
+                                    style="@style/Widget.Material3.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="48dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_weight="1"
+                                    android:text="-1 (Tutuldu)"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="14dp"
+                                    app:strokeColor="@color/card_stroke" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_fasting_increment"
+                                    style="@style/Widget.Material3.Button.TonalButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="48dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/selected_lang_bg"
+                                    android:text="+1 (Ekle)"
+                                    android:textColor="@color/secondary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="14dp"
+                                    app:strokeColor="@color/card_stroke"
+                                    app:strokeWidth="1dp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_fasting_add_month"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/kaza_fasting_add_month"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                app:cornerRadius="14dp"
+                                app:strokeColor="@color/card_stroke" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_fasting_reset"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="@string/dialog_kaza_reset"
+                                android:textColor="?attr/colorError"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

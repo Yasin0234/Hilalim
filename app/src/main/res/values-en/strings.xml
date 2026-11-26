@@ -269,4 +269,47 @@
         <item>(Surah Az-Zumar, 53)</item>
         <item>(Surah Al-Ankabut, 45)</item>
     </string-array>
+
+    <!-- Beyza Etap 2 -->
+    <string name="namaz_takibim">Prayer Tracker</string>
+    <string name="tool_namaz_takip">Prayer Tracker</string>
+    <string name="tool_namaz_takip_desc">Daily prayer log and streak tracker</string>
+    <string name="streak_format">%d Day Streak</string>
+    <string name="monthly_rate_format">%%%d This Month</string>
+    <string name="today_label">Today</string>
+    <string name="status_waiting">Waiting</string>
+    <string name="status_prayed">Prayed</string>
+    <string name="status_congregation">Congregation</string>
+    <string name="status_kaza">Qada</string>
+    <string name="vakit_vitir">Witr</string>
+    <string name="kaza_takip_title">Qada Prayer &amp; Fasting Tracker</string>
+    <string name="tool_kaza_takip">Qada Tracker</string>
+    <string name="tool_kaza_takip_desc">Missed prayer and fasting debt tracker</string>
+    <string name="tab_kaza_namaz">Missed Prayers</string>
+    <string name="tab_kaza_oruc">Missed Fasts</string>
+    <string name="kaza_total_debt_format">Total Remaining Debt: %d Prayers</string>
+    <string name="kaza_total_fasting_format">Total Remaining Missed Fasts: %d Days</string>
+    <string name="kaza_progress_format">%%%d Completed</string>
+    <string name="btn_kaza_calculate_debt">Calculate Debt</string>
+    <string name="btn_kaza_quick_drop_day">⚡ Drop 1 Full Day (-6 Prayers)</string>
+    <string name="dialog_kaza_calc_title">Calculate Missed Debt</string>
+    <string name="dialog_kaza_calc_message">How many years of missed prayers would you like to add? (1 year = 365 days added to each prayer)</string>
+    <string name="dialog_kaza_years_hint">Number of years (e.g. 3)</string>
+    <string name="dialog_kaza_apply">Calculate &amp; Add</string>
+    <string name="dialog_kaza_reset">Reset Counters</string>
+    <string name="kaza_dropped_undo">1 %s qada deducted</string>
+    <string name="kaza_day_dropped_undo">1 day of all missed prayers deducted</string>
+    <string name="kaza_fasting_dropped_undo">1 missed fast deducted</string>
+    <string name="undo">Undo</string>
+    <string name="mode_normal">Normal View</string>
+    <string name="mode_imsakiye">🌙 Ramadan Timetable</string>
+    <string name="sahur_countdown_label">Time Left for Suhoor</string>
+    <string name="iftar_countdown_label">Time Left for Iftar</string>
+    <string name="share_imsakiye">Share Timetable</string>
+    <string name="sahur">Suhoor</string>
+    <string name="iftar">Iftar</string>
+    <string name="widget_compact_name">Hilalim Compact Times (4x1)</string>
+    <string name="widget_countdown_name">Hilalim Countdown (2x2)</string>
+    <string name="kaza_fasting_add_month">+30 Days (Add 1 Month)</string>
+    <string name="kaza_fasting_reset_confirm">Are you sure you want to reset missed fasting counters?</string>
 </resources>

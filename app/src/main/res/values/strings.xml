@@ -289,4 +289,47 @@
         <item>(Zümer Suresi, 53. Ayet)</item>
         <item>(Ankebut Suresi, 45. Ayet)</item>
     </string-array>
+
+    <!-- Beyza Etap 2 -->
+    <string name="namaz_takibim">Namaz Takibim</string>
+    <string name="tool_namaz_takip">Namaz Takibim</string>
+    <string name="tool_namaz_takip_desc">Günlük namaz çetelesi ve seri takibi</string>
+    <string name="streak_format">%d Günlük Seri</string>
+    <string name="monthly_rate_format">%%%d Bu Ay</string>
+    <string name="today_label">Bugün</string>
+    <string name="status_waiting">Bekliyor</string>
+    <string name="status_prayed">Kıldım</string>
+    <string name="status_congregation">Cemaatle</string>
+    <string name="status_kaza">Kaza</string>
+    <string name="vakit_vitir">Vitir</string>
+    <string name="kaza_takip_title">Kaza Namazı &amp; Oruç Takibi</string>
+    <string name="tool_kaza_takip">Kaza Hesapla / Takip</string>
+    <string name="tool_kaza_takip_desc">Kaza namazı ve orucu borç takibi</string>
+    <string name="tab_kaza_namaz">Kaza Namazları</string>
+    <string name="tab_kaza_oruc">Kaza Oruçları</string>
+    <string name="kaza_total_debt_format">Toplam Kalan Borç: %d Vakit</string>
+    <string name="kaza_total_fasting_format">Toplam Kalan Kaza Orucu: %d Gün</string>
+    <string name="kaza_progress_format">%%%d Tamamlandı</string>
+    <string name="btn_kaza_calculate_debt">Borç Hesapla</string>
+    <string name="btn_kaza_quick_drop_day">⚡ 1 Günlük Tüm Vakitleri Düş (-6)</string>
+    <string name="dialog_kaza_calc_title">Kaza Borcu Hesaplama</string>
+    <string name="dialog_kaza_calc_message">Kaç yıllık kaza namazı borcu eklemek istiyorsunuz? (1 yıl = 365 gün her vakte eklenir)</string>
+    <string name="dialog_kaza_years_hint">Yıl sayısı (örn. 3)</string>
+    <string name="dialog_kaza_apply">Hesapla ve Ekle</string>
+    <string name="dialog_kaza_reset">Sayaçları Sıfırla</string>
+    <string name="kaza_dropped_undo">1 %s kazası düşüldü</string>
+    <string name="kaza_day_dropped_undo">1 günlük tüm kaza vakitleri düşüldü</string>
+    <string name="kaza_fasting_dropped_undo">1 günlük kaza orucu düşüldü</string>
+    <string name="undo">Geri Al</string>
+    <string name="mode_normal">Normal Görünüm</string>
+    <string name="mode_imsakiye">🌙 İmsakiye Modu</string>
+    <string name="sahur_countdown_label">Sahura Kalan Süre</string>
+    <string name="iftar_countdown_label">İftara Kalan Süre</string>
+    <string name="share_imsakiye">İmsakiyeyi Paylaş</string>
+    <string name="sahur">Sahur</string>
+    <string name="iftar">İftar</string>
+    <string name="widget_compact_name">Hilalim Kompakt Vakitler (4x1)</string>
+    <string name="widget_countdown_name">Hilalim Geri Sayım (2x2)</string>
+    <string name="kaza_fasting_add_month">+30 Gün (1 Ay Ekle)</string>
+    <string name="kaza_fasting_reset_confirm">Kaza orucu sayaçlarını sıfırlamak istediğinize emin misiniz?</string>
 </resources>
