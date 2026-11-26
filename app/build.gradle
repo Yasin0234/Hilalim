@@ -46,8 +46,10 @@ dependencies {
     implementation libs.appcompat
     implementation libs.constraintlayout
     implementation libs.material
-    
 
+    implementation libs.media3.exoplayer
+    implementation libs.media3.session
+    implementation libs.work.runtime
     implementation libs.retrofit
     implementation libs.retrofit.converter.gson
     implementation libs.play.services.location

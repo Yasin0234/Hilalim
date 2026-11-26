@@ -332,4 +332,39 @@
     <string name="widget_countdown_name">Hilalim Geri Sayım (2x2)</string>
     <string name="kaza_fasting_add_month">+30 Gün (1 Ay Ekle)</string>
     <string name="kaza_fasting_reset_confirm">Kaza orucu sayaçlarını sıfırlamak istediğinize emin misiniz?</string>
+
+    <!-- Yasin Etap 2: Kur'an Arama, Cüz, Sesli Tilavet & Gelişmiş Ezan -->
+    <string name="quran_tab_search_verses">Ayet Ara</string>
+    <string name="quran_tab_juz">Cüzler</string>
+    <string name="quran_search_verse_hint">Ayet meali ara (en az 3 harf)…</string>
+    <string name="quran_search_min_chars">Ayet içi arama için en az 3 karakter yazın.</string>
+    <string name="quran_search_empty">Aramanızla eşleşen ayet bulunamadı.</string>
+    <string name="quran_juz_format">%d. Cüz</string>
+    <string name="quran_juz_start_format">Başlangıç: %1$s • %2$d. Ayet</string>
+    <string name="quran_reciter_select">Hafız Seçin</string>
+    <string name="quran_reciter_alafasy">Mishary Rashid Alafasy</string>
+    <string name="quran_reciter_husary">Mahmoud Khalil Al-Husary</string>
+    <string name="quran_reciter_abdulbasit">Abdul Basit (Murattal)</string>
+    <string name="quran_repeat_format">%dx</string>
+    <string name="quran_audio_loading">Ses yükleniyor…</string>
+    <string name="quran_audio_network_error">Ses dosyası yüklenemedi. İnternet bağlantınızı kontrol edin.</string>
+    <string name="quran_audio_notif_channel">Kur\'an Tilaveti</string>
+    <string name="quran_audio_notif_desc">Arka planda sesli Kur\'an tilaveti kontrolleri</string>
+    <string name="quran_play_verse_desc">Ayeti Dinle</string>
+    <string name="quran_pause_verse_desc">Duraklat</string>
+    <string name="notif_ezan_sound_title">Ezan Makamı / Sesi</string>
+    <string name="ezan_sound_classic">Klasik Ezan (Dahili)</string>
+    <string name="ezan_sound_istanbul">İstanbul Makamı</string>
+    <string name="ezan_sound_makkah">Mekke / Medine Ezanı</string>
+    <string name="ezan_sound_short">Kısa Tekbir / Uyarı Sesi</string>
+    <string name="ezan_sound_silent">Sadece Sessiz Bildirim</string>
+    <string name="notif_pre_minutes_title">Erken Uyarı Süresi</string>
+    <string name="notif_pre_minutes_value">%d dakika önce</string>
+    <string name="notif_pre_minutes_dynamic">%d Dakika Önce Hatırlat</string>
+    <string name="notification_pre_custom_title">Ezan Vaktine %d Dk Kaldı</string>
+    <string name="notif_dnd_title">Namaz Vaktinde Sessize Al (DND)</string>
+    <string name="notif_dnd_desc">Vakitten 5 dk sonra telefonu 20 dk sessize alır</string>
+    <string name="notif_dnd_permission_title">Rahatsız Etmeyin İzni Gerekli</string>
+    <string name="notif_dnd_permission_msg">Namaz vakitlerinde telefonu otomatik sessize alabilmek için ayarlar ekranından Hilalim uygulamasına izin vermelisiniz.</string>
+    <string name="notif_dnd_go_settings">Ayarlara Git</string>
 </resources>

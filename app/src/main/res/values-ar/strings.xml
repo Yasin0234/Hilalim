@@ -312,4 +312,39 @@
     <string name="widget_countdown_name">عدّاد هلالي التنازلي (٢x٢)</string>
     <string name="kaza_fasting_add_month">+٣٠ يوماً (إضافة شهر)</string>
     <string name="kaza_fasting_reset_confirm">هل أنت متأكد من إعادة ضبط عدادات صيام القضاء؟</string>
+
+    <!-- Yasin Etap 2: البحث في القرآن والأجزاء والتلاوة والأذان -->
+    <string name="quran_tab_search_verses">بحث الآيات</string>
+    <string name="quran_tab_juz">الأجزاء</string>
+    <string name="quran_search_verse_hint">ابحث في معاني الآيات (٣ أحرف على الأقل)…</string>
+    <string name="quran_search_min_chars">أدخل ٣ أحرف على الأقل للبحث في الآيات.</string>
+    <string name="quran_search_empty">لم يتم العثور على آيات مطابقة.</string>
+    <string name="quran_juz_format">الجزء %d</string>
+    <string name="quran_juz_start_format">البداية: %1$s • الآية %2$d</string>
+    <string name="quran_reciter_select">اختر القارئ</string>
+    <string name="quran_reciter_alafasy">مشاري راشد العفاسي</string>
+    <string name="quran_reciter_husary">محمود خليل الحصري</string>
+    <string name="quran_reciter_abdulbasit">عبد الباسط عبد الصمد (مرتل)</string>
+    <string name="quran_repeat_format">%dx</string>
+    <string name="quran_audio_loading">جاري تحميل الصوت…</string>
+    <string name="quran_audio_network_error">تعذر تحميل الصوت. يرجى التحقق من الاتصال بالإنترنت.</string>
+    <string name="quran_audio_notif_channel">تلاوة القرآن</string>
+    <string name="quran_audio_notif_desc">عناصر التحكم بتلاوة القرآن في الخلفية</string>
+    <string name="quran_play_verse_desc">تشغيل الآية</string>
+    <string name="quran_pause_verse_desc">إيقاف مؤقت</string>
+    <string name="notif_ezan_sound_title">صوت / مقام الأذان</string>
+    <string name="ezan_sound_classic">الأذان الكلاسيكي (مدمج)</string>
+    <string name="ezan_sound_istanbul">مقام إسطنبول</string>
+    <string name="ezan_sound_makkah">أذان مكة / المدينة</string>
+    <string name="ezan_sound_short">نغمة تنبيه قصيرة</string>
+    <string name="ezan_sound_silent">إشعار صامت فقط</string>
+    <string name="notif_pre_minutes_title">وقت التنبيه المسبق</string>
+    <string name="notif_pre_minutes_value">قبل %d دقيقة</string>
+    <string name="notif_pre_minutes_dynamic">التنبيه قبل %d دقيقة</string>
+    <string name="notification_pre_custom_title">متبقي %d دقيقة على الصلاة</string>
+    <string name="notif_dnd_title">الوضع الصامت أثناء الصلاة</string>
+    <string name="notif_dnd_desc">يكتم الهاتف بعد الأذان بـ ٥ دقائق لمدة ٢٠ دقيقة</string>
+    <string name="notif_dnd_permission_title">مطلوب إذن عدم الإزعاج</string>
+    <string name="notif_dnd_permission_msg">يرجى منح تطبيق هلالي إذن الوصول إلى عدم الإزعاج من الإعدادات لكتم الصوت تلقائياً.</string>
+    <string name="notif_dnd_go_settings">الانتقال إلى الإعدادات</string>
 </resources>

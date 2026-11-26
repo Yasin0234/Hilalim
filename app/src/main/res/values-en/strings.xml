@@ -312,4 +312,39 @@
     <string name="widget_countdown_name">Hilalim Countdown (2x2)</string>
     <string name="kaza_fasting_add_month">+30 Days (Add 1 Month)</string>
     <string name="kaza_fasting_reset_confirm">Are you sure you want to reset missed fasting counters?</string>
+
+    <!-- Yasin Etap 2: Quran Search, Juz, Audio & Ezan -->
+    <string name="quran_tab_search_verses">Search Verses</string>
+    <string name="quran_tab_juz">Juz (1-30)</string>
+    <string name="quran_search_verse_hint">Search verse translation (min 3 chars)…</string>
+    <string name="quran_search_min_chars">Enter at least 3 characters to search verses.</string>
+    <string name="quran_search_empty">No matching verses found.</string>
+    <string name="quran_juz_format">Juz %d</string>
+    <string name="quran_juz_start_format">Starts: %1$s • Verse %2$d</string>
+    <string name="quran_reciter_select">Select Reciter</string>
+    <string name="quran_reciter_alafasy">Mishary Rashid Alafasy</string>
+    <string name="quran_reciter_husary">Mahmoud Khalil Al-Husary</string>
+    <string name="quran_reciter_abdulbasit">Abdul Basit (Murattal)</string>
+    <string name="quran_repeat_format">%dx</string>
+    <string name="quran_audio_loading">Loading audio…</string>
+    <string name="quran_audio_network_error">Could not load audio. Please check your internet connection.</string>
+    <string name="quran_audio_notif_channel">Quran Recitation</string>
+    <string name="quran_audio_notif_desc">Background Quran audio playback controls</string>
+    <string name="quran_play_verse_desc">Play Verse</string>
+    <string name="quran_pause_verse_desc">Pause</string>
+    <string name="notif_ezan_sound_title">Adhan Sound / Maqam</string>
+    <string name="ezan_sound_classic">Classic Adhan (Built-in)</string>
+    <string name="ezan_sound_istanbul">Istanbul Maqam</string>
+    <string name="ezan_sound_makkah">Makkah / Madinah Adhan</string>
+    <string name="ezan_sound_short">Short Alert Tone</string>
+    <string name="ezan_sound_silent">Silent Notification Only</string>
+    <string name="notif_pre_minutes_title">Early Reminder Lead Time</string>
+    <string name="notif_pre_minutes_value">%d minutes before</string>
+    <string name="notif_pre_minutes_dynamic">Remind %d Minutes Before</string>
+    <string name="notification_pre_custom_title">%d Min Left Until Prayer</string>
+    <string name="notif_dnd_title">Mute During Prayer (DND)</string>
+    <string name="notif_dnd_desc">Mutes phone 5 min after prayer for 20 minutes</string>
+    <string name="notif_dnd_permission_title">Do Not Disturb Access Needed</string>
+    <string name="notif_dnd_permission_msg">Please grant Do Not Disturb access to Hilalim in settings to mute your phone automatically during prayer times.</string>
+    <string name="notif_dnd_go_settings">Open Settings</string>
 </resources>

@@ -312,4 +312,39 @@
     <string name="widget_countdown_name">Hilalim Countdown (2x2)</string>
     <string name="kaza_fasting_add_month">+30 Tage (1 Monat hinzufügen)</string>
     <string name="kaza_fasting_reset_confirm">Möchten Sie den Zähler für das Nachholfasten wirklich zurücksetzen?</string>
+
+    <!-- Yasin Etap 2: Koran-Suche, Dschuz, Audio & Adhan -->
+    <string name="quran_tab_search_verses">Verssuche</string>
+    <string name="quran_tab_juz">Dschuz (1-30)</string>
+    <string name="quran_search_verse_hint">Versübersetzung suchen (min. 3 Zeichen)…</string>
+    <string name="quran_search_min_chars">Geben Sie mindestens 3 Zeichen für die Verssuche ein.</string>
+    <string name="quran_search_empty">Keine passenden Verse gefunden.</string>
+    <string name="quran_juz_format">Dschuz %d</string>
+    <string name="quran_juz_start_format">Beginn: %1$s • Vers %2$d</string>
+    <string name="quran_reciter_select">Rezitator wählen</string>
+    <string name="quran_reciter_alafasy">Mishary Rashid Alafasy</string>
+    <string name="quran_reciter_husary">Mahmoud Khalil Al-Husary</string>
+    <string name="quran_reciter_abdulbasit">Abdul Basit (Murattal)</string>
+    <string name="quran_repeat_format">%dx</string>
+    <string name="quran_audio_loading">Audio wird geladen…</string>
+    <string name="quran_audio_network_error">Audio konnte nicht geladen werden. Bitte prüfen Sie Ihre Internetverbindung.</string>
+    <string name="quran_audio_notif_channel">Koran-Rezitation</string>
+    <string name="quran_audio_notif_desc">Steuerung für Hintergrund-Rezitation</string>
+    <string name="quran_play_verse_desc">Vers abspielen</string>
+    <string name="quran_pause_verse_desc">Pause</string>
+    <string name="notif_ezan_sound_title">Adhan-Ton / Maqam</string>
+    <string name="ezan_sound_classic">Klassischer Adhan (Integriert)</string>
+    <string name="ezan_sound_istanbul">Istanbul-Maqam</string>
+    <string name="ezan_sound_makkah">Mekka / Medina Adhan</string>
+    <string name="ezan_sound_short">Kurzer Hinweiston</string>
+    <string name="ezan_sound_silent">Nur lautlose Benachrichtigung</string>
+    <string name="notif_pre_minutes_title">Vorlaufzeit der Erinnerung</string>
+    <string name="notif_pre_minutes_value">%d Minuten vorher</string>
+    <string name="notif_pre_minutes_dynamic">%d Minuten vorher erinnern</string>
+    <string name="notification_pre_custom_title">Noch %d Min. bis zum Gebet</string>
+    <string name="notif_dnd_title">Während des Gebets stumm (DND)</string>
+    <string name="notif_dnd_desc">Schaltet das Telefon 5 Min. nach Gebetsbeginn für 20 Min. stumm</string>
+    <string name="notif_dnd_permission_title">Bitte-nicht-stören-Berechtigung nötig</string>
+    <string name="notif_dnd_permission_msg">Bitte erteilen Sie Hilalim in den Einstellungen die Berechtigung für Bitte nicht stören.</string>
+    <string name="notif_dnd_go_settings">Einstellungen</string>
 </resources>
