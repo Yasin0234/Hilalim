@@ -26,6 +26,18 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.korkutsoftware.hilalim.util.QuranPrefsHelper;
 import com.korkutsoftware.hilalim.util.ShareCardHelper;
+import android.content.Intent;
+import android.widget.SeekBar;
+
+import androidx.core.graphics.ColorUtils;
+
+import com.google.android.material.card.MaterialCardView;
+import com.korkutsoftware.hilalim.data.db.AppDatabase;
+import com.korkutsoftware.hilalim.data.db.QuranVerseEntity;
+import com.korkutsoftware.hilalim.util.QuranImportHelper;
+import com.korkutsoftware.hilalim.util.QuranReciterHelper;
+
+import java.util.Locale;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,7 +47,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class SurahDetailActivity extends BaseActivity {
+public class SurahDetailActivity extends BaseActivity implements QuranAudioService.AudioStateListener {
 
     private RecyclerView rv;
     private LinearLayoutManager layoutManager;
@@ -48,6 +60,12 @@ public class SurahDetailActivity extends BaseActivity {
     private List<SurahInfo> allSurahInfos = null;
     private List<SurahVerses> allSurahVerses = null;
     private VerseAdapter currentAdapter = null;
+    private View miniPlayerCard;
+    private ImageView btnMiniPlayPause;
+    private TextView txtMiniTitle, txtMiniReciter, txtMiniRepeat, txtMiniTime;
+    private SeekBar seekMiniAudio;
+    private boolean userSeeking = false;
+    private int playingVerseId = -1;
 
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -77,6 +95,12 @@ public class SurahDetailActivity extends BaseActivity {
             btnTextSettings.setOnClickListener(v -> showTextSettingsDialog());
         }
 
+        View btnReciter = findViewById(R.id.btn_reciter);
+        if (btnReciter != null) {
+            btnReciter.setOnClickListener(v -> showReciterDialog());
+        }
+        setupMiniPlayer();
+
         rv = findViewById(R.id.rv_verses);
         progressBar = findViewById(R.id.progress_loading);
         txtNoContent = findViewById(R.id.txt_no_content);
@@ -102,6 +126,19 @@ public class SurahDetailActivity extends BaseActivity {
 
         loadSurahListAsync();
         loadDataAsync(currentSurahId);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        QuranAudioService.addListener(this);
+        syncMiniPlayerInitialState();
+    }
+
+    @Override
+    protected void onStop() {
+        QuranAudioService.removeListener(this);
+        super.onStop();
     }
 
     @Override
@@ -149,6 +186,182 @@ public class SurahDetailActivity extends BaseActivity {
                         })
                 .setNegativeButton(R.string.cancel, null)
                 .show();
+    }
+
+    private void setupMiniPlayer() {
+        miniPlayerCard = findViewById(R.id.mini_player_card);
+        btnMiniPlayPause = findViewById(R.id.btn_mini_play_pause);
+        txtMiniTitle = findViewById(R.id.txt_mini_title);
+        txtMiniReciter = findViewById(R.id.txt_mini_reciter);
+        txtMiniRepeat = findViewById(R.id.btn_mini_repeat);
+        txtMiniTime = findViewById(R.id.txt_mini_time);
+        seekMiniAudio = findViewById(R.id.seek_mini_audio);
+
+        if (btnMiniPlayPause != null) {
+            btnMiniPlayPause.setOnClickListener(v -> sendAudioAction(QuranAudioService.ACTION_TOGGLE_PLAY_PAUSE));
+        }
+        View btnPrev = findViewById(R.id.btn_mini_prev);
+        if (btnPrev != null) {
+            btnPrev.setOnClickListener(v -> sendAudioAction(QuranAudioService.ACTION_PREV_VERSE));
+        }
+        View btnNext = findViewById(R.id.btn_mini_next);
+        if (btnNext != null) {
+            btnNext.setOnClickListener(v -> sendAudioAction(QuranAudioService.ACTION_NEXT_VERSE));
+        }
+        View btnClose = findViewById(R.id.btn_mini_close);
+        if (btnClose != null) {
+            btnClose.setOnClickListener(v -> sendAudioAction(QuranAudioService.ACTION_STOP));
+        }
+        if (txtMiniRepeat != null) {
+            txtMiniRepeat.setOnClickListener(v -> {
+                int current = QuranPrefsHelper.getRepeatCount(this);
+                int next = current == 1 ? 3 : (current == 3 ? 5 : 1);
+                QuranPrefsHelper.setRepeatCount(this, next);
+                txtMiniRepeat.setText(getString(R.string.quran_repeat_format, next));
+            });
+        }
+        if (seekMiniAudio != null) {
+            seekMiniAudio.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {}
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+                    userSeeking = true;
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                    userSeeking = false;
+                    Intent intent = new Intent(SurahDetailActivity.this, QuranAudioService.class);
+                    intent.setAction(QuranAudioService.ACTION_SEEK_TO);
+                    intent.putExtra(QuranAudioService.EXTRA_SEEK_POS_MS, (long) seekBar.getProgress());
+                    startService(intent);
+                }
+            });
+        }
+    }
+
+    private void syncMiniPlayerInitialState() {
+        if (QuranAudioService.isActive()) {
+            onAudioStateChanged(
+                    true,
+                    QuranAudioService.isPlayingNow(),
+                    QuranAudioService.getCurrentSurahId(),
+                    QuranAudioService.getCurrentVerseId(),
+                    QuranAudioService.getCurrentSurahName(),
+                    0L,
+                    0L,
+                    QuranPrefsHelper.getRepeatCount(this)
+            );
+        } else if (miniPlayerCard != null) {
+            miniPlayerCard.setVisibility(View.GONE);
+            playingVerseId = -1;
+        }
+    }
+
+    private void showReciterDialog() {
+        int currentIdx = QuranPrefsHelper.getReciterIndex(this);
+        String[] reciters = QuranReciterHelper.getReciterNames(this);
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.quran_reciter_select)
+                .setSingleChoiceItems(reciters, currentIdx, (dialog, which) -> {
+                    QuranPrefsHelper.setReciterIndex(this, which);
+                    if (QuranAudioService.isActive()) {
+                        sendAudioAction(QuranAudioService.ACTION_RELOAD_SETTINGS);
+                    }
+                    dialog.dismiss();
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private void playVerse(int verseId) {
+        if (currentAdapter == null || currentAdapter.items.isEmpty()) return;
+        int maxVerses = currentAdapter.items.size();
+        if (QuranAudioService.isActive()
+                && QuranAudioService.getCurrentSurahId() == currentSurahId
+                && QuranAudioService.getCurrentVerseId() == verseId) {
+            sendAudioAction(QuranAudioService.ACTION_TOGGLE_PLAY_PAUSE);
+            return;
+        }
+        Intent intent = new Intent(this, QuranAudioService.class);
+        intent.setAction(QuranAudioService.ACTION_PLAY_VERSE);
+        intent.putExtra(QuranAudioService.EXTRA_SURAH_ID, currentSurahId);
+        intent.putExtra(QuranAudioService.EXTRA_SURAH_NAME, currentSurahName);
+        intent.putExtra(QuranAudioService.EXTRA_VERSE_ID, verseId);
+        intent.putExtra(QuranAudioService.EXTRA_MAX_VERSES, maxVerses);
+        ContextCompat.startForegroundService(this, intent);
+    }
+
+    private void sendAudioAction(String action) {
+        Intent intent = new Intent(this, QuranAudioService.class);
+        intent.setAction(action);
+        startService(intent);
+    }
+
+    @Override
+    public void onAudioStateChanged(boolean active, boolean playing, int surahId, int verseId,
+                                    String surahName, long positionMs, long durationMs, int repeatTarget) {
+        mainHandler.post(() -> {
+            if (isFinishing() || isDestroyed() || miniPlayerCard == null) return;
+            if (!active) {
+                miniPlayerCard.setVisibility(View.GONE);
+                if (playingVerseId != -1) {
+                    playingVerseId = -1;
+                    if (currentAdapter != null) currentAdapter.notifyDataSetChanged();
+                }
+                return;
+            }
+            miniPlayerCard.setVisibility(View.VISIBLE);
+            if (btnMiniPlayPause != null) {
+                btnMiniPlayPause.setImageResource(playing ? R.drawable.ic_pause : R.drawable.ic_play_arrow);
+            }
+            if (txtMiniTitle != null) {
+                txtMiniTitle.setText(surahName + " • " + getString(R.string.quran_verse_format, verseId));
+            }
+            if (txtMiniReciter != null) {
+                txtMiniReciter.setText(QuranReciterHelper.getReciterName(this, QuranPrefsHelper.getReciterIndex(this)));
+            }
+            if (txtMiniRepeat != null) {
+                txtMiniRepeat.setText(getString(R.string.quran_repeat_format, repeatTarget));
+            }
+            if (seekMiniAudio != null && !userSeeking) {
+                int max = durationMs > 0 ? (int) durationMs : 100;
+                seekMiniAudio.setMax(max);
+                seekMiniAudio.setProgress(durationMs > 0 ? (int) Math.min(positionMs, durationMs) : 0);
+            }
+            if (txtMiniTime != null) {
+                txtMiniTime.setText(durationMs > 0
+                        ? formatMs(positionMs) + " / " + formatMs(durationMs)
+                        : getString(R.string.quran_audio_loading));
+            }
+
+            int newHighlight = (surahId == currentSurahId) ? verseId : -1;
+            if (newHighlight != playingVerseId) {
+                playingVerseId = newHighlight;
+                if (currentAdapter != null) {
+                    currentAdapter.notifyDataSetChanged();
+                    if (playingVerseId > 0) {
+                        for (int i = 0; i < currentAdapter.items.size(); i++) {
+                            if (currentAdapter.items.get(i).id == playingVerseId) {
+                                rv.smoothScrollToPosition(i);
+                                break;
+                            }
+                        }
+                    }
+                }
+            } else if (currentAdapter != null) {
+                currentAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+
+    private String formatMs(long ms) {
+        long totalSec = Math.max(0L, ms / 1000L);
+        long min = totalSec / 60L;
+        long sec = totalSec % 60L;
+        return String.format(Locale.US, "%02d:%02d", min, sec);
     }
 
     private void navigateSurah(int delta) {
@@ -257,6 +470,20 @@ public class SurahDetailActivity extends BaseActivity {
 
     private List<VerseItem> loadVersesFromJson(int surahId) {
         try {
+            if (QuranImportHelper.isImported(this)) {
+                List<QuranVerseEntity> dbVerses = AppDatabase.getInstance(this).quranDao().getVersesBySurah(surahId);
+                if (dbVerses != null && !dbVerses.isEmpty()) {
+                    List<VerseItem> mapped = new ArrayList<>(dbVerses.size());
+                    for (QuranVerseEntity e : dbVerses) {
+                        VerseItem vi = new VerseItem();
+                        vi.id = e.verseId;
+                        vi.ar = e.arText;
+                        vi.tr = e.trText;
+                        mapped.add(vi);
+                    }
+                    return mapped;
+                }
+            }
             if (allSurahVerses == null) {
                 try (InputStream is = getAssets().open("quran_verses.json")) {
                     int size = is.available();
@@ -361,6 +588,28 @@ public class SurahDetailActivity extends BaseActivity {
             if (holder.btnCopy != null) {
                 holder.btnCopy.setOnClickListener(v -> copyVerse(item));
             }
+
+            boolean isThisPlayingVerse = (item.id == playingVerseId);
+            if (holder.cardVerse != null) {
+                int strokeWidthPx = Math.round(getResources().getDisplayMetrics().density * (isThisPlayingVerse ? 2 : 1));
+                holder.cardVerse.setStrokeWidth(strokeWidthPx);
+                holder.cardVerse.setStrokeColor(ContextCompat.getColor(
+                        SurahDetailActivity.this,
+                        isThisPlayingVerse ? R.color.gold : R.color.card_stroke
+                ));
+                int baseCardBg = ContextCompat.getColor(SurahDetailActivity.this, R.color.card_bg);
+                int bg = isThisPlayingVerse
+                        ? ColorUtils.compositeColors(
+                                ContextCompat.getColor(SurahDetailActivity.this, R.color.selected_lang_bg),
+                                baseCardBg)
+                        : baseCardBg;
+                holder.cardVerse.setCardBackgroundColor(bg);
+            }
+            if (holder.btnPlay != null) {
+                boolean showPause = isThisPlayingVerse && QuranAudioService.isPlayingNow();
+                holder.btnPlay.setImageResource(showPause ? R.drawable.ic_pause : R.drawable.ic_play_arrow);
+                holder.btnPlay.setOnClickListener(v -> playVerse(item.id));
+            }
         }
 
         private void updateBookmarkTint(ImageView icon, boolean active) {
@@ -387,16 +636,19 @@ public class SurahDetailActivity extends BaseActivity {
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
+            MaterialCardView cardVerse;
             TextView txtId, txtAr, txtTr;
             View divider, btnCopy, btnShare;
-            ImageView btnBookmark;
+            ImageView btnBookmark, btnPlay;
 
             ViewHolder(View v) {
                 super(v);
+                cardVerse = v.findViewById(R.id.card_verse);
                 txtId = v.findViewById(R.id.txt_verse_id);
                 txtAr = v.findViewById(R.id.txt_verse_ar);
                 txtTr = v.findViewById(R.id.txt_verse_tr);
                 divider = v.findViewById(R.id.divider_verse);
+                btnPlay = v.findViewById(R.id.btn_play_verse);
                 btnBookmark = v.findViewById(R.id.btn_bookmark_verse);
                 btnShare = v.findViewById(R.id.btn_share_verse);
                 btnCopy = v.findViewById(R.id.btn_copy_verse);
