@@ -1,14 +1,40 @@
 package com.korkutsoftware.hilalim.util;
-import com.korkutsoftware.hilalim.util.JuzHelper;
 
-import org.junit.Test;
+import java.util.Calendar;
+import java.util.Locale;
 
-public class AppCalculators {
+public final class AppCalculators {
+
+    private AppCalculators() {}
 
     public static final double MEKKA_LAT = 21.422487;
     public static final double MEKKA_LNG = 39.826206;
     public static final double NISAP_GOLD_GRAMS = 80.18;
     public static final double ZEKAT_RATE = 0.025;
+
+    private static final String[] HIJRI_MONTHS_TR = {
+            "Muharrem", "Safer", "Rebiülevvel", "Rebiülahir",
+            "Cemaziyelevvel", "Cemaziyelahir", "Recep", "Şaban",
+            "Ramazan", "Şevval", "Zilkade", "Zilhicce"
+    };
+
+    private static final String[] HIJRI_MONTHS_AR = {
+            "محرم", "صفر", "ربيع الأول", "ربيع الآخر",
+            "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان",
+            "رمضان", "شوال", "ذو القعدة", "ذو الحجة"
+    };
+
+    private static final String[] HIJRI_MONTHS_DE = {
+            "Muharram", "Safar", "Rabi' al-awwal", "Rabi' ath-thani",
+            "Dschumada l-ula", "Dschumada th-thaniya", "Radschab", "Scha'ban",
+            "Ramadan", "Schawwal", "Dhu l-qa'da", "Dhu l-hiddscha"
+    };
+
+    private static final String[] HIJRI_MONTHS_EN = {
+            "Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani",
+            "Jumada al-Ula", "Jumada al-Akhirah", "Rajab", "Sha'ban",
+            "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"
+    };
 
     public static class ZekatResult {
         public final double totalWealth;
@@ -21,6 +47,14 @@ public class AppCalculators {
             this.nisapThreshold = nisapThreshold;
             this.zekatAmount = zekatAmount;
             this.isEligible = isEligible;
+        }
+
+        @Override
+        public String toString() {
+            return "ZekatResult{totalWealth=" + totalWealth +
+                    ", nisapThreshold=" + nisapThreshold +
+                    ", zekatAmount=" + zekatAmount +
+                    ", isEligible=" + isEligible + '}';
         }
     }
 
@@ -50,7 +84,14 @@ public class AppCalculators {
         if (timeStr == null) return "";
         String trimmed = timeStr.trim();
         if (trimmed.isEmpty()) return "";
-        return trimmed.split("\\s+")[0];
+        int spaceIdx = -1;
+        for (int i = 0; i < trimmed.length(); i++) {
+            if (Character.isWhitespace(trimmed.charAt(i))) {
+                spaceIdx = i;
+                break;
+            }
+        }
+        return spaceIdx == -1 ? trimmed : trimmed.substring(0, spaceIdx);
     }
 
     public static int computeProgressPercent(long elapsedMs, long totalIntervalMs) {
@@ -74,54 +115,18 @@ public class AppCalculators {
         if (monthNumber < 1 || monthNumber > 12) {
             return fallbackEn != null ? fallbackEn : "";
         }
-        String[] monthsTr = {
-                "Muharrem", "Safer", "Rebiülevvel", "Rebiülahir",
-                "Cemaziyelevvel", "Cemaziyelahir", "Recep", "Şaban",
-                "Ramazan", "Şevval", "Zilkade", "Zilhicce"
-        };
-        String[] monthsAr = {
-                "محرم", "صفر", "ربيع الأول", "ربيع الآخر",
-                "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان",
-                "رمضان", "شوال", "ذو القعدة", "ذو الحجة"
-
-        };
-
-        String[] monthsDe = {
-                "Muharram", "Safar", "Rabi' al-awwal", "Rabi' ath-thani",
-                "Dschumada l-ula", "Dschumada th-thaniya", "Radschab", "Scha'ban",
-                "Ramadan", "Schawwal", "Dhu l-qa'da", "Dhu l-hiddscha"
-        };
-        String[] monthsEn = {
-                "Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani",
-                "Jumada al-Ula", "Jumada al-Akhirah", "Rajab", "Sha'ban",
-                "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"
-        };
         int idx = monthNumber - 1;
-        if ("tr".equals(lang)) return monthsTr[idx];
-        if ("ar".equals(lang)) return monthsAr[idx];
-        if ("de".equals(lang)) return monthsDe[idx];
-        return fallbackEn != null && !fallbackEn.isEmpty() ? fallbackEn : monthsEn[idx];
+        if ("tr".equals(lang)) return HIJRI_MONTHS_TR[idx];
+        if ("ar".equals(lang)) return HIJRI_MONTHS_AR[idx];
+        if ("de".equals(lang)) return HIJRI_MONTHS_DE[idx];
+        return (fallbackEn != null && !fallbackEn.isEmpty()) ? fallbackEn : HIJRI_MONTHS_EN[idx];
     }
 
     /**
      * Parses Turkish date labels like "26 Ocak 2026" and returns signed day delta from baseDate
      * (0 = today, >0 = future days left, <0 = past). Returns Integer.MIN_VALUE if unparseable.
      */
-    @Test
-    public void juzHelper_mapsBoundariesCorrectly() {
-        assertEquals(30, JuzHelper.getAllJuzList().size());
-        assertEquals(1, JuzHelper.getJuzForVerse(1, 1));
-        assertEquals(1, JuzHelper.getJuzForVerse(2, 141));
-        assertEquals(2, JuzHelper.getJuzForVerse(2, 142));
-        assertEquals(23, JuzHelper.getJuzForVerse(36, 28));
-        assertEquals(30, JuzHelper.getJuzForVerse(78, 1));
-        assertEquals(30, JuzHelper.getJuzForVerse(114, 6));
-    }
-
-    private void assertEquals(int i, int size) {
-    }
-
-    public static int computeDaysUntilTurkishDate(String dateStr, java.util.Calendar baseDate) {
+    public static int computeDaysUntilTurkishDate(String dateStr, Calendar baseDate) {
         if (dateStr == null || baseDate == null) return Integer.MIN_VALUE;
         String[] parts = dateStr.trim().split("\\s+");
         if (parts.length < 3) return Integer.MIN_VALUE;
@@ -131,16 +136,16 @@ public class AppCalculators {
             int month = parseTurkishMonth(parts[1]);
             if (month < 0) return Integer.MIN_VALUE;
 
-            java.util.Calendar target = java.util.Calendar.getInstance();
+            Calendar target = Calendar.getInstance();
             target.clear();
             target.set(year, month, day, 0, 0, 0);
 
-            java.util.Calendar today = java.util.Calendar.getInstance();
+            Calendar today = Calendar.getInstance();
             today.clear();
             today.set(
-                    baseDate.get(java.util.Calendar.YEAR),
-                    baseDate.get(java.util.Calendar.MONTH),
-                    baseDate.get(java.util.Calendar.DAY_OF_MONTH),
+                    baseDate.get(Calendar.YEAR),
+                    baseDate.get(Calendar.MONTH),
+                    baseDate.get(Calendar.DAY_OF_MONTH),
                     0, 0, 0
             );
             long diffMs = target.getTimeInMillis() - today.getTimeInMillis();
@@ -152,20 +157,19 @@ public class AppCalculators {
 
     private static int parseTurkishMonth(String monthName) {
         if (monthName == null) return -1;
-        String lower = monthName.toLowerCase(new java.util.Locale("tr"));
-        switch (lower) {
-            case "ocak": return java.util.Calendar.JANUARY;
-            case "şubat": return java.util.Calendar.FEBRUARY;
-            case "mart": return java.util.Calendar.MARCH;
-            case "nisan": return java.util.Calendar.APRIL;
-            case "mayıs": return java.util.Calendar.MAY;
-            case "haziran": return java.util.Calendar.JUNE;
-            case "temmuz": return java.util.Calendar.JULY;
-            case "ağustos": return java.util.Calendar.AUGUST;
-            case "eylül": return java.util.Calendar.SEPTEMBER;
-            case "ekim": return java.util.Calendar.OCTOBER;
-            case "kasım": return java.util.Calendar.NOVEMBER;
-            case "aralık": return java.util.Calendar.DECEMBER;
+        switch (monthName.toLowerCase(new Locale("tr"))) {
+            case "ocak": return Calendar.JANUARY;
+            case "şubat": return Calendar.FEBRUARY;
+            case "mart": return Calendar.MARCH;
+            case "nisan": return Calendar.APRIL;
+            case "mayıs": return Calendar.MAY;
+            case "haziran": return Calendar.JUNE;
+            case "temmuz": return Calendar.JULY;
+            case "ağustos": return Calendar.AUGUST;
+            case "eylül": return Calendar.SEPTEMBER;
+            case "ekim": return Calendar.OCTOBER;
+            case "kasım": return Calendar.NOVEMBER;
+            case "aralık": return Calendar.DECEMBER;
             default: return -1;
         }
     }

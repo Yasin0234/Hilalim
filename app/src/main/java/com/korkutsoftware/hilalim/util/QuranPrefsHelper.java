@@ -25,7 +25,8 @@ public class QuranPrefsHelper {
     private static final String KEY_SHOW_TRANSLATION = "quran_show_translation";
 
     private static final Gson GSON = new Gson();
-
+    private static final String KEY_RECITER_INDEX = "quran_reciter_index";
+    private static final String KEY_REPEAT_COUNT = "quran_repeat_count";
     public static class Bookmark {
         public int surahId;
         public String surahName;
@@ -104,7 +105,31 @@ public class QuranPrefsHelper {
                 .putBoolean(KEY_SHOW_TRANSLATION, show)
                 .apply();
     }
+    public static int getReciterIndex(Context context) {
+        if (context == null) return 0;
+        return context.getSharedPreferences(PREFS_QURAN, Context.MODE_PRIVATE).getInt(KEY_RECITER_INDEX, 0);
+    }
 
+    public static void setReciterIndex(Context context, int index) {
+        if (context == null) return;
+        context.getSharedPreferences(PREFS_QURAN, Context.MODE_PRIVATE).edit()
+                .putInt(KEY_RECITER_INDEX, Math.max(0, Math.min(2, index)))
+                .apply();
+    }
+
+    public static int getRepeatCount(Context context) {
+        if (context == null) return 1;
+        int val = context.getSharedPreferences(PREFS_QURAN, Context.MODE_PRIVATE).getInt(KEY_REPEAT_COUNT, 1);
+        return (val == 3 || val == 5) ? val : 1;
+    }
+
+    public static void setRepeatCount(Context context, int count) {
+        if (context == null) return;
+        int safe = (count == 3 || count == 5) ? count : 1;
+        context.getSharedPreferences(PREFS_QURAN, Context.MODE_PRIVATE).edit()
+                .putInt(KEY_REPEAT_COUNT, safe)
+                .apply();
+    }
     public static List<Bookmark> getBookmarks(Context context) {
         if (context == null) return new ArrayList<>();
         String json = context.getSharedPreferences(PREFS_QURAN, Context.MODE_PRIVATE).getString(KEY_BOOKMARKS, null);
