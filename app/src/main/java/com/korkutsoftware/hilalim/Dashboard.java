@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
+import com.korkutsoftware.hilalim.util.QuranImportHelper;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -100,6 +100,7 @@ public class Dashboard extends BaseActivity implements NavigationView.OnNavigati
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new HomeFragment())
                     .commit();
+            QuranImportHelper.importIfNeededAsync(this);
             bottomNav.setSelectedItemId(R.id.nav_home);
             navigationView.setCheckedItem(R.id.nav_home);
         }
