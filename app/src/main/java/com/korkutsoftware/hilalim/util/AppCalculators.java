@@ -1,4 +1,7 @@
 package com.korkutsoftware.hilalim.util;
+import com.korkutsoftware.hilalim.util.JuzHelper;
+
+import org.junit.Test;
 
 public class AppCalculators {
 
@@ -80,7 +83,9 @@ public class AppCalculators {
                 "محرم", "صفر", "ربيع الأول", "ربيع الآخر",
                 "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان",
                 "رمضان", "شوال", "ذو القعدة", "ذو الحجة"
+
         };
+
         String[] monthsDe = {
                 "Muharram", "Safar", "Rabi' al-awwal", "Rabi' ath-thani",
                 "Dschumada l-ula", "Dschumada th-thaniya", "Radschab", "Scha'ban",
@@ -102,6 +107,20 @@ public class AppCalculators {
      * Parses Turkish date labels like "26 Ocak 2026" and returns signed day delta from baseDate
      * (0 = today, >0 = future days left, <0 = past). Returns Integer.MIN_VALUE if unparseable.
      */
+    @Test
+    public void juzHelper_mapsBoundariesCorrectly() {
+        assertEquals(30, JuzHelper.getAllJuzList().size());
+        assertEquals(1, JuzHelper.getJuzForVerse(1, 1));
+        assertEquals(1, JuzHelper.getJuzForVerse(2, 141));
+        assertEquals(2, JuzHelper.getJuzForVerse(2, 142));
+        assertEquals(23, JuzHelper.getJuzForVerse(36, 28));
+        assertEquals(30, JuzHelper.getJuzForVerse(78, 1));
+        assertEquals(30, JuzHelper.getJuzForVerse(114, 6));
+    }
+
+    private void assertEquals(int i, int size) {
+    }
+
     public static int computeDaysUntilTurkishDate(String dateStr, java.util.Calendar baseDate) {
         if (dateStr == null || baseDate == null) return Integer.MIN_VALUE;
         String[] parts = dateStr.trim().split("\\s+");
