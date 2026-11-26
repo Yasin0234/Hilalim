@@ -27,8 +27,13 @@ public class AlarmHelper {
     public static final String[] PRAYER_KEYS = {"fajr", "sunrise", "dhuhr", "asr", "maghrib", "isha"};
 
     public static final int TYPE_EXACT = 0;
-    public static final int TYPE_PRE_45 = 1;
+    public static final int TYPE_PRE_45 = 1; // Özelleştirilebilir erken uyarı (15/30/45/60 dk)
     public static final int TYPE_PRE_15 = 2;
+    public static final int TYPE_DND_START = 3;
+    public static final int TYPE_DND_END = 4;
+
+    public static final String PREF_PRE_CUSTOM_MINUTES = "notif_pre_custom_minutes";
+    private static final int MAX_ALARM_TYPES = 5;
 
     // Offsets in milliseconds relative to prayer time
     private static final long[] TYPE_OFFSETS_MS = {
@@ -51,6 +56,8 @@ public class AlarmHelper {
         }
         boolean pre45Enabled = prefs.getBoolean("notif_pre_45", true);
         boolean pre15Enabled = prefs.getBoolean("notif_pre_15", true);
+        int customPreMinutes = prefs.getInt(PREF_PRE_CUSTOM_MINUTES, 45);
+        boolean dndEnabled = prefs.getBoolean(DndHelper.PREF_DND_ENABLED, false) && DndHelper.hasPolicyAccess(context);
 
         Calendar tomorrowCal = Calendar.getInstance();
         tomorrowCal.add(Calendar.DAY_OF_MONTH, 1);
@@ -97,14 +104,25 @@ public class AlarmHelper {
                 }
                 long tomorrowPrayerTimeMs = tomorrowBaseCal.getTimeInMillis();
 
-                for (int type = 0; type < TYPE_OFFSETS_MS.length; type++) {
-                    if (type == TYPE_PRE_45 && !pre45Enabled) continue;
-                    if (type == TYPE_PRE_15 && !pre15Enabled) continue;
-                    long triggerMs = basePrayerTimeMs + TYPE_OFFSETS_MS[type];
+                long[] offsetsMs = {
+                        0L,
+                        -customPreMinutes * 60L * 1000L,
+                        -15L * 60L * 1000L,
+                        5L * 60L * 1000L,
+                        25L * 60L * 1000L
+                };
 
-                    // If time has passed today, schedule using tomorrow's cached time
+                for (int type = 0; type < offsetsMs.length; type++) {
+                    if (type == TYPE_PRE_45 && !pre45Enabled) continue;
+                    if (type == TYPE_PRE_15 && (!pre15Enabled || customPreMinutes == 15)) continue;
+                    if ((type == TYPE_DND_START || type == TYPE_DND_END) && (!dndEnabled || "sunrise".equals(PRAYER_KEYS[i]))) {
+                        continue;
+                    }
+                    long triggerMs = basePrayerTimeMs + offsetsMs[type];
+
+                    // Bugünkü vakit geçtiyse yarının önbellek saatini kullan
                     if (triggerMs <= nowMs) {
-                        triggerMs = tomorrowPrayerTimeMs + TYPE_OFFSETS_MS[type];
+                        triggerMs = tomorrowPrayerTimeMs + offsetsMs[type];
                     }
 
                     int requestCode = (i * 10) + type;
@@ -167,7 +185,7 @@ public class AlarmHelper {
         if (alarmManager == null) return;
 
         for (int i = 0; i < PRAYER_KEYS.length; i++) {
-            for (int type = 0; type < TYPE_OFFSETS_MS.length; type++) {
+            for (int type = 0; type < MAX_ALARM_TYPES; type++)  {
                 int requestCode = (i * 10) + type;
                 Intent intent = new Intent(context, NotificationReceiver.class);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(

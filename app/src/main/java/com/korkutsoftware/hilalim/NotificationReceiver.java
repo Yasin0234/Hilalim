@@ -13,6 +13,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.korkutsoftware.hilalim.util.AlarmHelper;
+import com.korkutsoftware.hilalim.util.DndHelper;
 
 public class NotificationReceiver extends BroadcastReceiver {
 
@@ -34,8 +35,14 @@ public class NotificationReceiver extends BroadcastReceiver {
         int typeIndex = intent.getIntExtra("type_index", AlarmHelper.TYPE_EXACT);
 
         if (prayerKey != null) {
-            showNotification(context, prayerKey, typeIndex);
-            // Re-schedule next day's alarms using 30-day cache and refresh ongoing bar + widgets
+            if (typeIndex == AlarmHelper.TYPE_DND_START) {
+                DndHelper.enableDndForPrayer(context);
+            } else if (typeIndex == AlarmHelper.TYPE_DND_END) {
+                DndHelper.restoreDndAfterPrayer(context);
+            } else {
+                showNotification(context, prayerKey, typeIndex);
+            }
+            // Ertesi günün alarmlarını yenile ve widget/çubuğu güncelle
             AlarmHelper.rescheduleAlarmsFromCache(context);
             PrayerWidgetProvider.updateAllWidgets(context);
         }
@@ -83,22 +90,21 @@ public class NotificationReceiver extends BroadcastReceiver {
 
         String prayerName = context.getString(prayerResId);
 
-        int titleResId;
-        int contentResId;
+        SharedPreferences prefs = context.getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
+        int customMinutes = prefs.getInt(AlarmHelper.PREF_PRE_CUSTOM_MINUTES, 45);
 
+        String titleText;
+        String contentText;
         if (typeIndex == AlarmHelper.TYPE_PRE_45) {
-            titleResId = R.string.notification_pre_45_title;
-            contentResId = R.string.notification_pre_45_content;
+            titleText = context.getString(R.string.notification_pre_custom_title, customMinutes);
+            contentText = context.getString(R.string.notification_pre_45_content, prayerName);
         } else if (typeIndex == AlarmHelper.TYPE_PRE_15) {
-            titleResId = R.string.notification_pre_15_title;
-            contentResId = R.string.notification_pre_15_content;
+            titleText = context.getString(R.string.notification_pre_15_title);
+            contentText = context.getString(R.string.notification_pre_15_content, prayerName);
         } else {
-            titleResId = R.string.notification_exact_title;
-            contentResId = R.string.notification_exact_content;
+            titleText = context.getString(R.string.notification_exact_title);
+            contentText = context.getString(R.string.notification_exact_content, prayerName);
         }
-
-        String titleText = context.getString(titleResId);
-        String contentText = context.getString(contentResId, prayerName);
 
         Intent openIntent = new Intent(context, MainActivity.class);
         openIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -121,9 +127,11 @@ public class NotificationReceiver extends BroadcastReceiver {
         int notificationId = (int) (System.currentTimeMillis() % 100000);
         notificationManager.notify(notificationId, builder.build());
 
-        SharedPreferences prefs = context.getSharedPreferences("hilalim_prefs", Context.MODE_PRIVATE);
         boolean ezanEnabled = prefs.getBoolean("notif_ezan_enabled", true);
-        if (typeIndex == AlarmHelper.TYPE_EXACT && ezanEnabled && !"sunrise".equals(prayerKey)) {
+        int soundIndex = prefs.getInt(EzanPlayerService.PREF_EZAN_SOUND_INDEX, EzanPlayerService.SOUND_CLASSIC);
+        if (typeIndex == AlarmHelper.TYPE_EXACT && ezanEnabled
+                && soundIndex != EzanPlayerService.SOUND_SILENT
+                && !"sunrise".equals(prayerKey)) {
             Intent ezanIntent = new Intent(context, EzanPlayerService.class);
             ezanIntent.setAction(EzanPlayerService.ACTION_PLAY_EZAN);
             ezanIntent.putExtra(EzanPlayerService.EXTRA_PRAYER_NAME, prayerName);

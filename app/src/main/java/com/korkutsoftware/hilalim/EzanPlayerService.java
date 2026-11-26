@@ -16,7 +16,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
-
+import android.content.SharedPreferences;
+import android.media.RingtoneManager;
 public class EzanPlayerService extends Service {
 
     private static final String TAG = "EzanPlayerService";
@@ -26,7 +27,12 @@ public class EzanPlayerService extends Service {
     public static final String ACTION_PLAY_EZAN = "com.korkutsoftware.hilalim.ACTION_PLAY_EZAN";
     public static final String ACTION_STOP_EZAN = "com.korkutsoftware.hilalim.ACTION_STOP_EZAN";
     public static final String EXTRA_PRAYER_NAME = "extra_prayer_name";
-
+    public static final String PREF_EZAN_SOUND_INDEX = "notif_ezan_sound_index";
+    public static final int SOUND_CLASSIC = 0;
+    public static final int SOUND_ISTANBUL = 1;
+    public static final int SOUND_MAKKAH = 2;
+    public static final int SOUND_SHORT_TONE = 3;
+    public static final int SOUND_SILENT = 4;
     private static volatile boolean playing = false;
     private MediaPlayer mediaPlayer;
 
@@ -100,6 +106,13 @@ public class EzanPlayerService extends Service {
 
     private void startAudio() {
         releasePlayer();
+        SharedPreferences prefs = getSharedPreferences("hilalim_prefs", MODE_PRIVATE);
+        int soundIndex = prefs.getInt(PREF_EZAN_SOUND_INDEX, SOUND_CLASSIC);
+        if (soundIndex == SOUND_SILENT) {
+            stopEzan();
+            return;
+        }
+
         try {
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setAudioAttributes(new AudioAttributes.Builder()
@@ -107,8 +120,8 @@ public class EzanPlayerService extends Service {
                     .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
                     .build());
 
-            Uri rawUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.ezan);
-            mediaPlayer.setDataSource(this, rawUri);
+            Uri soundUri = resolveEzanSoundUri(soundIndex);
+            mediaPlayer.setDataSource(this, soundUri);
 
             mediaPlayer.setOnCompletionListener(mp -> stopEzan());
             mediaPlayer.setOnErrorListener((mp, what, extra) -> {
@@ -124,6 +137,22 @@ public class EzanPlayerService extends Service {
             Log.e(TAG, "Error playing Ezan audio", e);
             stopEzan();
         }
+    }
+
+    private Uri resolveEzanSoundUri(int soundIndex) {
+        if (soundIndex == SOUND_SHORT_TONE) {
+            Uri notifUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            if (notifUri != null) return notifUri;
+        }
+        int resId = R.raw.ezan;
+        if (soundIndex == SOUND_ISTANBUL) {
+            int custom = getResources().getIdentifier("ezan_istanbul", "raw", getPackageName());
+            if (custom != 0) resId = custom;
+        } else if (soundIndex == SOUND_MAKKAH) {
+            int custom = getResources().getIdentifier("ezan_mekke", "raw", getPackageName());
+            if (custom != 0) resId = custom;
+        }
+        return Uri.parse("android.resource://" + getPackageName() + "/" + resId);
     }
 
     private void stopEzan() {
